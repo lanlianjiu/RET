@@ -1,0 +1,24 @@
+﻿<flash_project name="~293" version="1">
+	<project_file path="./~293.fla" filetype="fla" profile="" def_file="true"/>
+	<project_file path="./mx/managers/PopUpManager.as" filetype="as"/>
+	<project_file path="./mx/core/UIObject.as" filetype="as"/>
+	<project_file path="./mx/skins/SkinElement.as" filetype="as"/>
+	<project_file path="./mx/styles/CSSTextStyles.as" filetype="as"/>
+	<project_file path="./mx/styles/CSSStyleDeclaration.as" filetype="as"/>
+	<project_file path="./mx/styles/StyleManager.as" filetype="as"/>
+	<project_file path="./mx/managers/DepthManager.as" filetype="as"/>
+	<project_file path="./mx/managers/SystemManager.as" filetype="as"/>
+	<project_file path="./mx/events/EventDispatcher.as" filetype="as"/>
+	<project_file path="./mx/core/UIComponent.as" filetype="as"/>
+	<project_file path="./mx/core/View.as" filetype="as"/>
+	<project_file path="./mx/skins/Border.as" filetype="as"/>
+	<project_file path="./mx/skins/RectBorder.as" filetype="as"/>
+	<project_file path="./mx/core/ExternalContent.as" filetype="as"/>
+	<project_file path="./mx/events/UIEventDispatcher.as" filetype="as"/>
+	<project_file path="./mx/core/ScrollView.as" filetype="as"/>
+	<project_file path="./mx/controls/scrollClasses/ScrollBar.as" filetype="as"/>
+	<project_file path="./mx/skins/CustomBorder.as" filetype="as"/>
+	<project_file path="./mx/controls/scrollClasses/ScrollThumb.as" filetype="as"/>
+	<project_file path="./mx/controls/SimpleButton.as" filetype="as"/>
+	<project_file path="./mx/containers/Window.as" filetype="as"/>
+</flash_project>

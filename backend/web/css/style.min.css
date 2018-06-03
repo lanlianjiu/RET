@@ -1,0 +1,107 @@
+.modal {
+    background: rgba(0, 0, 0, 0) !important;
+}
+
+.action-a-btn {
+    margin-right: 10px;
+}
+
+.th-table {
+    border-bottom: 0px !important;
+}
+
+.th-table>thead>tr>th {
+    border: 0px;
+    border-bottom: 0px !important;
+}
+
+.table>tbody>tr>td {
+    border: 0px;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+thead {
+    background-color: #FFF;
+}
+
+.table-loading {
+    position: absolute;
+    top: 45%;
+    left: 45%;
+    width: auto;
+    z-index: 101;
+    padding: 6px;
+    margin: 5px;
+    width: 64px;
+    height: 64px;
+    background: url(../images/loading.gif) no-repeat;
+}
+
+.no-margin {
+    margin: 0px !important;
+}
+
+.no-padding-top {
+    padding-top: 0px !important;
+}
+
+.text-c {
+    text-align: center !important;
+}
+
+.dataTable>thead>tr>th:first-child,
+.dataTable>tbody>tr>td:first-child {
+    text-align: center;
+}
+
+.dataTable>thead>tr>th:first-child {
+    padding-right: 10px;
+}
+
+.dataTable>thead>tr>th:last-child,
+.dataTable>tbody>tr>td:last-child {
+    text-align: center;
+}
+
+.logo-box {
+    text-align: center;
+}
+
+.btn {
+    margin-right: 5px;
+}
+
+.user-image {
+    max-width: 75px !important;
+    border-radius: 50%;
+}
+
+.content {
+    padding-top: 0px;
+}
+
+.left-header {
+    background-color: #1e282c;
+}
+
+.box {
+    border-top: 1px solid #ddd;
+}
+
+.search-box {
+    padding: 0px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    background-color: #FFF;
+}
+
+.modal-box {
+    background: none;
+}
+
+.modal-content {
+    border-radius: 5px;
+}
