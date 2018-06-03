@@ -69,9 +69,7 @@ if($otherMenu == false){
   <link rel="stylesheet" href="<?=Url::base()?>/libs/ionicons.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=Url::base()?>/dist/css/AdminLTE.min.css">
-  <!-- AdminLTE Skins. Choose a skin from the css/skins
-       folder instead of downloading all of them to reduce the load. -->
-  <link rel="stylesheet" href="<?=Url::base()?>/dist/css/skins/_all-skins.min.css">
+  
   <!-- iCheck -->
   <link rel="stylesheet" href="<?=Url::base()?>/plugins/iCheck/flat/blue.css">
   <!-- Morris chart -->
@@ -90,6 +88,7 @@ if($otherMenu == false){
   <link rel="stylesheet" href="<?=Url::base()?>/plugins/bootstrap-table/css/bootstrap-table.min.css">
   <!-- style.min -->
   <link rel="stylesheet" href="<?=Url::base()?>/css/style.min.css">
+  <link rel="stylesheet" href="<?=Url::base()?>/css/style.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
@@ -151,295 +150,285 @@ if($otherMenu == false){
 <?php endif;?>
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
-<div class="modal fade" id="confirm_dialog" tabindex="-1" role="dialog"
-	aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h3>提示信息</h3>
-			</div>
-			<div id="confirm_content" class="modal-body"></div>
-			<div class="modal-footer">
-				<a id="confirm_dialog_cancel" href="#" class="btn btn-default" data-dismiss="modal">关闭</a> <a
-					id="confirm_dialog_ok" href="#" class="btn btn-primary">确定</a>
-			</div>
-		</div>
-	</div>
-</div>
-
-<div class="wrapper">
-  <header class="main-header left-header">
-    <a href="#" class="logo">
-      <!-- mini logo for sidebar mini 50x50 pixels -->
-      <span class="logo-mini"><b>T</b>ES</span>
-      <!-- logo for regular state and mobile devices -->
-      <span class="logo-lg"><b>后台管理系统</b></span>
-    </a>
-   <!-- 右边顶部菜单栏 -->
-    <nav class="navbar navbar-static-top">
-      <!-- 菜单栏显、隐 -->
-      <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-        <span class="sr-only"></span>
-      </a>
-      <div class="navbar-custom-menu">
-        <ul class="nav navbar-nav" >
-          <!-- 个人信息 -->
-          <li class="dropdown user-menu notifications-menu" >
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> 
-              <span class="hidden-xs"><?php echo Yii::$app->user->identity->uname;?>&nbsp;&nbsp;</span>
-              <span class="fa fa-caret-down"></span>
-            </a>
-              <ul class="dropdown-menu" style="width: 150px;height:100px;">
-              <li>
-              	<ul class="menu">
-            		<li><a href="<?=Url::toRoute('site/psw')?>"><i class="fa fa-cog"></i> 修改密码</a></li>
-                	<li><a href="<?=Url::toRoute('site/logout')?>" data-method="post"><i class="fa fa-sign-out"></i> 退出</a></li>
-            	</ul>
-            </ul>
-          </li>
-          <!-- 设置 -->
-          <li>
-            <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </header>
-  <!--菜单栏 -->
-  <aside class="main-sidebar">
-    <section class="sidebar">
-      <!-- <div class="user-panel">
-        <div class="image logo-box">
-          <img src="images/logo.jpg" class="user-image" alt="User Image">
+<section id="container" >
+  <div class="modal fade" id="confirm_dialog" tabindex="-1" role="dialog"
+    aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">×</button>
+          <h3>提示信息</h3>
         </div>
-      </div> -->
-      <ul class="sidebar-menu">
-        <li <?=$route == 'site/index' ?  ' class="active" ' : ''?>>
-        	<a href="<?=Url::to(['site/index'])?>">
-        	<i class="fa fa-home"></i> 
-        	<span>首页</span>
-        	</a>
-        </li>
-        <?php 
-          foreach($system_menus as $menu){
-              $funcList = $menu['funcList'];
-              $isMenuActive = '';
-              $isTreeView = count($funcList) > 0 ? "treeview" : "";
-              $menuHtml = '<li class="#isMenuActive#'. $isTreeView .'">'; // active 
-              $menuHtml .= '   <a href="#">';
-              $menuHtml .= '   <i class="fa '.$menu['menuicon'].'"></i> <span>'. $menu['label'] .'</span>';
-              $menuHtml .= '   <span class="pull-right-container">';
-              $menuHtml .= '       <i class="fa fa-angle-left pull-right"></i>';
-              $menuHtml .= '   </span>';
-              $menuHtml .= '   </a>';
-            // echo '   <ul class="treeview-menu">';
-            if($isTreeView != ""){
-                $menuHtml .= '<ul class="treeview-menu">';
-                foreach($funcList as $fun){
-                    $isActive = $fun['url'] == $funInfo['entry_url'] ? 'class="active"' : ''; //'. $isActive .'
-                    $menuHtml .= '<li '. $isActive .'><a href="'.Url::to([$fun['url']]).'"><i class="fa fa-circle-o"></i>'. $fun['label'] .'</a></li>';
-                    if(empty($isMenuActive) == true && $isActive != ""){
-                        $isMenuActive = 'active ';
-                    }
-                }
-                $menuHtml .= '</ul>';
-            }
-              $menuHtml .= '</li>';
-              $menuHtml = str_replace('#isMenuActive#', $isMenuActive, $menuHtml);
-              echo $menuHtml;
-          }
-        ?>
-      </ul>
-    </section>
-  </aside>
-
-    <!-- 右边内容顶部栏 -->
-    <div class="content-wrapper">
-      <section class="content-header no-padding">
-        <h6 style="margin-top:0px;border-bottom:  1px solid;">  
-          <ol class="breadcrumb breadcrumb-quirk no-margin">
-              <li><a href="<?=Url::toRoute('site/index')?>"><i class="fa fa-home"></i> 首页</a></li>
-            <?php
-            if(isset($funInfo['module_name']) == true && isset($funInfo['menu_name']) == true){
-                echo '<li><a href="#">'.$funInfo['module_name'].'</a></li>';
-                echo '<li><a href="'.Url::toRoute($funInfo['entry_url']).'">'.$funInfo['menu_name'].'</a></li>';
-            }
-            ?>
-          </ol>
-        </h6>
-      </section>
-      <?= $content ?>
+        <div id="confirm_content" class="modal-body"></div>
+        <div class="modal-footer">
+          <a id="confirm_dialog_cancel" href="#" class="btn btn-default" data-dismiss="modal">关闭</a> <a
+            id="confirm_dialog_ok" href="#" class="btn btn-primary">确定</a>
+        </div>
+      </div>
     </div>
-    <!-- 颜色设置栏 -->
-    <aside class="control-sidebar control-sidebar-dark">
-      <div class="tab-content">
-        <div class="tab-pane" id="control-sidebar-home-tab">
-          <h3 class="control-sidebar-heading">Recent Activity</h3>
-          <ul class="control-sidebar-menu">
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-birthday-cake bg-red"></i>
-
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
-                  <p>Will be 23 on April 24th</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-user bg-yellow"></i>
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
-                  <p>New phone +1(800)555-1234</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
-
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
-
-                  <p>nora@example.com</p>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <i class="menu-icon fa fa-file-code-o bg-green"></i>
-                <div class="menu-info">
-                  <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
-                  <p>Execution time 5 seconds</p>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <!-- /.control-sidebar-menu -->
-          <h3 class="control-sidebar-heading">Tasks Progress</h3>
-          <ul class="control-sidebar-menu">
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Custom Template Design
-                  <span class="label label-danger pull-right">70%</span>
-                </h4>
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Update Resume
-                  <span class="label label-success pull-right">95%</span>
-                </h4>
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-success" style="width: 95%"></div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Laravel Integration
-                  <span class="label label-warning pull-right">50%</span>
-                </h4>
-
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
-                </div>
-              </a>
-            </li>
-            <li>
-              <a href="javascript:void(0)">
-                <h4 class="control-sidebar-subheading">
-                  Back End Framework
-                  <span class="label label-primary pull-right">68%</span>
-                </h4>
-
-                <div class="progress progress-xxs">
-                  <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
-                </div>
-              </a>
-            </li>
-          </ul>
-          <!-- /.control-sidebar-menu -->
-        </div>
-        <!-- /.tab-pane -->
-        <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
-        <!-- /.tab-pane -->
-        <div class="tab-pane" id="control-sidebar-settings-tab">
-          <form method="post">
-            <h3 class="control-sidebar-heading">General Settings</h3>
-
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Report panel usage
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-              <p>
-                Some information about this general settings option
-              </p>
-            </div>
-            <!-- /.form-group -->
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Allow mail redirect
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-              <p>
-                Other sets of options are available
-              </p>
-            </div>
-            <!-- /.form-group -->
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Expose author name in posts
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-
-              <p>
-                Allow the user to show his name in blog posts
-              </p>
-            </div>
-            <!-- /.form-group -->
-
-            <h3 class="control-sidebar-heading">Chat Settings</h3>
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Show me as online
-                <input type="checkbox" class="pull-right" checked>
-              </label>
-            </div>
-            <!-- /.form-group -->
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Turn off notifications
-                <input type="checkbox" class="pull-right">
-              </label>
-            </div>
-            <!-- /.form-group -->
-            <div class="form-group">
-              <label class="control-sidebar-subheading">
-                Delete chat history
-                <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
-              </label>
-            </div>
-            <!-- /.form-group -->
-          </form>
-        </div>
-        <!-- /.tab-pane -->
-      </div>
-    </aside>
-    <!-- 颜色控制背景 -->
-    <div class="control-sidebar-bg"></div>
   </div>
+      <header class="header  left-header">
+          <div class="sidebar-toggle-box">
+              <div class="fa fa-bars tooltips" data-placement="right" data-original-title="Toggle Navigation"></div>
+          </div>
+          <!--logo start-->
+          <a href="#" class="logo">YII<span>RBAC</span></a>
+          <!--logo end-->
+          <div class="top-nav ">
+              <!--search & user info start-->
+              <ul class="nav pull-right top-menu">
+                  <!-- user login dropdown start-->
+                  <li class="dropdown">
+                      <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                          <img alt="" src="">
+                          <span class="username"></span>
+                          <b class="caret"></b>
+                      </a>
+                      <ul class="dropdown-menu extended logout">
+                          <div class="log-arrow-up"></div>
+                          <li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                          <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                          <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li>
+                          <li><a href="<?=Url::toRoute('/site/logout')?>" data-method="post"><i class="fa fa-key"></i> Log Out</a></li>
+                      </ul>
+                  </li>
+                  <li class="sb-toggle-right">
+                      <i class="fa  fa-align-right"></i>
+                  </li>
+                  <!-- user login dropdown end -->
+              </ul>
+              <!--search & user info end-->
+          </div>
+      </header>
+      <!--菜单栏 -->
+      <aside class="">
+        <section class="sidebar main-sidebar">
+          <div id="sidebar"  class="nav-collapse ">
+            <ul class="sidebar-menu">
+              <li <?=$route == 'site/index' ?  ' class="active" ' : ''?>>
+                <a href="<?=Url::to(['site/index'])?>">
+                <i class="fa fa-home"></i> 
+                <span>首页</span>
+                </a>
+              </li>
+              <?php 
+                foreach($system_menus as $menu){
+                    $funcList = $menu['funcList'];
+                    $isMenuActive = '';
+                    $isTreeView = count($funcList) > 0 ? "treeview" : "";
+                    $menuHtml = '<li class="#isMenuActive#'. $isTreeView .'">'; // active 
+                    $menuHtml .= '   <a href="#">';
+                    $menuHtml .= '   <i class="fa '.$menu['menuicon'].'"></i> <span>'. $menu['label'] .'</span>';
+                    $menuHtml .= '   <span class="pull-right-container">';
+                    $menuHtml .= '       <i class="fa fa-angle-left pull-right"></i>';
+                    $menuHtml .= '   </span>';
+                    $menuHtml .= '   </a>';
+                  // echo '   <ul class="treeview-menu">';
+                  if($isTreeView != ""){
+                      $menuHtml .= '<ul class="treeview-menu">';
+                      foreach($funcList as $fun){
+                          $isActive = $fun['url'] == $funInfo['entry_url'] ? 'class="active"' : ''; //'. $isActive .'
+                          $menuHtml .= '<li '. $isActive .'><a href="'.Url::to([$fun['url']]).'"><i class="fa fa-circle-o"></i>'. $fun['label'] .'</a></li>';
+                          if(empty($isMenuActive) == true && $isActive != ""){
+                              $isMenuActive = 'active ';
+                          }
+                      }
+                      $menuHtml .= '</ul>';
+                  }
+                    $menuHtml .= '</li>';
+                    $menuHtml = str_replace('#isMenuActive#', $isMenuActive, $menuHtml);
+                    echo $menuHtml;
+                }
+              ?>
+            </ul>
+          </div>
+        </section>
+      </aside>
 
+      <!-- 右边内容顶部栏 -->
+      <div class="content-wrapper">
+        <section class="content-header no-padding">
+          <h6 style="margin-top:0px;border-bottom:  1px solid;">  
+            <ol class="breadcrumb breadcrumb-quirk no-margin">
+                <li><a href="<?=Url::toRoute('site/index')?>"><i class="fa fa-home"></i> 首页</a></li>
+              <?php
+              if(isset($funInfo['module_name']) == true && isset($funInfo['menu_name']) == true){
+                  echo '<li><a href="#">'.$funInfo['module_name'].'</a></li>';
+                  echo '<li><a href="'.Url::toRoute($funInfo['entry_url']).'">'.$funInfo['menu_name'].'</a></li>';
+              }
+              ?>
+            </ol>
+          </h6>
+        </section>
+          <?= $content ?>
+      </div>
+      <!-- 颜色设置栏 -->
+      <aside class="control-sidebar control-sidebar-dark">
+        <div class="tab-content">
+          <div class="tab-pane" id="control-sidebar-home-tab">
+            <h3 class="control-sidebar-heading">Recent Activity</h3>
+            <ul class="control-sidebar-menu">
+              <li>
+                <a href="javascript:void(0)">
+                  <i class="menu-icon fa fa-birthday-cake bg-red"></i>
+
+                  <div class="menu-info">
+                    <h4 class="control-sidebar-subheading">Langdon's Birthday</h4>
+                    <p>Will be 23 on April 24th</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <i class="menu-icon fa fa-user bg-yellow"></i>
+                  <div class="menu-info">
+                    <h4 class="control-sidebar-subheading">Frodo Updated His Profile</h4>
+                    <p>New phone +1(800)555-1234</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <i class="menu-icon fa fa-envelope-o bg-light-blue"></i>
+
+                  <div class="menu-info">
+                    <h4 class="control-sidebar-subheading">Nora Joined Mailing List</h4>
+
+                    <p>nora@example.com</p>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <i class="menu-icon fa fa-file-code-o bg-green"></i>
+                  <div class="menu-info">
+                    <h4 class="control-sidebar-subheading">Cron Job 254 Executed</h4>
+                    <p>Execution time 5 seconds</p>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <!-- /.control-sidebar-menu -->
+            <h3 class="control-sidebar-heading">Tasks Progress</h3>
+            <ul class="control-sidebar-menu">
+              <li>
+                <a href="javascript:void(0)">
+                  <h4 class="control-sidebar-subheading">
+                    Custom Template Design
+                    <span class="label label-danger pull-right">70%</span>
+                  </h4>
+                  <div class="progress progress-xxs">
+                    <div class="progress-bar progress-bar-danger" style="width: 70%"></div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <h4 class="control-sidebar-subheading">
+                    Update Resume
+                    <span class="label label-success pull-right">95%</span>
+                  </h4>
+                  <div class="progress progress-xxs">
+                    <div class="progress-bar progress-bar-success" style="width: 95%"></div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <h4 class="control-sidebar-subheading">
+                    Laravel Integration
+                    <span class="label label-warning pull-right">50%</span>
+                  </h4>
+
+                  <div class="progress progress-xxs">
+                    <div class="progress-bar progress-bar-warning" style="width: 50%"></div>
+                  </div>
+                </a>
+              </li>
+              <li>
+                <a href="javascript:void(0)">
+                  <h4 class="control-sidebar-subheading">
+                    Back End Framework
+                    <span class="label label-primary pull-right">68%</span>
+                  </h4>
+
+                  <div class="progress progress-xxs">
+                    <div class="progress-bar progress-bar-primary" style="width: 68%"></div>
+                  </div>
+                </a>
+              </li>
+            </ul>
+            <!-- /.control-sidebar-menu -->
+          </div>
+          <!-- /.tab-pane -->
+          <div class="tab-pane" id="control-sidebar-stats-tab">Stats Tab Content</div>
+          <!-- /.tab-pane -->
+          <div class="tab-pane" id="control-sidebar-settings-tab">
+            <form method="post">
+              <h3 class="control-sidebar-heading">General Settings</h3>
+
+              <div class="form-group">
+                <label class="control-sidebar-subheading">
+                  Report panel usage
+                  <input type="checkbox" class="pull-right" checked>
+                </label>
+                <p>
+                  Some information about this general settings option
+                </p>
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label class="control-sidebar-subheading">
+                  Allow mail redirect
+                  <input type="checkbox" class="pull-right" checked>
+                </label>
+                <p>
+                  Other sets of options are available
+                </p>
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label class="control-sidebar-subheading">
+                  Expose author name in posts
+                  <input type="checkbox" class="pull-right" checked>
+                </label>
+
+                <p>
+                  Allow the user to show his name in blog posts
+                </p>
+              </div>
+              <!-- /.form-group -->
+
+              <h3 class="control-sidebar-heading">Chat Settings</h3>
+              <div class="form-group">
+                <label class="control-sidebar-subheading">
+                  Show me as online
+                  <input type="checkbox" class="pull-right" checked>
+                </label>
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label class="control-sidebar-subheading">
+                  Turn off notifications
+                  <input type="checkbox" class="pull-right">
+                </label>
+              </div>
+              <!-- /.form-group -->
+              <div class="form-group">
+                <label class="control-sidebar-subheading">
+                  Delete chat history
+                  <a href="javascript:void(0)" class="text-red pull-right"><i class="fa fa-trash-o"></i></a>
+                </label>
+              </div>
+              <!-- /.form-group -->
+            </form>
+          </div>
+          <!-- /.tab-pane -->
+        </div>
+      </aside>
+      <!-- 颜色控制背景 -->
+      <div class="control-sidebar-bg"></div>
+  </section>
   <!-- ./wrapper -->
   <script src="<?=Url::base()?>/plugins/form/jquery.form.min.js"></script>
   <!-- Bootstrap 3.3.6 -->
