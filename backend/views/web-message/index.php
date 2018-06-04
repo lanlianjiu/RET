@@ -32,7 +32,6 @@ $modelLabel = new \backend\models\WebMessageModel();
                 </div>
           	</div>
         </div>
-        <!-- /.box-header -->
         <div class="box">
             <div class="box-body">
                 <table id="webmessage-table" data-toggle="table" data-show-columns="true" data-autoheight="160" data-show-export="true"
@@ -55,14 +54,8 @@ $modelLabel = new \backend\models\WebMessageModel();
                 </table>
             </div>
         </div>
-        </div>
-        <!-- /.box-body -->
-      </div>
-      <!-- /.box -->
     </div>
-    <!-- /.col -->
   </div>
-  <!-- /.row -->
 </section>
 <!-- /.content -->
 
@@ -71,7 +64,7 @@ $modelLabel = new \backend\models\WebMessageModel();
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h3>留言信息</h3>
+                <h5 class="modal-title bootstrap-dialog-title">留言信息</h5>
 			</div>
 			<div class="modal-body">
                 <?php $form = ActiveForm::begin(["id" => "admin-message-form", "class"=>"form-horizontal", "action"=>"index.php?r=admin-log/save"]); ?>                      

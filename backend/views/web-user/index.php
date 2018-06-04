@@ -16,35 +16,31 @@ $modelLabel = new \backend\models\WebUserModel();
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
-             <!-- row start search-->
             <div class="box-header search-box">
                 <div class="row">
                     <div class="col-sm-12 ">
                         <form bootstrap-table-form="webuser-table" class="form-inline">
                         
-                        <div class="form-group" style="margin: 5px;">
-                            <label>ID</label>
-                            <input type="text" class="form-control"  name="id"  />
-                        </div>
+                            <div class="form-group" style="margin: 5px;">
+                                <label>ID</label>
+                                <input type="text" class="form-control"  name="id"  />
+                            </div>
 
-                        <div class="form-group" style="margin: 5px;">
-                            <label>名称</label>
-                            <input type="text" class="form-control"  name="username"  />
-                        </div>
-                        <div class="form-group">
-                            <a bootstrap-table-search="webuser-table" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</a>
-                        </div>
-                    </form>
+                            <div class="form-group" style="margin: 5px;">
+                                <label>名称</label>
+                                <input type="text" class="form-control"  name="username"  />
+                            </div>
+                            <div class="form-group">
+                                <a bootstrap-table-search="webuser-table" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-             <!-- row end search -->
             <div class="box">  
-                <!-- /.box-header -->
                 <div class="box-body">
                     <div class="input-group input-group-sm action-toolbar">
                         <div class="from-gruop">
-                            <label>会员列表 </label>
                             <button id="delete_btn" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> 批量删除</button>
                         </div>
                     </div>
@@ -65,19 +61,10 @@ $modelLabel = new \backend\models\WebUserModel();
                         </thead>
                     </table>
                 </div>
-                
-                
-                </div>
-                </div>
-                <!-- /.box-body -->
             </div>
-            <!-- /.box -->
         </div>
-        <!-- /.col -->
     </div>
-    <!-- /.row -->
 </section>
-<!-- /.content -->
 
 <!-- 弹窗 -->
 <div class="modal bootstrap-dialog type-primary modal-box fade" id="edit_dialog">
@@ -85,7 +72,7 @@ $modelLabel = new \backend\models\WebUserModel();
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h4>会员管理</h4>
+                <h5 class="modal-title bootstrap-dialog-title">会员管理</h5>
 			</div>
 			<div class="modal-body">
                 <?php $form = ActiveForm::begin(["id" => "web-user-form", "class"=>"form-horizontal"]); ?> 

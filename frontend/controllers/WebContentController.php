@@ -18,7 +18,7 @@ use Aliyun\Api\Sms\Request\V20170525\SendBatchSmsRequest;
 use Aliyun\Api\Sms\Request\V20170525\QuerySendDetailsRequest;
 
 // 加载区域结点配置
-Config::load();
+//Config::load();
 class WebContentController extends \yii\web\Controller
 {
     

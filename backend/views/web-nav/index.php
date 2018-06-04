@@ -17,35 +17,31 @@ $modelLabel = new \backend\models\WebNavModel();
 <section class="content">
     <div class="row">
         <div class="col-xs-12">
-             <!-- row start search-->
             <div class="box-header search-box">
                 <div class="row">
                     <div class="col-sm-12 ">
                         <form bootstrap-table-form="webnav-table" class="form-inline">
                         
-                        <div class="form-group" style="margin: 5px;">
-                            <label>类型</label>
-                            <input type="text" class="form-control"  name="web_navType_id"  />
-                        </div>
+                            <div class="form-group" style="margin: 5px;">
+                                <label>类型</label>
+                                <input type="text" class="form-control"  name="web_navType_id"  />
+                            </div>
 
-                        <div class="form-group" style="margin: 5px;">
-                            <label>名称</label>
-                            <input type="text" class="form-control"  name="web_nav_name"  />
-                        </div>
-                        <div class="form-group">
-                            <a bootstrap-table-search="webnav-table" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</a>
-                        </div>
-                    </form>
+                            <div class="form-group" style="margin: 5px;">
+                                <label>名称</label>
+                                <input type="text" class="form-control"  name="web_nav_name"  />
+                            </div>
+                            <div class="form-group">
+                                <a bootstrap-table-search="webnav-table" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</a>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
-             <!-- row end search -->
             <div class="box">  
-                <!-- /.box-header -->
                 <div class="box-body">
                     <div class="input-group input-group-sm action-toolbar">
                         <div class="from-gruop">
-                            <label>导航列表 </label>
                             <button id="create_btn" type="button" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> 添加</button>
                             <button id="delete_btn" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> 批量删除</button>
                         </div>
@@ -65,17 +61,9 @@ $modelLabel = new \backend\models\WebNavModel();
                         </thead>
                     </table>
                 </div>
-                
-                
-                </div>
-                </div>
-                <!-- /.box-body -->
             </div>
-            <!-- /.box -->
         </div>
-        <!-- /.col -->
     </div>
-    <!-- /.row -->
 </section>
 <!-- /.content -->
 
@@ -85,7 +73,7 @@ $modelLabel = new \backend\models\WebNavModel();
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h4>导航管理</h4>
+                <h5 class="modal-title bootstrap-dialog-title">导航管理</h5>
 			</div>
 			<div class="modal-body">
                 <?php $form = ActiveForm::begin(["id" => "web-nav-form", "class"=>"form-horizontal", "action"=>Url::toRoute("web-nav/save")]); ?> 

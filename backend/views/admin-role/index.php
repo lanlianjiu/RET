@@ -40,7 +40,6 @@ $modelLabel = new \backend\models\AdminRole();
         <div class="box">
             <div class="box-body">
                 <div class="input-group input-group-sm action-toolbar">
-                    <label>角色管理&nbsp;</label>
                     <button id="create_btn" type="button" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> 添加</button>
                     <button id="delete_btn" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> 批量删除</button>
                 </div>
@@ -62,13 +61,9 @@ $modelLabel = new \backend\models\AdminRole();
                 </table>
             </div>
         </div>
-        <!-- /.box-body -->
       </div>
-      <!-- /.box -->
     </div>
-    <!-- /.col -->
   </div>
-  <!-- /.row -->
 </section>
 <!-- /.content -->
 

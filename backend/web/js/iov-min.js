@@ -327,11 +327,9 @@ function ($) {
         //模态框垂直居中
         $(this).css('display', 'block'); // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零
         var modalHeight = ($(window).height() / 2) - ($('.modal-dialog').height() / 2);
-        console.log($(this));
-        console.log($('.modal-dialog').height());
-        // $(this).find('.modal-dialog').css({
-        //     'margin-top': modalHeight
-        // });
+        $(this).find('.modal-dialog').css({
+            'margin-top': modalHeight
+        });
     });
 }(jQuery); +
 (function ($) {
