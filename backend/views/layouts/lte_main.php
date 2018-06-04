@@ -88,7 +88,7 @@ if($otherMenu == false){
   <link rel="stylesheet" href="<?=Url::base()?>/plugins/bootstrap-table/css/bootstrap-table.min.css">
   <!-- style.min -->
   <link rel="stylesheet" href="<?=Url::base()?>/css/style.min.css">
-  <link rel="stylesheet" href="<?=Url::base()?>/css/style.css">
+  
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
   <!--[if lt IE 9]>
