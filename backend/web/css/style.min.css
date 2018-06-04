@@ -10,6 +10,20 @@ body {
     -moz-font-smoothing: antialiased;
 }
 
+.form-control {
+    border: 1px solid #e2e2e4;
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+.action-toolbar {
+    margin-top: 15px;
+}
+
+.box-body {
+    padding-top: 0px;
+}
+
 ul li {
     list-style: none;
 }
