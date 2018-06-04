@@ -4,13 +4,13 @@ Navicat MySQL Data Transfer
 Source Server         : localhost
 Source Server Version : 50505
 Source Host           : localhost:3306
-Source Database       : tes
+Source Database       : shp
 
 Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-05-25 18:24:14
+Date: 2018-06-04 18:20:52
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,7 +34,7 @@ CREATE TABLE `admin_log` (
   KEY `index_create_date` (`create_date`),
   KEY `index_create_index` (`create_user`),
   KEY `index_url` (`url`)
-) ENGINE=InnoDB AUTO_INCREMENT=3118 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3265 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_log
@@ -3156,6 +3156,153 @@ INSERT INTO `admin_log` VALUES ('3114', 'admin-role', 'index', 'admin-role/index
 INSERT INTO `admin_log` VALUES ('3115', 'admin-role', 'table', 'admin-role/table', '组织管理', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-25 12:16:31');
 INSERT INTO `admin_log` VALUES ('3116', 'admin-role', 'index', 'admin-role/index', '组织管理', '角色管理', '分配权限', '无法获取ip', 'test', '2018-05-25 12:16:32');
 INSERT INTO `admin_log` VALUES ('3117', 'admin-role', 'table', 'admin-role/table', '组织管理', '角色管理', '角色操作', '无法获取ip', 'test', '2018-05-25 12:16:33');
+INSERT INTO `admin_log` VALUES ('3118', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:23:05');
+INSERT INTO `admin_log` VALUES ('3119', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:25:57');
+INSERT INTO `admin_log` VALUES ('3120', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:26:03');
+INSERT INTO `admin_log` VALUES ('3121', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:26:51');
+INSERT INTO `admin_log` VALUES ('3122', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:26:54');
+INSERT INTO `admin_log` VALUES ('3123', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-04 10:27:30');
+INSERT INTO `admin_log` VALUES ('3124', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-04 10:27:32');
+INSERT INTO `admin_log` VALUES ('3125', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-04 10:28:23');
+INSERT INTO `admin_log` VALUES ('3126', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-04 10:28:24');
+INSERT INTO `admin_log` VALUES ('3127', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:28:46');
+INSERT INTO `admin_log` VALUES ('3128', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:28:48');
+INSERT INTO `admin_log` VALUES ('3129', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:29:27');
+INSERT INTO `admin_log` VALUES ('3130', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:29:30');
+INSERT INTO `admin_log` VALUES ('3131', 'admin-role', 'index', 'admin-role/index', '组织管理', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-06-04 10:29:42');
+INSERT INTO `admin_log` VALUES ('3132', 'admin-role', 'table', 'admin-role/table', '组织管理', '角色管理', '角色操作', '无法获取ip', 'admin', '2018-06-04 10:29:45');
+INSERT INTO `admin_log` VALUES ('3133', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:30:00');
+INSERT INTO `admin_log` VALUES ('3134', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:30:05');
+INSERT INTO `admin_log` VALUES ('3135', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:38:03');
+INSERT INTO `admin_log` VALUES ('3136', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:38:06');
+INSERT INTO `admin_log` VALUES ('3137', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:40:33');
+INSERT INTO `admin_log` VALUES ('3138', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:40:36');
+INSERT INTO `admin_log` VALUES ('3139', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:44:03');
+INSERT INTO `admin_log` VALUES ('3140', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:44:06');
+INSERT INTO `admin_log` VALUES ('3141', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-04 10:44:40');
+INSERT INTO `admin_log` VALUES ('3142', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-04 10:44:43');
+INSERT INTO `admin_log` VALUES ('3143', 'web-user', 'index', 'web-user/index', '会员管理', '会员列表', '会员信息', '无法获取ip', 'admin', '2018-06-04 10:44:48');
+INSERT INTO `admin_log` VALUES ('3144', 'web-user', 'table', 'web-user/table', '会员管理', '会员列表', '会员信息', '无法获取ip', 'admin', '2018-06-04 10:44:50');
+INSERT INTO `admin_log` VALUES ('3145', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:45:49');
+INSERT INTO `admin_log` VALUES ('3146', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:45:53');
+INSERT INTO `admin_log` VALUES ('3147', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:46:39');
+INSERT INTO `admin_log` VALUES ('3148', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:46:42');
+INSERT INTO `admin_log` VALUES ('3149', 'admin-module', 'create', 'admin-module/create', '组织管理', '菜单管理', '一级菜单添加', '无法获取ip', 'admin', '2018-06-04 10:46:53');
+INSERT INTO `admin_log` VALUES ('3150', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:46:53');
+INSERT INTO `admin_log` VALUES ('3151', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:51:59');
+INSERT INTO `admin_log` VALUES ('3152', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:52:01');
+INSERT INTO `admin_log` VALUES ('3153', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:54:47');
+INSERT INTO `admin_log` VALUES ('3154', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:54:50');
+INSERT INTO `admin_log` VALUES ('3155', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:55:11');
+INSERT INTO `admin_log` VALUES ('3156', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:55:18');
+INSERT INTO `admin_log` VALUES ('3157', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:57:04');
+INSERT INTO `admin_log` VALUES ('3158', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:57:08');
+INSERT INTO `admin_log` VALUES ('3159', 'admin-module', 'delete', 'admin-module/delete', '组织管理', '菜单管理', '一级菜单删除', '无法获取ip', 'admin', '2018-06-04 10:57:26');
+INSERT INTO `admin_log` VALUES ('3160', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:57:27');
+INSERT INTO `admin_log` VALUES ('3161', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:58:10');
+INSERT INTO `admin_log` VALUES ('3162', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 10:58:13');
+INSERT INTO `admin_log` VALUES ('3163', 'admin-right', 'index', 'admin-right/index', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 10:58:16');
+INSERT INTO `admin_log` VALUES ('3164', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 10:58:18');
+INSERT INTO `admin_log` VALUES ('3165', 'admin-right', 'right-action', 'admin-right/right-action', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 10:58:22');
+INSERT INTO `admin_log` VALUES ('3166', 'admin-right', 'view', 'admin-right/view', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 10:58:41');
+INSERT INTO `admin_log` VALUES ('3167', 'admin-right', 'index', 'admin-right/index', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 10:59:20');
+INSERT INTO `admin_log` VALUES ('3168', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 10:59:22');
+INSERT INTO `admin_log` VALUES ('3169', 'admin-right', 'index', 'admin-right/index', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 11:03:32');
+INSERT INTO `admin_log` VALUES ('3170', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 11:03:33');
+INSERT INTO `admin_log` VALUES ('3171', 'admin-right', 'index', 'admin-right/index', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 11:03:57');
+INSERT INTO `admin_log` VALUES ('3172', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 11:03:58');
+INSERT INTO `admin_log` VALUES ('3173', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 11:04:01');
+INSERT INTO `admin_log` VALUES ('3174', 'admin-right', 'index', 'admin-right/index', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 11:09:22');
+INSERT INTO `admin_log` VALUES ('3175', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-04 11:09:25');
+INSERT INTO `admin_log` VALUES ('3176', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:09:30');
+INSERT INTO `admin_log` VALUES ('3177', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:09:32');
+INSERT INTO `admin_log` VALUES ('3178', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:10:28');
+INSERT INTO `admin_log` VALUES ('3179', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:10:30');
+INSERT INTO `admin_log` VALUES ('3180', 'admin-module', 'view', 'admin-module/view', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:10:50');
+INSERT INTO `admin_log` VALUES ('3181', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:12:39');
+INSERT INTO `admin_log` VALUES ('3182', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:12:42');
+INSERT INTO `admin_log` VALUES ('3183', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:12:44');
+INSERT INTO `admin_log` VALUES ('3184', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:13:37');
+INSERT INTO `admin_log` VALUES ('3185', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:13:40');
+INSERT INTO `admin_log` VALUES ('3186', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:15:13');
+INSERT INTO `admin_log` VALUES ('3187', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:15:18');
+INSERT INTO `admin_log` VALUES ('3188', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:16:04');
+INSERT INTO `admin_log` VALUES ('3189', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:16:08');
+INSERT INTO `admin_log` VALUES ('3190', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:17:27');
+INSERT INTO `admin_log` VALUES ('3191', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:17:29');
+INSERT INTO `admin_log` VALUES ('3192', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:17:31');
+INSERT INTO `admin_log` VALUES ('3193', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:17:32');
+INSERT INTO `admin_log` VALUES ('3194', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:17:36');
+INSERT INTO `admin_log` VALUES ('3195', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:17:37');
+INSERT INTO `admin_log` VALUES ('3196', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:17:38');
+INSERT INTO `admin_log` VALUES ('3197', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:18:11');
+INSERT INTO `admin_log` VALUES ('3198', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:18:13');
+INSERT INTO `admin_log` VALUES ('3199', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:26:33');
+INSERT INTO `admin_log` VALUES ('3200', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:26:35');
+INSERT INTO `admin_log` VALUES ('3201', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:27:33');
+INSERT INTO `admin_log` VALUES ('3202', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:27:37');
+INSERT INTO `admin_log` VALUES ('3203', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:27:39');
+INSERT INTO `admin_log` VALUES ('3204', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:37:57');
+INSERT INTO `admin_log` VALUES ('3205', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:37:59');
+INSERT INTO `admin_log` VALUES ('3206', 'admin-role', 'index', 'admin-role/index', '组织管理', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-06-04 11:38:01');
+INSERT INTO `admin_log` VALUES ('3207', 'admin-role', 'table', 'admin-role/table', '组织管理', '角色管理', '角色操作', '无法获取ip', 'admin', '2018-06-04 11:38:02');
+INSERT INTO `admin_log` VALUES ('3208', 'admin-user', 'index', 'admin-user/index', '组织管理', '用户管理', '用户操作', '无法获取ip', 'admin', '2018-06-04 11:38:06');
+INSERT INTO `admin_log` VALUES ('3209', 'admin-user', 'table', 'admin-user/table', '组织管理', '用户管理', '用户操作', '无法获取ip', 'admin', '2018-06-04 11:38:08');
+INSERT INTO `admin_log` VALUES ('3210', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-06-04 11:38:13');
+INSERT INTO `admin_log` VALUES ('3211', 'web-message', 'table', 'web-message/table', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-06-04 11:38:14');
+INSERT INTO `admin_log` VALUES ('3212', 'web-message', 'view', 'web-message/view', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-06-04 11:38:22');
+INSERT INTO `admin_log` VALUES ('3213', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:38:26');
+INSERT INTO `admin_log` VALUES ('3214', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-06-04 11:38:53');
+INSERT INTO `admin_log` VALUES ('3215', 'web-message', 'table', 'web-message/table', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-06-04 11:38:55');
+INSERT INTO `admin_log` VALUES ('3216', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-06-04 11:39:21');
+INSERT INTO `admin_log` VALUES ('3217', 'web-message', 'table', 'web-message/table', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-06-04 11:39:23');
+INSERT INTO `admin_log` VALUES ('3218', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:39:26');
+INSERT INTO `admin_log` VALUES ('3219', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:40:21');
+INSERT INTO `admin_log` VALUES ('3220', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:40:23');
+INSERT INTO `admin_log` VALUES ('3221', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:40:26');
+INSERT INTO `admin_log` VALUES ('3222', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:40:27');
+INSERT INTO `admin_log` VALUES ('3223', 'web-user', 'index', 'web-user/index', '会员管理', '会员列表', '会员信息', '无法获取ip', 'admin', '2018-06-04 11:40:54');
+INSERT INTO `admin_log` VALUES ('3224', 'web-user', 'table', 'web-user/table', '会员管理', '会员列表', '会员信息', '无法获取ip', 'admin', '2018-06-04 11:40:56');
+INSERT INTO `admin_log` VALUES ('3225', 'web-user', 'index', 'web-user/index', '会员管理', '会员列表', '会员信息', '无法获取ip', 'admin', '2018-06-04 11:42:10');
+INSERT INTO `admin_log` VALUES ('3226', 'web-user', 'table', 'web-user/table', '会员管理', '会员列表', '会员信息', '无法获取ip', 'admin', '2018-06-04 11:42:12');
+INSERT INTO `admin_log` VALUES ('3227', 'web-user', 'index', 'web-user/index', '会员管理', '会员列表', '会员信息', '无法获取ip', 'admin', '2018-06-04 11:42:14');
+INSERT INTO `admin_log` VALUES ('3228', 'web-user', 'table', 'web-user/table', '会员管理', '会员列表', '会员信息', '无法获取ip', 'admin', '2018-06-04 11:42:15');
+INSERT INTO `admin_log` VALUES ('3229', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-04 11:42:20');
+INSERT INTO `admin_log` VALUES ('3230', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-04 11:42:21');
+INSERT INTO `admin_log` VALUES ('3231', 'web-user', 'index', 'web-user/index', '会员管理', '会员列表', '会员信息', '无法获取ip', 'admin', '2018-06-04 11:42:26');
+INSERT INTO `admin_log` VALUES ('3232', 'web-user', 'table', 'web-user/table', '会员管理', '会员列表', '会员信息', '无法获取ip', 'admin', '2018-06-04 11:42:27');
+INSERT INTO `admin_log` VALUES ('3233', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:42:51');
+INSERT INTO `admin_log` VALUES ('3234', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:42:52');
+INSERT INTO `admin_log` VALUES ('3235', 'web-nav', 'view', 'web-nav/view', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:42:54');
+INSERT INTO `admin_log` VALUES ('3236', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:44:35');
+INSERT INTO `admin_log` VALUES ('3237', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:44:36');
+INSERT INTO `admin_log` VALUES ('3238', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:44:38');
+INSERT INTO `admin_log` VALUES ('3239', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:44:39');
+INSERT INTO `admin_log` VALUES ('3240', 'admin-menu', 'view', 'admin-menu/view', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:45:15');
+INSERT INTO `admin_log` VALUES ('3241', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:46:39');
+INSERT INTO `admin_log` VALUES ('3242', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:46:41');
+INSERT INTO `admin_log` VALUES ('3243', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:46:46');
+INSERT INTO `admin_log` VALUES ('3244', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:46:47');
+INSERT INTO `admin_log` VALUES ('3245', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:47:42');
+INSERT INTO `admin_log` VALUES ('3246', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:47:45');
+INSERT INTO `admin_log` VALUES ('3247', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:48:39');
+INSERT INTO `admin_log` VALUES ('3248', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:48:41');
+INSERT INTO `admin_log` VALUES ('3249', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:54:32');
+INSERT INTO `admin_log` VALUES ('3250', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:54:34');
+INSERT INTO `admin_log` VALUES ('3251', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:54:55');
+INSERT INTO `admin_log` VALUES ('3252', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-04 11:54:56');
+INSERT INTO `admin_log` VALUES ('3253', 'admin-role', 'index', 'admin-role/index', '组织管理', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-06-04 11:55:02');
+INSERT INTO `admin_log` VALUES ('3254', 'admin-role', 'table', 'admin-role/table', '组织管理', '角色管理', '角色操作', '无法获取ip', 'admin', '2018-06-04 11:55:04');
+INSERT INTO `admin_log` VALUES ('3255', 'web-message', 'index', 'web-message/index', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-06-04 11:55:10');
+INSERT INTO `admin_log` VALUES ('3256', 'web-message', 'table', 'web-message/table', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-06-04 11:55:11');
+INSERT INTO `admin_log` VALUES ('3257', 'web-message', 'view', 'web-message/view', '留言管理', '留言列表', '留言列表', '无法获取ip', 'admin', '2018-06-04 11:55:14');
+INSERT INTO `admin_log` VALUES ('3258', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:55:22');
+INSERT INTO `admin_log` VALUES ('3259', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:55:24');
+INSERT INTO `admin_log` VALUES ('3260', 'web-nav', 'view', 'web-nav/view', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:56:01');
+INSERT INTO `admin_log` VALUES ('3261', 'web-nav', 'view', 'web-nav/view', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:56:06');
+INSERT INTO `admin_log` VALUES ('3262', 'web-nav', 'view', 'web-nav/view', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:56:16');
+INSERT INTO `admin_log` VALUES ('3263', 'web-nav', 'index', 'web-nav/index', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:57:19');
+INSERT INTO `admin_log` VALUES ('3264', 'web-nav', 'table', 'web-nav/table', '服务管理', '导航列表', '导航列表路由', '无法获取ip', 'admin', '2018-06-04 11:57:20');
 
 -- ----------------------------
 -- Table structure for admin_menu
@@ -3233,7 +3380,7 @@ CREATE TABLE `admin_module` (
   `update_date` datetime DEFAULT NULL COMMENT '修改时间',
   `meun_icon` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_module
