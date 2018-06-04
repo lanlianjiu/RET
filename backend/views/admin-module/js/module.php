@@ -103,17 +103,34 @@ function editAction(id){
 	initModel(id, 'edit');
 }
 
+  //获取选中id
+function getCheckId(data) {
+
+	var arrayId = [];
+	for (var i in data) {
+		arrayId.push(data[i].web_nav_id);
+	}
+	return arrayId;
+};
+
 function deleteAction(id){
+
 	var ids = [];
 	if(!!id == true){
 		ids[0] = id;
-	}
-	else{
+	}else{
 	   ids = getCheckId($('#adminModule-table').bootstrapTable('getSelections'));
-	}
-	if(ids.length > 0){
-		admin_tool.confirm('请确认是否删除', function(){
-		    $.ajax({
+	};
+
+	if(ids.length == 0){
+		$.dialog.Warn("请选择删除数据!");
+		return;
+	};
+
+	$.dialog.Confirm('确认删除选中的记录吗?', function (result) {
+
+		if(result){
+			 $.ajax({
 				   type: "GET",
 				   url: "<?=Url::toRoute('admin-module/delete')?>",
 				   data: {"ids":ids},
@@ -126,16 +143,12 @@ function deleteAction(id){
 					   for(i = 0; i < ids.length; i++){
 						   $('#rowid_' + ids[i]).remove();
 					   }
-					   admin_tool.alert('msg_info', '删除成功', 'success');
+					    $.dialog.Success('成功!');
 					   $('#adminModule-table').bootstrapTable('refresh');
 				   }
 				});
-		});
-	}
-	else{
-		admin_tool.alert('msg_info', '请先选择要删除的数据', 'warning');
-	}
-    
+		}
+	});
 }
 
 $('#edit_dialog_ok').click(function (e) {

@@ -333,7 +333,60 @@ function ($) {
         //     'margin-top': modalHeight
         // });
     });
-}(jQuery);
+}(jQuery); +
+(function ($) {
+    var Dialog = function () {}
+    Dialog.prototype.Success = function (message, callback) {
+        var dlg = BootstrapDialog.show({
+            type: 'type-success',
+            title: '提示信息',
+            message: message,
+            closable: true,
+            draggable: true,
+            onhidden: callback,
+        });
+        setTimeout(function () {
+            dlg.close();
+        }, 1500);
+    }
+
+    Dialog.prototype.Info = function (message) {
+        var dlg = BootstrapDialog.show({
+            type: 'type-info',
+            title: '提示信息',
+            message: message,
+            closable: true,
+            draggable: true,
+        })
+        setTimeout(function () {
+            dlg.close();
+        }, 1500);
+    }
+
+    Dialog.prototype.Warn = function (message) {
+        BootstrapDialog.show({
+            type: 'type-warning',
+            title: '提示信息',
+            message: message,
+            closable: true,
+            draggable: true,
+        })
+    }
+    Dialog.prototype.Confirm = function (message, callback) {
+        BootstrapDialog.confirm({
+            type: 'type-primary',
+            title: '提示信息',
+            message: message,
+            closable: false,
+            draggable: true,
+            btnCancelLabel: '否',
+            btnOKLabel: '是',
+            btnOKClass: 'btn-primary',
+            callback: callback
+        })
+    }
+    $.dialog = new Dialog();
+})(jQuery);
 /**bootstrap-dialog-modal**/
 +
 /**

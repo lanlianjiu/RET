@@ -156,13 +156,12 @@ if($otherMenu == false){
       
       <!-- 头部 -->
       <header class="main-header left-header">
+        
         <a href="#" class="logo">
-          <!-- mini logo for sidebar mini 50x50 pixels -->
           <span class="logo-mini"><b>S</b>HP</span>
-          <!-- logo for regular state and mobile devices -->
-          <span class="logo-lg"><b>后台管理系统</b></span>
+          <span class="logo-lg"><b>SHP管理系统</b></span>
         </a>
-      <!-- 右边顶部菜单栏 -->
+     
         <nav class="navbar navbar-static-top">
           <!-- 菜单栏显、隐 -->
           <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
@@ -173,7 +172,7 @@ if($otherMenu == false){
               <!-- 个人信息 -->
               <li class="dropdown user-menu notifications-menu" >
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <img src="dist/img/user2-160x160.jpg" class="user-image" alt="User Image"> 
+                  <img src="dist/img/user2-160x160.jpg" class="user-image" alt=""> 
                   <span class="hidden-xs"><?php echo Yii::$app->user->identity->uname;?>&nbsp;&nbsp;</span>
                   <span class="fa fa-caret-down"></span>
                 </a>
@@ -193,11 +192,6 @@ if($otherMenu == false){
       <!--菜单栏 -->
       <aside class="main-sidebar">
         <section class="sidebar">
-          <!-- <div class="user-panel">
-            <div class="image logo-box">
-              <img src="images/logo.jpg" class="user-image" alt="User Image">
-            </div>
-          </div> -->
           <ul class="sidebar-menu">
             <li <?=$route == 'site/index' ?  ' class="active" ' : ''?>>
               <a href="<?=Url::to(['site/index'])?>">
@@ -321,6 +315,9 @@ if($otherMenu == false){
   <script src="<?=Url::base()?>/plugins/bootstrap-extensions/tableExport.min.js"></script>
   <script src="<?=Url::base()?>/plugins/bootstrap-extensions/bootstrap-table-export/bootstrap-table-export.js"></script>
   <script src="<?=Url::base()?>/plugins/bootstrap-extensions/toolbar/bootstrap-table-toolbar.js"></script>
+
+  <!-- bootstrap-dialog -->
+  <script src="<?=Url::base()?>/plugins/bootstrap-dialog/bootstrap-dialog.min.js"></script>
 
   <!-- AdminLTE App -->
   <script src="<?=Url::base()?>/statics/dist/js/app.min.js"></script>

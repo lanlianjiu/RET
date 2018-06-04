@@ -166,6 +166,7 @@ thead {
     margin-bottom: 10px;
     border: 1px solid #ddd;
     background-color: #FFF;
+    border-radius: 4px;
 }
 
 .modal-box {
