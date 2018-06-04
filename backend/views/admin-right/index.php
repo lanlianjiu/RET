@@ -69,7 +69,7 @@ $modelLabel = new \backend\models\AdminRight();
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h4>路由管理</h4>
+                 <h5 class="modal-title bootstrap-dialog-title">路由管理</h5>
 			</div>
 			<div class="modal-body">
                 <?php $form = ActiveForm::begin(["id" => "admin-right-form", "class"=>"form-horizontal", "action"=>Url::toRoute('admin-right/save')]); ?>                      

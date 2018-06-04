@@ -75,7 +75,7 @@ $modelLabel = new \backend\models\AdminUser();
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h4>设置</h4>
+                <h5 class="modal-title bootstrap-dialog-title">设置</h5>
 			</div>
 			<div class="modal-body">
                 <?php $form = ActiveForm::begin(["id" => "admin-user-form", "class"=>"form-horizontal", "action"=>Url::toRoute("admin-user/save")]); ?>                      

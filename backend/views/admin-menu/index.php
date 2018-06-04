@@ -76,7 +76,7 @@ $modelLabel = new \backend\models\AdminMenu();
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h4>子菜单管理</h4>
+                <h5 class="modal-title bootstrap-dialog-title">子菜单管理</h5>
 			</div>
 			<div class="modal-body">
                 <?php $form = ActiveForm::begin(["id" => "admin-menu-form", "class"=>"form-horizontal", "action"=>Url::toRoute('admin-menu/save')]); ?>                      

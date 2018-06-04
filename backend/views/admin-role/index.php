@@ -77,7 +77,7 @@ $modelLabel = new \backend\models\AdminRole();
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4>设置</h4>
+                <h5 class="modal-title bootstrap-dialog-title">设置</h5>
             </div>
             <div class="modal-body">
                 <?php $form = ActiveForm::begin(["id" => "admin-role-form", "class"=>"form-horizontal", "action"=>Url::toRoute("admin-role/save")]); ?>                      
@@ -147,7 +147,7 @@ $modelLabel = new \backend\models\AdminRole();
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h4>权限分配</h4>
+                <h5 class="modal-title bootstrap-dialog-title">权限分配</h5>
 			</div>
 			<div class="modal-body">
 			     <input type="hidden" id="select_role_id" />

@@ -61,7 +61,7 @@ $modelLabel = new \backend\models\AdminLog();
 		<div class="modal-content">
 			<div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal">×</button>
-				<h3>设置</h3>
+                <h5 class="modal-title bootstrap-dialog-title">设置</h5>
 			</div>
 			<div class="modal-body">
                 <?php $form = ActiveForm::begin(["id" => "admin-log-form", "class"=>"form-horizontal", "action"=>"index.php?r=admin-log/save"]); ?>                      
