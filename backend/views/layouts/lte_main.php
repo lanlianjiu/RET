@@ -249,7 +249,7 @@ if($otherMenu == false){
             </ol>
           </h6>
         </section>
-        <?= $content ?>
+           <?= $content ?>
       </div>
 
       <!-- 确认框 -->
@@ -323,6 +323,10 @@ if($otherMenu == false){
 
   <!-- AdminLTE App -->
   <script src="<?=Url::base()?>/statics/dist/js/app.min.js"></script>
+
+   <!-- anglarjs -->
+  <script src="<?=Url::base()?>/plugins/angular/1.6.1/angular.js"></script>
+
   <!-- iov-min -->
   <script src="<?=Url::base()?>/js/iov-min.js"></script>
 

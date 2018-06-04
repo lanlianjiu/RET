@@ -65,8 +65,8 @@ $modelLabel = new \backend\models\AdminModule();
                                 <th data-sortable="true" data-field="des" width="120">描述</th>
                                 <th data-sortable="true" data-field="entry_url" width="120">入口地址</th>
                                 <th data-sortable="true" data-field="display_order" width="120">顺序</th>
-                                <th data-sortable="true" data-field="update_user" width="120">修改人</th>
-                                <th data-sortable="true" data-field="update_date" width="120">修改时间</th>
+                                <!-- <th data-sortable="true" data-field="update_user" width="120">修改人</th>
+                                <th data-sortable="true" data-field="update_date" width="120">修改时间</th> -->
                                 <th data-formatter="operateFormatter" width="120">操作</th>
                             </tr>
                         </thead>

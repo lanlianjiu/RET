@@ -203,4 +203,14 @@ function  operateFormatter(value, row, index) {
 	 return h;
 }
 
+var app = angular.module("myApp", []);
+
+app.controller("admin-log-controller", function($scope) {
+    $scope.firstName = "John";
+    $scope.lastName = "Doe";
+	$scope.butooot = function() {
+		console.log(234234)
+	}
+});
+
 </script>

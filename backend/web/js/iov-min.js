@@ -323,7 +323,7 @@ function ($) {
         $(this).draggable({
             handle: ".modal-header"
         });
-        // $(this).css("overflow-y", "hidden"); // 防止出现滚动条
+         $(this).css("overflow-y", "hidden"); // 防止出现滚动条
         //模态框垂直居中
         $(this).css('display', 'block'); // 关键代码，如没将modal设置为 block，则$modala_dialog.height() 为零
         var modalHeight = ($(window).height() / 2) - ($('.modal-dialog').height() / 2);
