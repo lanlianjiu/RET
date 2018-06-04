@@ -88,6 +88,8 @@ if($otherMenu == false){
   <link rel="stylesheet" href="<?=Url::base()?>/plugins/datatables/dataTables.bootstrap.css">
   <!-- bootstrap-table -->
   <link rel="stylesheet" href="<?=Url::base()?>/plugins/bootstrap-table/css/bootstrap-table.min.css">
+  <!-- bootstrap-dialog -->
+  <link rel="stylesheet" href="<?=Url::base()?>/plugins/bootstrap-dialog/bootstrap-dialog.min.css">
   <!-- style.min -->
   <link rel="stylesheet" href="<?=Url::base()?>/css/style.min.css">
   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
