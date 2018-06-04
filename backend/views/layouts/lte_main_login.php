@@ -16,8 +16,6 @@ use yii\helpers\Url;
   <link rel="stylesheet" href="<?=Url::base()?>/libs/font-awesome.min.css">
   <!-- Ionicons -->
   <link rel="stylesheet" href="<?=Url::base()?>/libs/ionicons.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="<?=Url::base()?>/dist/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="<?=Url::base()?>/plugins/iCheck/square/blue.css">
   <!-- login -->
@@ -38,16 +36,6 @@ use yii\helpers\Url;
 <script src="<?=Url::base()?>/plugins/form/jquery.form.min.js"></script>
 <!-- Bootstrap 3.3.6 -->
 <script src="<?=Url::base()?>/bootstrap/js/bootstrap.min.js"></script>
-<!-- iCheck -->
-<script src="<?=Url::base()?>/plugins/iCheck/icheck.min.js"></script>
-<script>
-  $(function () {
-    $('input').iCheck({
-      checkboxClass: 'icheckbox_square-blue',
-      radioClass: 'iradio_square-blue',
-      increaseArea: '20%' // optional
-    });
-  });
-</script>
+
 </body>
 </html>

@@ -4,9 +4,7 @@ use yii\helpers\Url;
 ?>
 <div class="login-box">
   <div class="login-logo">
-    <a href="<?=Url::toRoute('site/login')?>">
-      <b>登录</b>
-    </a>
+    <h3>登录</h3>
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
@@ -39,5 +37,7 @@ use yii\helpers\Url;
   </div>
   <!-- /.login-box-body -->
 </div>
+<!-- iCheck -->
+<script src="<?=Url::base()?>/plugins/iCheck/icheck.min.js"></script>
 <!-- /.login-box -->
 <?php include '/js/login.php';?>

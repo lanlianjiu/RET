@@ -1,11 +1,16 @@
 .login-page {
-    background: url('../images/login.jpg');
+    background: url('../images/timg.jpg') no-repeat;
 }
 
 .login-box {
     background-color: #FFF;
     border-radius: 5px;
     opacity: 0.8;
+    width: 300px;
+    float: right;
+    padding: 30px;
+    margin-top: 10%;
+    margin-right: 10%;
 }
 
 .login-box-body {
@@ -16,5 +21,9 @@
 }
 
 .login-logo {
-    margin: 10px;
+    text-align: center;
+}
+
+h3 {
+    margin-top: -10px;
 }
