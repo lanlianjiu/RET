@@ -83,7 +83,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 						success: function(data){
 							
 							$.dialog.Success('成功!');
-							$('#adminModule-table').bootstrapTable('refresh');
+							tableId.bootstrapTable('refresh');
 						}
 					});
 				}
@@ -97,8 +97,8 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		var action = "<?=Url::toRoute('admin-menu/index')?>"+'&mid='+row.id;
 		h +='<a id="view_btn" class="action-a-btn" href="'+action+'">二级菜单</a>';
 		// h +='<a id="view_btn" onclick="viewAction('+ row.id +')" class="action-a-btn" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
-		h +='<a id="edit_btn" onclick="editAction('+ row.id +')" class="action-a-btn" href="#"> <i class="fa fa-edit icon-white"></i></a>';
-		h +='<a id="delete_btn" onclick="deleteAction('+ row.id +')" class="action-a-btn" href="#"> <i class="fa fa-trash icon-white"></i></a>';
+		h +='<a id="edit_btn" onclick="editAction('+ row.id +')" class="action-a-btn"> <i class="fa fa-edit icon-white"></i></a>';
+		h +='<a id="delete_btn" onclick="deleteAction('+ row.id +')" class="action-a-btn"> <i class="fa fa-trash icon-white"></i></a>';
 		return h;
 	};
 
