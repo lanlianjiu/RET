@@ -12,13 +12,13 @@ $modelLabel = new \backend\models\AdminLog();
 <?php $this->beginBlock('header');  ?>
 <!-- <head></head>中代码块 -->
 <?php $this->endBlock(); ?>
-<div class="content-box" ng-app="myApp" ng-controller="admin-log-controller">
-    <!-- Main content -->
+
+<div data-content-box="body" ng-app="myApp" ng-controller="admin-log-controller">
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
                 <div class="box-header search-box">
-                    <form bootstrap-table-form="adminLog-table" class="form-inline">
+                    <form bootstrap-table-form="adminLog-table" class="form-inline search-form">
                         <div class="form-group" style="margin: 5px;">
                             <label>主键ID</label> <input type="text" class="form-control" name="id"  />
                         </div>
@@ -31,7 +31,7 @@ $modelLabel = new \backend\models\AdminLog();
                     <div class="box-body">
                         <table id="adminLog-table" data-toggle="table" data-show-columns="true" data-autoheight="150" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                            data-id-field="orderId" data-unique-id="orderId" data-custom-url="index.php?r=admin-log/table" class="table table-hover th-table">
+                            data-id-field="id" data-unique-id="id" data-custom-url="index.php?r=admin-log/table" class="table table-hover th-table">
                             <thead>
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>
@@ -54,87 +54,86 @@ $modelLabel = new \backend\models\AdminLog();
             </div>
         </div>
     </section>
-    <!-- /.content -->
     <div class="modal bootstrap-dialog type-primary modal-box fade" id="edit_dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">×</button>
-                    <h5 class="modal-title bootstrap-dialog-title">设置</h5>
+                    <h5 class="modal-title bootstrap-dialog-title">查看</h5>
                 </div>
                 <div class="modal-body">
                     <?php $form = ActiveForm::begin(["id" => "admin-log-form", "class"=>"form-horizontal", "action"=>"index.php?r=admin-log/save"]); ?>                      
                             
-                    <input type="hidden" class="form-control" id="id" name="AdminLog[id]" />
+                    <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminLog[id]" />
 
                     <div id="controller_id_div" class="form-group">
-                        <label for="controller_id" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("controller_id")?></label>
+                        <label for="controller_id" class="col-sm-2 control-label">控制器</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="controller_id" name="AdminLog[controller_id]" placeholder="" />
+                            <input type="text" class="form-control" id="controller_id" ng-model="modal.controller_id" name="AdminLog[controller_id]" placeholder="" />
                         </div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div id="action_id_div" class="form-group">
-                        <label for="action_id" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("action_id")?></label>
+                        <label for="action_id" class="col-sm-2 control-label">方法</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="action_id" name="AdminLog[action_id]" placeholder="" />
+                            <input type="text" class="form-control" id="action_id" ng-model="modal.action_id" name="AdminLog[action_id]" placeholder="" />
                         </div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div id="url_div" class="form-group">
-                        <label for="url" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("url")?></label>
+                        <label for="url" class="col-sm-2 control-label">URL</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="url" name="AdminLog[url]" placeholder="" />
+                            <input type="text" class="form-control" ng-model="modal.url" id="url" name="AdminLog[url]" placeholder="" />
                         </div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div id="module_name_div" class="form-group">
-                        <label for="module_name" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("module_name")?></label>
+                        <label for="module_name" class="col-sm-2 control-label">模块</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="module_name" name="AdminLog[module_name]" placeholder="" />
+                            <input type="text" class="form-control" ng-model="modal.module_name" id="module_name" name="AdminLog[module_name]" placeholder="" />
                         </div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div id="func_name_div" class="form-group">
-                        <label for="func_name" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("func_name")?></label>
+                        <label for="func_name" class="col-sm-2 control-label">功能</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="func_name" name="AdminLog[func_name]" placeholder="" />
+                            <input type="text" class="form-control" ng-model="modal.func_name" id="func_name" name="AdminLog[func_name]" placeholder="" />
                         </div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div id="right_name_div" class="form-group">
-                        <label for="right_name" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("right_name")?></label>
+                        <label for="right_name" class="col-sm-2 control-label">方法名</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="right_name" name="AdminLog[right_name]" placeholder="" />
+                            <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminLog[right_name]" placeholder="" />
                         </div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div id="client_ip_div" class="form-group">
-                        <label for="client_ip" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("client_ip")?></label>
+                        <label for="client_ip" class="col-sm-2 control-label">客户端IP</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="client_ip" name="AdminLog[client_ip]" placeholder="" />
+                            <input type="text" class="form-control" ng-model="modal.client_ip" id="client_ip" name="AdminLog[client_ip]" placeholder="" />
                         </div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div id="create_user_div" class="form-group">
-                        <label for="create_user" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("create_user")?></label>
+                        <label for="create_user" class="col-sm-2 control-label">创建人</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="create_user" name="AdminLog[create_user]" placeholder="" />
+                            <input type="text" class="form-control" ng-model="modal.create_user" id="create_user" name="AdminLog[create_user]" placeholder="" />
                         </div>
                         <div class="clearfix"></div>
                     </div>
 
                     <div id="create_date_div" class="form-group">
-                        <label for="create_date" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("create_date")?></label>
+                        <label for="create_date" class="col-sm-2 control-label">创建时间</label>
                         <div class="col-sm-10">
-                            <input type="text" class="form-control" id="create_date" name="AdminLog[create_date]" placeholder="" />
+                            <input type="text" class="form-control" ng-model="modal.create_date" id="create_date" name="AdminLog[create_date]" placeholder="" />
                         </div>
                         <div class="clearfix"></div>
                     </div> 
@@ -149,6 +148,7 @@ $modelLabel = new \backend\models\AdminLog();
         </div>
     </div>
  </div>
+
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
 <?php include '/js/log.php';?>

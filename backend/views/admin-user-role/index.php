@@ -13,13 +13,14 @@ $modelLabel = new \backend\models\AdminUserRole();
 <?php $this->endBlock(); ?>
 
 <div  data-content-box="body" ng-app="myApp" ng-controller="admin-user-role-controller">
+
     <section class="content">
         <div class="row">
             <div class="col-xs-12">
                 <div class="box-header search-box">
                     <div class="row">
                         <div class="col-sm-12">
-                            <form bootstrap-table-form="adminUserrole-table" class="form-inline">
+                            <form bootstrap-table-form="adminUserrole-table" class="form-inline search-form">
                                 <div class="form-group" style="margin: 5px;">
                                     <label>名称</label>
                                     <input type="text" class="form-control"  name="user_id"  />
@@ -70,7 +71,7 @@ $modelLabel = new \backend\models\AdminUserRole();
                     <input type="text" ng-model="modal.id" class="form-control hide" id="id" name="AdminUserRole[id]" />
 
                     <div id="user_id_div" class="form-group">
-                        <label for="user_id" class="col-sm-2 control-label"><?php echo $modelLabel->getAttributeLabel("user_id")?></label>
+                        <label for="user_id" class="col-sm-2 control-label">用户ID</label>
                         <div class="col-sm-10">
                             <input type="text" ng-model="modal.user_id" class="form-control" id="user_id" name="AdminUserRole[user_id]" />
                         </div>

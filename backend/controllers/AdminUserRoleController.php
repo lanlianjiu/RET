@@ -33,9 +33,10 @@ class AdminUserRoleController extends BaseController
         $roleId = $params->roleId;
         $query = Yii::$app->db->createCommand('
          SELECT 
-         ur.*,
-         u.uname user_name,
-         r.*
+                ur.*,
+                u.uname user_name,
+                r.id role_id,
+                r.name name
            FROM admin_user_role ur,
                 admin_user u,
                 admin_role r 

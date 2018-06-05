@@ -6,174 +6,108 @@ use yii\helpers\Url;
 
 <script>
 
-function searchAction(){
-		$('#web-nav-search-form').submit();
-}
-function viewAction(id){
-		//initModel(id, 'view', 'fun');
-    var editData = $('#webuser-table').bootstrapTable('getRowByUniqueId', id);
-    initEditSystemModule(editData, 'view');
-}
+	var app = angular.module("myApp", []);
+	app.controller("web-user-controller", function($scope) {
 
-function initEditSystemModule(data, type){
-	if(type == 'create'){
+		$scope.modal = {};
+		var tableId = $('#webuser-table');
 
-		$("#id").val('');
-		$("#username").val('');
-		$("#email").val('');
-		$("#vip_1v").val('');
-		$("#created_at").val('');
-        $("#updated_at").val('');
-		
-	}else{
+		$scope.addAction = function() {
+			$scope.modal = {};
+			$('#edit_dialog').modal('show');
+		};
 
-		$("#id").val(data.id);
-    	$("#username").val(data.username);
-    	$("#email").val(data.email);
-		$("#vip_1v").val(data.vip_1v);
-		$("#created_at").val(data.created_at);
-        $("#updated_at").val(data.updated_at);
-    }
+		$scope.edit_action = function(id) {
+			var tableData = tableId.bootstrapTable('getRowByUniqueId', id);
+			$scope.modal = tableData;
+			$scope.$apply();
+			$('#edit_dialog').modal('show');
+		};
 
-	if(type == "view"){
+		$scope.saveAction = function() {
+			var id = $("#id").val();
+			var action = (id == "") ? "<?=Url::toRoute('web-user/create')?>" : "<?=Url::toRoute('web-user/update')?>";
+			$("#web-user-form").ajaxSubmit({
+				type: "post",
+				dataType:"json",
+				url: action,
+				data:{id:id},
+				success: function(value) 
+				{
+					if(value.errno == 0){
+						$('#edit_dialog').modal('hide');
 
-      $("#id").attr({readonly:true,disabled:true});
-      $("#username").attr({readonly:true,disabled:true});
-      $("#email").attr({readonly:true,disabled:true});
-	  $("#vip_1v").attr({readonly:true,disabled:true});
-	  $("#created_at").attr({readonly:true,disabled:true});
-      $("#updated_at").attr({readonly:true,disabled:true});
-	  $('#edit_dialog_ok').addClass('hidden');
-	}else{
+							$.dialog.Success('操作成功！', function () {
+								tableId.bootstrapTable('refresh');
+							});
+					}else{
+						$.dialog.Warn(value);
+					}
+				}
+			});
+		};
 
-      $("#id").attr({readonly:false,disabled:false});
-      $("#username").attr({readonly:false,disabled:false});
-      $("#email").attr({readonly:false,disabled:false});
-	  $("#vip_1v").attr({readonly:false,disabled:false});
-	  $("#created_at").attr({readonly:false,disabled:false});
-      $("#updated_at").attr({readonly:false,disabled:false});
-	  $('#edit_dialog_ok').removeClass('hidden');
-	}
-		$('#edit_dialog').modal('show');
-}
+		$scope.getCheckId = function (data) {
+			
+			var arrayId = [];
+			for (var i in data) {
+				arrayId.push(data[i].id);
+			}
+			return arrayId;
+		};
 
-function initModel(id, type, fun){
-	
-	$.ajax({
-		type: "GET",
-		url: "<?=Url::toRoute('web-nav/view')?>",
-		data: {"id":id},
-		cache: false,
-		dataType:"json",
-		error: function (xmlHttpRequest, textStatus, errorThrown) {
-			alert("出错了，" + textStatus);
-		},
-		success: function(data){
-			initEditSystemModule(data, type);
-		}
+		$scope.del_action = function(id) {
+			
+				var ids = [];
+			if(!!id == true){
+				ids[0] = id;
+			}else{
+				ids = $scope.getCheckId(tableId.bootstrapTable('getSelections'));
+			};
+			if(ids.length == 0){
+				$.dialog.Warn("请选择删除数据!");
+				return;
+			};
+
+			$.dialog.Confirm('确认删除选中的记录吗?', function (result) {
+
+				if(result){
+					$.ajax({
+						type: "GET",
+						url: "<?=Url::toRoute('web-user/delete')?>",
+						data: {"ids":ids},
+						cache: false,
+						dataType:"json",
+						error: function (xmlHttpRequest, textStatus, errorThrown) {
+								alert("出错了，" + textStatus);
+							},
+						success: function(data){
+							
+							$.dialog.Success('成功!');
+							tableId.bootstrapTable('refresh');
+						}
+					});
+				}
+			});
+		};
+
 	});
-}
-	
-function editAction(id){
-	//initModel(id, 'edit');
-    var editData = $('#webuser-table').bootstrapTable('getRowByUniqueId', id);
-    initEditSystemModule(editData, 'edit');
-}
 
-//获取选中id
-function getCheckId(data) {
-
-	var arrayId = [];
-	for (var i in data) {
-		arrayId.push(data[i].id);
+	function  operateFormatter(value, row, index) {
+		var h = "";
+		h +='<a id="edit_btn" onclick="editAction('+ row.id +')" class="action-a-btn"> <i class="fa fa-edit icon-white"></i></a>';
+		h +='<a id="delete_btn" onclick="deleteAction('+ row.id +')" class="action-a-btn"> <i class="fa fa-trash icon-white"></i></a>';
+		return h;
 	}
-	return arrayId;
-};
 
-function deleteAction(id){
-	var ids = [];
-	if(!!id == true){
-		ids[0] = id;
-	}else{
-		ids = getCheckId($('#webuser-table').bootstrapTable('getSelections'));
-	}
-	
-	if(ids.length > 0){
-		admin_tool.confirm('请确认是否删除', function(){
-		    $.ajax({
-				   type: "GET",
-				   url: "<?=Url::toRoute('web-nav/delete')?>",
-				   data: {"ids":ids},
-				   cache: false,
-				   dataType:"json",
-				   error: function (xmlHttpRequest, textStatus, errorThrown) {
-					    alert("出错了，" + textStatus);
-					},
-				   success: function(data){
-					   for(i = 0; i < ids.length; i++){
-						   $('#rowid_' + ids[i]).remove();
-					   }
-					   admin_tool.alert('msg_info', '删除成功', 'success');
-					  $('#webuser-table').bootstrapTable('refresh');
-				   }
-				});
-		});
-	}
-	else{
-		admin_tool.alert('msg_info', '请先选择要删除的数据', 'warning');
-	}
-    
-}
+	function editAction(id) {
+		var $scope = angular.element('[data-content-box="body"]').scope();
+		$scope.edit_action(id);
+	};
 
-$('#edit_dialog_ok').click(function (e) {
-    e.preventDefault();
-	$('#web-user-form').submit();
-});
-
-$('#create_btn').click(function (e) {
-    e.preventDefault();
-    initEditSystemModule({}, 'create');
-});
-
-$('#delete_btn').click(function (e) {
-    e.preventDefault();
-    deleteAction('');
-});
-
-$('#web-user-form').bind('submit', function(e) {
-	e.preventDefault();
-	var id = $("#id").val();
-	var action = id == "" ? "<?=Url::toRoute('web-user/create')?>" : "<?=Url::toRoute('web-user/update')?>";
-    $(this).ajaxSubmit({
-    	type: "post",
-    	dataType:"json",
-    	url: action,
-    	data:{id:id},
-    	success: function(value) 
-    	{
-        	if(value.errno == 0){
-        		$('#edit_dialog').modal('hide');
-        		admin_tool.alert('msg_info', '添加成功', 'success');
-        		 $('#webuser-table').bootstrapTable('refresh');
-        	}else{
-            	var json = value.data;
-        		for(var key in json){
-        			$('#' + key).attr({'data-placement':'bottom', 'data-content':json[key], 'data-toggle':'popover'}).addClass('popover-show').popover('show');
-        			
-        		}
-        	}
-
-    	}
-    });
-});
-
-
-function  operateFormatter(value, row, index) {
-	 var h = "";
-	    h +='<a id="view_btn" onclick="viewAction(' + row.id + ')" class="action-a-btn" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
-	    h +='<a id="edit_btn" onclick="editAction(' +row.id +')" class="action-a-btn" href="#"> <i class="fa fa-edit icon-white"></i></a>';
-	    h +='<a id="delete_btn" onclick="deleteAction('+row.id +')" class="action-a-btn" href="#"> <i class="fa fa-trash icon-white"></i></a>';
-	 return h;
-}
+	function deleteAction(id) {
+		var $scope = angular.element('[data-content-box="body"]').scope();
+		$scope.del_action(id);
+	};
  
 </script>
