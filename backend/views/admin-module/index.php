@@ -21,15 +21,10 @@ $modelLabel = new \backend\models\AdminModule();
                 <div class="search-box">
                     <div class="row">
                         <div class="col-sm-12">
-                            <form bootstrap-table-form="adminModule-table" class="form-inline">
-                            
-                                <div class="form-group" style="margin: 5px;">
-                                    <label>ID</label>
-                                    <input type="text" class="form-control"  name="id"  />
-                                </div>
+                            <form bootstrap-table-form="adminModule-table" class="form-inline search-form">
 
                                 <div class="form-group" style="margin: 5px;">
-                                    <label>code</label>
+                                    <label>编码</label>
                                     <input type="text" class="form-control"  name="code"  />
                                 </div>
 
@@ -58,7 +53,7 @@ $modelLabel = new \backend\models\AdminModule();
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>
                                     <th data-sortable="true" data-field="id" width="80">ID</th>
-                                    <th data-sortable="true" data-field="code" width="80">code</th>
+                                    <th data-sortable="true" data-field="code" width="80">编码</th>
                                     <th data-sortable="true" data-field="display_label" width="80">显示名称</th>
                                     <th data-sortable="true" data-field="meun_icon" width="80">菜单图标</th>
                                     <th data-sortable="true" data-field="has_lef" width="120">是否有子</th>

@@ -14,10 +14,16 @@ body {
     overflow: auto;
     max-height: 500px;
 }
+
 .form-control {
     border: 1px solid #e2e2e4;
     box-shadow: none;
     border-radius: 4px;
+}
+
+.search-form {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .action-toolbar {
@@ -32,7 +38,9 @@ ul li {
     list-style: none;
 }
 
-a, a:hover, a:focus {
+a,
+a:hover,
+a:focus {
     text-decoration: none;
     outline: none;
 }
@@ -124,7 +132,8 @@ thead {
     text-align: center !important;
 }
 
-.dataTable>thead>tr>th:first-child, .dataTable>tbody>tr>td:first-child {
+.dataTable>thead>tr>th:first-child,
+.dataTable>tbody>tr>td:first-child {
     text-align: center;
 }
 
@@ -132,7 +141,8 @@ thead {
     padding-right: 10px;
 }
 
-.dataTable>thead>tr>th:last-child, .dataTable>tbody>tr>td:last-child {
+.dataTable>thead>tr>th:last-child,
+.dataTable>tbody>tr>td:last-child {
     text-align: center;
 }
 
