@@ -121,39 +121,7 @@ $modelLabel = new \backend\models\AdminModule();
                         </div>
                         <div class="clearfix"></div>
                     </div>
-
-                    <div id="create_user_div" class="form-group">
-                        <label for="create_user" class="col-sm-2 control-label">创建人</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="create_user" ng-model="modal.create_user" name="AdminModule[create_user]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="create_date_div" class="form-group">
-                        <label for="create_date" class="col-sm-2 control-label">创建时间</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="create_date" ng-model="modal.create_date" name="AdminModule[create_date]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="update_user_div" class="form-group">
-                        <label for="update_user" class="col-sm-2 control-label">修改人</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="update_user" ng-model="modal.update_user" name="AdminModule[update_user]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="update_date_div" class="form-group">
-                        <label for="update_date" class="col-sm-2 control-label">修改时间</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="update_date" ng-model="modal.update_date" name="AdminModule[update_date]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <!-- </form>        -->
+                    <!-- </form> -->
                      <?php ActiveForm::end(); ?>  
                 </div>
                 <div class="modal-footer text-c">
