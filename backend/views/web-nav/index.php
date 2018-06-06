@@ -97,12 +97,7 @@ $modelLabel = new \backend\models\WebNavModel();
                         <label for="controller" class="col-sm-2 control-label">控制器</label>
                         <div class="col-sm-10">
                             <select class="form-control" ng-model="modal.controller" name="WebNavModel[controller]" id="controller_id">
-                                <option>请选择</option>
-                                <?php 	   
-                                foreach($controllerData as $key=>$data){
-                                    echo "<option value='" . $key . "'>". $key."</option>";
-                                }
-                                ?>
+                                <option ng-repeat="item in controllerData" value="{{item}}">{{item}}</option>
                             </select>
                         </div>
                         <div class="clearfix"></div>
@@ -110,10 +105,9 @@ $modelLabel = new \backend\models\WebNavModel();
                     <div id="url_div" class="form-group">
                         <label for="url" class="col-sm-2 control-label">URL</label>
                         <div class="col-sm-10">
-                            <select class="form-control" ng-model="modal.url" name="WebNavModel[url]" id="actionUrl">
-                                <option>请选择</option>
+                            <select class="form-control" ng-model="modal.url" name="WebNavModel[url]" >
+                                <option ng-repeat="item in selectData" value="{{item.value}}">{{item.label}}</option>
                             </select>
-                            <!-- <input type="text" class="form-control" id="url" name="WebNavModel[url]" placeholder="" /> -->
                         </div>
                         <div class="clearfix"></div>
                     </div>

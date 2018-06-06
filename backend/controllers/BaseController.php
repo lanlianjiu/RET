@@ -128,7 +128,7 @@ class BaseController extends Controller
                     if($m != 'actions' && StringHelper::startsWith($m, 'action') !== false){
                         $actionName = substr($m, 6, strlen($m));
                         $aUrl = Inflector::camel2id($actionName);
-                        $actionTree = ['text'=>$aUrl . "&nbsp;&nbsp;($cUrl/$aUrl)", 'c'=>$cUrl, 'a'=>$aUrl, 'selectable'=>true, 'state'=>['checked'=>false], 'type'=>'a'];
+                        $actionTree = ['text'=>$aUrl . "($cUrl/$aUrl)", 'c'=>$cUrl, 'a'=>$aUrl, 'selectable'=>true, 'state'=>['checked'=>false], 'type'=>'a'];
                         if(isset($rightUrls[$cUrl.'/'.$aUrl]) == true){
                             $actionTree['state']['checked'] = true;
                             $rightTree['state']['checked'] = true;

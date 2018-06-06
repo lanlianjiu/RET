@@ -10,17 +10,49 @@ use yii\helpers\Url;
 	var app = angular.module("myApp", []);
 	app.controller("web-nav-controller", function($scope) {
 
-		$scope.modal = {};
 		var tableId = $('#webnav-table');
+		$scope.modal = {};
+		$scope.selectData = {};
+		$scope.controllerData = {};
+			
+		for(var i in window.controllerData){
+			$scope.controllerData[i] = i;
+		};
+	
+		$scope.selectFun = function(controller) {
+			$scope.selectData = {};
+			var actions = window.controllerData[controller];
+			var nodes = actions.nodes;
+			if(nodes !== undefined){
+				for(i = 0; i < nodes.length; i++){
+					var action = nodes[i];
+					$scope.selectData[i] = {
+						label:action.text,
+						value:action.a
+					}
+				}
+			};
+		};
+
+		$("#controller_id").change(function(){
+			// 先清空第二个
+			var controller = $(this).val();
+			$scope.selectFun(controller);
+		});
 
 		$scope.addAction = function() {
 			$scope.modal = {};
 			$('#edit_dialog').modal('show');
 		};
-
+		
 		$scope.edit_action = function(id) {
 			var tableData = tableId.bootstrapTable('getRowByUniqueId', id);
+			$scope.selectFun(tableData.controller);
 			$scope.modal = tableData;
+			var str = tableData.url
+			var index = str .lastIndexOf("\/");  
+			str  = str .substring(index + 1, str .length);
+			$scope.modal.url = str;
 			$scope.$apply();
 			$('#edit_dialog').modal('show');
 		};
@@ -38,9 +70,9 @@ use yii\helpers\Url;
 					if(value.errno == 0){
 						$('#edit_dialog').modal('hide');
 
-							$.dialog.Success('操作成功！', function () {
-								tableId.bootstrapTable('refresh');
-							});
+						$.dialog.Success('操作成功！', function () {
+							tableId.bootstrapTable('refresh');
+						});
 					}else{
 						$.dialog.Warn(value);
 					}
@@ -92,27 +124,6 @@ use yii\helpers\Url;
 			});
 		};
 
-	});
-
-	$("#controller_id").change(function(){
-		// 先清空第二个
-		var controller = $(this).val();
-		$("#actionUrl").empty();
-		var option = $("<option>").html("请选择");
-		$("#actionUrl").append(option);
-		var actions = window.controllerData[controller];
-		var nodes = actions.nodes;
-		
-		if(nodes !== undefined){
-			for(i = 0; i < nodes.length; i++){
-				var action = nodes[i];
-				var option = $("<option>").val(action.a).html(action.text);
-				$("#actionUrl").append(option);
-			}
-		}else{
-			$("#actionUrl").append(option);
-		};
-		
 	});
 
 	function  operateFormatter(value, row, index) {
