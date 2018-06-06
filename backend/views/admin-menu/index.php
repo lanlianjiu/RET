@@ -116,12 +116,7 @@ $modelLabel = new \backend\models\AdminMenu();
                         <label for="controller" class="col-sm-2 control-label">控制器</label>
                         <div class="col-sm-10">
                             <select class="form-control" ng-model="modal.controller" name="AdminMenu[controller]" id="controller">
-                                <option>请选择</option>
-                                <?php 	   
-                                foreach($controllerData as $key=>$data){
-                                    echo "<option value='" . $key . "'>". $key."</option>";
-                                }
-                                ?>
+                               <option ng-repeat="item in controllerData" value="{{item}}">{{item}}</option>
                             </select>
                         </div>
                         <div class="clearfix"></div>
@@ -131,7 +126,7 @@ $modelLabel = new \backend\models\AdminMenu();
                         <label for="action" class="col-sm-2 control-label">操作</label>
                         <div class="col-sm-10">
                             <select class="form-control" ng-model="modal.action" name="AdminMenu[action]" id="action">
-                                <option>请选择</option>
+                                <option ng-repeat="item in selectData" value="{{item.value}}">{{item.label}}</option>
                             </select>
                         </div>
                         <div class="clearfix"></div>

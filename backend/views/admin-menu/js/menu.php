@@ -9,8 +9,35 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 	var app = angular.module("myApp", []);
 	app.controller("admin-menu-controller", function($scope) {
 
-		$scope.modal = {};
 		var tableId = $('#adminMenu-table');
+		$scope.modal = {};
+		$scope.selectData = {};
+		$scope.controllerData = {};
+
+		for(var i in window.controllerData){
+			$scope.controllerData[i] = i;
+		};
+
+		$("#controller").change(function(){
+			// 先清空第二个
+			var controller = $(this).val();
+			$scope.selectFun(controller);
+		});
+	
+		$scope.selectFun = function(controller) {
+			$scope.selectData = {};
+			var actions = window.controllerData[controller];
+			var nodes = actions.nodes;
+			if(nodes !== undefined){
+				for(i = 0; i < nodes.length; i++){
+					var action = nodes[i];
+					$scope.selectData[i] = {
+						label:action.text,
+						value:action.a
+					}
+				}
+			};
+		};
 
 		$scope.addMenu = function() {
 			$scope.modal = {};
@@ -18,9 +45,16 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		};
 
 		$scope.edit_action = function(id) {
+			
 			var tableData = tableId.bootstrapTable('getRowByUniqueId', id);
 			$scope.modal = tableData;
+			$scope.selectFun(tableData.controller);
+			var str = tableData.entry_url;
+			var index = str.lastIndexOf("\/"); 
+			str  = str.substring(index + 1, str.length);
+			$scope.modal.entry_url = str;
 			$scope.$apply();
+
 			$('#edit_dialog').modal('show');
 		};
 
@@ -91,21 +125,6 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 			});
 		};
 
-	});
-
-	$("#controller").change(function(){
-		// 先清空第二个
-		var controller = $(this).val();
-		$("#action").empty();
-		var option = $("<option>").html("请选择");
-		$("#action").append(option);
-		var actions = window.controllerData[controller];
-		var nodes = actions.nodes;
-		for(i = 0; i < nodes.length; i++){
-			var action = nodes[i];
-			var option = $("<option>").val(action.a).html(action.text);
-			$("#action").append(option);
-		}
 	});
 
 

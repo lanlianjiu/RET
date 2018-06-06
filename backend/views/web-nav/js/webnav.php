@@ -50,8 +50,8 @@ use yii\helpers\Url;
 			$scope.selectFun(tableData.controller);
 			$scope.modal = tableData;
 			var str = tableData.url
-			var index = str .lastIndexOf("\/");  
-			str  = str .substring(index + 1, str .length);
+			var index = str.lastIndexOf("\/");  
+			str  = str.substring(index + 1, str.length);
 			$scope.modal.url = str;
 			$scope.$apply();
 			$('#edit_dialog').modal('show');
@@ -128,9 +128,9 @@ use yii\helpers\Url;
 
 	function  operateFormatter(value, row, index) {
 		var h = "";
-			// h +='<a id="view_btn" onclick="viewAction(' + row.web_nav_id + ')" class="action-a-btn" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
-			h +='<a id="edit_btn" onclick="editAction(' +row.web_nav_id +')" class="action-a-btn" href="#"> <i class="fa fa-edit icon-white"></i></a>';
-			h +='<a id="delete_btn" onclick="deleteAction('+row.web_nav_id +')" class="action-a-btn" href="#"> <i class="fa fa-trash icon-white"></i></a>';
+			// h +='<a id="view_btn" onclick="viewAction(' + row.web_nav_id + ')" class="action-a-btn" > <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+			h +='<a id="edit_btn" onclick="editAction(' +row.web_nav_id +')" class="action-a-btn" > <i class="fa fa-edit icon-white"></i></a>';
+			h +='<a id="delete_btn" onclick="deleteAction('+row.web_nav_id +')" class="action-a-btn" > <i class="fa fa-trash icon-white"></i></a>';
 		return h;
 	};
 

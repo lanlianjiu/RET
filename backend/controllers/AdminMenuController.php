@@ -112,6 +112,8 @@ class AdminMenuController extends BaseController
         if ($model->load(Yii::$app->request->post())) {
               $model->display_label = $model->menu_name;
               $model->entry_right_name = $model->menu_name;
+              $controllerName = substr($model->controller, 0, strlen($model->controller) - 10);
+              $model->entry_url = Inflector::camel2id(StringHelper::basename($controllerName)) . '/' .$model->action;
               $model->has_lef = 'n';
               $model->update_user = Yii::$app->user->identity->uname;
               $model->update_date = date('Y-m-d H:i:s');        
