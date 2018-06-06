@@ -11,6 +11,7 @@ use yii\helpers\Url;
 	app.controller("web-nav-controller", function($scope) {
 
 		var tableId = $('#webnav-table');
+		var dialog_add_edit = $('#edit_dialog');
 		$scope.modal = {};
 		$scope.selectData = {};
 		$scope.controllerData = {};
@@ -42,7 +43,7 @@ use yii\helpers\Url;
 
 		$scope.addAction = function() {
 			$scope.modal = {};
-			$('#edit_dialog').modal('show');
+			dialog_add_edit.modal('show');
 		};
 		
 		$scope.edit_action = function(id) {
@@ -54,7 +55,7 @@ use yii\helpers\Url;
 			str  = str.substring(index + 1, str.length);
 			$scope.modal.url = str;
 			$scope.$apply();
-			$('#edit_dialog').modal('show');
+			dialog_add_edit.modal('show');
 		};
 
 		$scope.saveAction = function() {
@@ -68,7 +69,7 @@ use yii\helpers\Url;
 				success: function(value) 
 				{
 					if(value.errno == 0){
-						$('#edit_dialog').modal('hide');
+						dialog_add_edit.modal('hide');
 
 						$.dialog.Success('操作成功！', function () {
 							tableId.bootstrapTable('refresh');

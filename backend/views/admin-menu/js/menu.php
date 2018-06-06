@@ -10,6 +10,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 	app.controller("admin-menu-controller", function($scope) {
 
 		var tableId = $('#adminMenu-table');
+		var dialog_add_edit = $('#edit_dialog');
 		$scope.modal = {};
 		$scope.selectData = {};
 		$scope.controllerData = {};
@@ -41,7 +42,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 
 		$scope.addMenu = function() {
 			$scope.modal = {};
-			$('#edit_dialog').modal('show');
+			dialog_add_edit.modal('show');
 		};
 
 		$scope.edit_action = function(id) {
@@ -55,7 +56,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 			$scope.modal.entry_url = str;
 			$scope.$apply();
 
-			$('#edit_dialog').modal('show');
+			dialog_add_edit.modal('show');
 		};
 
 		$scope.saveMenu = function() {
@@ -69,7 +70,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 				success: function(value) 
 				{
 					if(value.errno == 0){
-						$('#edit_dialog').modal('hide');
+						dialog_add_edit.modal('hide');
 
 							$.dialog.Success('操作成功！', function () {
 								tableId.bootstrapTable('refresh');

@@ -11,7 +11,7 @@ app.controller("admin-right-controller", function($scope) {
 
 	$scope.modal = {};
 	var tableId = $('#adminRight-table');
-
+	var dialog_add_edit = $('#edit_dialog');
 	//配置功能url
 	function changeCheckState(node, checked){
 		if(!!node.nodes == true){
@@ -134,7 +134,7 @@ app.controller("admin-right-controller", function($scope) {
 			}
 		});
 
-		$('#edit_dialog').modal('show');
+		dialog_add_edit.modal('show');
 	};
 
 	
@@ -143,7 +143,7 @@ app.controller("admin-right-controller", function($scope) {
 		$scope.modal = tableData;
 		initModel(id,"edit");
 		$scope.$apply();
-		$('#edit_dialog').modal('show');
+		dialog_add_edit.modal('show');
 	};
 
 	$scope.saveAction = function() {
@@ -172,7 +172,7 @@ app.controller("admin-right-controller", function($scope) {
 			success: function(value) 
 			{
 				if(value.errno == 0){
-					$('#edit_dialog').modal('hide');
+					dialog_add_edit.modal('hide');
 
 						$.dialog.Success('操作成功！', function () {
 							tableId.bootstrapTable('refresh');

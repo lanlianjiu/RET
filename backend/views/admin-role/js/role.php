@@ -11,17 +11,19 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 
 		$scope.modal = {};
 		var tableId = $('#adminRole-table');
-
+		var dialog_add_edit = $('#edit_dialog');
+		var treeview_dialog = $('#treeview');
+		
 		$scope.addAction = function() {
 			$scope.modal = {};
-			$('#edit_dialog').modal('show');
+			dialog_add_edit.modal('show');
 		};
 
 		$scope.edit_action = function(id) {
 			var tableData = tableId.bootstrapTable('getRowByUniqueId', id);
 			$scope.modal = tableData;
 			$scope.$apply();
-			$('#edit_dialog').modal('show');
+			dialog_add_edit.modal('show');
 		};
 
 		$scope.saveAction = function() {
@@ -35,7 +37,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 				success: function(value) 
 				{
 					if(value.errno == 0){
-						$('#edit_dialog').modal('hide');
+						dialog_add_edit.modal('hide');
 
 							$.dialog.Success('操作成功！', function () {
 								tableId.bootstrapTable('refresh');
@@ -98,10 +100,10 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 				for(var i = 0; i < nodes.length; i++){
 					var node1 = nodes[i];
 					if(checked == true){
-						$('#treeview').treeview('checkNode', [ node1.nodeId, { silent: true } ]);
+						treeview_dialog.treeview('checkNode', [ node1.nodeId, { silent: true } ]);
 					}
 					else{
-						$('#treeview').treeview('uncheckNode', [ node1.nodeId, { silent: true } ]);
+						treeview_dialog.treeview('uncheckNode', [ node1.nodeId, { silent: true } ]);
 					}
 					changeCheckState(node1, checked);
 				}
@@ -123,7 +125,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 				},
 				success: function(data){
 
-					$('#treeview').treeview({
+					treeview_dialog.treeview({
 						data:data,
 						showIcon: false,
 						showCheckbox: true,
@@ -144,7 +146,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		$scope.saveRight = function() {
 			
 			var role_id = $('#select_role_id').val();
-			var checkNodes = $('#treeview').treeview('getChecked');
+			var checkNodes = treeview_dialog.treeview('getChecked');
 
 			if(checkNodes.length > 0){
 

@@ -11,17 +11,17 @@ use yii\helpers\Url;
 
 		$scope.modal = {};
 		var tableId = $('#webuser-table');
-
+		var dialog_add_edit = $('#edit_dialog');
 		$scope.addAction = function() {
 			$scope.modal = {};
-			$('#edit_dialog').modal('show');
+			dialog_add_edit.modal('show');
 		};
 
 		$scope.edit_action = function(id) {
 			var tableData = tableId.bootstrapTable('getRowByUniqueId', id);
 			$scope.modal = tableData;
 			$scope.$apply();
-			$('#edit_dialog').modal('show');
+			dialog_add_edit.modal('show');
 		};
 
 		$scope.saveAction = function() {
@@ -35,7 +35,7 @@ use yii\helpers\Url;
 				success: function(value) 
 				{
 					if(value.errno == 0){
-						$('#edit_dialog').modal('hide');
+						dialog_add_edit.modal('hide');
 
 							$.dialog.Success('操作成功！', function () {
 								tableId.bootstrapTable('refresh');
