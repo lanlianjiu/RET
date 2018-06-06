@@ -70,7 +70,15 @@ $modelLabel = new \backend\models\AdminUser();
                 <div class="modal-body">
                     <?php $form = ActiveForm::begin(["id" => "admin-user-form", "class"=>"form-horizontal", "action"=>Url::toRoute("admin-user/save")]); ?>                      
                     <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminUser[id]" />
-                  
+
+                     <div id="head_img_url_div" class="form-group">
+                        <label for="head_img_url" class="col-sm-2 control-label">头像</label>
+                        <div class="col-sm-10">
+                            <?= $form->field($modelLabel,'head_img_url')->widget('common\widgets\file_upload\FileUpload',['config'=>[]])?>
+                        </div>
+                    </div>
+
+                   
                     <div id="uname_div" class="form-group">
                         <label for="uname" class="col-sm-2 control-label">用户名</label>
                         <div class="col-sm-10">
