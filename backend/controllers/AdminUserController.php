@@ -44,7 +44,7 @@ class AdminUserController extends BaseController
     }
 
 
-    public function actionsUpload(){
+    public function actionUpload(){
         return [
             'upload'=>[
                     'class'=>'common\widgets\file_upload\UploadAction',
