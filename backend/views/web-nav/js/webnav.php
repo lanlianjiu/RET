@@ -32,7 +32,7 @@ use yii\helpers\Url;
 				type: "post",
 				dataType:"json",
 				url: action,
-				data:{id:id},
+				data:{web_nav_id:id},
 				success: function(value) 
 				{
 					if(value.errno == 0){
