@@ -41,7 +41,7 @@ class WebUserController extends BaseController
         $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post())) {
 
-              $model->update_at = date();        
+              $model->updated_at = strtotime(date('Y-m-d H:i:s'));        
         
             if($model->validate() == true && $model->save()){
                 $msg = array('errno'=>0, 'msg'=>'保存成功');
@@ -75,6 +75,22 @@ class WebUserController extends BaseController
         }
     
   
+    }
+
+    /**
+     * Finds the WebUserModel model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param string $id
+     * @return WebUserModel the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = WebUserModel::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 
 }

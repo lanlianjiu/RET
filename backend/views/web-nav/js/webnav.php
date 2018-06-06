@@ -117,7 +117,7 @@ use yii\helpers\Url;
 
 	function  operateFormatter(value, row, index) {
 		var h = "";
-			h +='<a id="view_btn" onclick="viewAction(' + row.web_nav_id + ')" class="action-a-btn" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
+			// h +='<a id="view_btn" onclick="viewAction(' + row.web_nav_id + ')" class="action-a-btn" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i></a>';
 			h +='<a id="edit_btn" onclick="editAction(' +row.web_nav_id +')" class="action-a-btn" href="#"> <i class="fa fa-edit icon-white"></i></a>';
 			h +='<a id="delete_btn" onclick="deleteAction('+row.web_nav_id +')" class="action-a-btn" href="#"> <i class="fa fa-trash icon-white"></i></a>';
 		return h;
