@@ -24,6 +24,7 @@ class BaseController extends Controller
         return false;
     }
     
+    // 访问权限（请求地址权限验证）
     private function verifyPermission($action){
         $route = $this->route;
         // 检查是否已经登录
@@ -33,8 +34,7 @@ class BaseController extends Controller
                 $this->redirect(Url::toRoute('site/index'));
                 return false;
             }
-        }
-        else{
+        }else{
             $system_rights = Yii::$app->user->identity->getSystemRights();
             $loginAllowUrl = ['site/index', 'site/logout', 'site/psw', 'site/psw-save'];
             if(in_array($route, $loginAllowUrl) == false){
@@ -143,16 +143,16 @@ class BaseController extends Controller
     }
 
     //excel导入
-   public function Getexcel($file){
-   $file=$_FILES['file']['tmp_name'];
-   Yii::import("special.extensions.PHPExcel");
-   $PHPExcel = new PHPExcel();
-       $PHPReader = new PHPExcel_Reader_Excel2007();
-       if(!$PHPReader->canRead($file)){
-          $PHPReader = new PHPExcel_Reader_Excel5();
-          if(!$PHPReader->canRead($file)){
-             return false;
-           }
+    public function Getexcel($file){
+        $file=$_FILES['file']['tmp_name'];
+        Yii::import("special.extensions.PHPExcel");
+        $PHPExcel = new PHPExcel();
+        $PHPReader = new PHPExcel_Reader_Excel2007();
+        if(!$PHPReader->canRead($file)){
+            $PHPReader = new PHPExcel_Reader_Excel5();
+            if(!$PHPReader->canRead($file)){
+                return false;
+            }
         }
         $PHPExcel = $PHPReader->load($file);
         $currentSheet = $PHPExcel->getSheet(0);//读取第一个工作表
@@ -160,10 +160,10 @@ class BaseController extends Controller
         $allRow = $currentSheet->getHighestRow();//取得一共有多少行
         /**从第二行开始输出，因为excel表中第一行为列名*/
         $arr=array();
-
         for($currentRow = 4;$currentRow <= $allRow;$currentRow++){
             /**从第A列开始输出*/
             for($currentColumn= 'A';$currentColumn<= $allColumn; $currentColumn++){
+
                 $val = $currentSheet->getCellByColumnAndRow(ord($currentColumn) - 65,$currentRow)->getValue(); /*ord()将字符转为十进制数*/
 
                 /**如果输出汉字有乱码，则需将输出内容用iconv函数进行编码转换，如下将gb2312编码转为utf-8编码输出*/
