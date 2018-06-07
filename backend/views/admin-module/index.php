@@ -1,17 +1,14 @@
 
 <?php
-use yii\widgets\LinkPager;
-use yii\base\Object;
-use yii\bootstrap\ActiveForm;
-use common\utils\CommonFun;
 use backend\models\AdminModule;
-use yii\helpers\Url;
+use yii\bootstrap\ActiveForm;
+use yii\widgets\LinkPager;
 $modelLabel = new \backend\models\AdminModule();
 ?>
 
 <?php $this->beginBlock('header');?>
 <!-- <head></head>中代码块 -->
-<?php $this->endBlock(); ?>
+<?php $this->endBlock();?>
 <div  data-content-box="body" ng-app="myApp" ng-controller="admin-module-controller">
     <!--content -->
     <section class="content">
@@ -40,7 +37,7 @@ $modelLabel = new \backend\models\AdminModule();
                     </div>
                 </div>
                 <!-- row end search -->
-                <div class="box">  
+                <div class="box">
                     <div class="box-body">
                         <div class="input-group input-group-sm action-toolbar">
                             <button ng-click="addModule()" id="create_btn" type="button" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> 添加</button>
@@ -83,7 +80,7 @@ $modelLabel = new \backend\models\AdminModule();
                 </div>
                 <div class="modal-body">
                     <!-- <form id="admin-module-form" method="post" action="index.php?r=admin-module/save" class="form-horizontal"> -->
-                    <?php $form = ActiveForm::begin(["id" => "admin-module-form", "class"=>"form-horizontal", "action"=>"index.php?r=admin-module/save"]); ?> 
+                    <?php $form = ActiveForm::begin(["id" => "admin-module-form", "class" => "form-horizontal", "action" => "index.php?r=admin-module/save"]);?>
                     <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminModule[id]" />
                     <div id="code_div" class="form-group">
                         <label for="code" class="col-sm-2 control-label">编码</label>
@@ -122,10 +119,10 @@ $modelLabel = new \backend\models\AdminModule();
                         <div class="clearfix"></div>
                     </div>
                     <!-- </form> -->
-                     <?php ActiveForm::end(); ?>  
+                     <?php ActiveForm::end();?>
                 </div>
                 <div class="modal-footer text-c">
-                    <button  class="btn btn-default" data-dismiss="modal">关闭</button> 
+                    <button  class="btn btn-default" data-dismiss="modal">关闭</button>
                     <button id="edit_dialog_ok"  class="btn btn-primary" ng-click="saveModule()">确定</button>
                 </div>
             </div>
@@ -133,7 +130,7 @@ $modelLabel = new \backend\models\AdminModule();
     </div>
 </div>
 
-<?php $this->beginBlock('footer');  ?>
+<?php $this->beginBlock('footer');?>
 <!-- <body></body>后代码块 -->
 <?php include '/js/module.php';?>
-<?php $this->endBlock(); ?>
+<?php $this->endBlock();?>
