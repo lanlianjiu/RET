@@ -113,7 +113,7 @@ if($otherMenu == false){
           
           <a href="#" class="logo">
             <span class="logo-mini"><b>S</b>HP</span>
-            <span class="logo-lg"><b>SHP管理系统</b></span>
+            <span class="logo-lg"><b>SHP</b></span>
           </a>
       
           <nav class="navbar navbar-static-top">
@@ -165,7 +165,6 @@ if($otherMenu == false){
                     $menuHtml .= '       <i class="fa fa-angle-left pull-right"></i>';
                     $menuHtml .= '   </span>';
                     $menuHtml .= '   </a>';
-                  // echo '   <ul class="treeview-menu">';
                   if($isTreeView != ""){
                       $menuHtml .= '<ul class="treeview-menu">';
                       foreach($funcList as $fun){
