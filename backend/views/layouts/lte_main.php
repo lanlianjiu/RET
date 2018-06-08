@@ -157,12 +157,13 @@ if($otherMenu == false){
                 foreach($system_menus as $menu){
                     $funcList = $menu['funcList'];
                     $isMenuActive = '';
+                    $isMenuIcon = 'fa-angle-left';
                     $isTreeView = count($funcList) > 0 ? "treeview" : "";
                     $menuHtml = '<li class="#isMenuActive#'. $isTreeView .'">'; // active 
                     $menuHtml .= '   <a href="#">';
                     $menuHtml .= '   <i class="fa '.$menu['menuicon'].'"></i> <span>'. $menu['label'] .'</span>';
                     $menuHtml .= '   <span class="pull-right-container">';
-                    $menuHtml .= '       <i class="fa fa-angle-left pull-right"></i>';
+                    $menuHtml .= '       <i class="fa #isMenuIcon# pull-right"></i>';
                     $menuHtml .= '   </span>';
                     $menuHtml .= '   </a>';
                   if($isTreeView != ""){
@@ -172,12 +173,15 @@ if($otherMenu == false){
                           $menuHtml .= '<li '. $isActive .'><a href="'.Url::to([$fun['url']]).'"><i class="fa fa-circle-o"></i>'. $fun['label'] .'</a></li>';
                           if(empty($isMenuActive) == true && $isActive != ""){
                               $isMenuActive = 'active ';
+                              $isMenuIcon = 'fa-angle-down';
                           }
                       }
                       $menuHtml .= '</ul>';
                   }
                     $menuHtml .= '</li>';
                     $menuHtml = str_replace('#isMenuActive#', $isMenuActive, $menuHtml);
+                    $menuHtml = str_replace('#isMenuIcon#', $isMenuIcon, $menuHtml);
+                   
                     echo $menuHtml;
                 }
               ?>
