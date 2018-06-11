@@ -81,6 +81,11 @@ a:focus {
     border: 1px solid #46A4E8;
 }
 
+.fixed-table-pagination .pagination-detail,
+.fixed-table-pagination div.pagination {
+    margin-bottom: 0px;
+}
+
 /*  */
 
 .modal {

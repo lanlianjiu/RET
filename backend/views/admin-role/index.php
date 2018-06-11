@@ -105,7 +105,7 @@ $modelLabel = new \backend\models\AdminRole();
     </div>
 
     <!-- 分配权限 -->
-    <div class="modal bootstrap-dialog type-primary modal-box fade" id="tree_dialog">
+    <div class="modal bootstrap-dialog type-primary modal-box fade" data-model-overflow="true" id="tree_dialog">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
