@@ -37,6 +37,7 @@ $('[data-toggle="table"]').each(function () {
 		url: tableUrl,
 		height: autoHeight,
 		queryParamsType:'limit',
+		pageSize: 50,
 		queryParams:getParams
 	};
 	var postParams = <?php echo json_encode($severUrlparam); ?>;
