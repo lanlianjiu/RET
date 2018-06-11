@@ -112,7 +112,7 @@ $modelLabel = new \backend\models\AdminRole();
                     <button type="button" class="close" data-dismiss="modal">×</button>
                     <h5 class="modal-title bootstrap-dialog-title">权限分配</h5>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body" style="height:400px;">
                     <input type="text" class="hide" id="select_role_id" />
                     <?php $form = ActiveForm::begin(["id" => "system-role-form", "class"=>"form-horizontal", "action"=>Url::toRoute("system-role/save")]); ?>  
                         <div id="treeview"></div>
