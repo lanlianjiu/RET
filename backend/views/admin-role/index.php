@@ -29,7 +29,7 @@ $modelLabel = new \backend\models\AdminRole();
                                     <input type="text" class="form-control"  name="name" />
                                 </div>
                                 <div class="form-group">
-                                    <button bootstrap-table-search="adminRole-table" class="btn btn-outline btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</button>
+                                    <button bootstrap-table-search="adminRole-table" class="btn btn-outline btn-primary btn-sm"> <i class="fa fa-search icon-white"></i> 搜索</button>
                                 </div>
                             </form>
                         </div>

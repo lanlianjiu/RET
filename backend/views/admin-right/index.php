@@ -26,7 +26,7 @@ $modelLabel = new \backend\models\AdminRight();
                                     <input type="text" class="form-control"  name="id"  />
                                 </div>
                                 <div class="form-group">
-                                    <button bootstrap-table-search="adminRight-table" class="btn btn-outline btn-primary btn-sm" href="#"> <i class="glyphicon glyphicon-zoom-in icon-white"></i>搜索</button>
+                                    <button bootstrap-table-search="adminRight-table" class="btn btn-outline btn-primary btn-sm"> <i class="glyphicon glyphicon-zoom-in icon-white"></i>搜索</button>
                                 </div>
                             </form>
                         </div>

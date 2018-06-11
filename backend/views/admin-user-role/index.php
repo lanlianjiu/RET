@@ -26,7 +26,7 @@ $modelLabel = new \backend\models\AdminUserRole();
                                     <input type="text" class="form-control"  name="user_id"  />
                                 </div>
                                 <div class="form-group">
-                                    <button bootstrap-table-search="adminUserrole-table" class="btn btn-outline btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</button>
+                                    <button bootstrap-table-search="adminUserrole-table" class="btn btn-outline btn-primary btn-sm"> <i class="fa fa-search icon-white"></i> 搜索</button>
                                 </div>
                             </form>
                         </div>

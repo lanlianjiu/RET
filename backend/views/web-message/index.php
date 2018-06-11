@@ -27,7 +27,7 @@ $modelLabel = new \backend\models\WebMessageModel();
                                     <input type="text" class="form-control"  name="message_id"  />
                                 </div>
                                 <div class="form-group">
-                                    <button bootstrap-table-search="webmessage-table" class="btn btn-outline btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</button>
+                                    <button bootstrap-table-search="webmessage-table" class="btn btn-outline btn-primary btn-sm"> <i class="fa fa-search icon-white"></i> 搜索</button>
                                 </div>
                             </form>
                         </div>
