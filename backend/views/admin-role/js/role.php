@@ -128,6 +128,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 					treeview_dialog.treeview({
 						data:data,
 						collapsed: false,
+						expanded: false,
 						showIcon: false,
 						showCheckbox: true,
 						onNodeChecked: function(event, node) {
