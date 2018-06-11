@@ -23,13 +23,18 @@ use yii\helpers\Url;
 		$scope.selectFun = function(controller) {
 			$scope.selectData = {};
 			var actions = window.controllerData[controller];
-			var nodes = actions.nodes;
-			if(nodes !== undefined){
-				for(i = 0; i < nodes.length; i++){
-					var action = nodes[i];
-					$scope.selectData[i] = {
-						label:action.text,
-						value:action.a
+			
+			if(actions !== undefined){
+
+				var nodes = actions.nodes;
+
+				if(nodes !== undefined){
+					for(i = 0; i < nodes.length; i++){
+						var action = nodes[i];
+						$scope.selectData[i] = {
+							label:action.text,
+							value:action.a
+						}
 					}
 				}
 			};
