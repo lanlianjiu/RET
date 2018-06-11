@@ -23,7 +23,7 @@ $modelLabel = new \backend\models\AdminLog();
                             <label>主键ID</label> <input type="text" class="form-control" name="id"  />
                         </div>
                         <div class="form-group">
-                            <a bootstrap-table-search="adminLog-table" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</a>
+                            <button bootstrap-table-search="adminLog-table" class="btn btn-outline btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</button>
                         </div>
                     </form>
                 </div>

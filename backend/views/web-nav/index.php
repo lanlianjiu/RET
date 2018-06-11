@@ -33,7 +33,7 @@ $modelLabel = new \backend\models\WebNavModel();
                                     <input type="text" class="form-control"  name="web_nav_name"  />
                                 </div>
                                 <div class="form-group">
-                                    <a bootstrap-table-search="webnav-table" class="btn btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</a>
+                                    <button bootstrap-table-search="webnav-table" class="btn btn-outline btn-primary btn-sm" href="#"> <i class="fa fa-search icon-white"></i> 搜索</button>
                                 </div>
                             </form>
                         </div>

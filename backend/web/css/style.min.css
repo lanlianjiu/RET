@@ -76,6 +76,11 @@ a:focus {
     background-color: #1e282c !important;
 }
 
+.btn-outline {
+    color: #46A4E8;
+    border: 1px solid #46A4E8;
+}
+
 /*  */
 
 .modal {
