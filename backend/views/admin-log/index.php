@@ -62,82 +62,77 @@ $modelLabel = new \backend\models\AdminLog();
                     <h5 class="modal-title bootstrap-dialog-title">查看</h5>
                 </div>
                 <div class="modal-body">
-                    <?php $form = ActiveForm::begin(["id" => "admin-log-form", "class"=>"form-horizontal", "action"=>"index.php?r=admin-log/save"]); ?>                      
-                            
-                    <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminLog[id]" />
+                    <?php $form = ActiveForm::begin(["id" => "admin-log-form", "class"=>"form-horizontal", "action"=>"index.php?r=admin-log/save"]); ?> 
 
-                    <div id="controller_id_div" class="form-group">
-                        <label for="controller_id" class="col-sm-2 control-label">控制器</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="controller_id" ng-model="modal.controller_id" name="AdminLog[controller_id]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                    <table class="table">
+                        <tr>
+                            <td> 
+                               <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminLog[id]" />
+                               <label for="controller_id" class="control-label">控制器</label>
+                            </td>
+                            <td>
+                               <input type="text" class="form-control" id="controller_id" ng-model="modal.controller_id" name="AdminLog[controller_id]" placeholder="" />
+                            </td>
+                            <td> 
+                                <label for="action_id" class="control-label">方法</label>
+                            </td>
+                            <td>
+                               <input type="text" class="form-control" id="action_id" ng-model="modal.action_id" name="AdminLog[action_id]" placeholder="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                  <label for="url" class="control-label">URL</label>
+                            </td>
+                            <td>
+                               <input type="text" class="form-control" ng-model="modal.url" id="url" name="AdminLog[url]" placeholder="" />
+                            </td>
+                            <td> 
+                                 <label for="module_name" class="control-label">模块</label>
+                            </td>
+                            <td>
+                               <input type="text" class="form-control" ng-model="modal.module_name" id="module_name" name="AdminLog[module_name]" placeholder="" />
+                            </td>
+                        </tr>
+                         <tr>
+                            <td> 
+                                 <label for="func_name" class="control-label">功能</label>
+                            </td>
+                            <td>
+                               <input type="text" class="form-control" ng-model="modal.func_name" id="func_name" name="AdminLog[func_name]" placeholder="" />
+                            </td>
+                             <td> 
+                                  <label for="right_name" class="control-label">方法名</label>
+                            </td>
+                            <td>
+                               <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminLog[right_name]" placeholder="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                <label for="client_ip" class="control-label">客户端IP</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" ng-model="modal.client_ip" id="client_ip" name="AdminLog[client_ip]" placeholder="" />
+                            </td>
+                             <td> 
+                               <label for="create_user" class="control-label">创建人</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" ng-model="modal.create_user" id="create_user" name="AdminLog[create_user]" placeholder="" />
+                            </td>
+                        </tr>
+                         <tr>
+                            <td> 
+                                <label for="create_date" class="control-label">创建时间</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" ng-model="modal.create_date" id="create_date" name="AdminLog[create_date]" placeholder="" />
+                            </td>
+                        </tr>
+                    </table>  
 
-                    <div id="action_id_div" class="form-group">
-                        <label for="action_id" class="col-sm-2 control-label">方法</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="action_id" ng-model="modal.action_id" name="AdminLog[action_id]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="url_div" class="form-group">
-                        <label for="url" class="col-sm-2 control-label">URL</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.url" id="url" name="AdminLog[url]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="module_name_div" class="form-group">
-                        <label for="module_name" class="col-sm-2 control-label">模块</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.module_name" id="module_name" name="AdminLog[module_name]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="func_name_div" class="form-group">
-                        <label for="func_name" class="col-sm-2 control-label">功能</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.func_name" id="func_name" name="AdminLog[func_name]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="right_name_div" class="form-group">
-                        <label for="right_name" class="col-sm-2 control-label">方法名</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminLog[right_name]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="client_ip_div" class="form-group">
-                        <label for="client_ip" class="col-sm-2 control-label">客户端IP</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.client_ip" id="client_ip" name="AdminLog[client_ip]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="create_user_div" class="form-group">
-                        <label for="create_user" class="col-sm-2 control-label">创建人</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.create_user" id="create_user" name="AdminLog[create_user]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="create_date_div" class="form-group">
-                        <label for="create_date" class="col-sm-2 control-label">创建时间</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.create_date" id="create_date" name="AdminLog[create_date]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div> 
-
+                    
                     <?php ActiveForm::end(); ?>          
                 </div>
                 <div class="modal-footer text-c">

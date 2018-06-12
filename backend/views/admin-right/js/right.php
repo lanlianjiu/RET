@@ -12,6 +12,7 @@ app.controller("admin-right-controller", function($scope) {
 	$scope.modal = {};
 	var tableId = $('#adminRight-table');
 	var dialog_add_edit = $('#edit_dialog');
+	var treeview_dialog = $('#treeview');
 	//配置功能url
 	function changeCheckState(node, checked){
 		if(!!node.nodes == true){
@@ -19,10 +20,10 @@ app.controller("admin-right-controller", function($scope) {
 			for(var i = 0; i < nodes.length; i++){
 				var node1 = nodes[i];
 				if(checked == true){
-					$('#treeview').treeview('checkNode', [ node1.nodeId, { silent: true } ]);
+					treeview_dialog.treeview('checkNode', [ node1.nodeId, { silent: true } ]);
 				}
 				else{
-					$('#treeview').treeview('uncheckNode', [ node1.nodeId, { silent: true } ]);
+					treeview_dialog.treeview('uncheckNode', [ node1.nodeId, { silent: true } ]);
 				}
 				changeCheckState(node1, checked);
 			}
@@ -58,7 +59,7 @@ app.controller("admin-right-controller", function($scope) {
 						}
 				}
 			
-				$('#treeview').treeview({
+				treeview_dialog.treeview({
 					data:data.actions,
 					showIcon: false,
 					showCheckbox: true,
@@ -70,6 +71,7 @@ app.controller("admin-right-controller", function($scope) {
 						changeCheckState(node, false);
 					}
 				});
+				treeview_dialog.treeview('collapseAll',{ silent: true });
 			}
 		});
 	};
@@ -87,7 +89,7 @@ app.controller("admin-right-controller", function($scope) {
 		var rightTree = {'text':controller, 'selectable':false, 'state':{'checked':false}, 'type':'r'};
 		rightTree['nodes'] = nodes;
 		
-		$('#treeview').treeview({
+		treeview_dialog.treeview({
 			data: [rightTree],
 			showIcon: false,
 			showCheckbox: true,
@@ -118,7 +120,7 @@ app.controller("admin-right-controller", function($scope) {
 				alert("出错了，" + textStatus);
 			},
 			success: function(data){
-				$('#treeview').treeview({
+				treeview_dialog.treeview({
 					data:data,
 					showIcon: false,
 					showCheckbox: true,
@@ -149,7 +151,7 @@ app.controller("admin-right-controller", function($scope) {
 	$scope.saveAction = function() {
 
 		
-		var checkNodes = $('#treeview').treeview('getChecked');
+		var checkNodes = treeview_dialog.treeview('getChecked');
 		var rightUrls = [];
 		if(checkNodes.length > 0){
 			for(i = 0; i < checkNodes.length; i++){

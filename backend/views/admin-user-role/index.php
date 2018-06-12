@@ -68,25 +68,26 @@ $modelLabel = new \backend\models\AdminUserRole();
                 </div>
                 <div class="modal-body">
                     <?php $form = ActiveForm::begin(["id" => "admin-user-role-form", "class"=>"form-horizontal", "action"=>Url::toRoute("admin-user-role/save")]); ?>                         
-                    <input type="text" ng-model="modal.id" class="form-control hide" id="id" name="AdminUserRole[id]" />
 
-                    <div id="user_id_div" class="form-group">
-                        <label for="user_id" class="col-sm-2 control-label">用户ID</label>
-                        <div class="col-sm-10">
-                            <input type="text" ng-model="modal.user_id" class="form-control" id="user_id" name="AdminUserRole[user_id]" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-            
-                    <div id="user_name_div" class="form-group">
-                        <label for="user_name" class="col-sm-2 control-label">用户名</label>
-                        <div class="col-sm-10">
-                            <input type="text" ng-model="modal.user_name" class="form-control" id="user_name" name="user_name" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <input type="text" class="form-control hide"  id="role_id" name="AdminUserRole[role_id]" value="<?=$role_id?>"/>
+                    <table class="table">
+                        <tr>
+                            <td> 
+                                <input type="text" ng-model="modal.id" class="form-control hide" id="id" name="AdminUserRole[id]" />
+                                <input type="text" class="form-control hide"  id="role_id" name="AdminUserRole[role_id]" value="<?=$role_id?>"/>
+                                <label for="user_id" class="control-label">用户ID</label>
+                            </td>
+                            <td>
+                               <input type="text" ng-model="modal.user_id" class="form-control" id="user_id" name="AdminUserRole[user_id]" />
+                            </td>
+                            <td> 
+                                <label for="user_name" class="control-label">用户名</label>
+                            </td>
+                            <td>
+                              <input type="text" ng-model="modal.user_name" class="form-control" id="user_name" name="user_name" />
+                            </td>
+                        </tr>
+                    </table>
+                   
                     <?php ActiveForm::end(); ?>          
                     </div>
                     <div class="modal-footer text-c">

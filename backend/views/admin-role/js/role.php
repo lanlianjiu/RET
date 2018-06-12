@@ -137,6 +137,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 							changeCheckState(node, false);
 						}
 					});
+					treeview_dialog.treeview('collapseAll',{ silent: true });
 				}
 			});
 

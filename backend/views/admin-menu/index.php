@@ -72,65 +72,71 @@ $modelLabel = new \backend\models\AdminMenu();
                 </div>
                 <div class="modal-body">
                     <?php $form = ActiveForm::begin(["id" => "admin-menu-form", "class"=>"form-horizontal", "action"=>Url::toRoute('admin-menu/save')]); ?> 
-                    <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminMenu[id]" />
-                    <input type="text" class="form-control hide"  id="module_id" name="AdminMenu[module_id]" value="<?=$module_id?>"> 
-                    <div id="code_div" class="form-group">
-                        <label for="code" class="col-sm-2 control-label">编码</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.code" id="code" name="AdminMenu[code]" placeholder="必填" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
 
-                    <div id="menu_name_div" class="form-group">
-                        <label for="menu_name" class="col-sm-2 control-label">名称</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.menu_name" id="menu_name" name="AdminMenu[menu_name]" placeholder="必填" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div id="des_div" class="form-group">
-                        <label for="des" class="col-sm-2 control-label">描述</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.des" id="des" name="AdminMenu[des]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                    <table class="table">
+                        <tr>
+                            <td> 
+                                 <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminMenu[id]" />
+                                <input type="text" class="form-control hide"  id="module_id" name="AdminMenu[module_id]" value="<?=$module_id?>"> 
+                                <label for="code" class="control-label">编码</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" ng-model="modal.code" id="code" name="AdminMenu[code]" placeholder="必填" />
+                            </td>
+                            <td> 
+                                <label for="menu_name" class="control-label">名称</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" ng-model="modal.menu_name" id="menu_name" name="AdminMenu[menu_name]" placeholder="必填" />
+                            </td>
+                        </tr>
+                        
+                        <tr>
+                            <td> 
+                                <label for="entry_url" class="control-label">入口地址</label>
+                            </td>
+                            <td>
+                               <input type="text" readonly class="form-control" ng-model="modal.entry_url" id="entry_url" name="AdminMenu[entry_url]" />
+                            </td>
+                            <td> 
+                                <label for="display_order" class="control-label">显示顺序</label>
+                            </td>
+                            <td>
+                              <input type="text" class="form-control" ng-model="modal.display_order" id="display_order" name="AdminMenu[display_order]" placeholder="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                <label for="controller" class="control-label">控制器</label>
+                            </td>
+                            <td colspan="3">
+                                <select class="form-control" ng-model="modal.controller" name="AdminMenu[controller]" id="controller">
+                                    <option ng-repeat="item in controllerData" value="{{item}}">{{item}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                <label for="action" class="control-label">操作</label>
+                            </td>
+                            <td colspan="3">
+                                <select class="form-control" ng-model="modal.action" name="AdminMenu[action]" id="action">
+                                    <option ng-repeat="item in selectData" value="{{item.value}}">{{item.label}}</option>
+                                </select>
+                            </td>
+                        </tr>
 
-                    <div id="display_order_div" class="form-group">
-                        <label for="display_order" class="col-sm-2 control-label">显示顺序</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.display_order" id="display_order" name="AdminMenu[display_order]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div id="entry_url_div" class="form-group hide">
-                        <label for="entry_url" class="col-sm-2 control-label">入口地址</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.entry_url" id="entry_url" name="AdminMenu[entry_url]" placeholder="必填" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="controller_div" class="form-group">
-                        <label for="controller" class="col-sm-2 control-label">控制器</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" ng-model="modal.controller" name="AdminMenu[controller]" id="controller">
-                               <option ng-repeat="item in controllerData" value="{{item}}">{{item}}</option>
-                            </select>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-            
-                    <div id="action_div" class="form-group">
-                        <label for="action" class="col-sm-2 control-label">操作</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" ng-model="modal.action" name="AdminMenu[action]" id="action">
-                                <option ng-repeat="item in selectData" value="{{item.value}}">{{item.label}}</option>
-                            </select>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                        <tr>
+                            <td> 
+                                 <label for="des" class="control-label">描述</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" class="form-control" ng-model="modal.des" id="des" name="AdminMenu[des]" placeholder="" />
+                            </td>
+                        </tr>
+                        
+                    </table>
+                   
                     <?php ActiveForm::end(); ?>          
                 </div>
                 <div class="modal-footer text-c">

@@ -77,40 +77,45 @@ $modelLabel = new \backend\models\WebNavModel();
                 </div>
                 <div class="modal-body">
                     <?php $form = ActiveForm::begin(["id" => "web-nav-form", "class"=>"form-horizontal", "action"=>Url::toRoute("web-nav/save")]); ?> 
-                    <input type="text" class="form-control hide" ng-model="modal.web_nav_id" id="web_nav_id" name="WebNavModel[web_nav_id]" />
-                
-                    <div id="web_navType_id_div" class="form-group">
-                        <label for="web_navType_id" class="col-sm-2 control-label">类型</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="web_navType_id" ng-model="modal.web_navType_id" name="WebNavModel[web_navType_id]" placeholder="必填" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div id="web_nav_name_div" class="form-group">
-                        <label for="web_nav_name" class="col-sm-2 control-label">名称</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="web_nav_name" ng-model="modal.web_nav_name" name="WebNavModel[web_nav_name]" placeholder="必填" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div id="controller_div" class="form-group">
-                        <label for="controller" class="col-sm-2 control-label">控制器</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" ng-model="modal.controller" name="WebNavModel[controller]" id="controller_id">
-                                <option ng-repeat="item in controllerData" value="{{item}}">{{item}}</option>
-                            </select>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-                    <div id="url_div" class="form-group">
-                        <label for="url" class="col-sm-2 control-label">URL</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" ng-model="modal.url" name="WebNavModel[url]" >
-                                <option ng-repeat="item in selectData" value="{{item.value}}">{{item.label}}</option>
-                            </select>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                    
+                    <table class="table">
+                        <tr>
+                            <td> 
+                                <input type="text" class="form-control hide" ng-model="modal.web_nav_id" id="web_nav_id" name="WebNavModel[web_nav_id]" />
+                                <label for="web_navType_id" class="control-label">类型</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" id="web_navType_id" ng-model="modal.web_navType_id" name="WebNavModel[web_navType_id]" placeholder="必填" />
+                            </td>
+                            <td> 
+                                <label for="web_nav_name" class="control-label">名称</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" id="web_nav_name" ng-model="modal.web_nav_name" name="WebNavModel[web_nav_name]" placeholder="必填" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                <label for="controller" class="control-label">控制器</label>
+                            </td>
+                            <td colspan="3">
+                                <select class="form-control" ng-model="modal.controller" name="WebNavModel[controller]" id="controller_id">
+                                    <option ng-repeat="item in controllerData" value="{{item}}">{{item}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                <label for="url" class="control-label">URL</label>
+                            </td>
+                            <td colspan="3">
+                                <select class="form-control" ng-model="modal.url" name="WebNavModel[url]" >
+                                    <option ng-repeat="item in selectData" value="{{item.value}}">{{item.label}}</option>
+                                </select>
+                            </td>
+                        </tr>
+                    </table>
+
                     <?php ActiveForm::end(); ?>          
                 </div>
                 <div class="modal-footer text-c">

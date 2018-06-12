@@ -68,40 +68,45 @@ $modelLabel = new \backend\models\AdminUser();
                     <h5 class="modal-title bootstrap-dialog-title">添加</h5>
                 </div>
                 <div class="modal-body">
-                    <?php $form = ActiveForm::begin(["id" => "admin-user-form", "class"=>"form-horizontal", "action"=>Url::toRoute("admin-user/save")]); ?>                      
-                    <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminUser[id]" />
+                    <?php $form = ActiveForm::begin(["id" => "admin-user-form", "class"=>"form-horizontal", "action"=>Url::toRoute("admin-user/save")]); ?>  
 
-                     <div id="head_img_url_div" class="form-group">
-                        <label for="head_img_url" class="col-sm-2 control-label">头像</label>
-                        <div class="col-sm-10">
-                            <?= $form->field($modelLabel,'head_img_url')->widget('common\widgets\file_upload\FileUpload',['config'=>[]])?>
-                        </div>
-                    </div>
+                     <table class="table">
+                        <tr>
+                            <td> 
+                                <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminUser[id]" />
 
-                   
-                    <div id="uname_div" class="form-group">
-                        <label for="uname" class="col-sm-2 control-label">用户名</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.uname" id="uname" name="AdminUser[uname]" placeholder="必填" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                                <label for="head_img_url" class="control-label">头像</label>
+                            </td>
+                            <td>
+                              <?= $form->field($modelLabel,'head_img_url')->widget('common\widgets\file_upload\FileUpload',['config'=>[]])?>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                <label for="uname" class="control-label">用户名</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" ng-model="modal.uname" id="uname" name="AdminUser[uname]" placeholder="必填" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                <label for="password" class="control-label">密码</label>
+                            </td>
+                            <td>
+                               <input type="text" class="form-control" id="password" ng-model="modal.password" name="AdminUser[password]" placeholder="必填" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                <label for="status" class="control-label">状态</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control"  ng-model="modal.status"  id="status" name="AdminUser[status]" placeholder="必填" />
+                            </td>
+                        </tr>
+                    </table>
 
-                    <div id="password_div" class="form-group">
-                        <label for="password" class="col-sm-2 control-label">密码</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" id="password" ng-model="modal.password" name="AdminUser[password]" placeholder="必填" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="status_div" class="form-group">
-                        <label for="status" class="col-sm-2 control-label">状态</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control"  ng-model="modal.status"  id="status" name="AdminUser[status]" placeholder="必填" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
                     <?php ActiveForm::end(); ?>          
                 </div>
                 <div class="modal-footer text-c">

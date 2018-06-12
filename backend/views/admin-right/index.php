@@ -71,56 +71,59 @@ $modelLabel = new \backend\models\AdminRight();
                 <div class="modal-body">
                     <?php $form = ActiveForm::begin(["id" => "admin-right-form", "class"=>"form-horizontal", "action"=>Url::toRoute('admin-right/save')]); ?> 
                     
-                    <input type="text" ng-model="modal.id" class="form-control hide" id="id" name="id" />
-                    <input type="text" class="form-control hide" id="menu_id" name="AdminRight[menu_id]" value="<?=$menu_id?>" />
-                    
-                    <div id="right_name_div" class="form-group">
-                        <label for="right_name" class="col-sm-2 control-label">名称</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminRight[right_name]" placeholder="必填" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                    <table class="table">
+                        <tr>
+                            <td> 
+                                <input type="text" ng-model="modal.id" class="form-control hide" id="id" name="id" />
+                                <input type="text" class="form-control hide" id="menu_id" name="AdminRight[menu_id]" value="<?=$menu_id?>" />           
+                                <label for="right_name" class="control-label">名称</label>
+                            </td>
+                            <td>
+                                <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminRight[right_name]" placeholder="必填" />
+                            </td>
+                            <td> 
+                                <label for="display_order" class="control-label">显示顺序</label>
+                            </td>
+                            <td>
+                              <input type="text" class="form-control" ng-model="modal.display_order" id="display_order" name="AdminRight[display_order]" placeholder="" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> 
+                                 <label for="des" class="control-label">描述</label>
+                            </td>
+                            <td colspan="3">
+                                <input type="text" class="form-control" ng-model="modal.des" id="des" name="AdminRight[des]" placeholder="" />
+                            </td>
+                        </tr>
 
-                    <div id="des_div" class="form-group">
-                        <label for="des" class="col-sm-2 control-label">描述</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.des" id="des" name="AdminRight[des]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
+                         <tr>
+                            <td>    
+                                <label for="controller" class="control-label">控制器</label>
+                            </td>
+                            <td colspan="3">
+                              <select class="form-control" ng-model="modal.controller" name="SystemFunction[controller]" id="controller">
+                                    <option>请选择</option>
+                                    <?php 
+                                    
+                                    foreach($controllerData as $key=>$data){
+                                        echo "<option value='" . $key . "'>". $key."</option>";
+                                    }
+                                    ?>
+                                </select>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td> 
+                                <label for="actions" class="control-label">路由地址</label>
+                            </td>
+                            <td colspan="3">
+                                <div id="treeview"></div>
+                            </td>
+                        </tr>
+                        
+                    </table>
 
-                    <div id="display_order_div" class="form-group">
-                        <label for="display_order" class="col-sm-2 control-label">显示顺序</label>
-                        <div class="col-sm-10">
-                            <input type="text" class="form-control" ng-model="modal.display_order" id="display_order" name="AdminRight[display_order]" placeholder="" />
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="controller_div" class="form-group">
-                        <label for="controller" class="col-sm-2 control-label">控制器</label>
-                        <div class="col-sm-10">
-                            <select class="form-control" ng-model="modal.controller" name="SystemFunction[controller]" id="controller">
-                            <option>请选择</option>
-                            <?php 
-                            
-                            foreach($controllerData as $key=>$data){
-                                echo "<option value='" . $key . "'>". $key."</option>";
-                            }
-                            ?>
-                        </select>
-                        </div>
-                        <div class="clearfix"></div>
-                    </div>
-
-                    <div id="actions_div" class="form-group">
-                        <label for="actions" class="col-sm-2 control-label">路由地址</label>
-                        <div class="col-sm-10">
-                            <div id="treeview"></div>
-                        </div>
-                        <div class="clearfix"><br/></div>
-                    </div> 
                     <?php ActiveForm::end(); ?>          
                 </div>
                 <div class="modal-footer text-c">
