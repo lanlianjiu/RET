@@ -143,6 +143,7 @@ app.controller("admin-right-controller", function($scope) {
 	$scope.edit_action = function(id) {
 		var tableData = tableId.bootstrapTable('getRowByUniqueId', id);
 		$scope.modal = tableData;
+		console.log(tableData);
 		initModel(id,"edit");
 		$scope.$apply();
 		dialog_add_edit.modal('show');
