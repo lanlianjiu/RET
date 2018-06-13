@@ -86,6 +86,10 @@ a:focus {
     margin-bottom: 0px;
 }
 
+.modal-sm {
+    padding-top: 15%;
+}
+
 /*  */
 
 .modal {
