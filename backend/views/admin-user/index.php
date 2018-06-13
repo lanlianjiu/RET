@@ -80,6 +80,9 @@ $modelLabel = new \backend\models\AdminUser();
                             <td>
                               <?= $form->field($modelLabel,'head_img_url')->widget('common\widgets\file_upload\FileUpload',['config'=>[]])?>
                             </td>
+                            <td>
+                                <?=$form->field($modelLabel, 'head_img_url')->widget('common\widgets\batch_upload\FileUpload')?>
+                            </td>
                         </tr>
                         <tr>
                             <td> 

@@ -8,7 +8,7 @@ use backend\models\AdminUser;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use yii\web\NotFoundHttpException;
-
+use common\widgets\batch_upload\Uploader;
 /**
  * AdminUserController implements the CRUD actions for AdminUser model.
  */
@@ -52,6 +52,9 @@ class AdminUserController extends BaseController
                         'imagePathFormat' => "/uploadimg/{yyyy}{mm}{dd}/{time}{rand:6}",
                             ]
                     ],
+            'upload_more'=>[
+                        'class' => 'common\widgets\batch_upload\UploadAction'
+                    ]
             // 'ueditor'=>[
             //         'class'=>'common\widgets\file_upload\UeditorAction',
             //         'config'=>[
