@@ -17,6 +17,3 @@ use yii\helpers\Html;
     </div>
     <input up-id="<?=$attribute?>" type="hidden" name="<?=$inputName?>" upname='<?=$config['fileName']?>' value="<?=isset($inputValue)?$inputValue:''?>" filetype="img" />
 </div>
-<script src="../../common/widgets/file_upload/statics/js/jquery.form.js"></script>
-<script src="../../common/widgets/file_upload/statics/js/upload-input.js"></script>
-<script src="../../common/widgets/file_upload/statics/js/upload.js"></script>
