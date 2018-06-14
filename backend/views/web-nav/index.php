@@ -47,7 +47,7 @@ $modelLabel = new \backend\models\WebNavModel();
                                 <button id="delete_btn" type="button" ng-click="del_action()" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> 批量删除</button>
                             </div>
                         </div>
-                        <table id="webnav-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="130" data-show-export="true"
+                        <table id="webnav-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="137" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
                             data-id-field="web_nav_id" data-unique-id="web_nav_id" data-custom-url="index.php?r=web-nav/table" class="table  table-hover th-table">
                             <thead>

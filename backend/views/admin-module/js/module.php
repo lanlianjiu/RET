@@ -26,17 +26,26 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 
 		$scope.saveModule = function() {
 			var id = $("#id").val();
+			
 		    var action = id == "" ? "<?=Url::toRoute('admin-module/create')?>" : "<?=Url::toRoute('admin-module/update')?>";
-			$("#admin-module-form").ajaxSubmit({
+			$.ajax({
 				type: "post",
 				dataType:"json",
 				url: action,
-				data:{id:id},
+				data:{
+					id:id,
+					'AdminModule[id]':$scope.modal.id,
+					'AdminModule[code]':$scope.modal.code,
+					'AdminModule[display_label]':$scope.modal.display_label,
+					'AdminModule[meun_icon]':$scope.modal.meun_icon,
+					'AdminModule[display_order]':$scope.modal.display_order,
+					'AdminModule[des]':$scope.modal.des
+				},
 				success: function(value) 
 				{
 					if(value.errno == 0){
 						dialog_add_edit.modal('hide');
-							$.dialog.Success('操作成功！', function () {
+						$.dialog.Success('操作成功！', function () {
 							tableId.bootstrapTable('refresh');
 						});
 					}else{
