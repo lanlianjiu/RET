@@ -100,13 +100,7 @@ class BackendUser extends ActiveRecord implements IdentityInterface
         return $this->getAuthKey() === $authKey;
     }
 
-
-
-  
-    
-    
-        public function initUserModuleList()
-        {
+    public function initUserModuleList(){
             $adminModuleService = new AdminModuleService();
             $urlList = $adminModuleService->getUserModuleList($this->id);
             $menus = array();
@@ -127,8 +121,7 @@ class BackendUser extends ActiveRecord implements IdentityInterface
     
                     $rightList = array();
                     $count11 = 0;
-                } else
-                        if ($menus[$count]["id"] !== $_url["mid"]) {
+                } else if ($menus[$count]["id"] !== $_url["mid"]) {
                             $funcList[$count1]["rightList"] = $rightList;
                             $menus[$count]["funcList"] = $funcList;
                             $count ++;
@@ -144,8 +137,9 @@ class BackendUser extends ActiveRecord implements IdentityInterface
     
                             $rightList = array();
                             $count11 = 0;
-                        } else {
+                } else {
                             if ($funcList[$count1]["id"] !== $_url["fid"]) {
+
                                 $funcList[$count1]["rightList"] = $rightList;
                                 $count1 ++;
                                 $funcList[$count1]["id"] = $_url["fid"];
@@ -155,7 +149,7 @@ class BackendUser extends ActiveRecord implements IdentityInterface
                                 $rightList = array();
                                 $count11 = 0;
                             }
-                        }
+                }
                     $rightList[$count11]["id"] = $_url["rid"];
                     $rightList[$count11]["label"] = $_url["rlb"];
                     $rightList[$count11]["module"] = $_url["url"];
@@ -167,14 +161,13 @@ class BackendUser extends ActiveRecord implements IdentityInterface
                         $funcList[$count1]["rightList"] = $rightList;
                         $menus[$count]["funcList"] = $funcList;
                     }
-                }
+            }
                 $this->_menus = $menus;
                 Yii::$app->session['system_menus_'.$this->id] = $menus;
                 return $menus;
-            } 
+    } 
     
-        public function initUserUrls($userId = 0)
-        {
+    public function initUserUrls($userId = 0){
             $adminModuleService = new AdminModuleService();
             $rightUrls = $adminModuleService->getUserUrls($this->id);
             $funcs = $adminModuleService->getAllFunctions();
@@ -197,7 +190,7 @@ class BackendUser extends ActiveRecord implements IdentityInterface
             }
             Yii::$app->session['system_rights_'.$this->id] = $rightData;
             return $rightData;
-        }
+    }
 
     public function getSystemMenus(){
         if(isset(Yii::$app->session['system_menus_'.$this->id]) == false){

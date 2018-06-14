@@ -67,7 +67,7 @@ class AdminUser extends BackendUser
             'create_date' => '创建时间',
             'update_user' => '更新人',
             'update_date' => '更新时间',
-             'head_img_url' => '头像',
+             'head_img_url' => '',
         ];
     }
 
