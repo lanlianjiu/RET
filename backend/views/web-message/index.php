@@ -72,27 +72,27 @@ $modelLabel = new \backend\models\WebMessageModel();
 
                         <table class="table">
                             <tr>
-                                <td> 
-                                <label for="message_id" class="control-label">主键</label>
+                                <td align="right"> 
+                                    <label for="message_id" class="control-label">主键</label>
                                 </td>
                                 <td>
                                     <input type="text" ng-model="modal.message_id" class="form-control" id="message_id" name="WebMessage[message_id]" placeholder="" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="connet_name" class="control-label">联系人</label>
                                 </td>
                                 <td>
-                                <input type="text" ng-model="modal.connet_name" class="form-control" id="connet_name" name="WebMessage[connet_name]" placeholder="" />
+                                    <input type="text" ng-model="modal.connet_name" class="form-control" id="connet_name" name="WebMessage[connet_name]" placeholder="" />
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="connet_phone" class="control-label">联系电话</label>
                                 </td>
                                 <td>
-                                <input type="text" ng-model="modal.connet_phone" class="form-control" id="connet_phone" name="WebMessage[connet_phone]" placeholder="" />
+                                    <input type="text" ng-model="modal.connet_phone" class="form-control" id="connet_phone" name="WebMessage[connet_phone]" placeholder="" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="email" class="control-label">电子邮箱</label>
                                 </td>
                                 <td>
@@ -100,19 +100,19 @@ $modelLabel = new \backend\models\WebMessageModel();
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="address" class="control-label">地址</label>
                                 </td>
                                 <td colspan="3">
-                                <input type="text" ng-model="modal.address" class="form-control" id="address" name="WebMessage[address]" placeholder="" />
+                                    <input type="text" ng-model="modal.address" class="form-control" id="address" name="WebMessage[address]" placeholder="" />
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="message_content" class="control-label">留言内容</label>
                                 </td>
                                 <td colspan="3">
-                                <input type="text" ng-model="modal.message_content" class="form-control" id="message_content" name="WebMessage[message_content]" placeholder="" />
+                                    <input type="text" ng-model="modal.message_content" class="form-control" id="message_content" name="WebMessage[message_content]" placeholder="" />
                                 </td>
                             </tr>
                             <!-- <tr>

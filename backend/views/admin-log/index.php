@@ -66,27 +66,27 @@ $modelLabel = new \backend\models\AdminLog();
                     <form id="admin-log-form" role="form"  method="post"> 
                         <table class="table">
                             <tr>
-                                <td> 
-                                <label for="controller_id" class="control-label">控制器</label>
+                                <td align="right"> 
+                                    <label for="controller_id" class="control-label">控制器</label>
                                 </td>
                                 <td>
-                                <input type="text" class="form-control" id="controller_id" ng-model="modal.controller_id" name="AdminLog[controller_id]" placeholder="" />
+                                    <input type="text" class="form-control" id="controller_id" ng-model="modal.controller_id" name="AdminLog[controller_id]" placeholder="" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="action_id" class="control-label">方法</label>
                                 </td>
                                 <td>
-                                <input type="text" class="form-control" id="action_id" ng-model="modal.action_id" name="AdminLog[action_id]" placeholder="" />
+                                    <input type="text" class="form-control" id="action_id" ng-model="modal.action_id" name="AdminLog[action_id]" placeholder="" />
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="url" class="control-label">URL</label>
                                 </td>
                                 <td>
-                                <input type="text" class="form-control" ng-model="modal.url" id="url" name="AdminLog[url]" placeholder="" />
+                                    <input type="text" class="form-control" ng-model="modal.url" id="url" name="AdminLog[url]" placeholder="" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="module_name" class="control-label">模块</label>
                                 </td>
                                 <td>
@@ -94,21 +94,21 @@ $modelLabel = new \backend\models\AdminLog();
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="func_name" class="control-label">功能</label>
                                 </td>
                                 <td>
-                                <input type="text" class="form-control" ng-model="modal.func_name" id="func_name" name="AdminLog[func_name]" placeholder="" />
+                                    <input type="text" class="form-control" ng-model="modal.func_name" id="func_name" name="AdminLog[func_name]" placeholder="" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="right_name" class="control-label">方法名</label>
                                 </td>
                                 <td>
-                                <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminLog[right_name]" placeholder="" />
+                                    <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminLog[right_name]" placeholder="" />
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="client_ip" class="control-label">客户端IP</label>
                                 </td>
                                 <td>

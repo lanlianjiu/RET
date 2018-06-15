@@ -75,7 +75,7 @@ $form = ActiveForm::begin(["id" => "admin-user-form"]);//定义form表单，调�
 
                         <table class="table">
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="head_img_url" class="control-label">头像</label>
                                 </td>
                                 <td>
@@ -83,7 +83,7 @@ $form = ActiveForm::begin(["id" => "admin-user-form"]);//定义form表单，调�
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="uname" class="control-label">用户名</label>
                                 </td>
                                 <td>
@@ -91,15 +91,15 @@ $form = ActiveForm::begin(["id" => "admin-user-form"]);//定义form表单，调�
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="password" class="control-label">密码</label>
                                 </td>
                                 <td>
-                                <input type="text" class="form-control" id="password" ng-model="modal.password" name="AdminUser[password]" placeholder="必填" />
+                                    <input type="text" class="form-control" id="password" ng-model="modal.password" name="AdminUser[password]" placeholder="必填" />
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="status" class="control-label">状态</label>
                                 </td>
                                 <td>

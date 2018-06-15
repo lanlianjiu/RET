@@ -76,15 +76,13 @@ $modelLabel = new \backend\models\AdminMenu();
 
                         <table class="table">
                             <tr>
-                                <td> 
-                                    <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminMenu[id]" />
-                                    <input type="text" class="form-control hide"  id="module_id" name="AdminMenu[module_id]" value="<?=$module_id?>"> 
+                                <td align="right"> 
                                     <label for="code" class="control-label">编码</label>
                                 </td>
                                 <td>
                                     <input type="text" class="form-control" ng-model="modal.code" id="code" name="AdminMenu[code]" placeholder="必填" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="menu_name" class="control-label">名称</label>
                                 </td>
                                 <td>
@@ -93,13 +91,13 @@ $modelLabel = new \backend\models\AdminMenu();
                             </tr>
                             
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="entry_url" class="control-label">入口地址</label>
                                 </td>
                                 <td>
-                                <input type="text" readonly class="form-control" ng-model="modal.entry_url" id="entry_url" name="AdminMenu[entry_url]" />
+                                    <input type="text" readonly class="form-control" ng-model="modal.entry_url" id="entry_url" name="AdminMenu[entry_url]" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="display_order" class="control-label">显示顺序</label>
                                 </td>
                                 <td>
@@ -107,7 +105,7 @@ $modelLabel = new \backend\models\AdminMenu();
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="controller" class="control-label">控制器</label>
                                 </td>
                                 <td colspan="3">
@@ -117,7 +115,7 @@ $modelLabel = new \backend\models\AdminMenu();
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="action" class="control-label">操作</label>
                                 </td>
                                 <td colspan="3">
@@ -128,7 +126,7 @@ $modelLabel = new \backend\models\AdminMenu();
                             </tr>
 
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="des" class="control-label">描述</label>
                                 </td>
                                 <td colspan="3">

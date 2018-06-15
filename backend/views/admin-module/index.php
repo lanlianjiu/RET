@@ -83,27 +83,27 @@ $modelLabel = new \backend\models\AdminModule();
         
                         <table class="table">
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="code" class="control-label">编码</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" ng-model="modal.code" id="code" name="AdminModule[code]" placeholder="必填" />
+                                    <input type="text" class="form-control" ng-model="modal.code" id="code" name="AdminModule[code]" data-type="required" placeholder="必填" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="code" class="control-label">显示名称</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" id="display_label" ng-model="modal.display_label" name="AdminModule[display_label]" placeholder="必填" />
+                                    <input type="text" class="form-control" id="display_label" data-type="required" ng-model="modal.display_label" name="AdminModule[display_label]" placeholder="必填" />
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="code" class="control-label">图标</label>
                                 </td>
                                 <td>
-                                    <input type="text" class="form-control" id="meun_icon"  ng-model="modal.meun_icon" name="AdminModule[meun_icon]" placeholder="必填" />
+                                    <input type="text" class="form-control" id="meun_icon"  ng-model="modal.meun_icon" name="AdminModule[meun_icon]" data-type="required" placeholder="必填" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="code" class="control-label">顺序</label>
                                 </td>
                                 <td>
@@ -111,7 +111,7 @@ $modelLabel = new \backend\models\AdminModule();
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="code" class="control-label">描述</label>
                                 </td>
                                 <td colspan="3">
@@ -124,7 +124,7 @@ $modelLabel = new \backend\models\AdminModule();
                 </div>
                 <div class="modal-footer text-c">
                     <button  class="btn btn-default" data-dismiss="modal">关闭</button>
-                    <button id="edit_dialog_ok"  class="btn btn-primary" ng-click="saveModule()">确定</button>
+                    <button type="submit"  class="btn btn-primary" ng-click="saveModule()">确定</button>
                 </div>
             </div>
         </div>

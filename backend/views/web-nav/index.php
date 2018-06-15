@@ -81,13 +81,13 @@ $modelLabel = new \backend\models\WebNavModel();
                      
                         <table class="table">
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="web_navType_id" class="control-label">类型</label>
                                 </td>
                                 <td>
                                     <input type="text" class="form-control" id="web_navType_id" ng-model="modal.web_navType_id" name="WebNavModel[web_navType_id]" placeholder="必填" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="web_nav_name" class="control-label">名称</label>
                                 </td>
                                 <td>
@@ -95,7 +95,7 @@ $modelLabel = new \backend\models\WebNavModel();
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="controller" class="control-label">控制器</label>
                                 </td>
                                 <td colspan="3">
@@ -105,7 +105,7 @@ $modelLabel = new \backend\models\WebNavModel();
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="url" class="control-label">URL</label>
                                 </td>
                                 <td colspan="3">

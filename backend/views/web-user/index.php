@@ -79,7 +79,7 @@ $modelLabel = new \backend\models\WebUserModel();
                    <form id="web-user-form" role="form"  method="post"> 
                         <table class="table">
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="username" class="control-label">用户名</label>
                                 </td>
                                 <td>
@@ -87,19 +87,19 @@ $modelLabel = new \backend\models\WebUserModel();
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="email" class="control-label">邮箱</label>
                                 </td>
                                 <td>
-                                <input type="text" class="form-control" ng-model="modal.email" id="email" name="WebUserModel[email]" placeholder="必填" />
+                                    <input type="text" class="form-control" ng-model="modal.email" id="email" name="WebUserModel[email]" placeholder="必填" />
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="vip_1v" class="control-label">会员等级</label>
                                 </td>
                                 <td>
-                                <input type="text" class="form-control" ng-model="modal.vip_1v" id="vip_1v" name="WebUserModel[vip_1v]" placeholder="必填" />
+                                    <input type="text" class="form-control" ng-model="modal.vip_1v" id="vip_1v" name="WebUserModel[vip_1v]" placeholder="必填" />
                                 </td>
                             </tr>
                         </table>

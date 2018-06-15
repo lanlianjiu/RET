@@ -26,7 +26,7 @@ $modelLabel = new \backend\models\AdminRight();
                                     <input type="text" class="form-control"  name="id"  />
                                 </div>
                                 <div class="form-group">
-                                    <button bootstrap-table-search="adminRight-table" class="btn btn-outline btn-primary btn-sm"> <i class="glyphicon glyphicon-zoom-in icon-white"></i>搜索</button>
+                                    <button bootstrap-table-search="adminRight-table" class="btn btn-outline btn-primary btn-sm"> <i class="fa fa-search icon-white"></i> 搜索</button>
                                 </div>
                             </form>
                         </div>
@@ -73,21 +73,21 @@ $modelLabel = new \backend\models\AdminRight();
                     <form id="admin-right-form" role="form"  method="post" >        
                         <table class="table">
                             <tr>
-                                <td>        
+                                <td align="right">        
                                     <label for="right_name" class="control-label">名称</label>
                                 </td>
                                 <td>
                                     <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminRight[right_name]" placeholder="必填" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="display_order" class="control-label">显示顺序</label>
                                 </td>
                                 <td>
-                                <input type="text" class="form-control" ng-model="modal.display_order" id="display_order" name="AdminRight[display_order]" placeholder="" />
+                                    <input type="text" class="form-control" ng-model="modal.display_order" id="display_order" name="AdminRight[display_order]" placeholder="" />
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="des" class="control-label">描述</label>
                                 </td>
                                 <td colspan="3">
@@ -96,7 +96,7 @@ $modelLabel = new \backend\models\AdminRight();
                             </tr>
 
                             <tr>
-                                <td>    
+                                <td align="right">    
                                     <label for="controller" class="control-label">控制器</label>
                                 </td>
                                 <td colspan="3">
@@ -112,7 +112,7 @@ $modelLabel = new \backend\models\AdminRight();
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="actions" class="control-label">路由地址</label>
                                 </td>
                                 <td colspan="3">

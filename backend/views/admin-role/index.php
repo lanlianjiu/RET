@@ -75,13 +75,13 @@ $modelLabel = new \backend\models\AdminRole();
                      <form id="admin-role-form" role="form"  method="post" > 
                         <table class="table">
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="code" class="control-label">角色编号</label>
                                 </td>
                                 <td>
                                     <input type="text" ng-model="modal.code" class="form-control" id="code" name="AdminRole[code]" placeholder="必填" />
                                 </td>
-                                <td> 
+                                <td align="right"> 
                                     <label for="name" class="control-label">角色名称</label>
                                 </td>
                                 <td>
@@ -89,7 +89,7 @@ $modelLabel = new \backend\models\AdminRole();
                                 </td>
                             </tr>
                             <tr>
-                                <td> 
+                                <td align="right"> 
                                     <label for="des" class="control-label">描述</label>
                                 </td>
                                 <td colspan="3">

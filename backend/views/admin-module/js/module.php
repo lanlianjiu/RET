@@ -25,33 +25,39 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		};
 
 		$scope.saveModule = function() {
-			
-		    var URL = ($scope.modal.id) ?  "<?=Url::toRoute('admin-module/update')?>": "<?=Url::toRoute('admin-module/create')?>";
-			$.ajax({
-				type: "post",
-				dataType:"json",
-				url: URL,
-				data:{
-					id:$scope.modal.id,
-					'AdminModule[id]':$scope.modal.id,
-					'AdminModule[code]':$scope.modal.code,
-					'AdminModule[display_label]':$scope.modal.display_label,
-					'AdminModule[meun_icon]':$scope.modal.meun_icon,
-					'AdminModule[display_order]':$scope.modal.display_order,
-					'AdminModule[des]':$scope.modal.des
-				},
-				success: function(value) 
-				{
-					if(value.errno == 0){
-						dialog_add_edit.modal('hide');
-						$.dialog.Success('操作成功！', function () {
-							tableId.bootstrapTable('refresh');
-						});
-					}else{
-						$.dialog.Warn(value);
+
+			//$("#admin-module-form").html5Validate(function() {
+
+				var URL = ($scope.modal.id) ?  "<?=Url::toRoute('admin-module/update')?>": "<?=Url::toRoute('admin-module/create')?>";
+				$.ajax({
+					type: "post",
+					dataType:"json",
+					url: URL,
+					data:{
+						id:$scope.modal.id,
+						'AdminModule[id]':$scope.modal.id,
+						'AdminModule[code]':$scope.modal.code,
+						'AdminModule[display_label]':$scope.modal.display_label,
+						'AdminModule[meun_icon]':$scope.modal.meun_icon,
+						'AdminModule[display_order]':$scope.modal.display_order,
+						'AdminModule[des]':$scope.modal.des
+					},
+					success: function(value) 
+					{
+						if(value.errno == 0){
+							dialog_add_edit.modal('hide');
+							$.dialog.Success('操作成功！', function () {
+								tableId.bootstrapTable('refresh');
+							});
+						}else{
+							$.dialog.Warn(value);
+						}
 					}
-				}
-			});
+				});
+				
+			// }, {
+			// 		novalidate: false	
+			// 	});
 		};
 
 		$scope.getCheckId = function (data) {
