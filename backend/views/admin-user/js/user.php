@@ -42,11 +42,13 @@ define('ROOT_PATH',dirname(dirname(dirname(dirname(__FILE__)))));
 				success: function(value) 
 				{
 					if(value.errno == 0){
+
 						dialog_add_edit.modal('hide');
 
-							$.dialog.Success('操作成功！', function () {
-								tableId.bootstrapTable('refresh');
-							});
+						$.dialog.Success('操作成功！', function () {
+							tableId.bootstrapTable('refresh');
+						});
+						
 					}else{
 						$.dialog.Warn(value);
 					}
