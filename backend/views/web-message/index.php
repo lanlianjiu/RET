@@ -67,65 +67,65 @@ $modelLabel = new \backend\models\WebMessageModel();
                     <h5 class="modal-title bootstrap-dialog-title">留言信息</h5>
                 </div>
                 <div class="modal-body">
-                    <?php $form = ActiveForm::begin(["id" => "admin-message-form", "class"=>"form-horizontal", "action"=>"index.php?r=admin-log/save"]); ?>  
+                   
+                    <form id="admin-message-form" role="form"  method="post" >
 
-                    <table class="table">
-                        <tr>
-                            <td> 
-                                <input type="text" ng-model="modal.id" class="form-control hide" id="id" name="WebMessage[id]" />
-                               <label for="message_id" class="control-label">主键</label>
-                            </td>
-                            <td>
-                                <input type="text" ng-model="modal.message_id" class="form-control" id="message_id" name="WebMessage[message_id]" placeholder="" />
-                            </td>
-                            <td> 
-                                <label for="connet_name" class="control-label">联系人</label>
-                            </td>
-                            <td>
-                               <input type="text" ng-model="modal.connet_name" class="form-control" id="connet_name" name="WebMessage[connet_name]" placeholder="" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                 <label for="connet_phone" class="control-label">联系电话</label>
-                            </td>
-                            <td>
-                               <input type="text" ng-model="modal.connet_phone" class="form-control" id="connet_phone" name="WebMessage[connet_phone]" placeholder="" />
-                            </td>
-                            <td> 
-                                 <label for="email" class="control-label">电子邮箱</label>
-                            </td>
-                            <td>
-                               <input type="text" ng-model="modal.email" class="form-control" id="email" name="WebMessage[email]" placeholder="" />
-                            </td>
-                        </tr>
-                         <tr>
-                            <td> 
-                                 <label for="address" class="control-label">地址</label>
-                            </td>
-                            <td colspan="3">
-                               <input type="text" ng-model="modal.address" class="form-control" id="address" name="WebMessage[address]" placeholder="" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                <label for="message_content" class="control-label">留言内容</label>
-                            </td>
-                            <td colspan="3">
-                              <input type="text" ng-model="modal.message_content" class="form-control" id="message_content" name="WebMessage[message_content]" placeholder="" />
-                            </td>
-                        </tr>
-                        <!-- <tr>
-                            <td> 
-                                <label for="is_look" class="control-label">是否已查看</label>
-                            </td>
-                            <td>
-                               <input type="text" class="form-control" id="is_look" name="WebMessage[is_look]" placeholder="" /> 
-                            </td>
-                        </tr> -->
-                    </table> 
+                        <table class="table">
+                            <tr>
+                                <td> 
+                                <label for="message_id" class="control-label">主键</label>
+                                </td>
+                                <td>
+                                    <input type="text" ng-model="modal.message_id" class="form-control" id="message_id" name="WebMessage[message_id]" placeholder="" />
+                                </td>
+                                <td> 
+                                    <label for="connet_name" class="control-label">联系人</label>
+                                </td>
+                                <td>
+                                <input type="text" ng-model="modal.connet_name" class="form-control" id="connet_name" name="WebMessage[connet_name]" placeholder="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="connet_phone" class="control-label">联系电话</label>
+                                </td>
+                                <td>
+                                <input type="text" ng-model="modal.connet_phone" class="form-control" id="connet_phone" name="WebMessage[connet_phone]" placeholder="" />
+                                </td>
+                                <td> 
+                                    <label for="email" class="control-label">电子邮箱</label>
+                                </td>
+                                <td>
+                                <input type="text" ng-model="modal.email" class="form-control" id="email" name="WebMessage[email]" placeholder="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="address" class="control-label">地址</label>
+                                </td>
+                                <td colspan="3">
+                                <input type="text" ng-model="modal.address" class="form-control" id="address" name="WebMessage[address]" placeholder="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="message_content" class="control-label">留言内容</label>
+                                </td>
+                                <td colspan="3">
+                                <input type="text" ng-model="modal.message_content" class="form-control" id="message_content" name="WebMessage[message_content]" placeholder="" />
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td> 
+                                    <label for="is_look" class="control-label">是否已查看</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" id="is_look" name="WebMessage[is_look]" placeholder="" /> 
+                                </td>
+                            </tr> -->
+                        </table> 
 
-                    <?php ActiveForm::end(); ?>          
+                    </form>        
                 </div>
                 <div class="modal-footer text-c">
                     <button  class="btn btn-default" data-dismiss="modal">关闭</button>

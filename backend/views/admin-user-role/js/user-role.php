@@ -9,6 +9,8 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 	var app = angular.module("myApp", []);
 	app.controller("admin-user-role-controller", function($scope) {
 
+		var roleId = $.utils.getUrlParams('roleId');
+
 		$scope.modal = {};
 		var tableId = $('#adminUserrole-table');
 	    var dialog_add_edit = $('#edit_dialog');
@@ -25,13 +27,18 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		};
 
 		$scope.saveAction = function() {
-			var id = $("#id").val();
-			var action = (id == "") ? "<?=Url::toRoute('admin-user-role/create')?>" : "<?=Url::toRoute('admin-user-role/update')?>";
-			$("#admin-user-role-form").ajaxSubmit({
+			
+			var URL = ($scope.modal.id) ? "<?=Url::toRoute('admin-user-role/update')?>" : "<?=Url::toRoute('admin-user-role/create')?>";
+			$.ajax({
 				type: "post",
 				dataType:"json",
-				url: action,
-				data:{id:id},
+				url: URL,
+				data:{
+					id:$scope.modal.id,
+					'AdminUserRole[role_id]':roleId,
+					'AdminUserRole[user_id]':$scope.modal.user_id,
+					'AdminUserRole[user_name]':$scope.modal.user_name
+				},
 				success: function(value) 
 				{
 					if(value.errno == 0){

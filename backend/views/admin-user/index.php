@@ -6,6 +6,7 @@ use backend\models\AdminUser;
 use yii\helpers\Url;
 
 $modelLabel = new \backend\models\AdminUser();
+$form = ActiveForm::begin(["id" => "admin-user-form"]);//定义form表单，调用组件需要
 ?>
 
 <?php $this->beginBlock('header');  ?>
@@ -68,46 +69,45 @@ $modelLabel = new \backend\models\AdminUser();
                     <h5 class="modal-title bootstrap-dialog-title">添加</h5>
                 </div>
                 <div class="modal-body">
-                    <?php $form = ActiveForm::begin(["id" => "admin-user-form", "class"=>"form-horizontal", "action"=>Url::toRoute("admin-user/save")]); ?>  
+                     
+                    <form id="admin-user-form" role="form"  method="post"> 
 
-                     <table class="table">
-                        <tr>
-                            <td> 
-                                <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminUser[id]" />
+                        <table class="table">
+                            <tr>
+                                <td> 
+                                    <label for="head_img_url" class="control-label">头像</label>
+                                </td>
+                                <td>
+                                    <?= $form->field($modelLabel,'head_img_url')->widget('common\widgets\file_upload\FileUpload',['config'=>[]])?>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="uname" class="control-label">用户名</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" ng-model="modal.uname" id="uname" name="AdminUser[uname]" placeholder="必填" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="password" class="control-label">密码</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" id="password" ng-model="modal.password" name="AdminUser[password]" placeholder="必填" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="status" class="control-label">状态</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control"  ng-model="modal.status"  id="status" name="AdminUser[status]" placeholder="必填" />
+                                </td>
+                            </tr>
+                        </table>
 
-                                <label for="head_img_url" class="control-label">头像</label>
-                            </td>
-                            <td>
-                              <?= $form->field($modelLabel,'head_img_url')->widget('common\widgets\file_upload\FileUpload',['config'=>[]])?>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                <label for="uname" class="control-label">用户名</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" ng-model="modal.uname" id="uname" name="AdminUser[uname]" placeholder="必填" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                <label for="password" class="control-label">密码</label>
-                            </td>
-                            <td>
-                               <input type="text" class="form-control" id="password" ng-model="modal.password" name="AdminUser[password]" placeholder="必填" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                <label for="status" class="control-label">状态</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control"  ng-model="modal.status"  id="status" name="AdminUser[status]" placeholder="必填" />
-                            </td>
-                        </tr>
-                    </table>
-
-                    <?php ActiveForm::end(); ?>          
+                    </form>          
                 </div>
                 <div class="modal-footer text-c">
                     <button  class="btn btn-default" data-dismiss="modal">关闭</button> 

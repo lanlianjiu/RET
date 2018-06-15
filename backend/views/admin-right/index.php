@@ -69,62 +69,59 @@ $modelLabel = new \backend\models\AdminRight();
                     <h5 class="modal-title bootstrap-dialog-title">路由管理</h5>
                 </div>
                 <div class="modal-body">
-                    <?php $form = ActiveForm::begin(["id" => "admin-right-form", "class"=>"form-horizontal", "action"=>Url::toRoute('admin-right/save')]); ?> 
-                    
-                    <table class="table">
-                        <tr>
-                            <td> 
-                                <input type="text" ng-model="modal.id" class="form-control hide" id="id" name="id" />
-                                <input type="text" class="form-control hide" id="menu_id" name="AdminRight[menu_id]" value="<?=$menu_id?>" />           
-                                <label for="right_name" class="control-label">名称</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminRight[right_name]" placeholder="必填" />
-                            </td>
-                            <td> 
-                                <label for="display_order" class="control-label">显示顺序</label>
-                            </td>
-                            <td>
-                              <input type="text" class="form-control" ng-model="modal.display_order" id="display_order" name="AdminRight[display_order]" placeholder="" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                 <label for="des" class="control-label">描述</label>
-                            </td>
-                            <td colspan="3">
-                                <input type="text" class="form-control" ng-model="modal.des" id="des" name="AdminRight[des]" placeholder="" />
-                            </td>
-                        </tr>
+                   
+                    <form id="admin-right-form" role="form"  method="post" >        
+                        <table class="table">
+                            <tr>
+                                <td>        
+                                    <label for="right_name" class="control-label">名称</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminRight[right_name]" placeholder="必填" />
+                                </td>
+                                <td> 
+                                    <label for="display_order" class="control-label">显示顺序</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" ng-model="modal.display_order" id="display_order" name="AdminRight[display_order]" placeholder="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="des" class="control-label">描述</label>
+                                </td>
+                                <td colspan="3">
+                                    <input type="text" class="form-control" ng-model="modal.des" id="des" name="AdminRight[des]" placeholder="" />
+                                </td>
+                            </tr>
 
-                         <tr>
-                            <td>    
-                                <label for="controller" class="control-label">控制器</label>
-                            </td>
-                            <td colspan="3">
-                              <select class="form-control" ng-model="modal.controller" name="SystemFunction[controller]" id="controller">
-                                    <option>请选择</option>
-                                    <?php 
-                                    
-                                    foreach($controllerData as $key=>$data){
-                                        echo "<option value='" . $key . "'>". $key."</option>";
-                                    }
-                                    ?>
-                                </select>
-                            </td>
-                        </tr>
-                         <tr>
-                            <td> 
-                                <label for="actions" class="control-label">路由地址</label>
-                            </td>
-                            <td colspan="3">
-                                <div id="treeview"></div>
-                            </td>
-                        </tr>
-                        
-                    </table>
-
-                    <?php ActiveForm::end(); ?>          
+                            <tr>
+                                <td>    
+                                    <label for="controller" class="control-label">控制器</label>
+                                </td>
+                                <td colspan="3">
+                                <select class="form-control" ng-model="modal.controller" name="SystemFunction[controller]" id="controller">
+                                        <option>请选择</option>
+                                        <?php 
+                                        
+                                        foreach($controllerData as $key=>$data){
+                                            echo "<option value='" . $key . "'>". $key."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="actions" class="control-label">路由地址</label>
+                                </td>
+                                <td colspan="3">
+                                    <div id="treeview"></div>
+                                </td>
+                            </tr>
+                            
+                        </table>
+                    </form>          
                 </div>
                 <div class="modal-footer text-c">
                     <button  class="btn btn-default" data-dismiss="modal">关闭</button> 

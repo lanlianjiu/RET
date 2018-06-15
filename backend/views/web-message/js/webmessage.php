@@ -26,13 +26,21 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		};
 
 		$scope.saveAction = function() {
-			var id = $("#id").val();
-			var action = (id == "") ? "<?=Url::toRoute('web-message/create')?>" : "<?=Url::toRoute('web-message/update')?>";
-			$("#web-message-form").ajaxSubmit({
+			
+			var URL = ($scope.modal.id) ? "<?=Url::toRoute('web-message/update')?>" : "<?=Url::toRoute('web-message/create')?>";
+			$.ajax({
 				type: "post",
 				dataType:"json",
-				url: action,
-				data:{id:id},
+				url: URL,
+				data:{
+					id:$scope.modal.id,
+					'WebMessage[message_id]':$scope.modal.message_id,
+					'WebMessage[connet_name]':$scope.modal.connet_name,
+					'WebMessage[connet_phone]':$scope.modal.connet_phone,
+					'WebMessage[email]':$scope.modal.email,
+					'WebMessage[address]':$scope.modal.address,
+					'WebMessage[message_content]':$scope.modal.message_content
+				},
 				success: function(value) 
 				{
 					if(value.errno == 0){

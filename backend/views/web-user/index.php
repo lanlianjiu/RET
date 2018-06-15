@@ -75,37 +75,35 @@ $modelLabel = new \backend\models\WebUserModel();
                     <h5 class="modal-title bootstrap-dialog-title">会员管理</h5>
                 </div>
                 <div class="modal-body">
-                    <?php $form = ActiveForm::begin(["id" => "web-user-form", "class"=>"form-horizontal"]); ?> 
                    
-                    <table class="table">
-                        <tr>
-                            <td> 
-                                 <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="WebUserModel[id]" />
-                                <label for="username" class="control-label">用户名</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" ng-model="modal.username" id="username" name="WebUserModel[username]" placeholder="必填" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                <label for="email" class="control-label">邮箱</label>
-                            </td>
-                            <td>
-                               <input type="text" class="form-control" ng-model="modal.email" id="email" name="WebUserModel[email]" placeholder="必填" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                <label for="vip_1v" class="control-label">会员等级</label>
-                            </td>
-                            <td>
-                               <input type="text" class="form-control" ng-model="modal.vip_1v" id="vip_1v" name="WebUserModel[vip_1v]" placeholder="必填" />
-                            </td>
-                        </tr>
-                    </table>
-
-                    <?php ActiveForm::end(); ?>          
+                   <form id="web-user-form" role="form"  method="post"> 
+                        <table class="table">
+                            <tr>
+                                <td> 
+                                    <label for="username" class="control-label">用户名</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" ng-model="modal.username" id="username" name="WebUserModel[username]" placeholder="必填" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="email" class="control-label">邮箱</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" ng-model="modal.email" id="email" name="WebUserModel[email]" placeholder="必填" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="vip_1v" class="control-label">会员等级</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" ng-model="modal.vip_1v" id="vip_1v" name="WebUserModel[vip_1v]" placeholder="必填" />
+                                </td>
+                            </tr>
+                        </table>
+                    </form>          
                 </div>
                 <div class="modal-footer text-c">
                     <button  class="btn btn-default" data-dismiss="modal">关闭</button> 

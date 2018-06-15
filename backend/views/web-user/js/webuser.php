@@ -25,13 +25,18 @@ use yii\helpers\Url;
 		};
 
 		$scope.saveAction = function() {
-			var id = $("#id").val();
-			var action = (id == "") ? "<?=Url::toRoute('web-user/create')?>" : "<?=Url::toRoute('web-user/update')?>";
-			$("#web-user-form").ajaxSubmit({
+			
+			var URL = ($scope.modal.id) ? "<?=Url::toRoute('web-user/update')?>" : "<?=Url::toRoute('web-user/create')?>";
+			$.ajax({
 				type: "post",
 				dataType:"json",
-				url: action,
-				data:{id:id},
+				url: URL,
+				data:{
+					id:$scope.modal.id,
+					'WebUserModel[username]':$scope.modal.username,
+					'WebUserModel[email]':$scope.modal.email,
+					'WebUserModel[vip_1v]':$scope.modal.vip_1v
+				},
 				success: function(value) 
 				{
 					if(value.errno == 0){

@@ -62,82 +62,71 @@ $modelLabel = new \backend\models\AdminLog();
                     <h5 class="modal-title bootstrap-dialog-title">查看</h5>
                 </div>
                 <div class="modal-body">
-                    <?php $form = ActiveForm::begin(["id" => "admin-log-form", "class"=>"form-horizontal", "action"=>"index.php?r=admin-log/save"]); ?> 
-
-                    <table class="table">
-                        <tr>
-                            <td> 
-                               <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminLog[id]" />
-                               <label for="controller_id" class="control-label">控制器</label>
-                            </td>
-                            <td>
-                               <input type="text" class="form-control" id="controller_id" ng-model="modal.controller_id" name="AdminLog[controller_id]" placeholder="" />
-                            </td>
-                            <td> 
-                                <label for="action_id" class="control-label">方法</label>
-                            </td>
-                            <td>
-                               <input type="text" class="form-control" id="action_id" ng-model="modal.action_id" name="AdminLog[action_id]" placeholder="" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                  <label for="url" class="control-label">URL</label>
-                            </td>
-                            <td>
-                               <input type="text" class="form-control" ng-model="modal.url" id="url" name="AdminLog[url]" placeholder="" />
-                            </td>
-                            <td> 
-                                 <label for="module_name" class="control-label">模块</label>
-                            </td>
-                            <td>
-                               <input type="text" class="form-control" ng-model="modal.module_name" id="module_name" name="AdminLog[module_name]" placeholder="" />
-                            </td>
-                        </tr>
-                         <tr>
-                            <td> 
-                                 <label for="func_name" class="control-label">功能</label>
-                            </td>
-                            <td>
-                               <input type="text" class="form-control" ng-model="modal.func_name" id="func_name" name="AdminLog[func_name]" placeholder="" />
-                            </td>
-                             <td> 
-                                  <label for="right_name" class="control-label">方法名</label>
-                            </td>
-                            <td>
-                               <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminLog[right_name]" placeholder="" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                <label for="client_ip" class="control-label">客户端IP</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" ng-model="modal.client_ip" id="client_ip" name="AdminLog[client_ip]" placeholder="" />
-                            </td>
-                             <td> 
-                               <label for="create_user" class="control-label">创建人</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" ng-model="modal.create_user" id="create_user" name="AdminLog[create_user]" placeholder="" />
-                            </td>
-                        </tr>
-                         <tr>
-                            <td> 
-                                <label for="create_date" class="control-label">创建时间</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" ng-model="modal.create_date" id="create_date" name="AdminLog[create_date]" placeholder="" />
-                            </td>
-                        </tr>
-                    </table>  
-
                     
-                    <?php ActiveForm::end(); ?>          
+                    <form id="admin-log-form" role="form"  method="post"> 
+                        <table class="table">
+                            <tr>
+                                <td> 
+                                <label for="controller_id" class="control-label">控制器</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" id="controller_id" ng-model="modal.controller_id" name="AdminLog[controller_id]" placeholder="" />
+                                </td>
+                                <td> 
+                                    <label for="action_id" class="control-label">方法</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" id="action_id" ng-model="modal.action_id" name="AdminLog[action_id]" placeholder="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="url" class="control-label">URL</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" ng-model="modal.url" id="url" name="AdminLog[url]" placeholder="" />
+                                </td>
+                                <td> 
+                                    <label for="module_name" class="control-label">模块</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" ng-model="modal.module_name" id="module_name" name="AdminLog[module_name]" placeholder="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="func_name" class="control-label">功能</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" ng-model="modal.func_name" id="func_name" name="AdminLog[func_name]" placeholder="" />
+                                </td>
+                                <td> 
+                                    <label for="right_name" class="control-label">方法名</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" ng-model="modal.right_name" id="right_name" name="AdminLog[right_name]" placeholder="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="client_ip" class="control-label">客户端IP</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" ng-model="modal.client_ip" id="client_ip" name="AdminLog[client_ip]" placeholder="" />
+                                </td>
+                                <td> 
+                                
+                                </td>
+                                <td>
+                                
+                                </td>
+                            </tr>
+                        </table>
+                    </form>          
                 </div>
                 <div class="modal-footer text-c">
-                    <a href="#" class="btn btn-default" data-dismiss="modal">关闭</a> <a
-                        id="edit_dialog_ok" href="#" class="btn btn-primary">确定</a>
+                    <button  class="btn btn-default" data-dismiss="modal">关闭</button> 
+                    <!-- <button  id="edit_dialog_ok"  class="btn btn-primary">确定</button> -->
                 </div>
             </div>
         </div>

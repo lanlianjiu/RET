@@ -25,13 +25,20 @@ define('ROOT_PATH',dirname(dirname(dirname(dirname(__FILE__)))));
 		};
 
 		$scope.saveAction = function() {
-			var id = $("#id").val();
-			var action = (id == "") ? "<?=Url::toRoute('admin-user/create')?>" : "<?=Url::toRoute('admin-user/update')?>";
-			$("#admin-user-form").ajaxSubmit({
+			
+			var URL = ($scope.modal.id) ? "<?=Url::toRoute('admin-user/update')?>" : "<?=Url::toRoute('admin-user/create')?>";
+			
+			$.ajax({
 				type: "post",
 				dataType:"json",
-				url: action,
-				data:{id:id},
+				url: URL,
+				data:{
+					id:$scope.modal.id,
+					'AdminUser[head_img_url]':$('input[up-id="head_img_url"]').val(),
+					'AdminUser[uname]':$scope.modal.uname,
+					'AdminUser[password]':$scope.modal.password,
+					'AdminUser[status]':$scope.modal.status,
+				},
 				success: function(value) 
 				{
 					if(value.errno == 0){

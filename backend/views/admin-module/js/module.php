@@ -25,15 +25,14 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		};
 
 		$scope.saveModule = function() {
-			var id = $("#id").val();
 			
-		    var action = id == "" ? "<?=Url::toRoute('admin-module/create')?>" : "<?=Url::toRoute('admin-module/update')?>";
+		    var URL = ($scope.modal.id) ?  "<?=Url::toRoute('admin-module/update')?>": "<?=Url::toRoute('admin-module/create')?>";
 			$.ajax({
 				type: "post",
 				dataType:"json",
-				url: action,
+				url: URL,
 				data:{
-					id:id,
+					id:$scope.modal.id,
 					'AdminModule[id]':$scope.modal.id,
 					'AdminModule[code]':$scope.modal.code,
 					'AdminModule[display_label]':$scope.modal.display_label,

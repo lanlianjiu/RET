@@ -9,6 +9,8 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 	var app = angular.module("myApp", []);
 	app.controller("admin-menu-controller", function($scope) {
 
+		var moduleId = $.utils.getUrlParams('mid');
+
 		var tableId = $('#adminMenu-table');
 		var dialog_add_edit = $('#edit_dialog');
 		$scope.modal = {};
@@ -60,13 +62,25 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		};
 
 		$scope.saveMenu = function() {
-			var id = $("#id").val();
-			var action = id == "" ? "<?=Url::toRoute('admin-menu/create')?>" : "<?=Url::toRoute('admin-menu/update')?>";
-			$("#admin-menu-form").ajaxSubmit({
+			
+			var URL = ($scope.modal.id) ? "<?=Url::toRoute('admin-menu/update')?>" : "<?=Url::toRoute('admin-menu/create')?>";
+			
+			$.ajax({
 				type: "post",
 				dataType:"json",
-				url: action,
-				data:{id:id},
+				url: URL,
+				data:{
+					id:$scope.modal.id,
+					'AdminMenu[id]':$scope.modal.id,
+					'AdminMenu[module_id]':moduleId,
+					'AdminMenu[code]':$scope.modal.code,
+					'AdminMenu[menu_name]':$scope.modal.menu_name,
+					'AdminMenu[entry_url]':$scope.modal.entry_url,
+					'AdminMenu[display_order]':$scope.modal.display_order,
+					'AdminMenu[controller]':$scope.modal.controller,
+					'AdminMenu[action]':$scope.modal.action,
+					'AdminMenu[des]':$scope.modal.des
+				},
 				success: function(value) 
 				{
 					if(value.errno == 0){

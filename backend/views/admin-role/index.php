@@ -71,36 +71,35 @@ $modelLabel = new \backend\models\AdminRole();
                     <h5 class="modal-title bootstrap-dialog-title">添加</h5>
                 </div>
                 <div class="modal-body">
-                    <?php $form = ActiveForm::begin(["id" => "admin-role-form", "class"=>"form-horizontal", "action"=>Url::toRoute("admin-role/save")]); ?>  
-
-                     <table class="table">
-                        <tr>
-                            <td> 
-                                <input type="text" ng-model="modal.id" class="form-control hide" id="id" name="AdminRole[id]" />
-                                <label for="code" class="control-label">角色编号</label>
-                            </td>
-                            <td>
-                                <input type="text" ng-model="modal.code" class="form-control" id="code" name="AdminRole[code]" placeholder="必填" />
-                            </td>
-                            <td> 
-                                <label for="name" class="control-label">角色名称</label>
-                            </td>
-                            <td>
-                               <input type="text" ng-model="modal.name" class="form-control" id="name" name="AdminRole[name]" placeholder="必填" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                 <label for="des" class="control-label">描述</label>
-                            </td>
-                            <td colspan="3">
-                                <input type="text" class="form-control" ng-model="modal.des" id="des" name="AdminRole[des]" placeholder="" />
-                            </td>
-                        </tr>
+                     
+                     <form id="admin-role-form" role="form"  method="post" > 
+                        <table class="table">
+                            <tr>
+                                <td> 
+                                    <label for="code" class="control-label">角色编号</label>
+                                </td>
+                                <td>
+                                    <input type="text" ng-model="modal.code" class="form-control" id="code" name="AdminRole[code]" placeholder="必填" />
+                                </td>
+                                <td> 
+                                    <label for="name" class="control-label">角色名称</label>
+                                </td>
+                                <td>
+                                <input type="text" ng-model="modal.name" class="form-control" id="name" name="AdminRole[name]" placeholder="必填" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="des" class="control-label">描述</label>
+                                </td>
+                                <td colspan="3">
+                                    <input type="text" class="form-control" ng-model="modal.des" id="des" name="AdminRole[des]" placeholder="" />
+                                </td>
+                            </tr>
                         
-                    </table>
+                        </table>
 
-                    <?php ActiveForm::end(); ?>          
+                    </form>        
                 </div>
                 <div class="modal-footer text-c">
                     <button  class="btn btn-default" data-dismiss="modal">关闭</button> 
@@ -120,9 +119,9 @@ $modelLabel = new \backend\models\AdminRole();
                 </div>
                 <div class="modal-body" style="height:450px;">
                     <input type="text" class="hide" id="select_role_id" />
-                    <?php $form = ActiveForm::begin(["id" => "system-role-form", "class"=>"form-horizontal", "action"=>Url::toRoute("system-role/save")]); ?>  
+                    <form id="system-role-form" role="form"  method="post" >
                         <div id="treeview"></div>
-                    <?php ActiveForm::end(); ?>            
+                    </form>            
                 </div>
                 <div class="modal-footer text-c">
                     <button  class="btn btn-default" data-dismiss="modal">关闭</button> 

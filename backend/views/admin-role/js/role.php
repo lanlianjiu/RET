@@ -27,13 +27,19 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		};
 
 		$scope.saveAction = function() {
-			var id = $("#id").val();
-			var action = id == "" ? "<?=Url::toRoute('admin-role/create')?>" : "<?=Url::toRoute('admin-role/update')?>";
-			$("#admin-role-form").ajaxSubmit({
+			
+			var URL = ($scope.modal.id) ? "<?=Url::toRoute('admin-role/update')?>" : "<?=Url::toRoute('admin-role/create')?>";
+
+			$.ajax({
 				type: "post",
 				dataType:"json",
-				url: action,
-				data:{id:id},
+				url: URL,
+				data:{
+					id:$scope.modal.id,
+					'AdminRole[code]':$scope.modal.code,
+					'AdminRole[name]':$scope.modal.name,
+					'AdminRole[des]':$scope.modal.des
+				},
 				success: function(value) 
 				{
 					if(value.errno == 0){
@@ -112,7 +118,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 
 		$scope.right_action = function(roleId) {
 
-			$('#select_role_id').val(roleId);
+			$scope.select_role_id = roleId;
 			
 			$.ajax({
 				type: "GET",
@@ -147,7 +153,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 
 		$scope.saveRight = function() {
 			
-			var role_id = $('#select_role_id').val();
+			var role_id = $scope.select_role_id;
 			var checkNodes = treeview_dialog.treeview('getChecked');
 
 			if(checkNodes.length > 0){
@@ -172,8 +178,10 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 					success: function(data){
 						if(data.errno == 0){
 							$('#tree_dialog').modal('hide');
+							$.dialog.Success('操作成功！');
 						}else{
 							
+							$.dialog.warn('操作失败！');
 						}
 						
 					}

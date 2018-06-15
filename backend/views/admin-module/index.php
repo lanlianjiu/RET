@@ -79,47 +79,48 @@ $modelLabel = new \backend\models\AdminModule();
                     <h5 class="modal-title bootstrap-dialog-title">主菜单管理</h5>
                 </div>
                 <div class="modal-body">
-                    <?php $form = ActiveForm::begin(["id" => "admin-module-form", "class" => "form-horizontal", "action" => "index.php?r=admin-module/save"]);?>
-                    <table class="table">
-                        <tr>
-                            <td> 
-                                <input type="text" class="form-control hide" ng-model="modal.id" id="id" name="AdminModule[id]" />
-                                <label for="code" class="control-label">编码</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" ng-model="modal.code" id="code" name="AdminModule[code]" placeholder="必填" />
-                            </td>
-                            <td> 
-                                <label for="code" class="control-label">显示名称</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" id="display_label" ng-model="modal.display_label" name="AdminModule[display_label]" placeholder="必填" />
-                            </td>
-                        </tr>
-                        <tr>
-                            <td> 
-                                <label for="code" class="control-label">图标</label>
-                            </td>
-                            <td>
-                                <input type="text" class="form-control" id="meun_icon"  ng-model="modal.meun_icon" name="AdminModule[meun_icon]" placeholder="必填" />
-                            </td>
-                            <td> 
-                                <label for="code" class="control-label">顺序</label>
-                            </td>
-                            <td>
-                               <input type="text" class="form-control" id="display_order" ng-model="modal.display_order" name="AdminModule[display_order]" placeholder="" />
-                            </td>
-                        </tr>
-                         <tr>
-                            <td> 
-                                <label for="code" class="control-label">描述</label>
-                            </td>
-                            <td colspan="3">
-                               <textarea type="text" class="form-control" id="des" ng-model="modal.des" name="AdminModule[des]" placeholder="" ></textarea>
-                            </td>
-                        </tr>
-                    </table>
-                    <?php ActiveForm::end();?>
+                    <form id="admin-module-form" role="form"  method="post" >                    
+        
+                        <table class="table">
+                            <tr>
+                                <td> 
+                                    <label for="code" class="control-label">编码</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" ng-model="modal.code" id="code" name="AdminModule[code]" placeholder="必填" />
+                                </td>
+                                <td> 
+                                    <label for="code" class="control-label">显示名称</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="display_label" ng-model="modal.display_label" name="AdminModule[display_label]" placeholder="必填" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="code" class="control-label">图标</label>
+                                </td>
+                                <td>
+                                    <input type="text" class="form-control" id="meun_icon"  ng-model="modal.meun_icon" name="AdminModule[meun_icon]" placeholder="必填" />
+                                </td>
+                                <td> 
+                                    <label for="code" class="control-label">顺序</label>
+                                </td>
+                                <td>
+                                <input type="text" class="form-control" id="display_order" ng-model="modal.display_order" name="AdminModule[display_order]" placeholder="" />
+                                </td>
+                            </tr>
+                            <tr>
+                                <td> 
+                                    <label for="code" class="control-label">描述</label>
+                                </td>
+                                <td colspan="3">
+                                <textarea type="text" class="form-control" id="des" ng-model="modal.des" name="AdminModule[des]" placeholder="" ></textarea>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </form>
                 </div>
                 <div class="modal-footer text-c">
                     <button  class="btn btn-default" data-dismiss="modal">关闭</button>
@@ -128,6 +129,7 @@ $modelLabel = new \backend\models\AdminModule();
             </div>
         </div>
     </div>
+
 </div>
 
 <?php $this->beginBlock('footer');?>

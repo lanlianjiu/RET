@@ -64,13 +64,19 @@ use yii\helpers\Url;
 		};
 
 		$scope.saveAction = function() {
-			var id = $("#web_nav_id").val();
-			var action = (id == "") ? "<?=Url::toRoute('web-nav/create')?>" : "<?=Url::toRoute('web-nav/update')?>";
-			$("#web-nav-form").ajaxSubmit({
+			
+			var URL = ($scope.modal.web_nav_id) ? "<?=Url::toRoute('web-nav/update')?>" : "<?=Url::toRoute('web-nav/create')?>";
+			$.ajax({
 				type: "post",
 				dataType:"json",
-				url: action,
-				data:{web_nav_id:id},
+				url: URL,
+				data:{
+					 web_nav_id:$scope.modal.web_nav_id,
+					'WebNavModel[web_navType_id]':$scope.modal.web_navType_id,
+					'WebNavModel[web_nav_name]':$scope.modal.web_nav_name,
+					'WebNavModel[controller]':$scope.modal.controller,
+					'WebNavModel[url]':$scope.modal.url
+				},
 				success: function(value) 
 				{
 					if(value.errno == 0){

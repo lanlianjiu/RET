@@ -9,6 +9,8 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 var app = angular.module("myApp", []);
 app.controller("admin-right-controller", function($scope) {
 
+	var menuId = $.utils.getUrlParams('id');
+
 	$scope.modal = {};
 	var tableId = $('#adminRight-table');
 	var dialog_add_edit = $('#edit_dialog');
@@ -108,12 +110,10 @@ app.controller("admin-right-controller", function($scope) {
 
 		$scope.modal = {};
 
-		var menu_id = $("#menu_id").val();
-
 		$.ajax({
 			type: "GET",
 			url: "<?=Url::toRoute('admin-right/right-action')?>",
-			data: {'rightId':0, 'menu_id':menu_id},
+			data: {'rightId':0, 'menu_id':menuId},
 			cache: false,
 			dataType:"json",
 			error: function (xmlHttpRequest, textStatus, errorThrown) {
@@ -164,14 +164,20 @@ app.controller("admin-right-controller", function($scope) {
 			}
 		};
 
-		var id = $("#id").val();
-		var action = (id == "") ? "<?=Url::toRoute('admin-right/create')?>" : "<?=Url::toRoute('admin-right/update')?>";
-		$("#admin-right-form").ajaxSubmit({
+		var action = ($scope.modal.id) ? "<?=Url::toRoute('admin-right/update')?>" : "<?=Url::toRoute('admin-right/create')?>";
+		$.ajax({
 			type: "post",
 			dataType:"json",
 			url: action,
-			data:{id:id},
-    	    data: {"rightUrls":rightUrls},
+			data:{
+				id:$scope.modal.id,
+				'AdminRight[menu_id]':menuId,
+				'AdminRight[right_name]':$scope.modal.right_name,
+				'AdminRight[display_order]':$scope.modal.display_order,
+				'AdminRight[des]':$scope.modal.des,
+				'SystemFunction[controller]':$scope.modal.controller,
+				"rightUrls":rightUrls
+			},
 			success: function(value) 
 			{
 				if(value.errno == 0){
