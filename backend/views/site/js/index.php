@@ -116,5 +116,6 @@ use yii\helpers\Url;
 
     barChartOptions.datasetFill = false;
     barChart.Bar(barChartData, barChartOptions);
+    
   });
 </script>
