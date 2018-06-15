@@ -46,7 +46,7 @@ use yii\helpers\Url;
 								tableId.bootstrapTable('refresh');
 							});
 					}else{
-						$.dialog.Warn(value);
+						$.dialog.Warn(value.msg);
 					}
 				}
 			});

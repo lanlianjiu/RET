@@ -187,7 +187,7 @@ app.controller("admin-right-controller", function($scope) {
 							tableId.bootstrapTable('refresh');
 						});
 				}else{
-					$.dialog.Warn(value);
+					$.dialog.Warn(value.msg);
 				}
 			}
 		});

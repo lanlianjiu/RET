@@ -50,7 +50,7 @@ define('ROOT_PATH',dirname(dirname(dirname(dirname(__FILE__)))));
 						});
 						
 					}else{
-						$.dialog.Warn(value);
+						$.dialog.Warn(value.msg);
 					}
 				}
 			});

@@ -50,7 +50,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 								tableId.bootstrapTable('refresh');
 							});
 					}else{
-						$.dialog.Warn(value);
+						$.dialog.Warn(value.msg);
 					}
 				}
 			});
