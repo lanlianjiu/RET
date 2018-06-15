@@ -36,8 +36,8 @@ $form = ActiveForm::begin(["id" => "admin-user-form"]);//定义form表单，调�
                 <div class="box">
                     <div class="box-body">
                         <div class="input-group input-group-sm action-toolbar">
-                            <button id="create_btn" type="button" ng-click="addAction()" class="btn btn-sm btn-primary"><i class="fa fa-plus"></i> 添加</button>
-                            <button id="delete_btn" type="button" ng-click="del_action()" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> 批量删除</button>
+                            <button id="create_btn" type="button" ng-click="addAction()" class="btn btn-sm btn-outline btn-primary"><i class="fa fa-plus"></i> 添加</button>
+                            <button id="delete_btn" type="button" ng-click="del_action()" class="btn btn-sm btn-danger-outline"><i class="fa fa-trash"></i> 批量删除</button>
                         </div>
                         <table id="adminUser-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="137" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"

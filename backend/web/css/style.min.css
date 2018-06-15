@@ -101,6 +101,18 @@ a:focus {
     border-radius: 0px;
 }
 
+.btn-danger-outline {
+    background-color: #FFF;
+    color: #dd4b39;
+    border: 1px solid #dd4b39;
+}
+
+.btn-danger-outline:hover {
+    background-color: #dd4b39;
+    color: #FFF;
+    border: 1px solid #FFF;
+}
+
 /*  */
 
 .modal {

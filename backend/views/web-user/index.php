@@ -41,7 +41,7 @@ $modelLabel = new \backend\models\WebUserModel();
                     <div class="box-body">
                         <div class="input-group input-group-sm action-toolbar">
                             <div class="from-gruop">
-                                <button id="delete_btn" ng-click="del_action()" type="button" class="btn btn-sm btn-danger"><i class="fa fa-trash"></i> 批量删除</button>
+                                <button id="delete_btn" ng-click="del_action()" type="button" class="btn btn-sm btn-danger-outline"><i class="fa fa-trash"></i> 批量删除</button>
                             </div>
                         </div>
                         <table id="webuser-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="137" data-show-export="true"
