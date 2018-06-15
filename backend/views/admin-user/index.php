@@ -10,8 +10,9 @@ $form = ActiveForm::begin(["id" => "admin-user-form"]);//定义form表单，调�
 ?>
 
 <?php $this->beginBlock('header');  ?>
-<!-- <head></head>中代码块 -->
+    <!-- <head></head>中代码块 -->
 <?php $this->endBlock(); ?>
+
 <div  data-content-box="body" ng-app="myApp" ng-controller="admin-user-controller">
 
     <section class="content">
@@ -120,6 +121,6 @@ $form = ActiveForm::begin(["id" => "admin-user-form"]);//定义form表单，调�
 </div>
 
 <?php $this->beginBlock('footer');  ?>
-<!-- <body></body>后代码块 -->
-<?php include '/js/user.php';?>
+    <!-- <body></body>后代码块 -->
+    <?php include '/js/user.php';?>
 <?php $this->endBlock(); ?>
