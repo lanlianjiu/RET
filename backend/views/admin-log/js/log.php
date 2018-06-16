@@ -18,6 +18,7 @@ use yii\helpers\Url;
 		};
 
 		$scope.edit_action = function(id) {
+
 			var tableData = tableId.bootstrapTable('getRowByUniqueId', id);
 			$scope.modal = tableData;
 			$scope.$apply();
@@ -100,6 +101,7 @@ use yii\helpers\Url;
 				}
 			});
 		};
+		
 	});
 
 	function  operateFormatter(value, row, index) {

@@ -31,11 +31,11 @@ $modelLabel = new \backend\models\AdminLog();
                     <div class="box-body">
                         <table id="adminLog-table" data-toggle="table" data-show-columns="true" data-autoheight="137" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                            data-id-field="id" data-unique-id="id" data-custom-url="index.php?r=admin-log/table" class="table table-hover th-table">
+                            data-id-field="id" data-unique-id="id" data-hide-column="id" data-custom-url="index.php?r=admin-log/table" class="table table-hover th-table">
                             <thead>
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>
-                                    <th data-sortable="true" data-field="id" width="80">ID</th>
+                                    <th data-sortable="true" data-field="id" data-hidden="true" width="80">ID</th>
                                     <th data-sortable="true" data-field="controller_id" width="120">控制器ID</th>
                                     <th data-sortable="true" data-field="action_id" width="80">方法ID</th>
                                     <th data-sortable="true" data-field="url" width="80">访问地址</th>

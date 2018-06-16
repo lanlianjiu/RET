@@ -419,4 +419,10 @@ function ($) {
 })(jQuery);
 /**
  * adaptionHeight end
- */
+ */+
+    /**bootstrap-table 初始化**/
+    function ($) {
+
+        
+    
+    }(jQuery);

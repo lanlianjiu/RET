@@ -31,6 +31,7 @@ $('[data-toggle="table"]').each(function () {
 	var tableId = $("#" + $this.attr("id"));
 	var tableUrl = $this.attr("data-custom-url");
 	var exportType = $this.attr("data-export-type") || "all";
+	var tableHidelist = $this.attr("data-hide-column");
 	var autoHeight = $.utils.windowHeight() - tableId.offset().top - (Number(tableId.attr('data-autoheight')));
 
 	var option = {
@@ -40,6 +41,8 @@ $('[data-toggle="table"]').each(function () {
 		pageSize: 50,
 		queryParams:getParams
 	};
+	
+	
 	var postParams = <?php echo json_encode($severUrlparam); ?>;
 
 	//获取参数
@@ -59,6 +62,18 @@ $('[data-toggle="table"]').each(function () {
 		tableId.bootstrapTable('resetView');
 	});
 
+	// 隐藏指定列处理
+	$(document).on("load-success.bs.table", tableId, function () {
+		
+		if(tableHidelist){
+			var arraycolumn = tableHidelist.split(',');
+			for(var i in arraycolumn){
+				var key = $.trim(arraycolumn[i]);
+				tableId . bootstrapTable('hideColumn', key);
+			};
+		};
+    });
+    
 	//导出
 	function DoOnCellHtmlData(cell, row, col, data) {
 		var result = "";
