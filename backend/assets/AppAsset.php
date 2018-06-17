@@ -34,6 +34,7 @@ class AppAsset extends AssetBundle
         '/SHP/backend/web/plugins/datatables/dataTables.bootstrap.css',
         '/SHP/backend/web/plugins/bootstrap-table/css/bootstrap-table.min.css',
         '/SHP/backend/web/plugins/bootstrap-dialog/bootstrap-dialog.min.css',
+        '/SHP/backend/web/plugins/zTree/zTreeStyle/zTreeStyle.css',
         '/SHP/backend/web/css/style.min.css',
     ];
     public $js = [
@@ -67,6 +68,7 @@ class AppAsset extends AssetBundle
         '/SHP/backend/web/plugins/angular/1.6.1/angular.js',
         '/SHP/backend/web/plugins/html5Validate/jquery-html5Validate-min.js',
         '/SHP/backend/web/plugins/zTree/jquery.ztree.all-3.5.min.js',
+        '/SHP/backend/web/plugins/zTree/jquery.ztree.core.min.js',
 
         '/SHP/backend/web/js/iov-min.js'
     ];

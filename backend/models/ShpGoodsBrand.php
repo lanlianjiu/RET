@@ -33,7 +33,7 @@ class ShpGoodsBrand  extends \backend\models\BaseModel
         return [
             [['brand_name', 'is_used'], 'required'],
             [['is_used'], 'integer'],
-            [['brand_name', 'brand_icon'], 'string', 'max' => 20],
+            [['brand_name', 'brand_icon'], 'string', 'max' => 255],
         ];
     }
 
@@ -45,7 +45,7 @@ class ShpGoodsBrand  extends \backend\models\BaseModel
         return [
             'brand_id' => 'Brand ID',
             'brand_name' => 'Brand Name',
-            'brand_icon' => 'Brand Icon',
+            'brand_icon' => '',
             'is_used' => 'Is Used',
         ];
     }

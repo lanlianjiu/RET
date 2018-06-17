@@ -113,6 +113,18 @@ a:focus {
     border: 1px solid #FFF;
 }
 
+.ztree li span.button.add {
+    margin-left: 5px;
+    margin-right: 5px;
+    background-position: -144px 0;
+    vertical-align: top;
+    *vertical-align: middle
+}
+
+.ztree li span.button.edit {
+    margin-right: 7px !important;
+}
+
 /*  */
 
 .modal {
