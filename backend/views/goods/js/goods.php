@@ -7,9 +7,9 @@ use yii\helpers\Url;
 <script>
 
 	var app = angular.module("myApp", []);
-	app.controller("web-goodsbrand-controller", function($scope) {
+	app.controller("ShpGoods-controller", function($scope) {
 
-		var tableId = $('#goodsbrand-table');
+		var tableId = $('#goods-table');
 		var dialog_add_edit = $('#edit_dialog');
         $scope.modal = {};
             
@@ -30,17 +30,17 @@ use yii\helpers\Url;
 
 		$scope.saveAction = function() {
 			
-			var URL = ($scope.modal.brand_id) ? "<?=Url::toRoute('goods-brand/update')?>" : "<?=Url::toRoute('goods-brand/create')?>";
+			var URL = ($scope.modal.goods_id) ? "<?=Url::toRoute('goods/update')?>" : "<?=Url::toRoute('goods/create')?>";
 			$.ajax({
 				type: "post",
 				dataType:"json",
 				url: URL,
 				data:{
-                    brand_id:$scope.modal.brand_id,
-                    'ShpGoodsBrand[brand_icon]':$('input[up-id="brand_icon"]').val(),
-					'ShpGoodsBrand[brand_name]':$scope.modal.brand_name,
-					'ShpGoodsBrand[web_nav_name]':$scope.modal.web_nav_name,
-					'ShpGoodsBrand[is_used]':$scope.modal.is_used
+                    goods_id:$scope.modal.goods_id,
+                    'ShpGoods[brand_icon]':$('input[up-id="brand_icon"]').val(),
+					'ShpGoods[brand_name]':$scope.modal.brand_name,
+					'ShpGoods[web_nav_name]':$scope.modal.web_nav_name,
+					'ShpGoods[is_used]':$scope.modal.is_used
 				},
 				success: function(value) 
 				{
@@ -61,7 +61,7 @@ use yii\helpers\Url;
 			
 			var arrayId = [];
 			for (var i in data) {
-				arrayId.push(data[i].brand_id);
+				arrayId.push(data[i].goods_id);
 			}
 			return arrayId;
 		};
@@ -84,7 +84,7 @@ use yii\helpers\Url;
 				if(result){
 					$.ajax({
 						type: "GET",
-						url: "<?=Url::toRoute('goods-brand/delete')?>",
+						url: "<?=Url::toRoute('goods/delete')?>",
 						data: {"ids":ids},
 						cache: false,
 						dataType:"json",
@@ -105,16 +105,10 @@ use yii\helpers\Url;
 
 	function  operateFormatter(value, row, index) {
 		var h = "";
-			h +='<a id="edit_btn" onclick="editAction(' +row.brand_id +')" class="action-a-btn" > <i class="fa fa-edit icon-white"></i></a>';
-			h +='<a id="delete_btn" onclick="deleteAction('+row.brand_id +')" class="action-a-btn" > <i class="fa fa-trash icon-white"></i></a>';
+			h +='<a id="edit_btn" onclick="editAction(' +row.goods_id +')" class="action-a-btn" > <i class="fa fa-edit icon-white"></i></a>';
+			h +='<a id="delete_btn" onclick="deleteAction('+row.goods_id +')" class="action-a-btn" > <i class="fa fa-trash icon-white"></i></a>';
 		return h;
     };
-    
-    function  logoFormatter(value, row, index) {
-		var h = "";
-			h +='<img style="height:50px;width:50px;" src="'+row.brand_icon+'" />';
-		return h;
-	};
 
 	function editAction(id) {
 		var $scope = angular.element('[data-content-box="body"]').scope();
