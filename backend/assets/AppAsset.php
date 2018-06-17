@@ -66,6 +66,7 @@ class AppAsset extends AssetBundle
         '/SHP/backend/web/statics/dist/js/app.min.js',
         '/SHP/backend/web/plugins/angular/1.6.1/angular.js',
         '/SHP/backend/web/plugins/html5Validate/jquery-html5Validate-min.js',
+        '/SHP/backend/web/plugins/zTree/jquery.ztree.all-3.5.min.js',
 
         '/SHP/backend/web/js/iov-min.js'
     ];
