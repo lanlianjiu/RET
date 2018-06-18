@@ -26,7 +26,7 @@ $modelLabel = new \backend\models\ShpGoodsCategory();
                             </span>
                         </h4>
                     </div>
-                    <div class="panel-body" data-adaptionHeight="25">
+                    <div class="panel-body" data-adaptionHeight="36">
                         <ul id="category-tree" class="ztree"></ul>
                     </div>
                 </div>
