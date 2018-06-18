@@ -37,7 +37,7 @@ class ShpGoods  extends \backend\models\BaseModel
     public function rules()
     {
         return [
-            [['brand_id', 'goods_name', 'is_used', 'goods_color_id', 'category_id'], 'required'],
+            [['brand_id', 'goods_name', 'is_used', 'category_id'], 'required'],
             [['brand_id', 'is_used', 'goods_color_id', 'category_id'], 'integer'],
             [['goods_price'], 'number'],
             [['goods_name'], 'string', 'max' => 64],

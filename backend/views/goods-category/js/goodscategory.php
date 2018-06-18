@@ -111,6 +111,12 @@ use yii\helpers\Url;
         };
 
         function selectCategory(event, treeId, treeNode) {
+            console.log(treeNode);
+        $('#categoryToBrand-table').bootstrapTable('refresh', {
+            query: {
+                category_id:treeNode.Id
+            }
+        });
 
             $scope.categoryPId = treeNode.Id;
 

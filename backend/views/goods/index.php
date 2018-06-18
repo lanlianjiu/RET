@@ -50,16 +50,19 @@ $form = ActiveForm::begin(["id" => "goods-form"]);//定义form表单，调用组
                         </div>
                         <table id="goods-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="137" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                            data-id-field="goods_id" data-unique-id="goods_id"  data-custom-url="index.php?r=goods/table" class="table  table-hover th-table">
+                            data-id-field="goods_id" data-unique-id="goods_id" data-hide-column="category_id,brand_id,is_used"  data-custom-url="index.php?r=goods/table" class="table  table-hover th-table">
                             <thead>
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>
                                     <th data-sortable="true" data-field="goods_id" width="80">ID</th>
                                     <th data-sortable="true" data-field="goods_name" width="120">商品名称</th>
                                     <th data-sortable="true" data-field="goods_price" width="80">商品价格</th>
-                                    <th data-sortable="true" data-field="category_id" width="80">商品类别</th>
-                                    <th data-sortable="true" data-field="brand_id" width="80">商品品牌</th>
-                                    <th data-sortable="true" data-field="is_used" width="80">是否启用</th>
+                                    <th data-sortable="true" data-field="category_id" width="80">商品类别ID</th>
+                                    <th data-sortable="true" data-field="brand_id" width="80">商品品牌ID</th>
+                                    <th data-sortable="true" data-field="is_used" width="80">是否启用ID</th>
+                                    <th data-sortable="true" data-field="categoryName" width="80">商品类别</th>
+                                    <th data-sortable="true" data-field="brandName" width="80">商品品牌</th>
+                                    <th data-sortable="true" data-field="isUsedname" width="80">是否启用</th>
                                     <th data-formatter="operateFormatter" width="120">操作</th>
                                 </tr>
                             </thead>
@@ -90,8 +93,6 @@ $form = ActiveForm::begin(["id" => "goods-form"]);//定义form表单，调用组
                                 <td>
                                    <input type="text" ng-model="modal.goods_name" class="form-control" id="code" name="ShpGoods[goods_name]" placeholder="必填" />
                                 </td>
-                            </tr>
-                            <tr>
                                 <td align="right"> 
                                     <label for="goods_price" class="control-label">商品价格</label>
                                 </td>
@@ -104,15 +105,15 @@ $form = ActiveForm::begin(["id" => "goods-form"]);//定义form表单，调用组
                                     <label for="category_id" class="control-label">商品分类</label>
                                 </td>
                                 <td>
-                                   <input type="text" ng-model="modal.category_id" class="form-control" id="code" name="ShpGoods[category_id]" placeholder="必填" />
+                                   <!-- <input type="text" ng-model="modal.category_id" class="form-control" id="code" name="ShpGoods[category_id]" placeholder="必填" /> -->
+                                   <select id="sel_menu" style="width:100%" class="form-control" ng-model="modal.category_id" name="ShpGoods[category_id]"></select>
                                 </td>
-                            </tr>
-                            <tr>
                                 <td align="right"> 
                                     <label for="brand_id" class="control-label">商品品牌</label>
                                 </td>
                                 <td>
-                                   <input type="text" ng-model="modal.brand_id" class="form-control" id="code" name="ShpGoods[brand_id]" placeholder="必填" />
+                                   <!-- <input type="text" ng-model="modal.brand_id" class="form-control" id="code" name="ShpGoods[brand_id]" placeholder="必填" /> -->
+                                    <select id="sel_brand" style="width:100%" class="form-control" ng-model="modal.brand_id" name="ShpGoods[brand_id]"></select>
                                 </td>
                             </tr>
                             <tr>

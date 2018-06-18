@@ -45,22 +45,14 @@ $modelLabel = new \backend\models\ShpGoodsCategory();
                 </div>
                 <div class="box-header search-box">
                     <div class="box-body">
-                        <table id="adminLog-table" data-toggle="table" data-show-columns="true" data-autoheight="137" data-show-export="true"
+                        <table id="categoryToBrand-table" data-toggle="table" data-show-columns="true" data-autoheight="137" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                            data-id-field="id" data-unique-id="id" data-hide-column="id" data-custom-url="index.php?r=admin-log/table" class="table table-hover th-table">
+                            data-id-field="id" data-unique-id="id"  data-custom-url="index.php?r=goods-category/category-to-brand" class="table table-hover th-table">
                             <thead>
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>
                                     <th data-sortable="true" data-field="id" data-hidden="true" width="80">ID</th>
-                                    <th data-sortable="true" data-field="controller_id" width="120">控制器ID</th>
-                                    <th data-sortable="true" data-field="action_id" width="80">方法ID</th>
-                                    <th data-sortable="true" data-field="url" width="80">访问地址</th>
-                                    <th data-sortable="true" data-field="module_name" width="80">模块</th>
-                                    <th data-sortable="true" data-field="func_name" width="120">功能</th>
-                                    <th data-sortable="true" data-field="right_name" width="120">方法</th>
-                                    <th data-sortable="true" data-field="client_ip" width="120">客户端IP</th>
-                                    <th data-sortable="true" data-field="create_user" width="120">用户</th>
-                                    <th data-sortable="true" data-field="create_date" width="120">时间</th>
+                                    <th data-sortable="true" data-field="brandName" width="80">品牌名称</th>
                                     <th data-formatter="operateFormatter" width="120">操作</th>
                                 </tr>
                             </thead>

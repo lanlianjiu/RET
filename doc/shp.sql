@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50505
 File Encoding         : 65001
 
-Date: 2018-06-17 16:27:47
+Date: 2018-06-18 15:10:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -34,111 +34,11 @@ CREATE TABLE `admin_log` (
   KEY `index_create_date` (`create_date`),
   KEY `index_create_index` (`create_user`),
   KEY `index_url` (`url`)
-) ENGINE=InnoDB AUTO_INCREMENT=4418 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4880 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_log
 -- ----------------------------
-INSERT INTO `admin_log` VALUES ('2', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'admin', '2018-05-09 12:24:08');
-INSERT INTO `admin_log` VALUES ('3', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'admin', '2018-05-09 12:25:00');
-INSERT INTO `admin_log` VALUES ('4', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'admin', '2018-05-09 12:25:02');
-INSERT INTO `admin_log` VALUES ('5', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'admin', '2018-05-09 12:25:46');
-INSERT INTO `admin_log` VALUES ('6', 'admin-user-role', 'index', 'admin-user-role/index', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'admin', '2018-05-09 12:25:49');
-INSERT INTO `admin_log` VALUES ('7', 'admin-user-role', 'view', 'admin-user-role/view', '菜单用户权限', '角色管理', '分配用户', 'Unknown', 'admin', '2018-05-09 12:25:59');
-INSERT INTO `admin_log` VALUES ('8', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'admin', '2018-05-09 12:26:20');
-INSERT INTO `admin_log` VALUES ('9', 'admin-user', 'view', 'admin-user/view', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'admin', '2018-05-09 12:26:23');
-INSERT INTO `admin_log` VALUES ('10', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-09 12:27:22');
-INSERT INTO `admin_log` VALUES ('11', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-09 12:27:23');
-INSERT INTO `admin_log` VALUES ('12', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', 'Unknown', 'admin', '2018-05-09 12:27:31');
-INSERT INTO `admin_log` VALUES ('13', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 12:40:02');
-INSERT INTO `admin_log` VALUES ('14', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-09 12:40:10');
-INSERT INTO `admin_log` VALUES ('15', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-09 12:40:14');
-INSERT INTO `admin_log` VALUES ('16', 'admin-right', 'right-action', 'admin-right/right-action', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-09 12:40:24');
-INSERT INTO `admin_log` VALUES ('17', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-09 12:40:43');
-INSERT INTO `admin_log` VALUES ('18', 'admin-right', 'right-action', 'admin-right/right-action', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-09 12:54:49');
-INSERT INTO `admin_log` VALUES ('19', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-09 12:55:17');
-INSERT INTO `admin_log` VALUES ('20', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-09 12:55:37');
-INSERT INTO `admin_log` VALUES ('21', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 12:59:13');
-INSERT INTO `admin_log` VALUES ('22', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 12:59:35');
-INSERT INTO `admin_log` VALUES ('23', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 13:00:19');
-INSERT INTO `admin_log` VALUES ('24', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 13:00:24');
-INSERT INTO `admin_log` VALUES ('25', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 13:00:48');
-INSERT INTO `admin_log` VALUES ('26', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-09 13:00:59');
-INSERT INTO `admin_log` VALUES ('27', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 13:22:02');
-INSERT INTO `admin_log` VALUES ('28', 'admin-module', 'create', 'admin-module/create', '菜单用户权限', '菜单管理', '一级菜单添加', 'Unknown', 'test', '2018-05-09 13:23:52');
-INSERT INTO `admin_log` VALUES ('29', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 13:23:53');
-INSERT INTO `admin_log` VALUES ('30', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-09 13:24:01');
-INSERT INTO `admin_log` VALUES ('31', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 13:25:05');
-INSERT INTO `admin_log` VALUES ('32', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-09 13:25:15');
-INSERT INTO `admin_log` VALUES ('33', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 13:25:21');
-INSERT INTO `admin_log` VALUES ('34', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-09 13:25:23');
-INSERT INTO `admin_log` VALUES ('35', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-09 13:25:26');
-INSERT INTO `admin_log` VALUES ('36', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 13:25:38');
-INSERT INTO `admin_log` VALUES ('37', 'admin-module', 'view', 'admin-module/view', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 13:25:45');
-INSERT INTO `admin_log` VALUES ('38', 'admin-module', 'view', 'admin-module/view', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 13:25:49');
-INSERT INTO `admin_log` VALUES ('39', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-09 13:25:56');
-INSERT INTO `admin_log` VALUES ('40', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 13:26:16');
-INSERT INTO `admin_log` VALUES ('41', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 13:26:25');
-INSERT INTO `admin_log` VALUES ('42', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-09 13:26:37');
-INSERT INTO `admin_log` VALUES ('43', 'admin-menu', 'create', 'admin-menu/create', '菜单用户权限', '菜单管理', '二级菜单添加', 'Unknown', 'test', '2018-05-09 13:27:17');
-INSERT INTO `admin_log` VALUES ('44', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-09 13:27:17');
-INSERT INTO `admin_log` VALUES ('45', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-09 13:27:44');
-INSERT INTO `admin_log` VALUES ('46', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-09 13:27:49');
-INSERT INTO `admin_log` VALUES ('47', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 13:27:57');
-INSERT INTO `admin_log` VALUES ('48', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-09 13:28:08');
-INSERT INTO `admin_log` VALUES ('49', 'admin-menu', 'delete', 'admin-menu/delete', '菜单用户权限', '菜单管理', '二级菜单删除', 'Unknown', 'test', '2018-05-09 13:28:12');
-INSERT INTO `admin_log` VALUES ('50', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-09 13:28:13');
-INSERT INTO `admin_log` VALUES ('51', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 13:28:52');
-INSERT INTO `admin_log` VALUES ('52', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 13:37:40');
-INSERT INTO `admin_log` VALUES ('53', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 14:10:49');
-INSERT INTO `admin_log` VALUES ('54', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 14:36:22');
-INSERT INTO `admin_log` VALUES ('55', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 14:36:42');
-INSERT INTO `admin_log` VALUES ('56', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 14:36:47');
-INSERT INTO `admin_log` VALUES ('57', 'admin-role', 'create', 'admin-role/create', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 14:37:04');
-INSERT INTO `admin_log` VALUES ('58', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 14:37:05');
-INSERT INTO `admin_log` VALUES ('59', 'admin-role', 'delete', 'admin-role/delete', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 14:37:10');
-INSERT INTO `admin_log` VALUES ('60', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 14:37:11');
-INSERT INTO `admin_log` VALUES ('61', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 14:37:17');
-INSERT INTO `admin_log` VALUES ('62', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 14:37:23');
-INSERT INTO `admin_log` VALUES ('63', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 14:37:35');
-INSERT INTO `admin_log` VALUES ('64', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-09 14:49:37');
-INSERT INTO `admin_log` VALUES ('65', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-09 14:49:43');
-INSERT INTO `admin_log` VALUES ('66', 'admin-menu', 'index', 'admin-menu/index', '菜单用户权限', '菜单管理', '二级菜单查看', 'Unknown', 'test', '2018-05-09 14:49:47');
-INSERT INTO `admin_log` VALUES ('67', 'admin-right', 'index', 'admin-right/index', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-09 14:49:52');
-INSERT INTO `admin_log` VALUES ('68', 'admin-right', 'view', 'admin-right/view', '菜单用户权限', '菜单管理', '路由查看', 'Unknown', 'test', '2018-05-09 14:49:56');
-INSERT INTO `admin_log` VALUES ('69', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', 'Unknown', 'test', '2018-05-09 14:55:23');
-INSERT INTO `admin_log` VALUES ('70', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', 'Unknown', 'test', '2018-05-09 14:55:29');
-INSERT INTO `admin_log` VALUES ('71', 'admin-log', 'view', 'admin-log/view', '日志管理', '操作日志', '操作', 'Unknown', 'test', '2018-05-09 14:55:38');
-INSERT INTO `admin_log` VALUES ('72', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 05:55:14');
-INSERT INTO `admin_log` VALUES ('73', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 05:55:17');
-INSERT INTO `admin_log` VALUES ('74', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 06:19:43');
-INSERT INTO `admin_log` VALUES ('75', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 08:07:28');
-INSERT INTO `admin_log` VALUES ('76', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 08:12:54');
-INSERT INTO `admin_log` VALUES ('77', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 08:50:32');
-INSERT INTO `admin_log` VALUES ('78', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 08:50:55');
-INSERT INTO `admin_log` VALUES ('79', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:02:03');
-INSERT INTO `admin_log` VALUES ('80', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 09:02:06');
-INSERT INTO `admin_log` VALUES ('81', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 09:11:21');
-INSERT INTO `admin_log` VALUES ('82', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 09:11:56');
-INSERT INTO `admin_log` VALUES ('83', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 09:12:35');
-INSERT INTO `admin_log` VALUES ('84', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 09:13:43');
-INSERT INTO `admin_log` VALUES ('85', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 09:14:21');
-INSERT INTO `admin_log` VALUES ('86', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 09:14:49');
-INSERT INTO `admin_log` VALUES ('87', 'admin-module', 'index', 'admin-module/index', '菜单用户权限', '菜单管理', '一级菜单查看', 'Unknown', 'test', '2018-05-10 09:27:31');
-INSERT INTO `admin_log` VALUES ('88', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-10 09:28:58');
-INSERT INTO `admin_log` VALUES ('89', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:29:02');
-INSERT INTO `admin_log` VALUES ('90', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:29:07');
-INSERT INTO `admin_log` VALUES ('91', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:29:55');
-INSERT INTO `admin_log` VALUES ('92', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:30:02');
-INSERT INTO `admin_log` VALUES ('93', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:30:05');
-INSERT INTO `admin_log` VALUES ('94', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:30:07');
-INSERT INTO `admin_log` VALUES ('95', 'admin-role', 'index', 'admin-role/index', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:30:12');
-INSERT INTO `admin_log` VALUES ('96', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:30:16');
-INSERT INTO `admin_log` VALUES ('97', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:30:25');
-INSERT INTO `admin_log` VALUES ('98', 'admin-role', 'view', 'admin-role/view', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:31:13');
-INSERT INTO `admin_log` VALUES ('99', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:31:18');
-INSERT INTO `admin_log` VALUES ('100', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:31:20');
-INSERT INTO `admin_log` VALUES ('101', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:31:22');
 INSERT INTO `admin_log` VALUES ('102', 'admin-role', 'save-rights', 'admin-role/save-rights', '菜单用户权限', '角色管理', '分配权限', 'Unknown', 'test', '2018-05-10 09:31:25');
 INSERT INTO `admin_log` VALUES ('103', 'admin-user', 'index', 'admin-user/index', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-10 09:31:50');
 INSERT INTO `admin_log` VALUES ('104', 'admin-user', 'view', 'admin-user/view', '菜单用户权限', '用户管理', '用户操作', 'Unknown', 'test', '2018-05-10 09:31:54');
@@ -4455,6 +4355,285 @@ INSERT INTO `admin_log` VALUES ('4414', 'goods', 'index', 'goods/index', '商品
 INSERT INTO `admin_log` VALUES ('4415', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-17 10:27:01');
 INSERT INTO `admin_log` VALUES ('4416', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-17 10:27:15');
 INSERT INTO `admin_log` VALUES ('4417', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-17 10:27:17');
+INSERT INTO `admin_log` VALUES ('4418', 'goods-category', 'index', 'goods-category/index', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-17 10:34:43');
+INSERT INTO `admin_log` VALUES ('4419', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-17 10:34:47');
+INSERT INTO `admin_log` VALUES ('4420', 'goods-category', 'tree', 'goods-category/tree', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-17 10:34:49');
+INSERT INTO `admin_log` VALUES ('4421', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 02:54:31');
+INSERT INTO `admin_log` VALUES ('4422', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 02:54:34');
+INSERT INTO `admin_log` VALUES ('4423', 'goods-category', 'index', 'goods-category/index', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 02:58:27');
+INSERT INTO `admin_log` VALUES ('4424', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 02:58:29');
+INSERT INTO `admin_log` VALUES ('4425', 'goods-category', 'tree', 'goods-category/tree', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 02:58:29');
+INSERT INTO `admin_log` VALUES ('4426', 'goods-brand', 'index', 'goods-brand/index', '商品管理', '品牌管理', '品牌查看', '无法获取ip', 'admin', '2018-06-18 03:03:34');
+INSERT INTO `admin_log` VALUES ('4427', 'goods-brand', 'table', 'goods-brand/table', '商品管理', '品牌管理', '品牌查看', '无法获取ip', 'admin', '2018-06-18 03:03:36');
+INSERT INTO `admin_log` VALUES ('4428', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:03:38');
+INSERT INTO `admin_log` VALUES ('4429', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:03:40');
+INSERT INTO `admin_log` VALUES ('4430', 'goods-category', 'index', 'goods-category/index', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 03:03:43');
+INSERT INTO `admin_log` VALUES ('4431', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 03:03:46');
+INSERT INTO `admin_log` VALUES ('4432', 'goods-category', 'tree', 'goods-category/tree', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 03:03:46');
+INSERT INTO `admin_log` VALUES ('4433', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:11:06');
+INSERT INTO `admin_log` VALUES ('4434', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:11:09');
+INSERT INTO `admin_log` VALUES ('4435', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:13:28');
+INSERT INTO `admin_log` VALUES ('4436', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:13:31');
+INSERT INTO `admin_log` VALUES ('4437', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:14:36');
+INSERT INTO `admin_log` VALUES ('4438', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:14:39');
+INSERT INTO `admin_log` VALUES ('4439', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:17:13');
+INSERT INTO `admin_log` VALUES ('4440', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:17:16');
+INSERT INTO `admin_log` VALUES ('4441', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:17:48');
+INSERT INTO `admin_log` VALUES ('4442', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:17:53');
+INSERT INTO `admin_log` VALUES ('4443', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:34:39');
+INSERT INTO `admin_log` VALUES ('4444', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:34:43');
+INSERT INTO `admin_log` VALUES ('4445', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:35:49');
+INSERT INTO `admin_log` VALUES ('4446', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:35:52');
+INSERT INTO `admin_log` VALUES ('4447', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:38:24');
+INSERT INTO `admin_log` VALUES ('4448', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:38:27');
+INSERT INTO `admin_log` VALUES ('4449', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:46:33');
+INSERT INTO `admin_log` VALUES ('4450', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:46:36');
+INSERT INTO `admin_log` VALUES ('4451', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:47:14');
+INSERT INTO `admin_log` VALUES ('4452', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 03:47:17');
+INSERT INTO `admin_log` VALUES ('4453', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:20:45');
+INSERT INTO `admin_log` VALUES ('4454', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:20:48');
+INSERT INTO `admin_log` VALUES ('4455', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 04:20:50');
+INSERT INTO `admin_log` VALUES ('4456', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 04:20:53');
+INSERT INTO `admin_log` VALUES ('4457', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-18 04:20:55');
+INSERT INTO `admin_log` VALUES ('4458', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-18 04:20:58');
+INSERT INTO `admin_log` VALUES ('4459', 'admin-right', 'index', 'admin-right/index', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 04:21:04');
+INSERT INTO `admin_log` VALUES ('4460', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 04:21:06');
+INSERT INTO `admin_log` VALUES ('4461', 'admin-right', 'right-action', 'admin-right/right-action', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 04:21:09');
+INSERT INTO `admin_log` VALUES ('4462', 'admin-right', 'right-action', 'admin-right/right-action', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 04:21:15');
+INSERT INTO `admin_log` VALUES ('4463', 'admin-right', 'create', 'admin-right/create', '组织管理', '菜单管理', '路由添加', '无法获取ip', 'admin', '2018-06-18 04:21:33');
+INSERT INTO `admin_log` VALUES ('4464', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 04:21:35');
+INSERT INTO `admin_log` VALUES ('4465', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:21:46');
+INSERT INTO `admin_log` VALUES ('4466', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:21:49');
+INSERT INTO `admin_log` VALUES ('4467', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:22:38');
+INSERT INTO `admin_log` VALUES ('4468', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:22:40');
+INSERT INTO `admin_log` VALUES ('4469', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:23:26');
+INSERT INTO `admin_log` VALUES ('4470', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:23:29');
+INSERT INTO `admin_log` VALUES ('4471', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:25:48');
+INSERT INTO `admin_log` VALUES ('4472', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:25:51');
+INSERT INTO `admin_log` VALUES ('4473', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:27:28');
+INSERT INTO `admin_log` VALUES ('4474', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:27:30');
+INSERT INTO `admin_log` VALUES ('4475', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:27:49');
+INSERT INTO `admin_log` VALUES ('4476', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:27:51');
+INSERT INTO `admin_log` VALUES ('4477', 'admin-role', 'index', 'admin-role/index', '组织管理', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-06-18 04:28:04');
+INSERT INTO `admin_log` VALUES ('4478', 'admin-role', 'table', 'admin-role/table', '组织管理', '角色管理', '角色操作', '无法获取ip', 'admin', '2018-06-18 04:28:08');
+INSERT INTO `admin_log` VALUES ('4479', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '组织管理', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-06-18 04:28:10');
+INSERT INTO `admin_log` VALUES ('4480', 'admin-role', 'save-rights', 'admin-role/save-rights', '组织管理', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-06-18 04:28:17');
+INSERT INTO `admin_log` VALUES ('4481', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:28:39');
+INSERT INTO `admin_log` VALUES ('4482', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:28:43');
+INSERT INTO `admin_log` VALUES ('4483', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 04:28:43');
+INSERT INTO `admin_log` VALUES ('4484', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:54:45');
+INSERT INTO `admin_log` VALUES ('4485', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:54:48');
+INSERT INTO `admin_log` VALUES ('4486', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 04:54:49');
+INSERT INTO `admin_log` VALUES ('4487', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:55:02');
+INSERT INTO `admin_log` VALUES ('4488', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:55:04');
+INSERT INTO `admin_log` VALUES ('4489', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 04:55:05');
+INSERT INTO `admin_log` VALUES ('4490', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:55:48');
+INSERT INTO `admin_log` VALUES ('4491', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:55:51');
+INSERT INTO `admin_log` VALUES ('4492', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 04:55:51');
+INSERT INTO `admin_log` VALUES ('4493', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:59:47');
+INSERT INTO `admin_log` VALUES ('4494', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 04:59:50');
+INSERT INTO `admin_log` VALUES ('4495', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 04:59:50');
+INSERT INTO `admin_log` VALUES ('4496', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:13:50');
+INSERT INTO `admin_log` VALUES ('4497', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:13:53');
+INSERT INTO `admin_log` VALUES ('4498', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:13:53');
+INSERT INTO `admin_log` VALUES ('4499', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:22:03');
+INSERT INTO `admin_log` VALUES ('4500', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:22:05');
+INSERT INTO `admin_log` VALUES ('4501', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:22:06');
+INSERT INTO `admin_log` VALUES ('4502', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:25:15');
+INSERT INTO `admin_log` VALUES ('4503', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:25:18');
+INSERT INTO `admin_log` VALUES ('4504', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:25:18');
+INSERT INTO `admin_log` VALUES ('4505', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:26:24');
+INSERT INTO `admin_log` VALUES ('4506', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:26:26');
+INSERT INTO `admin_log` VALUES ('4507', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:26:27');
+INSERT INTO `admin_log` VALUES ('4508', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:27:34');
+INSERT INTO `admin_log` VALUES ('4509', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:27:36');
+INSERT INTO `admin_log` VALUES ('4510', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:27:37');
+INSERT INTO `admin_log` VALUES ('4511', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:32:24');
+INSERT INTO `admin_log` VALUES ('4512', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:32:26');
+INSERT INTO `admin_log` VALUES ('4513', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:32:26');
+INSERT INTO `admin_log` VALUES ('4514', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:33:49');
+INSERT INTO `admin_log` VALUES ('4515', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:33:51');
+INSERT INTO `admin_log` VALUES ('4516', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:33:51');
+INSERT INTO `admin_log` VALUES ('4517', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:34:41');
+INSERT INTO `admin_log` VALUES ('4518', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:34:43');
+INSERT INTO `admin_log` VALUES ('4519', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:34:44');
+INSERT INTO `admin_log` VALUES ('4520', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:45:41');
+INSERT INTO `admin_log` VALUES ('4521', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:45:44');
+INSERT INTO `admin_log` VALUES ('4522', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:45:44');
+INSERT INTO `admin_log` VALUES ('4523', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:46:03');
+INSERT INTO `admin_log` VALUES ('4524', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:46:06');
+INSERT INTO `admin_log` VALUES ('4525', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:46:06');
+INSERT INTO `admin_log` VALUES ('4526', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:48:57');
+INSERT INTO `admin_log` VALUES ('4527', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:49:00');
+INSERT INTO `admin_log` VALUES ('4528', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:49:00');
+INSERT INTO `admin_log` VALUES ('4529', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:50:11');
+INSERT INTO `admin_log` VALUES ('4530', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 05:50:15');
+INSERT INTO `admin_log` VALUES ('4531', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 05:50:15');
+INSERT INTO `admin_log` VALUES ('4532', 'goods-brand', 'index', 'goods-brand/index', '商品管理', '品牌管理', '品牌查看', '无法获取ip', 'admin', '2018-06-18 05:51:01');
+INSERT INTO `admin_log` VALUES ('4533', 'goods-brand', 'table', 'goods-brand/table', '商品管理', '品牌管理', '品牌查看', '无法获取ip', 'admin', '2018-06-18 05:51:04');
+INSERT INTO `admin_log` VALUES ('4534', 'goods-brand', 'update', 'goods-brand/update', '商品管理', '品牌管理', '品牌修改', '无法获取ip', 'admin', '2018-06-18 05:51:14');
+INSERT INTO `admin_log` VALUES ('4535', 'goods-brand', 'table', 'goods-brand/table', '商品管理', '品牌管理', '品牌查看', '无法获取ip', 'admin', '2018-06-18 05:51:16');
+INSERT INTO `admin_log` VALUES ('4536', 'goods-brand', 'upload', 'goods-brand/upload', '商品管理', '品牌管理', '图片上传', '无法获取ip', 'admin', '2018-06-18 05:51:23');
+INSERT INTO `admin_log` VALUES ('4537', 'goods-brand', 'create', 'goods-brand/create', '商品管理', '品牌管理', '品牌新增', '无法获取ip', 'admin', '2018-06-18 05:51:30');
+INSERT INTO `admin_log` VALUES ('4538', 'goods-brand', 'table', 'goods-brand/table', '商品管理', '品牌管理', '品牌查看', '无法获取ip', 'admin', '2018-06-18 05:51:32');
+INSERT INTO `admin_log` VALUES ('4539', 'goods-brand', 'upload', 'goods-brand/upload', '商品管理', '品牌管理', '图片上传', '无法获取ip', 'admin', '2018-06-18 05:51:41');
+INSERT INTO `admin_log` VALUES ('4540', 'goods-brand', 'update', 'goods-brand/update', '商品管理', '品牌管理', '品牌修改', '无法获取ip', 'admin', '2018-06-18 05:51:43');
+INSERT INTO `admin_log` VALUES ('4541', 'goods-brand', 'table', 'goods-brand/table', '商品管理', '品牌管理', '品牌查看', '无法获取ip', 'admin', '2018-06-18 05:51:45');
+INSERT INTO `admin_log` VALUES ('4542', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 06:06:39');
+INSERT INTO `admin_log` VALUES ('4543', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 06:06:41');
+INSERT INTO `admin_log` VALUES ('4544', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-18 06:06:44');
+INSERT INTO `admin_log` VALUES ('4545', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-18 06:06:46');
+INSERT INTO `admin_log` VALUES ('4546', 'admin-right', 'index', 'admin-right/index', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 06:06:51');
+INSERT INTO `admin_log` VALUES ('4547', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 06:06:53');
+INSERT INTO `admin_log` VALUES ('4548', 'admin-right', 'view', 'admin-right/view', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 06:06:56');
+INSERT INTO `admin_log` VALUES ('4549', 'admin-right', 'update', 'admin-right/update', '组织管理', '菜单管理', '路由添加', '无法获取ip', 'admin', '2018-06-18 06:07:04');
+INSERT INTO `admin_log` VALUES ('4550', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 06:07:06');
+INSERT INTO `admin_log` VALUES ('4551', 'admin-user', 'index', 'admin-user/index', '组织管理', '用户管理', '用户操作', '无法获取ip', 'admin', '2018-06-18 06:07:08');
+INSERT INTO `admin_log` VALUES ('4552', 'admin-role', 'index', 'admin-role/index', '组织管理', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-06-18 06:07:10');
+INSERT INTO `admin_log` VALUES ('4553', 'admin-role', 'table', 'admin-role/table', '组织管理', '角色管理', '角色操作', '无法获取ip', 'admin', '2018-06-18 06:07:12');
+INSERT INTO `admin_log` VALUES ('4554', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '组织管理', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-06-18 06:07:14');
+INSERT INTO `admin_log` VALUES ('4555', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:07:35');
+INSERT INTO `admin_log` VALUES ('4556', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:07:37');
+INSERT INTO `admin_log` VALUES ('4557', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:08:08');
+INSERT INTO `admin_log` VALUES ('4558', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:08:11');
+INSERT INTO `admin_log` VALUES ('4559', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:08:24');
+INSERT INTO `admin_log` VALUES ('4560', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:08:26');
+INSERT INTO `admin_log` VALUES ('4561', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:08:27');
+INSERT INTO `admin_log` VALUES ('4562', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:08:37');
+INSERT INTO `admin_log` VALUES ('4563', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:10:46');
+INSERT INTO `admin_log` VALUES ('4564', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:10:49');
+INSERT INTO `admin_log` VALUES ('4565', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:10:49');
+INSERT INTO `admin_log` VALUES ('4566', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:10:53');
+INSERT INTO `admin_log` VALUES ('4567', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:11:27');
+INSERT INTO `admin_log` VALUES ('4568', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:11:30');
+INSERT INTO `admin_log` VALUES ('4569', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:11:31');
+INSERT INTO `admin_log` VALUES ('4570', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:11:35');
+INSERT INTO `admin_log` VALUES ('4571', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:12:01');
+INSERT INTO `admin_log` VALUES ('4572', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:12:04');
+INSERT INTO `admin_log` VALUES ('4573', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:12:04');
+INSERT INTO `admin_log` VALUES ('4574', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:12:07');
+INSERT INTO `admin_log` VALUES ('4575', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:13:24');
+INSERT INTO `admin_log` VALUES ('4576', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:13:27');
+INSERT INTO `admin_log` VALUES ('4577', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:13:27');
+INSERT INTO `admin_log` VALUES ('4578', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:13:31');
+INSERT INTO `admin_log` VALUES ('4579', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 06:13:41');
+INSERT INTO `admin_log` VALUES ('4580', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 06:13:44');
+INSERT INTO `admin_log` VALUES ('4581', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-18 06:13:47');
+INSERT INTO `admin_log` VALUES ('4582', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-18 06:13:49');
+INSERT INTO `admin_log` VALUES ('4583', 'admin-right', 'index', 'admin-right/index', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 06:13:54');
+INSERT INTO `admin_log` VALUES ('4584', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 06:13:57');
+INSERT INTO `admin_log` VALUES ('4585', 'admin-right', 'view', 'admin-right/view', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 06:13:59');
+INSERT INTO `admin_log` VALUES ('4586', 'admin-right', 'index', 'admin-right/index', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 06:14:39');
+INSERT INTO `admin_log` VALUES ('4587', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 06:14:41');
+INSERT INTO `admin_log` VALUES ('4588', 'admin-right', 'right-action', 'admin-right/right-action', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 06:14:42');
+INSERT INTO `admin_log` VALUES ('4589', 'admin-user', 'index', 'admin-user/index', '组织管理', '用户管理', '用户操作', '无法获取ip', 'admin', '2018-06-18 06:14:45');
+INSERT INTO `admin_log` VALUES ('4590', 'admin-user', 'table', 'admin-user/table', '组织管理', '用户管理', '用户操作', '无法获取ip', 'admin', '2018-06-18 06:14:48');
+INSERT INTO `admin_log` VALUES ('4591', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:14:49');
+INSERT INTO `admin_log` VALUES ('4592', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:14:51');
+INSERT INTO `admin_log` VALUES ('4593', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:14:52');
+INSERT INTO `admin_log` VALUES ('4594', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:14:55');
+INSERT INTO `admin_log` VALUES ('4595', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:15:19');
+INSERT INTO `admin_log` VALUES ('4596', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:15:22');
+INSERT INTO `admin_log` VALUES ('4597', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:15:22');
+INSERT INTO `admin_log` VALUES ('4598', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:15:26');
+INSERT INTO `admin_log` VALUES ('4599', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:16:22');
+INSERT INTO `admin_log` VALUES ('4600', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:16:28');
+INSERT INTO `admin_log` VALUES ('4601', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:22:23');
+INSERT INTO `admin_log` VALUES ('4602', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:22:26');
+INSERT INTO `admin_log` VALUES ('4603', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:22:30');
+INSERT INTO `admin_log` VALUES ('4604', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:22:46');
+INSERT INTO `admin_log` VALUES ('4605', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:23:22');
+INSERT INTO `admin_log` VALUES ('4606', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:26:37');
+INSERT INTO `admin_log` VALUES ('4607', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:26:40');
+INSERT INTO `admin_log` VALUES ('4608', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:26:41');
+INSERT INTO `admin_log` VALUES ('4609', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:26:43');
+INSERT INTO `admin_log` VALUES ('4610', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:26:44');
+INSERT INTO `admin_log` VALUES ('4611', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:27:02');
+INSERT INTO `admin_log` VALUES ('4612', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:27:05');
+INSERT INTO `admin_log` VALUES ('4613', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:27:05');
+INSERT INTO `admin_log` VALUES ('4614', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:27:08');
+INSERT INTO `admin_log` VALUES ('4615', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:27:12');
+INSERT INTO `admin_log` VALUES ('4616', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:27:12');
+INSERT INTO `admin_log` VALUES ('4617', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:27:14');
+INSERT INTO `admin_log` VALUES ('4618', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:27:15');
+INSERT INTO `admin_log` VALUES ('4619', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:27:18');
+INSERT INTO `admin_log` VALUES ('4620', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:27:19');
+INSERT INTO `admin_log` VALUES ('4621', 'goods', 'category-to-brand', 'goods/category-to-brand', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 06:27:21');
+INSERT INTO `admin_log` VALUES ('4622', 'site', 'error', 'site/error', null, null, null, '无法获取ip', 'admin', '2018-06-18 06:27:24');
+INSERT INTO `admin_log` VALUES ('4623', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 06:28:52');
+INSERT INTO `admin_log` VALUES ('4807', 'admin-log', 'delete', 'admin-log/delete', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:19:57');
+INSERT INTO `admin_log` VALUES ('4808', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:19:58');
+INSERT INTO `admin_log` VALUES ('4809', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:20:26');
+INSERT INTO `admin_log` VALUES ('4810', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:20:29');
+INSERT INTO `admin_log` VALUES ('4811', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:25:50');
+INSERT INTO `admin_log` VALUES ('4812', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:25:53');
+INSERT INTO `admin_log` VALUES ('4813', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:26:10');
+INSERT INTO `admin_log` VALUES ('4814', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:26:14');
+INSERT INTO `admin_log` VALUES ('4815', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:27:53');
+INSERT INTO `admin_log` VALUES ('4816', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:27:57');
+INSERT INTO `admin_log` VALUES ('4817', 'admin-log', 'index', 'admin-log/index', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:28:28');
+INSERT INTO `admin_log` VALUES ('4818', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:28:32');
+INSERT INTO `admin_log` VALUES ('4819', 'admin-log', 'delete', 'admin-log/delete', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:37:33');
+INSERT INTO `admin_log` VALUES ('4820', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:37:33');
+INSERT INTO `admin_log` VALUES ('4821', 'admin-log', 'delete', 'admin-log/delete', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:37:39');
+INSERT INTO `admin_log` VALUES ('4822', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:37:39');
+INSERT INTO `admin_log` VALUES ('4823', 'goods-brand', 'index', 'goods-brand/index', '商品管理', '品牌管理', '品牌查看', '无法获取ip', 'admin', '2018-06-18 08:37:47');
+INSERT INTO `admin_log` VALUES ('4824', 'goods-brand', 'table', 'goods-brand/table', '商品管理', '品牌管理', '品牌查看', '无法获取ip', 'admin', '2018-06-18 08:37:50');
+INSERT INTO `admin_log` VALUES ('4825', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 08:37:53');
+INSERT INTO `admin_log` VALUES ('4826', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 08:37:55');
+INSERT INTO `admin_log` VALUES ('4827', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 08:37:56');
+INSERT INTO `admin_log` VALUES ('4828', 'goods-category', 'index', 'goods-category/index', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 08:38:13');
+INSERT INTO `admin_log` VALUES ('4829', 'admin-log', 'table', 'admin-log/table', '日志管理', '操作日志', '操作', '无法获取ip', 'admin', '2018-06-18 08:38:16');
+INSERT INTO `admin_log` VALUES ('4830', 'goods-category', 'tree', 'goods-category/tree', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 08:38:17');
+INSERT INTO `admin_log` VALUES ('4831', 'goods-category', 'index', 'goods-category/index', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 08:42:55');
+INSERT INTO `admin_log` VALUES ('4832', 'goods-category', 'tree', 'goods-category/tree', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 08:42:58');
+INSERT INTO `admin_log` VALUES ('4833', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 08:43:11');
+INSERT INTO `admin_log` VALUES ('4834', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 08:43:14');
+INSERT INTO `admin_log` VALUES ('4835', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-18 08:43:17');
+INSERT INTO `admin_log` VALUES ('4836', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-18 08:43:20');
+INSERT INTO `admin_log` VALUES ('4837', 'admin-right', 'index', 'admin-right/index', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 08:43:26');
+INSERT INTO `admin_log` VALUES ('4838', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 08:43:29');
+INSERT INTO `admin_log` VALUES ('4839', 'admin-module', 'index', 'admin-module/index', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 08:43:34');
+INSERT INTO `admin_log` VALUES ('4840', 'admin-module', 'table', 'admin-module/table', '组织管理', '菜单管理', '一级菜单查看', '无法获取ip', 'admin', '2018-06-18 08:43:37');
+INSERT INTO `admin_log` VALUES ('4841', 'admin-menu', 'index', 'admin-menu/index', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-18 08:43:44');
+INSERT INTO `admin_log` VALUES ('4842', 'admin-menu', 'table', 'admin-menu/table', '组织管理', '菜单管理', '二级菜单查看', '无法获取ip', 'admin', '2018-06-18 08:43:47');
+INSERT INTO `admin_log` VALUES ('4843', 'admin-right', 'index', 'admin-right/index', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 08:43:50');
+INSERT INTO `admin_log` VALUES ('4844', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 08:43:53');
+INSERT INTO `admin_log` VALUES ('4845', 'admin-right', 'right-action', 'admin-right/right-action', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 08:43:55');
+INSERT INTO `admin_log` VALUES ('4846', 'admin-right', 'create', 'admin-right/create', '组织管理', '菜单管理', '路由添加', '无法获取ip', 'admin', '2018-06-18 08:44:20');
+INSERT INTO `admin_log` VALUES ('4847', 'admin-right', 'table', 'admin-right/table', '组织管理', '菜单管理', '路由查看', '无法获取ip', 'admin', '2018-06-18 08:44:23');
+INSERT INTO `admin_log` VALUES ('4848', 'admin-role', 'index', 'admin-role/index', '组织管理', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-06-18 08:44:23');
+INSERT INTO `admin_log` VALUES ('4849', 'admin-role', 'table', 'admin-role/table', '组织管理', '角色管理', '角色操作', '无法获取ip', 'admin', '2018-06-18 08:44:27');
+INSERT INTO `admin_log` VALUES ('4850', 'admin-role', 'get-all-rights', 'admin-role/get-all-rights', '组织管理', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-06-18 08:44:30');
+INSERT INTO `admin_log` VALUES ('4851', 'admin-role', 'save-rights', 'admin-role/save-rights', '组织管理', '角色管理', '分配权限', '无法获取ip', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_log` VALUES ('4852', 'goods', 'index', 'goods/index', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 08:44:59');
+INSERT INTO `admin_log` VALUES ('4853', 'goods', 'table', 'goods/table', '商品管理', '商品列表', '商品列表', '无法获取ip', 'admin', '2018-06-18 08:45:02');
+INSERT INTO `admin_log` VALUES ('4854', 'goods', 'get-category', 'goods/get-category', '商品管理', '商品列表', '获取分类', '无法获取ip', 'admin', '2018-06-18 08:45:02');
+INSERT INTO `admin_log` VALUES ('4855', 'goods-category', 'index', 'goods-category/index', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 08:45:05');
+INSERT INTO `admin_log` VALUES ('4856', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 08:45:07');
+INSERT INTO `admin_log` VALUES ('4857', 'goods-category', 'tree', 'goods-category/tree', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 08:45:08');
+INSERT INTO `admin_log` VALUES ('4858', 'goods-category', 'index', 'goods-category/index', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 09:02:51');
+INSERT INTO `admin_log` VALUES ('4859', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:03:00');
+INSERT INTO `admin_log` VALUES ('4860', 'goods-category', 'tree', 'goods-category/tree', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 09:03:00');
+INSERT INTO `admin_log` VALUES ('4861', 'goods-category', 'index', 'goods-category/index', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 09:06:37');
+INSERT INTO `admin_log` VALUES ('4862', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:06:41');
+INSERT INTO `admin_log` VALUES ('4863', 'goods-category', 'tree', 'goods-category/tree', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 09:06:42');
+INSERT INTO `admin_log` VALUES ('4864', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:06:42');
+INSERT INTO `admin_log` VALUES ('4865', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:06:49');
+INSERT INTO `admin_log` VALUES ('4866', 'goods-category', 'index', 'goods-category/index', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 09:08:04');
+INSERT INTO `admin_log` VALUES ('4867', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:08:08');
+INSERT INTO `admin_log` VALUES ('4868', 'goods-category', 'tree', 'goods-category/tree', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 09:08:08');
+INSERT INTO `admin_log` VALUES ('4869', 'goods-category', 'index', 'goods-category/index', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 09:08:38');
+INSERT INTO `admin_log` VALUES ('4870', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:08:42');
+INSERT INTO `admin_log` VALUES ('4871', 'goods-category', 'tree', 'goods-category/tree', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 09:08:43');
+INSERT INTO `admin_log` VALUES ('4872', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:08:43');
+INSERT INTO `admin_log` VALUES ('4873', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:08:48');
+INSERT INTO `admin_log` VALUES ('4874', 'goods-category', 'index', 'goods-category/index', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 09:09:34');
+INSERT INTO `admin_log` VALUES ('4875', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:09:38');
+INSERT INTO `admin_log` VALUES ('4876', 'goods-category', 'tree', 'goods-category/tree', '商品管理', '商品分类', '商品类别查看', '无法获取ip', 'admin', '2018-06-18 09:09:38');
+INSERT INTO `admin_log` VALUES ('4877', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:09:39');
+INSERT INTO `admin_log` VALUES ('4878', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:09:43');
+INSERT INTO `admin_log` VALUES ('4879', 'goods-category', 'category-to-brand', 'goods-category/category-to-brand', '商品管理', '商品分类', '获取分类品牌', '无法获取ip', 'admin', '2018-06-18 09:09:51');
 
 -- ----------------------------
 -- Table structure for admin_menu
@@ -4568,7 +4747,7 @@ CREATE TABLE `admin_right` (
   KEY `FK_admin_right` (`menu_id`),
   KEY `index_menu_id` (`menu_id`),
   CONSTRAINT `FK_admin_right` FOREIGN KEY (`menu_id`) REFERENCES `admin_menu` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=41 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_right
@@ -4598,6 +4777,9 @@ INSERT INTO `admin_right` VALUES ('34', '14', '图片上传', '图片上传', 'l
 INSERT INTO `admin_right` VALUES ('35', '14', '品牌修改', '品牌修改', '品牌修改', '4', 'n', 'admin', '2018-06-17 08:57:32', 'admin', '2018-06-17 08:57:32');
 INSERT INTO `admin_right` VALUES ('36', '14', '品牌删除', '品牌删除', '品牌删除', '5', 'n', 'admin', '2018-06-17 09:02:45', 'admin', '2018-06-17 09:03:01');
 INSERT INTO `admin_right` VALUES ('37', '15', '商品列表', '商品列表', '商品列表', '2', 'n', 'admin', '2018-06-17 10:23:31', 'admin', '2018-06-17 10:25:18');
+INSERT INTO `admin_right` VALUES ('38', '15', '获取分类', '获取分类', '获取分类', '3', 'n', 'admin', '2018-06-18 04:21:33', 'admin', '2018-06-18 06:07:04');
+INSERT INTO `admin_right` VALUES ('39', '15', '新增商品', '新增商品', null, '4', 'n', 'admin', '2018-06-18 07:00:35', 'admin', '2018-06-18 07:00:35');
+INSERT INTO `admin_right` VALUES ('40', '13', '获取分类品牌', '获取分类品牌', '获取分类品牌', '2', 'n', 'admin', '2018-06-18 08:44:20', 'admin', '2018-06-18 08:44:20');
 
 -- ----------------------------
 -- Table structure for admin_right_url
@@ -4617,7 +4799,7 @@ CREATE TABLE `admin_right_url` (
   KEY `FK_admin_right_url` (`right_id`),
   KEY `index_right_id` (`right_id`),
   CONSTRAINT `FK_admin_right_url` FOREIGN KEY (`right_id`) REFERENCES `admin_right` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=277 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=282 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_right_url
@@ -4700,6 +4882,10 @@ INSERT INTO `admin_right_url` VALUES ('271', '34', 'goods-brand/upload', 'goods-
 INSERT INTO `admin_right_url` VALUES ('274', '32', 'goods/index', 'goods', 'index', 'admin', '2018-06-17 10:25:10', 'admin', '2018-06-17 10:25:10');
 INSERT INTO `admin_right_url` VALUES ('275', '37', 'goods/index', 'goods', 'index', 'admin', '2018-06-17 10:25:18', 'admin', '2018-06-17 10:25:18');
 INSERT INTO `admin_right_url` VALUES ('276', '37', 'goods/table', 'goods', 'table', 'admin', '2018-06-17 10:25:18', 'admin', '2018-06-17 10:25:18');
+INSERT INTO `admin_right_url` VALUES ('278', '38', 'goods/get-category', 'goods', 'get-category', 'admin', '2018-06-18 06:07:04', 'admin', '2018-06-18 06:07:04');
+INSERT INTO `admin_right_url` VALUES ('279', '38', 'goods/category-to-brand', 'goods', 'category-to-brand', 'admin', '2018-06-18 06:07:04', 'admin', '2018-06-18 06:07:04');
+INSERT INTO `admin_right_url` VALUES ('280', '39', 'goods/create', 'goods', 'create', 'admin', '2018-06-18 07:00:35', 'admin', '2018-06-18 07:00:35');
+INSERT INTO `admin_right_url` VALUES ('281', '40', 'goods-category/category-to-brand', 'goods-category', 'category-to-brand', 'admin', '2018-06-18 08:44:20', 'admin', '2018-06-18 08:44:20');
 
 -- ----------------------------
 -- Table structure for admin_role
@@ -4741,7 +4927,7 @@ CREATE TABLE `admin_role_right` (
   KEY `index_role_id` (`role_id`),
   KEY `index_right_id` (`right_id`),
   CONSTRAINT `admin_role_right_ibfk_1` FOREIGN KEY (`right_id`) REFERENCES `admin_right` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=548 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=629 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of admin_role_right
@@ -4763,31 +4949,34 @@ INSERT INTO `admin_role_right` VALUES ('430', '2', '8', null, 'test', '2018-06-1
 INSERT INTO `admin_role_right` VALUES ('431', '2', '26', null, 'test', '2018-06-13 16:08:04', 'test', '2018-06-13 16:08:04');
 INSERT INTO `admin_role_right` VALUES ('432', '2', '27', null, 'test', '2018-06-13 16:08:04', 'test', '2018-06-13 16:08:04');
 INSERT INTO `admin_role_right` VALUES ('433', '2', '29', null, 'test', '2018-06-13 16:08:04', 'test', '2018-06-13 16:08:04');
-INSERT INTO `admin_role_right` VALUES ('523', '1', '13', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('524', '1', '14', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('525', '1', '15', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('526', '1', '16', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('527', '1', '17', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('528', '1', '18', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('529', '1', '19', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('530', '1', '20', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('531', '1', '21', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('532', '1', '4', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('533', '1', '5', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('534', '1', '6', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('535', '1', '7', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('536', '1', '8', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('537', '1', '26', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('538', '1', '27', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('539', '1', '29', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('540', '1', '30', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('541', '1', '31', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('542', '1', '33', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('543', '1', '34', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('544', '1', '35', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('545', '1', '36', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('546', '1', '32', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
-INSERT INTO `admin_role_right` VALUES ('547', '1', '37', null, 'admin', '2018-06-17 10:23:56', 'admin', '2018-06-17 10:23:56');
+INSERT INTO `admin_role_right` VALUES ('601', '1', '13', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('602', '1', '14', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('603', '1', '15', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('604', '1', '16', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('605', '1', '17', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('606', '1', '18', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('607', '1', '19', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('608', '1', '20', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('609', '1', '21', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('610', '1', '4', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('611', '1', '5', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('612', '1', '6', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('613', '1', '7', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('614', '1', '8', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('615', '1', '26', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('616', '1', '27', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('617', '1', '29', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('618', '1', '30', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('619', '1', '40', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('620', '1', '31', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('621', '1', '33', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('622', '1', '34', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('623', '1', '35', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('624', '1', '36', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('625', '1', '32', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('626', '1', '37', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('627', '1', '38', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
+INSERT INTO `admin_role_right` VALUES ('628', '1', '39', null, 'admin', '2018-06-18 08:44:34', 'admin', '2018-06-18 08:44:34');
 
 -- ----------------------------
 -- Table structure for admin_user
@@ -4856,11 +5045,13 @@ CREATE TABLE `shp_category2brand` (
   KEY `SHP_R_12` (`brand_id`),
   CONSTRAINT `SHP_R_11` FOREIGN KEY (`category_id`) REFERENCES `shp_goods_category` (`category_id`),
   CONSTRAINT `SHP_R_12` FOREIGN KEY (`brand_id`) REFERENCES `shp_goods_brand` (`brand_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of shp_category2brand
 -- ----------------------------
+INSERT INTO `shp_category2brand` VALUES ('1', '2', '1001');
+INSERT INTO `shp_category2brand` VALUES ('2', '3', '1101');
 
 -- ----------------------------
 -- Table structure for shp_color
@@ -4890,7 +5081,7 @@ CREATE TABLE `shp_goods` (
   `goods_name` varchar(64) NOT NULL,
   `is_used` int(11) NOT NULL,
   `goods_price` decimal(10,2) DEFAULT NULL,
-  `goods_color_id` int(11) NOT NULL,
+  `goods_color_id` int(11) DEFAULT NULL,
   `category_id` int(11) NOT NULL,
   PRIMARY KEY (`goods_id`),
   KEY `SHP_R_13` (`category_id`),
@@ -4899,11 +5090,13 @@ CREATE TABLE `shp_goods` (
   CONSTRAINT `SHP_R_13` FOREIGN KEY (`category_id`) REFERENCES `shp_goods_category` (`category_id`),
   CONSTRAINT `SHP_R_14` FOREIGN KEY (`brand_id`) REFERENCES `shp_goods_brand` (`brand_id`),
   CONSTRAINT `SHP_R_15` FOREIGN KEY (`goods_color_id`) REFERENCES `shp_color` (`color_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of shp_goods
 -- ----------------------------
+INSERT INTO `shp_goods` VALUES ('1', '3', '赛琪短袖', '1', '1000.00', null, '1001');
+INSERT INTO `shp_goods` VALUES ('2', '3', '阿迪达斯裤子', '1', '500.00', null, '1101');
 
 -- ----------------------------
 -- Table structure for shp_goods2color
@@ -4933,9 +5126,12 @@ CREATE TABLE `shp_goodsextend` (
   `goods_stock_num` int(11) DEFAULT NULL,
   `goods_sales_num` int(11) NOT NULL,
   `goods_id` int(11) NOT NULL,
+  `color_id` int(11) NOT NULL,
   PRIMARY KEY (`goods_extend_id`),
   KEY `SHP_R_18` (`goods_id`),
-  CONSTRAINT `SHP_R_18` FOREIGN KEY (`goods_id`) REFERENCES `shp_goods` (`goods_id`)
+  KEY `SHP_R_28` (`color_id`),
+  CONSTRAINT `SHP_R_18` FOREIGN KEY (`goods_id`) REFERENCES `shp_goods` (`goods_id`),
+  CONSTRAINT `SHP_R_28` FOREIGN KEY (`color_id`) REFERENCES `shp_color` (`color_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
@@ -4952,12 +5148,13 @@ CREATE TABLE `shp_goods_brand` (
   `brand_icon` varchar(255) DEFAULT NULL,
   `is_used` int(11) NOT NULL,
   PRIMARY KEY (`brand_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of shp_goods_brand
 -- ----------------------------
-INSERT INTO `shp_goods_brand` VALUES ('2', '策吖', '/SHP/backend/web/uploadimg/20180617/1529215375110583.jpg', '1');
+INSERT INTO `shp_goods_brand` VALUES ('2', '阿迪达斯', '/SHP/backend/web/uploadimg/20180618/1529293901125523.jpg', '1');
+INSERT INTO `shp_goods_brand` VALUES ('3', '赛琪', '/SHP/backend/web/uploadimg/20180618/1529293883102759.png', '1');
 
 -- ----------------------------
 -- Table structure for shp_goods_category
@@ -4969,7 +5166,7 @@ CREATE TABLE `shp_goods_category` (
   `category_name` varchar(20) NOT NULL,
   `is_used` int(11) NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=1102 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of shp_goods_category
@@ -4977,6 +5174,8 @@ CREATE TABLE `shp_goods_category` (
 INSERT INTO `shp_goods_category` VALUES ('1', null, '商品分类', '0');
 INSERT INTO `shp_goods_category` VALUES ('10', '1', '女装 /内衣', '1');
 INSERT INTO `shp_goods_category` VALUES ('11', '1', '男装 /运动户外', '1');
+INSERT INTO `shp_goods_category` VALUES ('1001', '10', '女装', '1');
+INSERT INTO `shp_goods_category` VALUES ('1101', '11', '男装', '1');
 
 -- ----------------------------
 -- Table structure for shp_goods_pic

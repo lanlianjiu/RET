@@ -125,6 +125,12 @@ a:focus {
     margin-right: 7px !important;
 }
 
+.select2-container .select2-selection--single {
+    border: 1px solid #d2d6de;
+    border-radius: 0;
+    height: 31px;
+}
+
 /*  */
 
 .modal {

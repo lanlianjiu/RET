@@ -15,14 +15,20 @@ use yii\helpers\Url;
             
 		$scope.addAction = function() {
             $scope.modal = {};
-                $scope.modal.is_used = 1;
+            $scope.modal.is_used = 1;
+			$("#sel_menu").select2().val();
+			$("#sel_brand").select2().val();
 			dialog_add_edit.modal('show');
+
 		};
 		
 		$scope.edit_action = function(id) {
 
 			var tableData = tableId.bootstrapTable('getRowByUniqueId', id);
             $scope.modal = tableData;
+			console.log(tableData);
+			$("#sel_menu").select2().val(tableData.category_id);
+			$("#sel_brand").select2().val(tableData.brand_id);
             $scope.modal.is_used = Number(tableData.is_used);
 			$scope.$apply();
 			dialog_add_edit.modal('show');
@@ -37,9 +43,10 @@ use yii\helpers\Url;
 				url: URL,
 				data:{
                     goods_id:$scope.modal.goods_id,
-                    'ShpGoods[brand_icon]':$('input[up-id="brand_icon"]').val(),
-					'ShpGoods[brand_name]':$scope.modal.brand_name,
-					'ShpGoods[web_nav_name]':$scope.modal.web_nav_name,
+                    'ShpGoods[category_id]':$("#sel_menu").select2().val(),
+					'ShpGoods[brand_id]':$("#sel_brand").select2().val(),
+					'ShpGoods[goods_name]':$scope.modal.goods_name,
+					'ShpGoods[goods_price]':$scope.modal.goods_price,
 					'ShpGoods[is_used]':$scope.modal.is_used
 				},
 				success: function(value) 
@@ -101,6 +108,87 @@ use yii\helpers\Url;
 			});
 		};
 
+		$scope.getCatgory = function() {
+
+			$.ajax({
+					type: "GET",
+					url: "<?=Url::toRoute('goods/get-category')?>",
+					cache: false,
+					dataType:"json",
+					error: function (xmlHttpRequest, textStatus, errorThrown) {
+							alert("出错了，" + textStatus);
+						},
+					success: function(data){
+
+						$("#sel_menu").select2({
+							placeholder: "--请选择--",
+							data:[
+									{
+										"id": "10",
+										"text": "女装 /内衣",
+										"children": [
+											{
+												"id": "1001",
+												"text": "女装"
+											}
+										]
+									},
+									{
+										"id": "11",
+										"text": "男装 /运动户外",
+										"children": [
+											{
+												"id": "1101",
+												"text": "男装",
+												// "children": [
+												// 				{
+												// 					"id": "110101",
+												// 					"text": "男装"
+												// 				}
+												// 			]
+											}
+										]
+									}
+								]
+						});
+					}
+			});
+			
+		
+		};
+
+		$scope.getCatgory();
+
+		$("#sel_menu").change(function(){
+
+			// 先清空第二个
+			$("#sel_brand").select2({
+				placeholder: "--请选择--",
+				data:[]
+			});
+
+			var category_id = $(this).val();
+
+			$.ajax({
+					type: "GET",
+					url: "<?=Url::toRoute('goods/category-to-brand')?>",
+					cache: false,
+					data:{'category_id':category_id},
+					dataType:"json",
+					error: function (xmlHttpRequest, textStatus, errorThrown) {
+							alert("出错了，" + textStatus);
+						},
+					success: function(data){
+
+						$("#sel_brand").select2({
+							placeholder: "--请选择--",
+							data:data
+						});
+					}
+			});
+			
+		});
+		
 	});
 
 	function  operateFormatter(value, row, index) {

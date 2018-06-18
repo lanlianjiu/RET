@@ -33,4 +33,20 @@ class GoodsCategoryController extends BaseController
         return json_encode($query);
     }
 
+    public function actionCategoryToBrand()
+    {
+        $category_id = Yii::$app->request->get('category_id');
+        $query = Yii::$app->db->createCommand('
+         SELECT 
+                b.brand_id id,
+                b.brand_name brandName
+           FROM  shp_category2brand c2b,
+                 shp_goods_brand b
+           WHERE c2b.brand_id = b.brand_id
+             AND c2b.category_id = '.$category_id.'
+           ')->queryAll();
+           
+        return json_encode($query);
+    }
+
 }
