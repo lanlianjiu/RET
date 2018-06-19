@@ -45,13 +45,19 @@ $modelLabel = new \backend\models\ShpGoodsCategory();
                 </div>
                 <div class="box-header search-box">
                     <div class="box-body">
-                        <table id="categoryToBrand-table" data-toggle="table" data-show-columns="true" data-autoheight="140" data-show-export="true"
+                         <div class="input-group input-group-sm action-toolbar">
+                            <div class="from-gruop">
+                                <button id="create_btn" type="button" ng-click="addBrand()" class="btn btn-sm btn-outline btn-primary"><i class="fa fa-plus"></i> 添加</button>
+                                <button id="delete_btn" type="button" ng-click="del_action()" class="btn btn-sm btn-danger-outline"><i class="fa fa-trash"></i> 批量删除</button>
+                            </div>
+                        </div>
+                        <table id="categoryToBrand-table" data-toggle="table" data-toolbar=".action-toolbar" data-show-columns="true" data-autoheight="140" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                            data-id-field="id" data-unique-id="id"  class="table table-hover th-table">
+                            data-id-field="category2brand_id" data-unique-id="category2brand_id"  class="table table-hover th-table">
                             <thead>
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>
-                                    <th data-sortable="true" data-field="id" data-hidden="true" width="80">ID</th>
+                                    <th data-sortable="true" data-field="category2brand_id" data-hidden="true" width="80">ID</th>
                                     <th data-sortable="true" data-field="brandName" width="80">品牌名称</th>
                                     <th data-formatter="operateFormatter" width="120">操作</th>
                                 </tr>
@@ -63,6 +69,7 @@ $modelLabel = new \backend\models\ShpGoodsCategory();
         </div>
     </section>
 
+    <!-- 分类弹窗 -->
     <div class="modal bootstrap-dialog type-primary modal-box fade" id="edit_dialog">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -95,6 +102,40 @@ $modelLabel = new \backend\models\ShpGoodsCategory();
                 <div class="modal-footer text-c">
                     <button  class="btn btn-default" data-dismiss="modal">关闭</button> 
                     <button  ng-click="saveAction()" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 品牌弹窗 -->
+    <div class="modal bootstrap-dialog type-primary modal-box fade" id="brand_dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h5 class="modal-title bootstrap-dialog-title">品牌</h5>
+                </div>
+                <div class="modal-body">
+                    
+                    <form id="c-brand-form" role="form"  method="post">
+                     
+                        <table class="table">
+                            <tr>
+                                <td align="right" width="100"> 
+                                    <label for="brand_name" class="control-label">品牌名称</label>
+                                </td>
+                                <td>
+                                    <select id="c_brand" style="width:100%" class="form-control" ng-model="modal.brand_id" name="ShpGoodsCategory[brand_id]"></select>
+                                </td>
+                                <td></td>
+                            </tr>
+                        </table>
+
+                    </form>          
+                </div>
+                <div class="modal-footer text-c">
+                    <button  class="btn btn-default" data-dismiss="modal">关闭</button> 
+                    <button  id="edit_dialog_ok" ng-click="saveCbrand()" class="btn btn-primary">确定</button>
                 </div>
             </div>
         </div>

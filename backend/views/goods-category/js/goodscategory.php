@@ -12,7 +12,8 @@ use yii\helpers\Url;
         $scope.modal = {};
         $scope.data = {};
         var tableId = $('#goodsbrand-table');
-		var dialog_add_edit = $('#edit_dialog');
+        var dialog_add_edit = $('#edit_dialog');
+        var dialog_brand = $('#brand_dialog');
       
         var zTreeObj;
         var setting = {
@@ -88,7 +89,7 @@ use yii\helpers\Url;
                             };
                         };
                         //初始化树图、删除时
-                        if (!$scope.categoryPId && !$scope.newId) {
+                        if (!$scope.categoryId && !$scope.newId) {
                             
                             var treeObj = $.fn.zTree.getZTreeObj("category-tree");
                             var nodes = treeObj.getNodes()
@@ -121,17 +122,9 @@ use yii\helpers\Url;
            
            $scope.serachTable(treeNode.Id);
 
-            $scope.categoryPId = treeNode.Id;
+            $scope.categoryId = treeNode.Id;
 
-            $scope.$apply(function() {
-
-                if (treeNode.children != undefined) {
-                    $scope.butTags = false;
-                } else {
-                    $scope.butTags = true;
-
-                };
-            });
+            $scope.$apply();
         };
 
         $scope.saveAction = function() {
@@ -162,7 +155,7 @@ use yii\helpers\Url;
 				{
 					if(value.errno == 0){
 						dialog_add_edit.modal('hide');
-                        $scope.categoryId = $scope.modal.category_id || "";
+                        $scope.categoryId = $scope.modal.category_id;
                         $scope.newId = value.pk_id || "";
                         $scope.reloadTree();
 						$.dialog.Success('操作成功！');
@@ -174,27 +167,122 @@ use yii\helpers\Url;
 			});
            
         };
+       
+        //品牌
+        $scope.addBrand = function() {
+
+            $scope.modal = {};
+           
+            $.ajax({
+                type: "GET",
+                url: "<?=Url::toRoute('goods-category/category-cbrand')?>",
+                cache: false,
+                data:{category_id:$scope.categoryId},
+                dataType:"json",
+                error: function (xmlHttpRequest, textStatus, errorThrown) {
+                        alert("出错了，" + textStatus);
+                    },
+                success: function(data){
+                    $("#c_brand").select2({
+							placeholder: "--请选择--",
+							data:data
+						});
+                    dialog_brand.modal('show');
+                }
+
+            });
+			
+        };
+
+        $scope.saveCbrand = function() {
+            
+            $.ajax({
+				type: "post",
+				dataType:"json",
+				url: "<?=Url::toRoute('goods-category/create-c2b')?>",
+				data:{
+					'ShpCategory2brand[brand_id]':Number($("#c_brand").select2().val()),
+					'ShpCategory2brand[category_id]':Number($scope.categoryId)
+				},
+				success: function(value) 
+				{
+					if(value.errno == 0){
+
+						dialog_brand.modal('hide');
+
+						$.dialog.Success('操作成功！', function () {
+							$scope.serachTable($scope.categoryId);
+                        });
+                        
+					}else{
+
+						$.dialog.Warn(value.msg);
+					}
+				}
+			});
+        };
+
+        $scope.getCheckId = function (data) {
+			
+			var arrayId = [];
+			for (var i in data) {
+				arrayId.push(data[i].category2brand_id);
+			}
+			return arrayId;
+		};
+
+        $scope.del_brand = function(id) {
+
+            var ids = [];
+			if(!!id == true){
+
+				ids[0] = id;
+			}else{
+
+				ids = $scope.getCheckId(tableId.bootstrapTable('getSelections'));
+            };
+            
+			if(ids.length == 0){
+				$.dialog.Warn("请选择删除数据!");
+				return;
+			};
+
+			$.dialog.Confirm('确认删除选中的记录吗?', function (result) {
+
+				if(result){
+
+					$.ajax({
+						type: "GET",
+						url: "<?=Url::toRoute('goods-category/delete-c2b')?>",
+						data: {"ids":ids},
+						cache: false,
+						dataType:"json",
+						error: function (xmlHttpRequest, textStatus, errorThrown) {
+								alert("出错了，" + textStatus);
+							},
+						success: function(data){
+							
+							$.dialog.Success('成功!');
+							$scope.serachTable();
+						}
+					});
+				}
+			});
+            
+        };
 
         $scope.reloadTree();
-        
     });
-    
 
 	function  operateFormatter(value, row, index) {
 		var h = "";
-		h +='<a id="edit_btn" onclick="editAction('+ row.id +')" class="action-a-btn"> <i class="fa fa-edit icon-white"></i></a>';
-		h +='<a id="delete_btn" onclick="deleteAction('+ row.id +')" class="action-a-btn"> <i class="fa fa-trash icon-white"></i></a>';
+		h +='<a id="delete_btn" onclick="deleteAction('+ row.category2brand_id +')" class="action-a-btn"> <i class="fa fa-trash icon-white"></i></a>';
 		return h;
-	};
-
-	function editAction(id) {
-		var $scope = angular.element('[data-content-box="body"]').scope();
-		$scope.edit_action(id);
 	};
 
 	function deleteAction(id) {
 		var $scope = angular.element('[data-content-box="body"]').scope();
-		$scope.del_action(id);
+		$scope.del_brand(id);
     };
 
     //分类
@@ -229,7 +317,7 @@ use yii\helpers\Url;
                             if(value.errno == 0){
 
                                 $('#edit_dialog').modal('hide');
-                                $scope.categoryPId = null;
+                                $scope.categoryId = null;
                                 $scope.newId = null;
                                 $scope.reloadTree();
                                 $.dialog.Success('操作成功！');
@@ -244,9 +332,7 @@ use yii\helpers\Url;
                 return result;
             };
         });
-
         return false;
-
     };
     
    

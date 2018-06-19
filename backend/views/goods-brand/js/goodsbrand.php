@@ -15,7 +15,7 @@ use yii\helpers\Url;
             
 		$scope.addAction = function() {
             $scope.modal = {};
-                $scope.modal.is_used = 1;
+            $scope.modal.is_used = 1;
 			dialog_add_edit.modal('show');
 		};
 		

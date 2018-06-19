@@ -36,7 +36,15 @@ class BaseController extends Controller
             }
         }else{
             $system_rights = Yii::$app->user->identity->getSystemRights();
+            $loginAllowUrl = [];
             $loginAllowUrl = ['site/index', 'site/logout', 'site/psw', 'site/psw-save'];
+           
+            // 查询/table/index不记录日志
+            if((strstr($route,'/table')||(strstr($route,'/index')))){
+
+                array_push($loginAllowUrl,$route);
+            }
+
             if(in_array($route, $loginAllowUrl) == false){
                if((empty($system_rights) == true || empty($system_rights[$route]) == true)){
                     header("Content-type: text/html; charset=utf-8");
@@ -183,7 +191,6 @@ class BaseController extends Controller
 
         return $arr;
     }
-
 
 }
 

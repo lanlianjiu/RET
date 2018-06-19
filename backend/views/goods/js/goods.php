@@ -25,8 +25,8 @@ use yii\helpers\Url;
 		$scope.edit_action = function(id) {
 
 			var tableData = tableId.bootstrapTable('getRowByUniqueId', id);
-            $scope.modal = tableData;
-			console.log(tableData);
+			$scope.modal = tableData;
+			
 			$("#sel_menu").select2().val(tableData.category_id);
 			$("#sel_brand").select2().val(tableData.brand_id);
             $scope.modal.is_used = Number(tableData.is_used);
