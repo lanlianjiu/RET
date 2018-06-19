@@ -131,6 +131,12 @@ a:focus {
     height: 31px;
 }
 
+.btn-default {
+    color: inherit;
+    background: #fff;
+    border: 1px solid #e7eaec;
+}
+
 /*  */
 
 .modal {

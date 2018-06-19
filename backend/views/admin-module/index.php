@@ -31,6 +31,10 @@ $modelLabel = new \backend\models\AdminModule();
                                 </div>
                                 <div class="form-group">
                                     <button bootstrap-table-search="adminModule-table" class="btn btn-outline btn-primary btn-sm" > <i class="fa fa-search icon-white"></i> 搜索</button>
+                                     <button class="btn btn-default btn-sm" type="submit" bootstrap-table-form-reset="adminModule-table">
+                                        <i class="fa fa-repeat"></i>
+                                        清除搜索
+                                    </button>
                                 </div>
                             </form>
                         </div>
