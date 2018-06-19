@@ -103,12 +103,11 @@ class GoodsCategoryController extends BaseController
     public function actionUpdateCategory()
     {
         $id = Yii::$app->request->post('category_id');
-        $pid = Yii::$app->request->post('pid');
         $model = $this->findCategoryModel($id);
         if ($model->load(Yii::$app->request->post())) {
         
             if($model->validate() == true && $model->save()){
-                $msg = array('errno'=>0, 'msg'=>'保存成功','pid'=>$pid);
+                $msg = array('errno'=>0, 'msg'=>'保存成功');
                 echo json_encode($msg);
             }else{
                 $msg = array('errno'=>2, 'data'=>$model->getErrors());

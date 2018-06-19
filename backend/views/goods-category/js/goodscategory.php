@@ -65,11 +65,11 @@ use yii\helpers\Url;
                         zTreeObj.expandAll(false);
 
                         //修改时刷新树图
-                        if ($scope.categoryPId) {
+                        if ($scope.categoryId) {
                             var treeObj = $.fn.zTree.getZTreeObj("category-tree");
                             var nodes = treeObj.getNodes();
                             if (nodes.length > 0) {
-                                var node = treeObj.getNodeByParam('Id', $scope.categoryPId);
+                                var node = treeObj.getNodeByParam('Id', $scope.categoryId);
 
                                 treeObj.selectNode(node)
                                 treeObj.setting.callback.onClick(null, treeObj.setting.treeId, node);
@@ -107,14 +107,19 @@ use yii\helpers\Url;
             });
         };
 
-        function selectCategory(event, treeId, treeNode) {
-           
-            $('#categoryToBrand-table').bootstrapTable('refresh', {
+        $scope.serachTable = function(params) {
+
+             $('#categoryToBrand-table').bootstrapTable('refresh', {
                 url:"index.php?r=goods-category/category-to-brand",
                 query: {
-                    category_id:treeNode.Id
+                    category_id:params || 1
                 }
             });
+        };
+
+        function selectCategory(event, treeId, treeNode) {
+           
+           $scope.serachTable(treeNode.Id);
 
             $scope.categoryPId = treeNode.Id;
 
@@ -157,12 +162,10 @@ use yii\helpers\Url;
 				{
 					if(value.errno == 0){
 						dialog_add_edit.modal('hide');
-                        $scope.categoryPId = value.pid || "";
+                        $scope.categoryId = $scope.modal.category_id || "";
                         $scope.newId = value.pk_id || "";
                         $scope.reloadTree();
-						$.dialog.Success('操作成功！', function () {
-							$('#goodsbrand-table').bootstrapTable('refresh');
-                        });
+						$.dialog.Success('操作成功！');
                         $scope.$apply();
 					}else{
 						$.dialog.Warn(value.msg);
@@ -229,9 +232,7 @@ use yii\helpers\Url;
                                 $scope.categoryPId = null;
                                 $scope.newId = null;
                                 $scope.reloadTree();
-                                $.dialog.Success('操作成功！', function () {
-                                    $('#goodsbrand-table').bootstrapTable('refresh');
-                                });
+                                $.dialog.Success('操作成功！');
                             }else{
 
                                 $.dialog.Warn(value.msg);
