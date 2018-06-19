@@ -70,6 +70,7 @@ class AppAsset extends AssetBundle
         '/SHP/backend/web/plugins/html5Validate/jquery-html5Validate-min.js',
         '/SHP/backend/web/plugins/zTree/jquery.ztree.all-3.5.min.js',
         '/SHP/backend/web/plugins/zTree/jquery.ztree.core.min.js',
+        '/SHP/backend/web/plugins/zTree/jquery.ztree.exedit.min.js',
         '/SHP/backend/web/plugins/select2/select2.min.js',
 
         '/SHP/backend/web/js/iov-min.js'

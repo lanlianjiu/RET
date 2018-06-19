@@ -10,6 +10,9 @@ use yii\helpers\Url;
 	app.controller("admin-goodscategory-controller", function($scope) {
         
         $scope.modal = {};
+        $scope.data = {};
+        var tableId = $('#goodsbrand-table');
+		var dialog_add_edit = $('#edit_dialog');
       
         var zTreeObj;
         var setting = {
@@ -38,8 +41,8 @@ use yii\helpers\Url;
                 }
             },
             callback: {
-                // beforeRemove: delCategory,
-                // beforeEditName: editCategory,
+                beforeRemove: delCategory,
+                beforeEditName: editCategory,
                 onClick: selectCategory
             }
         };
@@ -70,9 +73,6 @@ use yii\helpers\Url;
 
                                 treeObj.selectNode(node)
                                 treeObj.setting.callback.onClick(null, treeObj.setting.treeId, node);
-
-                                // var nodeSelect = treeObj.getSelectedNodes();
-                                // treeObj.expandNode(nodeSelect[0], true, true, true);
                                 treeObj.expandAll(true);
                             };
                         };
@@ -84,9 +84,6 @@ use yii\helpers\Url;
                                 var node = treeObj.getNodeByParam('Id', $scope.newId);
                                 treeObj.selectNode(node);
                                 treeObj.setting.callback.onClick(null, treeObj.setting.treeId, node);
-
-                                // var nodeSelect = treeObj.getSelectedNodes();
-                                // treeObj.expandNode(nodeSelect[0], true, true, true);
                                 treeObj.expandAll(true);
                             };
                         };
@@ -132,6 +129,49 @@ use yii\helpers\Url;
             });
         };
 
+        $scope.saveAction = function() {
+
+            var URL = ($scope.modal.category_id) ? "<?=Url::toRoute('goods-category/update-category')?>" : "<?=Url::toRoute('goods-category/create-category')?>";
+            var data = {};
+            if($scope.modal.category_id){
+                data = {
+                            category_id:$scope.modal.category_id,
+                            'ShpGoodsCategory[category_name]':$scope.modal.category_name,
+                            'ShpGoodsCategory[is_used]':$scope.modal.is_used
+                    }
+            }else{
+
+                data = {
+                        'ShpGoodsCategory[category_p_id]':$scope.data.category_p_id,
+                        'ShpGoodsCategory[category_name]':$scope.modal.category_name,
+                        'ShpGoodsCategory[is_used]':$scope.modal.is_used
+                    }
+            };
+
+			$.ajax({
+				type: "post",
+				dataType:"json",
+				url: URL,
+				data:data,
+				success: function(value) 
+				{
+					if(value.errno == 0){
+						dialog_add_edit.modal('hide');
+                        $scope.categoryPId = value.pid || "";
+                        $scope.newId = value.pk_id || "";
+                        $scope.reloadTree();
+						$.dialog.Success('操作成功！', function () {
+							$('#goodsbrand-table').bootstrapTable('refresh');
+                        });
+                        $scope.$apply();
+					}else{
+						$.dialog.Warn(value.msg);
+					}
+				}
+			});
+           
+        };
+
         $scope.reloadTree();
         
     });
@@ -158,8 +198,11 @@ use yii\helpers\Url;
     function editCategory(treeId, treeNode) {
 
         var $scope = angular.element('[data-content-box="body"]').scope();
-
-    
+        $scope.modal.category_id = treeNode.Id;
+        $scope.modal.category_name = treeNode.categoryName;
+        $scope.modal.is_used = Number(treeNode.isUsed);
+        $scope.$apply();
+        $("#edit_dialog").modal('show');
         return false;
     };
 
@@ -167,9 +210,34 @@ use yii\helpers\Url;
 
         var $scope = angular.element('[data-content-box="body"]').scope();
 
-        $.dialog.Confirm('确认删除【' + treeNode.name + '】分类吗?', function(result) {
-            var $scope = $('html').scope();
+        $.dialog.Confirm('确认删除【' + treeNode.categoryName + '】分类吗?', function(result) {
+          
             if (result) {
+
+                var ids = [];
+                    ids[0] = Number(treeNode.Id);
+                	$.ajax({
+                        type: "GET",
+                        dataType:"json",
+                        url: "<?=Url::toRoute('goods-category/delete-category')?>",
+                        data:{"ids":ids},
+                        success: function(value) 
+                        {
+                            if(value.errno == 0){
+
+                                $('#edit_dialog').modal('hide');
+                                $scope.categoryPId = null;
+                                $scope.newId = null;
+                                $scope.reloadTree();
+                                $.dialog.Success('操作成功！', function () {
+                                    $('#goodsbrand-table').bootstrapTable('refresh');
+                                });
+                            }else{
+
+                                $.dialog.Warn(value.msg);
+                            }
+                        }
+			        });
 
             } else {
                 return result;
@@ -191,17 +259,24 @@ use yii\helpers\Url;
         sObj.after(addStr);
         var btn = $("#addBtn_" + treeNode.tId);
         if (btn) btn.bind("click", function() {
-
+            var $scope = angular.element('[data-content-box="body"]').scope();
+            $("#edit_dialog").modal('show');
+            $scope.data = {};
+            $scope.modal = {};
+            $scope.data.category_p_id = treeNode.Id;
+            $scope.modal.is_used = 1;
             return false;
         });
     };
 
+    // 控制树图删除按钮
     function removeHoverDom(treeId, treeNode) {
         $("#addBtn_" + treeNode.tId).unbind().remove();
     };
-
+    
     function showRemoveBtn(treeId, treeNode) {
-        if (treeNode.Id == 1) {
+       
+        if (treeNode.children) {
             return false;
         } else {
             return true;

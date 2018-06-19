@@ -45,7 +45,7 @@ $modelLabel = new \backend\models\ShpGoodsCategory();
                 </div>
                 <div class="box-header search-box">
                     <div class="box-body">
-                        <table id="categoryToBrand-table" data-toggle="table" data-show-columns="true" data-autoheight="137" data-show-export="true"
+                        <table id="categoryToBrand-table" data-toggle="table" data-show-columns="true" data-autoheight="140" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
                             data-id-field="id" data-unique-id="id"  class="table table-hover th-table">
                             <thead>
@@ -62,8 +62,45 @@ $modelLabel = new \backend\models\ShpGoodsCategory();
             </div>
         </div>
     </section>
-    
- </div>
+
+    <div class="modal bootstrap-dialog type-primary modal-box fade" id="edit_dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">×</button>
+                    <h5 class="modal-title bootstrap-dialog-title">添加</h5>
+                </div>
+                <div class="modal-body">
+                     
+                     <form id="admin-role-form" role="form"  method="post" > 
+                        <table class="table">
+                            <tr>
+                                <td align="right"> 
+                                    <label for="category_name" class="control-label">分类名称</label>
+                                </td>
+                                <td>
+                                    <input type="text" ng-model="modal.category_name" class="form-control" id="category_name" name="ShpGoodsCategory[category_name]" placeholder="必填" />
+                                </td> 
+                                <td align="right"> 
+                                    <label for="is_used" class="control-label">是否启用</label>
+                                </td>
+                                <td>
+                                     <input type="checkbox" ng-model="modal.is_used" ng-true-value="1" ng-false-value="0" id="code" name="ShpGoodsCategory[is_used]"  />
+                                </td>
+                            </tr>
+                        </table>
+
+                    </form>        
+                </div>
+                <div class="modal-footer text-c">
+                    <button  class="btn btn-default" data-dismiss="modal">关闭</button> 
+                    <button  ng-click="saveAction()" class="btn btn-primary">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
