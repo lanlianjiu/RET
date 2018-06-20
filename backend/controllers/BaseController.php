@@ -37,7 +37,7 @@ class BaseController extends Controller
         }else{
             $system_rights = Yii::$app->user->identity->getSystemRights();
             $loginAllowUrl = [];
-            $loginAllowUrl = ['site/index', 'site/logout', 'site/psw', 'site/psw-save'];
+            $loginAllowUrl = ['site/index', 'site/logout', 'site/psw', 'site/psw-save','edit-user'];
            
             // 查询/table/index不记录日志
             if((strstr($route,'/table')||(strstr($route,'/index')))){

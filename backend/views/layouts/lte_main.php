@@ -45,16 +45,17 @@ if(isset($funInfo) == true && $funInfo['entry_url'] != $this->context->route){
     else{
         $otherMenu = false;
     }
-}
-else{
+}else{
     $otherMenu = false;
-}
+};
+
 if($otherMenu == false){
     Yii::$app->session['system_menus_current'] = null;
 }
 
 ?>
 <?php $this->beginPage()?>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -108,7 +109,7 @@ if($otherMenu == false){
                         <ul class="dropdown-menu" style="width: 150px;height:100px;">
                         <li>
                           <ul class="menu">
-                          <li><a href="<?=Url::toRoute('site/psw')?>"><i class="fa fa-cog"></i> 修改密码</a></li>
+                          <li><a href="<?=Url::toRoute('site/edit-user')?>"><i class="fa fa-cog"></i> 修改资料</a></li>
                             <li><a href="<?=Url::toRoute('site/logout')?>" data-method="post"><i class="fa fa-sign-out"></i> 退出</a></li>
                         </ul>
                       </ul>

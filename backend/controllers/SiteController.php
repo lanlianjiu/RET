@@ -16,23 +16,15 @@ class SiteController extends BaseController
     /**
      * @inheritdoc
      */
-//     public function actions()
-//     {
-//         return [
-//             'error' => [
-//                 'class' => 'yii\web\ErrorAction',
-//             ],
-//         ];
-//     }
+
 
     public function actionIndex()
     {
         if(Yii::$app->user->isGuest){
             $this->layout = "lte_main_login";
             return $this->render('login');
-        }
-        else{
-//             $this->layout = "lte_main";
+        }else{
+
             $menus = Yii::$app->user->identity->getSystemMenus();
             $sysInfo = [
                 ['name'=> '操作系统', 'value'=>php_uname('s')],  //'value'=>php_uname('s').' '.php_uname('r').' '.php_uname('v')],
@@ -61,7 +53,6 @@ class SiteController extends BaseController
                 ['last_ip' => CommonFun::getClientIp()],
                 ['uname' => $username]
                 );
-            //return $this->goBack();
             echo json_encode(['errno'=>0]);
         }
         else{
@@ -72,8 +63,7 @@ class SiteController extends BaseController
 
     public function actionTest()
     {
-
-          
+    
     }
     
     public function actionLogout()
@@ -82,6 +72,15 @@ class SiteController extends BaseController
         Yii::$app->user->logout();
         return $this->goHome();
     }
+
+    public function actionEditUser()
+    {
+       $userInfo = AdminUser::find()->andWhere(['user_id'=>Yii::$app->user->identity->id])->one();
+        return $this->render('editUserInfo',[
+            'userInfo' => $userInfo
+        ]);
+    }
+
     public function actionPsw()
     {
        $userRole = AdminUserRole::find()->with('role')->andWhere(['user_id'=>Yii::$app->user->identity->id])->one();
@@ -89,6 +88,7 @@ class SiteController extends BaseController
             'user_role' => $userRole->role->name
         ]);
     }
+
     public function actionPswSave()
     {
         $old_password = Yii::$app->request->post('old_password', '');
