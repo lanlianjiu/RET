@@ -33,7 +33,7 @@ $('[data-toggle="table"]').each(function () {
 	var exportType = $this.attr("data-export-type") || "all";
 	var tableHidelist = $this.attr("data-hide-column");
 	var autoHeight = $.utils.windowHeight() - tableId.offset().top - (Number(tableId.attr('data-autoheight')));
-
+	var paramsTable = $this.attr("data-table-obj") || "";
 	var option = {
 		url: tableUrl,
 		height: autoHeight,
@@ -45,6 +45,11 @@ $('[data-toggle="table"]').each(function () {
 	
 	var postParams = <?php echo json_encode($severUrlparam); ?>;
 
+	if(paramsTable){
+		var paramsUrl = JSON.parse(paramsTable);
+		$.extend(postParams, paramsUrl);
+	};
+	
 	//获取参数
 	function getParams(params) {
 		var temp = { 

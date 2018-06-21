@@ -70,9 +70,10 @@ class AdminModuleController extends BaseController
      */
     public function actionTable()
     {
-        $query = Yii::$app->db->createCommand('
-         SELECT *
-           FROM admin_module')->queryAll();
+       
+        $spl = "SELECT * FROM admin_module";
+        $query = Yii::$app->db->createCommand($spl)->queryAll();
+            
         return json_encode($query);
     }
 
