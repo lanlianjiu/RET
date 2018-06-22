@@ -34,7 +34,7 @@ use yii\helpers\Url;
                     <div class="box-body">
                         <table id="evaluatedOrder-table"  data-toggle="table" data-show-columns="true" data-autoheight="137" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                            data-id-field="order_id" data-unique-id="order_id" data-table-obj='{"order_status_id":"1008"}' data-custom-url="index.php?r=order/table" class="table  table-hover th-table">
+                            data-id-field="order_id" data-unique-id="order_id" data-method="post" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" data-ajax-options='{"order_status_id":"1008"}' data-custom-url="index.php?r=order/table" class="table  table-hover th-table">
                             <thead>
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>

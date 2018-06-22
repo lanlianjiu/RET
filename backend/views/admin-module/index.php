@@ -49,7 +49,7 @@ $modelLabel = new \backend\models\AdminModule();
                         </div>
                         <table id="adminModule-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="137" 
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                            data-id-field="id" data-unique-id="id" data-custom-url="index.php?r=admin-module/table" class="table  table-hover  th-table">
+                            data-id-field="id" data-unique-id="id" data-method="post" data-custom-url="index.php?r=admin-module/table" class="table  table-hover  th-table">
                             <thead>
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>

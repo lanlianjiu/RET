@@ -53,7 +53,7 @@ $modelLabel = new \backend\models\ShpGoodsCategory();
                         </div>
                         <table id="categoryToBrand-table" data-toggle="table" data-toolbar=".action-toolbar" data-show-columns="true" data-autoheight="140" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                            data-id-field="category2brand_id" data-unique-id="category2brand_id"  class="table table-hover th-table">
+                            data-id-field="category2brand_id" data-unique-id="category2brand_id" data-method="post" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" class="table table-hover th-table">
                             <thead>
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>

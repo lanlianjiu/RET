@@ -52,8 +52,9 @@ class AdminMenuController extends BaseController
 
     }
 
-    public function actionTable($postParams)
+    public function actionTable()
     {
+        $postParams = Yii::$app->request->post("postParams");
         $params = json_decode($postParams);
         $mid = $params->mid;
         $query = Yii::$app->db->createCommand('

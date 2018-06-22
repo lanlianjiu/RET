@@ -37,7 +37,8 @@ class GoodsCategoryController extends BaseController
 
     public function actionCategoryToBrand()
     {
-        $category_id = Yii::$app->request->get('category_id');
+         
+        $category_id = Yii::$app->request->post('category_id');
         $query = Yii::$app->db->createCommand('
          SELECT 
                 c2b.category2brand_id category2brand_id,

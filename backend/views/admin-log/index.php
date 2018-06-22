@@ -34,7 +34,7 @@ $modelLabel = new \backend\models\AdminLog();
                         </div>
                         <table id="adminLog-table" data-toggle="table" data-toolbar=".action-toolbar" data-show-columns="true" data-autoheight="137" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                            data-id-field="id" data-unique-id="id" data-hide-column="id" data-custom-url="index.php?r=admin-log/table" class="table table-hover th-table">
+                            data-id-field="id" data-unique-id="id"  data-hide-column="id" data-method="post" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" data-custom-url="index.php?r=admin-log/table" class="table table-hover th-table">
                             <thead>
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>

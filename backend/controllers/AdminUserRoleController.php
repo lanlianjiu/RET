@@ -27,8 +27,9 @@ class AdminUserRoleController extends BaseController
         ]);
     }
 
-    public function actionTable($postParams)
+    public function actionTable()
     {
+        $postParams = Yii::$app->request->post("postParams");
         $params = json_decode($postParams);
         $roleId = $params->roleId;
         $query = Yii::$app->db->createCommand('

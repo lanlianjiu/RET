@@ -51,8 +51,9 @@ class AdminRightController extends BaseController
         echo json_encode($result);
     }
 
-    public function actionTable($postParams)
+    public function actionTable()
     {
+        $postParams = Yii::$app->request->post("postParams");
         $params = json_decode($postParams);
         $id = $params->id;
         $query = Yii::$app->db->createCommand('

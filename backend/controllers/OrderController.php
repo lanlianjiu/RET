@@ -79,14 +79,16 @@ class OrderController extends BaseController
         return $this->render('cancelOrder');
     }
 
-     public function actionTable($postParams)
+     public function actionTable()
     {
-       $params = json_decode($postParams);
+
+        $order_status_id = Yii::$app->request->post("order_status_id");
         
         $sql  = "SELECT *FROM shp_orders o";
-        if(isset($params->order_status_id)){
-            $id = $params->order_status_id;
-            $sql = "SELECT *FROM shp_orders o WHERE o.order_status_id=".$id;
+        
+        if(isset($order_status_id)){
+           
+            $sql = "SELECT *FROM shp_orders o WHERE o.order_status_id=".$order_status_id;
         };
 
         $query = Yii::$app->db->createCommand($sql)->queryAll();
