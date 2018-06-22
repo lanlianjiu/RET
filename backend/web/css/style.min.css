@@ -10,9 +10,9 @@ body {
     -moz-font-smoothing: antialiased;
 }
 
-.modal-body {
+.main-sidebar {
     overflow: auto;
-    max-height: 500px;
+    height: 100%;
 }
 
 .form-control {
@@ -37,9 +37,7 @@ ul li {
     list-style: none;
 }
 
-a,
-a:hover,
-a:focus {
+a, a:hover, a:focus {
     text-decoration: none;
     outline: none;
 }
@@ -80,8 +78,7 @@ a:focus {
     border: 1px solid #46A4E8;
 }
 
-.fixed-table-pagination .pagination-detail,
-.fixed-table-pagination div.pagination {
+.fixed-table-pagination .pagination-detail, .fixed-table-pagination div.pagination {
     margin-bottom: 0px;
 }
 
@@ -201,8 +198,7 @@ thead {
     text-align: center !important;
 }
 
-.dataTable>thead>tr>th:first-child,
-.dataTable>tbody>tr>td:first-child {
+.dataTable>thead>tr>th:first-child, .dataTable>tbody>tr>td:first-child {
     text-align: center;
 }
 
@@ -210,8 +206,7 @@ thead {
     padding-right: 10px;
 }
 
-.dataTable>thead>tr>th:last-child,
-.dataTable>tbody>tr>td:last-child {
+.dataTable>thead>tr>th:last-child, .dataTable>tbody>tr>td:last-child {
     text-align: center;
 }
 
