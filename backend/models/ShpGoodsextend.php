@@ -11,10 +11,14 @@ use Yii;
  * @property integer $goods_stock_num
  * @property integer $goods_sales_num
  * @property integer $goods_id
+ * @property integer $color_id
+ * @property integer $goods_size_id
  *
  * @property ShpGoods $goods
+ * @property ShpColor $color
+ * @property ShpGoodsSize $goodsSize
  */
-class ShpGoodsextend extends \yii\db\ActiveRecord
+class ShpGoodsextend extends \backend\models\BaseModel
 {
     /**
      * @inheritdoc
@@ -30,8 +34,8 @@ class ShpGoodsextend extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['goods_stock_num', 'goods_sales_num', 'goods_id'], 'integer'],
-            [['goods_sales_num', 'goods_id'], 'required'],
+            [['goods_stock_num', 'goods_sales_num', 'goods_id', 'color_id', 'goods_size_id'], 'integer'],
+            [['goods_stock_num', 'goods_id', 'color_id', 'goods_size_id'], 'required'],
         ];
     }
 
@@ -45,6 +49,8 @@ class ShpGoodsextend extends \yii\db\ActiveRecord
             'goods_stock_num' => 'Goods Stock Num',
             'goods_sales_num' => 'Goods Sales Num',
             'goods_id' => 'Goods ID',
+            'color_id' => 'Color ID',
+            'goods_size_id' => 'Goods Size ID',
         ];
     }
 
@@ -54,5 +60,21 @@ class ShpGoodsextend extends \yii\db\ActiveRecord
     public function getGoods()
     {
         return $this->hasOne(ShpGoods::className(), ['goods_id' => 'goods_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getColor()
+    {
+        return $this->hasOne(ShpColor::className(), ['color_id' => 'color_id']);
+    }
+
+    /**
+     * @return \yii\db\ActiveQuery
+     */
+    public function getGoodsSize()
+    {
+        return $this->hasOne(ShpGoodsSize::className(), ['goods_size_id' => 'goods_size_id']);
     }
 }

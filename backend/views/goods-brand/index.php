@@ -95,7 +95,7 @@ $form = ActiveForm::begin(["id" => "web-nav-form"]);//定义form表单，调用�
                                     <label for="brand_name" class="control-label">品牌名称</label>
                                 </td>
                                 <td>
-                                   <input type="text" ng-model="modal.brand_name" class="form-control" id="code" name="ShpGoodsBrand[brand_name]" placeholder="必填" />
+                                   <input type="text" ng-model="modal.brand_name" class="form-control"  name="ShpGoodsBrand[brand_name]" placeholder="必填" />
                                 </td>
                             </tr>
                             <tr>
@@ -103,7 +103,7 @@ $form = ActiveForm::begin(["id" => "web-nav-form"]);//定义form表单，调用�
                                     <label for="is_used" class="control-label">是否启用</label>
                                 </td>
                                 <td>
-                                     <input type="checkbox" ng-model="modal.is_used" ng-true-value="1" ng-false-value="0" id="code" name="ShpGoodsBrand[is_used]"  />
+                                     <input type="checkbox" ng-model="modal.is_used" ng-true-value="1" ng-false-value="0"  name="ShpGoodsBrand[is_used]"  />
                                 </td>
                             </tr>
                         </table>

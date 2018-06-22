@@ -91,13 +91,13 @@ $form = ActiveForm::begin(["id" => "goods-form"]);//定义form表单，调用组
                                     <label for="goods_name" class="control-label">商品名称</label>
                                 </td>
                                 <td>
-                                   <input type="text" ng-model="modal.goods_name" class="form-control" id="code" name="ShpGoods[goods_name]" placeholder="必填" />
+                                   <input type="text" ng-model="modal.goods_name" class="form-control"  name="ShpGoods[goods_name]" placeholder="必填" />
                                 </td>
                                 <td align="right"> 
                                     <label for="goods_price" class="control-label">商品价格</label>
                                 </td>
                                 <td>
-                                   <input type="text" ng-model="modal.goods_price" class="form-control" id="code" name="ShpGoods[goods_price]" placeholder="必填" />
+                                   <input type="text" ng-model="modal.goods_price" class="form-control"  name="ShpGoods[goods_price]" placeholder="必填" />
                                 </td>
                             </tr>
                             <tr>
@@ -105,14 +105,12 @@ $form = ActiveForm::begin(["id" => "goods-form"]);//定义form表单，调用组
                                     <label for="category_id" class="control-label">商品分类</label>
                                 </td>
                                 <td>
-                                   <!-- <input type="text" ng-model="modal.category_id" class="form-control" id="code" name="ShpGoods[category_id]" placeholder="必填" /> -->
                                    <select id="sel_menu" style="width:100%" class="form-control" ng-model="modal.category_id" name="ShpGoods[category_id]"></select>
                                 </td>
                                 <td align="right"> 
                                     <label for="brand_id" class="control-label">商品品牌</label>
                                 </td>
                                 <td>
-                                   <!-- <input type="text" ng-model="modal.brand_id" class="form-control" id="code" name="ShpGoods[brand_id]" placeholder="必填" /> -->
                                     <select id="sel_brand" style="width:100%" class="form-control" ng-model="modal.brand_id" name="ShpGoods[brand_id]"></select>
                                 </td>
                             </tr>
@@ -121,7 +119,7 @@ $form = ActiveForm::begin(["id" => "goods-form"]);//定义form表单，调用组
                                     <label for="is_used" class="control-label">是否启用</label>
                                 </td>
                                 <td>
-                                     <input type="checkbox" ng-model="modal.is_used" ng-true-value="1" ng-false-value="0" id="code" name="ShpGoods[is_used]"  />
+                                     <input type="checkbox" ng-model="modal.is_used" ng-true-value="1" ng-false-value="0" id="is_used" name="ShpGoods[is_used]"  />
                                 </td>
                             </tr>
                         </table>

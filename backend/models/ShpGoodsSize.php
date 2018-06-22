@@ -14,7 +14,7 @@ use Yii;
  *
  * @property ShpGoods $goods
  */
-class ShpGoodsSize extends \yii\db\ActiveRecord
+class ShpGoodsSize extends \backend\models\BaseModel
 {
     /**
      * @inheritdoc

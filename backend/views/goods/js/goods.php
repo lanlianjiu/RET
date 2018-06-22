@@ -193,6 +193,9 @@ use yii\helpers\Url;
 
 	function  operateFormatter(value, row, index) {
 		var h = "";
+		var action = "<?=Url::toRoute('shp-goods-size/index')?>"+'&goods_id='+row.goods_id;
+		    h +='<a id="view_btn" class="action-a-btn" href="'+action+'">设置参数</a>';
+			h +='<a id="view_btn" class="action-a-btn" href="'+action+'">商品图片</a>';
 			h +='<a id="edit_btn" onclick="editAction(' +row.goods_id +')" class="action-a-btn" > <i class="fa fa-edit icon-white"></i></a>';
 			h +='<a id="delete_btn" onclick="deleteAction('+row.goods_id +')" class="action-a-btn" > <i class="fa fa-trash icon-white"></i></a>';
 		return h;
