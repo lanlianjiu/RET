@@ -10,6 +10,51 @@ body {
     -moz-font-smoothing: antialiased;
 }
 
+/*IE滚动条颜色设置*/
+
+body, .main-sidebar {
+    scrollbar-arrow-color: #f2f2f3;
+    /*上下箭头*/
+    scrollbar-track-color: #1589ce;
+    /*底层背景色*/
+    scrollbar-face-color: #27aeff;
+    /*滚动条前景色*/
+    scrollbar-Shadow-color: #1589ce;
+    /*滚动条边线色*/
+}
+
+/*chrome滚动条颜色设置*/
+
+body::-webkit-scrollbar{
+    width: 0px;
+    height: 5px;
+    background-color: transparent;
+}
+
+.main-sidebar::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    background-color: transparent;
+}
+
+/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+
+body::-webkit-scrollbar-track, .main-sidebar::-webkit-scrollbar-track {
+    background-color: #ccc;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+/*定义滚动条轨道 内阴影+圆角*/
+
+body::-webkit-scrollbar-thumb, .main-sidebar::-webkit-scrollbar-thumb {
+    background-color: #555;
+    border-radius: 5px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, .3);
+}
+
+/*定义滑块 内阴影+圆角*/
+
 .main-sidebar {
     overflow: auto;
     height: 100%;
