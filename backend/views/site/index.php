@@ -6,40 +6,6 @@
       
         <div class="col-md-6">
 
-          <!-- AREA CHART -->
-          <div class="box box-primary">
-            <div class="box-header with-border">
-              <h3 class="box-title">面积折线图</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div class="chart">
-                <canvas id="areaChart" style="height:250px"></canvas>
-              </div>
-            </div>
-          </div>
-
-          <!-- DONUT CHART -->
-          <div class="box box-danger">
-            <div class="box-header with-border">
-              <h3 class="box-title">圆圈图</h3>
-              <div class="box-tools pull-right">
-                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i></button>
-                <button type="button" class="btn btn-box-tool" data-widget="remove"><i class="fa fa-times"></i></button>
-              </div>
-            </div>
-            <div class="box-body">
-              <div id="pieChart" style="height:237px"></div>
-            </div>
-          </div>
-
-        </div>
-
-        <div class="col-md-6">
-
           <!-- LINE CHART -->
           <div class="box box-info">
             <div class="box-header with-border">
@@ -75,6 +41,12 @@
             </div>
           </div>
 
+        </div>
+
+        <div class="col-md-6">
+          <div data-autoheight="130">
+              <div id="allmap"  style="width:100%;height:600px"></div>
+          </div>
         </div>
 
       </div>

@@ -86,6 +86,14 @@ $form = ActiveForm::begin(["id" => "goods-form"]);//定义form表单，调用组
                     <form id="goods-form" role="form"  method="post">
                      
                         <table class="table">
+                             <tr>
+                                <td align="right"> 
+                                    <label for="goods_main_pic" class="control-label">商品图片</label>
+                                </td>
+                                <td colspan="3">
+                                    <?= $form->field($modelLabel,'goods_main_pic')->widget('common\widgets\file_upload\FileUpload',['config'=>[]])?>
+                                </td>
+                            </tr>
                             <tr>
                                 <td align="right"> 
                                     <label for="goods_name" class="control-label">商品名称</label>

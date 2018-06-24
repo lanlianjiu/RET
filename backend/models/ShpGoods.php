@@ -57,6 +57,7 @@ class ShpGoods  extends \backend\models\BaseModel
             'goods_price' => 'Goods Price',
             'goods_color_id' => 'Goods Color ID',
             'category_id' => 'Category ID',
+            'goods_main_pic' => '',
         ];
     }
 

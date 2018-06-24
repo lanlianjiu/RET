@@ -26,17 +26,56 @@ class SiteController extends BaseController
         }else{
 
             $menus = Yii::$app->user->identity->getSystemMenus();
-            $sysInfo = [
-                ['name'=> '操作系统', 'value'=>php_uname('s')],  //'value'=>php_uname('s').' '.php_uname('r').' '.php_uname('v')],
-                ['name'=>'PHP版本', 'value'=>phpversion()],
-                ['name'=>'Yii版本', 'value'=>Yii::getVersion()],
-                ['name'=>'数据库', 'value'=>$this->getDbVersion()],
-                ['name'=>'AdminLTE', 'value'=>'V2.3.6'],
-                ['name'=>'建议和BUG', 'value'=>'http://git.oschina.net/penngo/chadmin/issues'],
-            ];
+            $sumInfo =  Yii::$app->db->createCommand('
+         SELECT 
+                ( SELECT count(*)
+                    FROM shp_orders
+                    WHERE date_format(create_time,"%Y-%m-%d") = (select subdate(curdate(),date_format(curdate(),"%w")-1)) 
+                ) MonNum,
+                
+                ( SELECT count(*)
+                    FROM shp_orders
+                    WHERE date_format(create_time,"%Y-%m-%d") = (select subdate(curdate(),date_format(curdate(),"%w")-2)) 
+                ) TueNum,
+
+                ( SELECT count(*)
+                    FROM shp_orders
+                    WHERE date_format(create_time,"%Y-%m-%d") = (select subdate(curdate(),date_format(curdate(),"%w")-3)) 
+                ) WedNum,
+
+
+                ( SELECT count(*)
+                    FROM shp_orders
+                    WHERE date_format(create_time,"%Y-%m-%d") = (select subdate(curdate(),date_format(curdate(),"%w")-4)) 
+                ) ThurNum,
+
+
+
+                ( SELECT count(*)
+                    FROM shp_orders
+                    WHERE date_format(create_time,"%Y-%m-%d") = (select subdate(curdate(),date_format(curdate(),"%w")-5)) 
+                ) FriNum,
+
+
+                ( SELECT count(*)
+                    FROM shp_orders
+                    WHERE date_format(create_time,"%Y-%m-%d") = (select subdate(curdate(),date_format(curdate(),"%w")-6)) 
+                ) SatNum,
+
+
+                ( SELECT count(*)
+                    FROM shp_orders
+                    WHERE date_format(create_time,"%Y-%m-%d") = (select subdate(curdate(),date_format(curdate(),"%w")-7)) 
+                ) SunNum
+
+         
+         
+           
+           ')->queryAll();
+
             return $this->render('index', [
                 'system_menus' => $menus,
-                'sysInfo'=>$sysInfo
+                'sumInfo'=>$sumInfo
             ]);
         }
     }

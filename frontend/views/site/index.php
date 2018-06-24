@@ -1,3 +1,4 @@
 <?php
-$this->title = '首页'; 
+    $this->title = '首页'; 
+    
 ?>

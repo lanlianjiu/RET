@@ -11,6 +11,18 @@ use yii\web\NotFoundHttpException;
 class GoodsController extends BaseController
 {
     public $layout = "lte_main";
+
+     public function actions(){
+        return [
+            'upload'=>[
+                    'class'=>'common\widgets\file_upload\UploadAction',
+                    'config'=>[
+                        'imagePathFormat' => "/SHP/goodsUploadimg/{yyyy}{mm}{dd}/{time}{rand:6}",
+                            ]
+                    ]
+        ];
+    }
+
     public function actionIndex()
     {
         return $this->render('index');

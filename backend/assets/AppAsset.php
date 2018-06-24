@@ -72,6 +72,7 @@ class AppAsset extends AssetBundle
         '/SHP/backend/web/plugins/zTree/jquery.ztree.core.min.js',
         '/SHP/backend/web/plugins/zTree/jquery.ztree.exedit.min.js',
         '/SHP/backend/web/plugins/select2/select2.min.js',
+        'http://api.map.baidu.com/api?v=2&ak=hvkoceANhFDRoMuI7noiOQFmjRMGTNFP',
 
         '/SHP/backend/web/js/iov-min.js'
     ];

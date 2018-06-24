@@ -47,7 +47,8 @@ use yii\helpers\Url;
 					'ShpGoods[brand_id]':$("#sel_brand").select2().val(),
 					'ShpGoods[goods_name]':$scope.modal.goods_name,
 					'ShpGoods[goods_price]':$scope.modal.goods_price,
-					'ShpGoods[is_used]':$scope.modal.is_used
+					'ShpGoods[is_used]':$scope.modal.is_used,
+					'ShpGoods[goods_main_pic]':$('input[up-id="goods_main_pic"]').val(),
 				},
 				success: function(value) 
 				{
@@ -194,8 +195,9 @@ use yii\helpers\Url;
 	function  operateFormatter(value, row, index) {
 		var h = "";
 		var action = "<?=Url::toRoute('shp-goods-size/index')?>"+'&goods_id='+row.goods_id;
+		var actionpic = "<?=Url::toRoute('goods-pic/index')?>"+'&goods_id='+row.goods_id;
 		    h +='<a id="view_btn" class="action-a-btn" href="'+action+'">设置参数</a>';
-			h +='<a id="view_btn" class="action-a-btn" href="'+action+'">商品图片</a>';
+			h +='<a id="view_btn" class="action-a-btn" href="'+actionpic+'">商品图片</a>';
 			h +='<a id="edit_btn" onclick="editAction(' +row.goods_id +')" class="action-a-btn" > <i class="fa fa-edit icon-white"></i></a>';
 			h +='<a id="delete_btn" onclick="deleteAction('+row.goods_id +')" class="action-a-btn" > <i class="fa fa-trash icon-white"></i></a>';
 		return h;

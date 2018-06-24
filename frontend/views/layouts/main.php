@@ -11,7 +11,7 @@ use yii\widgets\Breadcrumbs;
 use frontend\assets\AppAsset;
 use common\widgets\Alert;
 use frontend\models\WebNavModel;
-use frontend\widgets\banner\BannerWidget;
+use yii\bootstrap\Widget;
 AppAsset::register($this);
 //查询导航
 $navmodel = new WebNavModel();
@@ -30,72 +30,244 @@ $this->title = '首页';
     <?= Html::csrfMetaTags() ?>
     <title><?= Html::encode($this->title) ?></title>
     <?php $this->head() ?>
-    <link rel="stylesheet" href="<?=Url::base()?>/css/site.css">
+    <link rel="stylesheet" href="<?=Url::base()?>/css/reset.css">
+    <link rel="stylesheet" href="<?=Url::base()?>/css/main.css">
 </head>
 <body>
 <?php $this->beginBody() ?>
-
-<div class="wrap">
-    <div class="container" style="width: 1035px;">
-        <div class="site-index">
-            <div class="body-content">
-                <div class="row no-margin" style="background-color: #fbffed;">
-                    <div class="col-lg-9">
-                       <marquee scrollamount="3"><b>广州拓新保洁服务热线：0571-888888</b></marquee>
-                    </div>
-                    <div class="col-lg-3 inline">
-                       <p class="title-nav"><?php echo '<a href="'.Url::toRoute('web-content/signup').'">注册</a>'; ?></p>
-                    </div>
-                </div>
-                <div class="row no-margin">
-                    <div class="col-lg-12 no-padding" style="height:195px;background-color: #A2D410;">
-                        <embed src="img/flash5985.swf" width="100%" height="195" type="application/x-shockwave-flash" wmode="transparent" quality="high" align="absmiddle">
-                    </div>
-                </div>
-                <div class="row no-margin ">
-                    <div class="col-lg-12 no-padding">
-                        <ul class="nav nav-pills nav-justified header-nav">
-                            <?php
-                            
-                            foreach ($mainNav as $key => $value) {
-                                echo  '<li><a href="'.Url::toRoute($value['url']).'">'.$value['web_nav_name'].'</a></li>';
-                            }
-                            ?>
-                        </ul>
-                    </div>
-                </div>
-                <div class="row no-margin">
-                            
-                    <div class="col-lg-3" style="height:700px;border:1px solid #ddd;margin-top:5px;margin-bottom:5px;padding-right: 10px;
-    padding-left: 10px;">
-                        <h2><img src="img/index_08.png" width="238" height="38"></h2>
-                        <div><?=BannerWidget::widget()?></div>
-                        <div class="service-item"> 
-                            <ul>
-                                <?php
-                                    foreach ($severNav as $key => $value) {
-                                        echo  '<li><a href="#">'.$value['web_nav_name'].'</a></li>';
-                                    }
-                                ?>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-lg-9">
-                        <h3 class="content-title" style="margin-top: 2px;"><a href="Default.aspx">首页</a><span class="p-rl5">&gt;</span><a href="#">服务项目</a></h3>
-                        <?= $content ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <footer class="footer index-footer">
-            <div class="row no-margin">
-           <p> 版权所有：广州市拓新保洁服务有限公司     技术支持：广州首传科技有限公司</p>
-            <p>公司地址：广州市萍水路389号        联系电话：0571-567567556        Email:771678566@qq.com</P>
-            </div>
-        </footer>
-    </div>
-</div>
-
+	<div class="headerBar">
+		<div class="topBar">
+			<div class="comWidth row">
+                <!-- <div class="col-md-8" style="float:left">
+                     <marquee scrollamount="3"><b>广州拓新保洁服务热线：0571-888888</b></marquee>
+                </div> -->
+				<div class="rightArea col-md-4">
+					欢迎来到衣旺网！
+                    <?php echo '<a href="'.Url::toRoute('web-content/login').'">[登录]</a>'; ?>
+					<?php echo '<a href="'.Url::toRoute('web-content/signup').'">[免费注册]</a>'; ?>
+				</div>
+			</div>
+		</div>
+		<div class="logoBar">
+			<div class="comWidth">
+				<div class="logo fl">
+					<a href="#">
+						<img src="images/logo.jpg" alt="慕课网">
+					</a>
+				</div>
+				<div class="search_box fl">
+					<input type="text" class="search_text fl">
+					<input type="button" value="搜 索" class="search_btn fr">
+				</div>
+				<div class="shopCar fr">
+					<span class="shopText fl">购物车</span>
+					<span class="shopNum fl">0</span>
+				</div>
+			</div>
+		</div>
+		<div class="navBox">
+			<div class="comWidth clearfix">
+				<div class="shopClass fl">
+					<h3>全部商品分类
+						<i class="shopClass_icon"></i>
+					</h3>
+					<div class="shopClass_show">
+						<dl class="shopClass_item">
+							<dt>
+								<a href="#" class="b">手机</a>
+								<a href="#" class="b">数码</a>
+								<a href="#" class="aLink">合约机</a>
+							</dt>
+							<dd>
+								<a href="#">荣耀3X</a>
+								<a href="#">单反</a>
+								<a href="#">智能设备</a>
+							</dd>
+						</dl>
+						<dl class="shopClass_item">
+							<dt>
+								<a href="#" class="b">手机</a>
+								<a href="#" class="b">数码</a>
+								<a href="#" class="aLink">合约机</a>
+							</dt>
+							<dd>
+								<a href="#">荣耀3X</a>
+								<a href="#">单反</a>
+								<a href="#">智能设备</a>
+							</dd>
+						</dl>
+						<dl class="shopClass_item">
+							<dt>
+								<a href="#" class="b">手机</a>
+								<a href="#" class="b">数码</a>
+								<a href="#" class="aLink">合约机</a>
+							</dt>
+							<dd>
+								<a href="#">荣耀3X</a>
+								<a href="#">单反</a>
+								<a href="#">智能设备</a>
+							</dd>
+						</dl>
+						<dl class="shopClass_item">
+							<dt>
+								<a href="#" class="b">手机</a>
+								<a href="#" class="b">数码</a>
+								<a href="#" class="aLink">合约机</a>
+							</dt>
+							<dd>
+								<a href="#">荣耀3X</a>
+								<a href="#">单反</a>
+								<a href="#">智能设备</a>
+							</dd>
+						</dl>
+						<dl class="shopClass_item">
+							<dt>
+								<a href="#" class="b">手机</a>
+								<a href="#" class="b">数码</a>
+								<a href="#" class="aLink">合约机</a>
+							</dt>
+							<dd>
+								<a href="#">荣耀3X</a>
+								<a href="#">单反</a>
+								<a href="#">智能设备</a>
+							</dd>
+						</dl>
+					</div>
+					<div class="shopClass_list hide">
+						<div class="shopClass_cont">
+							<dl class="shopList_item">
+								<dt>电脑装机</dt>
+								<dd>
+									<a href="#">文字啊</a>
+									<a href="#">文字字啊</a>
+									<a href="#">文字字字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字</a>
+									<a href="#">文字啊</a>
+								</dd>
+							</dl>
+							<dl class="shopList_item">
+								<dt>电脑装机</dt>
+								<dd>
+									<a href="#">文字啊</a>
+									<a href="#">文字字啊</a>
+									<a href="#">文字字字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字字啊</a>
+									<a href="#">文字字字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字啊</a>
+								</dd>
+							</dl>
+							<dl class="shopList_item">
+								<dt>电脑装机</dt>
+								<dd>
+									<a href="#">文字啊</a>
+									<a href="#">文字字啊</a>
+									<a href="#">文字字字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字字啊</a>
+									<a href="#">文字字字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字啊</a>
+								</dd>
+							</dl>
+							<dl class="shopList_item">
+								<dt>电脑装机</dt>
+								<dd>
+									<a href="#">文字啊</a>
+									<a href="#">文字字啊</a>
+									<a href="#">文字字字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字字啊</a>
+									<a href="#">文字字字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字啊</a>
+								</dd>
+							</dl>
+							<dl class="shopList_item">
+								<dt>电脑装机</dt>
+								<dd>
+									<a href="#">文字啊</a>
+									<a href="#">文字字啊</a>
+									<a href="#">文字字字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字字啊</a>
+									<a href="#">文字字字啊</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字</a>
+									<a href="#">文字啊</a>
+									<a href="#">文字啊</a>
+								</dd>
+							</dl>
+							<div class="shopList_links">
+								<a href="#">文字测试内容等等
+									<span></span>
+								</a>
+								<a href="#">文字容等等
+									<span></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<ul class="nav fl">
+                     <?php
+                                
+                        foreach ($mainNav as $key => $value) {
+                            echo  '<li><a href="'.Url::toRoute($value['url']).'">'.$value['web_nav_name'].'</a></li>';
+                        }
+                    ?>
+				</ul>
+			</div>
+		</div>
+	</div>
+	 <?= $content ?>
+	<div class="hr_25"></div>
+	<div class="footer">
+		<p>
+			<a href="#">慕课简介</a>
+			<i>|</i>
+			<a href="#">慕课公告</a>
+			<i>|</i>
+			<a href="#">招纳贤士</a>
+			<i>|</i>
+			<a href="#">联系我们</a>
+			<i>|</i>客服热线：400-675-1234</p>
+		<p>Copyright &copy; 2006 - 2014 慕课版权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;&nbsp;京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;某市公安局XX分局备案编号：123456789123</p>
+		<p class="web">
+			<a href="#">
+				<img src="images/webLogo.jpg" alt="logo">
+			</a>
+			<a href="#">
+				<img src="images/webLogo.jpg" alt="logo">
+			</a>
+			<a href="#">
+				<img src="images/webLogo.jpg" alt="logo">
+			</a>
+			<a href="#">
+				<img src="images/webLogo.jpg" alt="logo">
+			</a>
+		</p>
+	</div>
 <?php $this->endBody() ?>
 </body>
 </html>

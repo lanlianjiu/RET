@@ -8,6 +8,7 @@ use yii\caching\Cache;
 use yii\filters\AccessControl;
 use yii\filters\VerbFilter;
 use frontend\models\SignupForm;
+use frontend\models\LoginForm;
 use yii\helpers\Url;
 ini_set("display_errors", "on");
 use Aliyun\Core\Config;
@@ -77,7 +78,14 @@ class WebContentController extends \yii\web\Controller
     //公司首页
     public function actionIndex()
     {
-        return $this->render('index');
+
+         $womenDtat = Yii::$app->db->createCommand('
+         SELECT 
+         g.*
+           FROM shp_goods g
+          WHERE g.category_id=1001')->queryAll();
+
+        return $this->render('index',["womendata"=>$womenDtat]);
     }
 
     //公司简介

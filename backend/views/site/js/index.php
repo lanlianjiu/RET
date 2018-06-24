@@ -3,25 +3,27 @@ use yii\helpers\Url;
 ?>
 <script>
   $(function () {
-    //--------------
-    //- AREA CHART -
-    //--------------
-    var areaChartCanvas = $("#areaChart").get(0).getContext("2d");
-    var areaChart = new Chart(areaChartCanvas);
 
+    var map = new BMap.Map("allmap");  // 创建Map实例
+	 map.centerAndZoom("广州",15);      // 初始化地图,用城市名设置地图中心点
+    map.enableScrollWheelZoom(true);
+    var sumData = <?php echo json_encode($sumInfo); ?>;
+    
+    var data = [];
+    for(var i = 0; i<sumData.length;i++){
+
+     data.push(sumData[i].MonNum);
+     data.push(sumData[i].TueNum);
+     data.push(sumData[i].WedNum);
+     data.push(sumData[i].ThurNum);
+     data.push(sumData[i].FriNum);
+     data.push(sumData[i].SatNum);
+     data.push(sumData[i].SunNum);
+    };
     var areaChartData = {
       labels: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
       datasets: [
-        {
-          label: "Electronics",
-          fillColor: "rgba(210, 214, 222, 1)",
-          strokeColor: "rgba(210, 214, 222, 1)",
-          pointColor: "rgba(210, 214, 222, 1)",
-          pointStrokeColor: "#c1c7d1",
-          pointHighlightFill: "#fff",
-          pointHighlightStroke: "rgba(220,220,220,1)",
-          data: [65, 59, 80, 81, 56, 55, 40]
-        },
+       
         {
           label: "Digital Goods",
           fillColor: "rgba(60,141,188,0.9)",
@@ -30,7 +32,7 @@ use yii\helpers\Url;
           pointStrokeColor: "rgba(60,141,188,1)",
           pointHighlightFill: "#fff",
           pointHighlightStroke: "rgba(60,141,188,1)",
-          data: [28, 48, 40, 19, 86, 27, 90]
+          data: data
         }
       ]
     };
@@ -56,8 +58,7 @@ use yii\helpers\Url;
       responsive: true
     };
 
-    //Create the line chart
-    areaChart.Line(areaChartData, areaChartOptions);
+  
 
     //-------------
     //- LINE CHART -
@@ -68,36 +69,13 @@ use yii\helpers\Url;
     lineChartOptions.datasetFill = false;
     lineChart.Line(areaChartData, lineChartOptions);
 
-    //-------------
-    //- PIE CHART -
-    //-------------
    
-   //DONUT CHART
-    var donut = new Morris.Donut({
-      element: 'pieChart',
-      resize: true,
-      colors: ["#3c8dbc", "#f56954", "#00a65a"],
-      data: [
-        {label: "周一", value: 10},
-        {label: "周二", value: 20},
-        {label: "周三", value: 30},
-        {label: "周四", value: 40},
-        {label: "周五", value: 50},
-        {label: "周六", value: 60},
-        {label: "周日", value: 70}
-      ],
-      hideHover: 'auto'
-    });
-
     //-------------
     //- BAR CHART -
     //-------------
     var barChartCanvas = $("#barChart").get(0).getContext("2d");
     var barChart = new Chart(barChartCanvas);
     var barChartData = areaChartData;
-    barChartData.datasets[1].fillColor = "#00a65a";
-    barChartData.datasets[1].strokeColor = "#00a65a";
-    barChartData.datasets[1].pointColor = "#00a65a";
     var barChartOptions = {
       scaleBeginAtZero: true,
       scaleShowGridLines: true,
