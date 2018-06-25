@@ -403,7 +403,7 @@
 .shopList .rightArea {
     width: 1000px;
     border: #999 solid 1px;
-    border-bottom: #FF7201 solid 3px;
+    border-top: #FF7201 solid 3px;
     /* height: 396px; */
     overflow: hidden;
 }
