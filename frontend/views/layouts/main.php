@@ -43,7 +43,14 @@ $this->title = '首页';
                 </div> -->
 				<div class="rightArea col-md-4">
 					欢迎来到衣旺网！
-                    <?php echo '<a href="'.Url::toRoute('web-content/login').'">[登录]</a>'; ?>
+					<?php
+						if(Yii::$app->user->isGuest){
+							
+							echo '<a href="'.Url::toRoute('web-content/login').'">[登录]</a>'; 
+						}else{
+							echo '<a href="'.Url::toRoute('web-content/logout').'">[退出]</a>';
+						};
+					?>
 					<?php echo '<a href="'.Url::toRoute('web-content/signup').'">[免费注册]</a>'; ?>
 				</div>
 			</div>
@@ -83,150 +90,260 @@ $this->title = '首页';
 								<a href="#">单反</a>
 								<a href="#">智能设备</a>
 							</dd>
-						</dl>
-						<dl class="shopClass_item">
-							<dt>
-								<a href="#" class="b">手机</a>
-								<a href="#" class="b">数码</a>
-								<a href="#" class="aLink">合约机</a>
-							</dt>
-							<dd>
-								<a href="#">荣耀3X</a>
-								<a href="#">单反</a>
-								<a href="#">智能设备</a>
-							</dd>
-						</dl>
-						<dl class="shopClass_item">
-							<dt>
-								<a href="#" class="b">手机</a>
-								<a href="#" class="b">数码</a>
-								<a href="#" class="aLink">合约机</a>
-							</dt>
-							<dd>
-								<a href="#">荣耀3X</a>
-								<a href="#">单反</a>
-								<a href="#">智能设备</a>
-							</dd>
-						</dl>
-						<dl class="shopClass_item">
-							<dt>
-								<a href="#" class="b">手机</a>
-								<a href="#" class="b">数码</a>
-								<a href="#" class="aLink">合约机</a>
-							</dt>
-							<dd>
-								<a href="#">荣耀3X</a>
-								<a href="#">单反</a>
-								<a href="#">智能设备</a>
-							</dd>
-						</dl>
-						<dl class="shopClass_item">
-							<dt>
-								<a href="#" class="b">手机</a>
-								<a href="#" class="b">数码</a>
-								<a href="#" class="aLink">合约机</a>
-							</dt>
-							<dd>
-								<a href="#">荣耀3X</a>
-								<a href="#">单反</a>
-								<a href="#">智能设备</a>
-							</dd>
-						</dl>
-					</div>
-					<div class="shopClass_list hide">
-						<div class="shopClass_cont">
-							<dl class="shopList_item">
-								<dt>电脑装机</dt>
-								<dd>
-									<a href="#">文字啊</a>
-									<a href="#">文字字啊</a>
-									<a href="#">文字字字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字</a>
-									<a href="#">文字啊</a>
-								</dd>
-							</dl>
-							<dl class="shopList_item">
-								<dt>电脑装机</dt>
-								<dd>
-									<a href="#">文字啊</a>
-									<a href="#">文字字啊</a>
-									<a href="#">文字字字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字字啊</a>
-									<a href="#">文字字字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字啊</a>
-								</dd>
-							</dl>
-							<dl class="shopList_item">
-								<dt>电脑装机</dt>
-								<dd>
-									<a href="#">文字啊</a>
-									<a href="#">文字字啊</a>
-									<a href="#">文字字字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字字啊</a>
-									<a href="#">文字字字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字啊</a>
-								</dd>
-							</dl>
-							<dl class="shopList_item">
-								<dt>电脑装机</dt>
-								<dd>
-									<a href="#">文字啊</a>
-									<a href="#">文字字啊</a>
-									<a href="#">文字字字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字字啊</a>
-									<a href="#">文字字字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字啊</a>
-								</dd>
-							</dl>
-							<dl class="shopList_item">
-								<dt>电脑装机</dt>
-								<dd>
-									<a href="#">文字啊</a>
-									<a href="#">文字字啊</a>
-									<a href="#">文字字字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字字啊</a>
-									<a href="#">文字字字啊</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字</a>
-									<a href="#">文字啊</a>
-									<a href="#">文字啊</a>
-								</dd>
-							</dl>
-							<div class="shopList_links">
-								<a href="#">文字测试内容等等
-									<span></span>
-								</a>
-								<a href="#">文字容等等
-									<span></span>
-								</a>
+							<div class="shopClass_list hide">
+								<div class="shopClass_cont">
+									<dl class="shopList_item">
+										<dt>电脑装机11111</dt>
+										<dd>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+										</dd>
+									</dl>
+									<dl class="shopList_item">
+										<dt>电脑装机</dt>
+										<dd>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字啊</a>
+										</dd>
+									</dl>
+									<div class="shopList_links">
+										<a href="#">文字测试内容等等
+											<span></span>
+										</a>
+										<a href="#">文字容等等
+											<span></span>
+										</a>
+									</div>
+								</div>
 							</div>
-						</div>
+						</dl>
+						<dl class="shopClass_item">
+							<dt>
+								<a href="#" class="b">手机</a>
+								<a href="#" class="b">数码</a>
+								<a href="#" class="aLink">合约机</a>
+							</dt>
+							<dd>
+								<a href="#">荣耀3X</a>
+								<a href="#">单反</a>
+								<a href="#">智能设备</a>
+							</dd>
+							<div class="shopClass_list hide">
+								<div class="shopClass_cont">
+									<dl class="shopList_item">
+										<dt>电脑装机</dt>
+										<dd>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+										</dd>
+									</dl>
+									<dl class="shopList_item">
+										<dt>电脑装机</dt>
+										<dd>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字啊</a>
+										</dd>
+									</dl>
+									<div class="shopList_links">
+										<a href="#">文字测试内容等等
+											<span></span>
+										</a>
+										<a href="#">文字容等等
+											<span></span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</dl>
+						<dl class="shopClass_item">
+							<dt>
+								<a href="#" class="b">手机</a>
+								<a href="#" class="b">数码</a>
+								<a href="#" class="aLink">合约机</a>
+							</dt>
+							<dd>
+								<a href="#">荣耀3X</a>
+								<a href="#">单反</a>
+								<a href="#">智能设备</a>
+							</dd>
+							<div class="shopClass_list hide">
+								<div class="shopClass_cont">
+									<dl class="shopList_item">
+										<dt>电脑装机222222</dt>
+										<dd>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+										</dd>
+									</dl>
+									<dl class="shopList_item">
+										<dt>电脑装机</dt>
+										<dd>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字啊</a>
+										</dd>
+									</dl>
+									<div class="shopList_links">
+										<a href="#">文字测试内容等等
+											<span></span>
+										</a>
+										<a href="#">文字容等等
+											<span></span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</dl>
+						<dl class="shopClass_item">
+							<dt>
+								<a href="#" class="b">手机</a>
+								<a href="#" class="b">数码</a>
+								<a href="#" class="aLink">合约机</a>
+							</dt>
+							<dd>
+								<a href="#">荣耀3X</a>
+								<a href="#">单反</a>
+								<a href="#">智能设备</a>
+							</dd>
+							<div class="shopClass_list hide">
+								<div class="shopClass_cont">
+									<dl class="shopList_item">
+										<dt>电脑装机3333333333</dt>
+										<dd>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+										</dd>
+									</dl>
+									<dl class="shopList_item">
+										<dt>电脑装机</dt>
+										<dd>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字啊</a>
+										</dd>
+									</dl>
+									<div class="shopList_links">
+										<a href="#">文字测试内容等等
+											<span></span>
+										</a>
+										<a href="#">文字容等等
+											<span></span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</dl>
+						<dl class="shopClass_item">
+							<dt>
+								<a href="#" class="b">手机</a>
+								<a href="#" class="b">数码</a>
+								<a href="#" class="aLink">合约机</a>
+							</dt>
+							<dd>
+								<a href="#">荣耀3X</a>
+								<a href="#">单反</a>
+								<a href="#">智能设备</a>
+							</dd>
+							<div class="shopClass_list hide">
+								<div class="shopClass_cont">
+									<dl class="shopList_item">
+										<dt>电脑装机4444444444444444</dt>
+										<dd>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+										</dd>
+									</dl>
+									<dl class="shopList_item">
+										<dt>电脑装机</dt>
+										<dd>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字字啊</a>
+											<a href="#">文字字字啊</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字</a>
+											<a href="#">文字啊</a>
+											<a href="#">文字啊</a>
+										</dd>
+									</dl>
+									<div class="shopList_links">
+										<a href="#">文字测试内容等等
+											<span></span>
+										</a>
+										<a href="#">文字容等等
+											<span></span>
+										</a>
+									</div>
+								</div>
+							</div>
+						</dl>
 					</div>
 				</div>
 				<ul class="nav fl">

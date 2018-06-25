@@ -143,8 +143,7 @@
     margin-left: 11px;
 }
 
-.nav,
-.shopClass h3 {
+.nav, .shopClass h3 {
     font-family: "Microsoft YaHei", "微软雅黑";
 }
 
@@ -176,6 +175,13 @@
     top: 35px;
     width: 100%;
     padding-bottom: 1px;
+}
+
+.shopClass_item:hover div {
+    display: block;
+    z-index: 9999;
+    background-color: #fff;
+    color: #000;
 }
 
 .shopClass_item {
@@ -217,6 +223,10 @@
 
 /*shopClass_item active 状态*/
 
+.shopClass_item:hover {
+    background-color: #1D7AD9;
+}
+
 .shopClass_active {
     background-color: #FFF;
     border-left: #4593FD solid 1px;
@@ -242,11 +252,12 @@
     border: #CCC solid 1px;
     position: absolute;
     left: 190px;
-    top: 35px;
+    top: 0px;
 }
 
 .shopClass_cont {
     padding: 0 20px;
+    min-height: 324px;
 }
 
 .shopList_item {
@@ -341,8 +352,7 @@
     background-color: #FF7700;
 }
 
-.banner_big,
-.banner_big img {
+.banner_big, .banner_big img {
     width: 810px;
     height: 326px;
 }
@@ -352,8 +362,7 @@
     height: 326px;
 }
 
-.banner_sm,
-.banner_sm img {
+.banner_sm, .banner_sm img {
     width: 190px;
     height: 400px;
 }
@@ -415,8 +424,7 @@
     margin-bottom: 15px;
 }
 
-.shopList_top,
-.shopList_sm {
+.shopList_top, .shopList_sm {
     margin-right: -4px;
     background-color: #f6f6f6;
 }
@@ -612,8 +620,7 @@
     padding-left: 8px;
 }
 
-.vertical .nav_title,
-.vertical .nav_cont h3 {
+.vertical .nav_title, .vertical .nav_cont h3 {
     font-family: "Microsoft YaHei", "微软雅黑";
     font-size: 14px;
 }
@@ -786,8 +793,7 @@
     _top: 4px;
 }
 
-.check input,
-.check label {
+.check input, .check label {
     vertical-align: middle;
 }
 
@@ -866,9 +872,7 @@
     padding: 0 8px 0 6px;
 }
 
-.page a,
-.page span,
-.page input {
+.page a, .page span, .page input {
     vertical-align: middle;
     position: relative;
 }
@@ -930,10 +934,7 @@
     margin-bottom: 15px;
 }
 
-.userPosition em,
-.userPosition span,
-.userPosition strong,
-.userPosition a {
+.userPosition em, .userPosition span, .userPosition strong, .userPosition a {
     font-size: 12px;
 }
 
@@ -1106,8 +1107,7 @@
     float: left;
 }
 
-.reduction,
-.plus {
+.reduction, .plus {
     width: 15px;
     background: url(../images/icon/plus_bg.jpg) left top no-repeat;
     line-height: 32px;
@@ -1170,8 +1170,7 @@
     text-align: center;
 }
 
-.shopping_btn,
-.buy_btn {
+.shopping_btn, .buy_btn {
     display: inline-block;
     width: 184px;
     height: 48px;
@@ -1187,9 +1186,7 @@
     margin: 0 40px;
 }
 
-.line,
-.shopping_btn,
-.buy_btn {
+.line, .shopping_btn, .buy_btn {
     vertical-align: middle;
 }
 
@@ -1518,8 +1515,7 @@
     float: left;
 }
 
-.s01,
-.s03 {
+.s01, .s03 {
     width: 30%;
 }
 
@@ -1564,8 +1560,7 @@
     line-height: 24px;
 }
 
-.cart_tel,
-.input {
+.cart_tel, .input {
     vertical-align: middle;
 }
 
@@ -1682,10 +1677,7 @@
     border-bottom: none;
 }
 
-.cart_cont .t_price,
-.cart_cont .t_return,
-.cart_cont .t_num,
-.cart_cont .t_subtotal {
+.cart_cont .t_price, .cart_cont .t_return, .cart_cont .t_num, .cart_cont .t_subtotal {
     line-height: 37px;
 }
 
@@ -1898,11 +1890,7 @@
 
 /*图片合并*/
 
-.stars,
-.hg_icon,
-.cart_prompt_icon,
-.shopClass_icon,
-.hot {
+.stars, .hg_icon, .cart_prompt_icon, .shopClass_icon, .hot {
     background-image: url(../images/icon/icon.png);
     background-repeat: no-repeat;
 }
