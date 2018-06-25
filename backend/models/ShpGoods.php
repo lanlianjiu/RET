@@ -40,7 +40,7 @@ class ShpGoods  extends \backend\models\BaseModel
             [['brand_id', 'goods_name', 'is_used', 'category_id'], 'required'],
             [['brand_id', 'is_used', 'goods_color_id', 'category_id'], 'integer'],
             [['goods_price'], 'number'],
-            [['goods_name'], 'string', 'max' => 64],
+            [['goods_name','goods_main_pic'], 'string', 'max' => 64],
         ];
     }
 

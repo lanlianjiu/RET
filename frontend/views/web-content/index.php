@@ -32,22 +32,6 @@
 		<a href="#" class="more">更多&gt;&gt;</a>
 	</div>
 	<div class="shopList comWidth clearfix">
-		<div class="leftArea">
-			<div class="banner_bar banner_sm">
-                <?=BannerWidget::widget(['items'=> [
-                    ['label'=>'demo',
-                    'image_url'=>'images/banner/banner_sm_01.jpg',
-                    'url'=>'site/index',
-                    'html'=>'',
-                    'active'=>'active'
-                    ],
-                    ['label'=>'demo',
-                    'image_url'=>'images/banner/banner_sm_02.jpg',
-                    'url'=>'site/index',
-                    'html'=>'']
-                ]])?>
-			</div>
-		</div>
 		<div class="rightArea">
 			<div class="shopList_top clearfix row">
                  <?php

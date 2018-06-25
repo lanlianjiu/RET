@@ -1,0 +1,189 @@
+html,
+body {
+    height: 100%;
+}
+
+body {
+    color: #197d00;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.no-margin {
+    margin: 0px;
+}
+
+.no-padding {
+    padding: 0px !important;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+
+a.asc:after,
+a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: /*"\e113"*/
+    "\e151";
+}
+
+a.desc:after {
+    content: /*"\e114"*/
+    "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view th {
+    white-space: nowrap;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+.carousel-indicators {
+    bottom: 0px;
+    margin-left: 0%;
+}
+
+.service-item>ul>li {
+    list-style: none;
+    height: 28px;
+    line-height: 28px;
+    padding-left: 20px;
+    border-bottom: 1px solid #ececec;
+    background: url(../img/index_33.png) no-repeat 0 50%;
+}
+
+.service-item>ul>li>a {
+    color: #197d00;
+}
+
+.index-footer {
+    margin: 10px auto 0;
+    padding-top: 20px;
+    background: url(../img/index11_11.png) no-repeat 0 0;
+    text-align: center;
+    line-height: 10px;
+}
+
+.header-nav {
+    width: 100%;
+    background: url(../img/nav_bg.jpg) no-repeat 0 0;
+    height: 37px;
+}
+
+.nav>li>a {
+    position: relative;
+    display: block;
+    padding: 10px 15px;
+    color: #FFF;
+}
+
+.nav-pills>li>a {
+    border-radius: 0px;
+}
+
+.nav-pills>li>a:hover {
+    color: red;
+    background-color: unset;
+}
+
+.title-nav>a {
+    float: right;
+    color: black;
+    margin-right: 5px;
+}
+
+.content-title {
+    padding: 12px 0 0 115px;
+    background: url(../img/gcal_07.png) no-repeat 0 0;
+}
+
+.p-rl5,
+.content-title>a {
+    font-size: 12px;
+}
+
+.server-p>p {
+    margin: 0px !important;
+}
+
+.content-connet {
+    line-height: 26px;
+    background: url(../img/connetbanner/index_28.png) no-repeat 95% 40%;
+}
+
+.feedback {
+    margin-bottom: 0px;
+}
+
+.feedback-table>tbody>tr>td {
+    text-align: center;
+    border-top: 0px;
+}
+
+.btn-flat {
+    background-color: #197d00;
+}

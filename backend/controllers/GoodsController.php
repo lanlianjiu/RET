@@ -74,6 +74,33 @@ class GoodsController extends BaseController
         }
     }
 
+     /**
+     * Updates an existing ShpGoods model.
+     * If update is successful, the browser will be redirected to the 'view' page.
+     * @param integer $id
+     * @return mixed
+     */
+    public function actionUpdate()
+    {
+        $id = Yii::$app->request->post('goods_id');
+        $model = $this->findModel($id);
+        if ($model->load(Yii::$app->request->post())) {
+        
+            if($model->validate() == true && $model->save()){
+                $msg = array('errno'=>0, 'msg'=>'保存成功');
+                echo json_encode($msg);
+            }
+            else{
+                $msg = array('errno'=>2, 'data'=>$model->getErrors());
+                echo json_encode($msg);
+            }
+        } else {
+            $msg = array('errno'=>2, 'msg'=>'数据出错');
+            echo json_encode($msg);
+        }
+    
+    }
+
     public function actionGetCategory()
     {
         $query = Yii::$app->db->createCommand('
@@ -129,6 +156,23 @@ class GoodsController extends BaseController
            ')->queryAll();
            
         return json_encode($query);
+    }
+
+
+     /**
+     * Finds the ShpGoods model based on its primary key value.
+     * If the model is not found, a 404 HTTP exception will be thrown.
+     * @param string $id
+     * @return ShpGoods the loaded model
+     * @throws NotFoundHttpException if the model cannot be found
+     */
+    protected function findModel($id)
+    {
+        if (($model = ShpGoods::findOne($id)) !== null) {
+            return $model;
+        } else {
+            throw new NotFoundHttpException('The requested page does not exist.');
+        }
     }
 
     

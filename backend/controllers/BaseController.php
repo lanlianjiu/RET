@@ -40,7 +40,7 @@ class BaseController extends Controller
             $loginAllowUrl = ['site/index', 'site/logout', 'site/psw', 'site/psw-save','edit-user'];
            
             // 查询/table/index不记录日志
-            if((strstr($route,'/table')||(strstr($route,'/index')))){
+            if((strstr($route,'/table')||(strstr($route,'/index'))||(strstr($route,'/get-')))){
 
                 array_push($loginAllowUrl,$route);
             }
