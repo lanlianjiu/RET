@@ -27,7 +27,7 @@
 		</div>
 	</div>
 	<div class="shopTit comWidth">
-		<span class="icon"></span>
+		<!-- <span class="icon"></span> -->
         <h3>女装</h3>
 		<a href="#" class="more">更多&gt;&gt;</a>
 	</div>
@@ -54,7 +54,7 @@
     </div>
     
     <div class="shopTit comWidth">
-		<span class="icon"></span>
+		<!-- <span class="icon"></span> -->
         <h3>男装</h3>
 		<a href="#" class="more">更多&gt;&gt;</a>
 	</div>

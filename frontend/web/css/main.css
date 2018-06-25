@@ -376,7 +376,7 @@
     font-size: 24px;
     float: left;
     font-weight: normal;
-    padding-left: 15px;
+    /* padding-left: 15px; */
 }
 
 .icon {
@@ -434,7 +434,7 @@
 
 .shop_item:hover {
     border-color: #FF7300;
-    box-shadow: 0px 0px 10px 5px #aaa;
+    box-shadow: 0px 0px 5px 5px #ccc;
 }
 
 .shop_img {
