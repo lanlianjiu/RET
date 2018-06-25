@@ -79,13 +79,19 @@ class WebContentController extends \yii\web\Controller
     public function actionIndex()
     {
 
-         $womenDtat = Yii::$app->db->createCommand('
+         $womenData = Yii::$app->db->createCommand('
          SELECT 
          g.*
            FROM shp_goods g
           WHERE g.category_id=1001')->queryAll();
 
-        return $this->render('index',["womendata"=>$womenDtat]);
+        $menData = Yii::$app->db->createCommand('
+         SELECT 
+         g.*
+           FROM shp_goods g
+          WHERE g.category_id=1101')->queryAll();
+
+        return $this->render('index',["womendata"=>$womenData,"mendata"=>$menData]);
     }
 
     //公司简介

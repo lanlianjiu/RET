@@ -52,7 +52,7 @@ $this->title = '首页';
 			<div class="comWidth">
 				<div class="logo fl">
 					<a href="#">
-						<img src="images/logo.jpg" alt="慕课网">
+						<img src="images/1.png" style="width: 110px;height: 55px;" alt="慕课网">
 					</a>
 				</div>
 				<div class="search_box fl">
