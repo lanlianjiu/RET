@@ -18,7 +18,7 @@ $navmodel = new WebNavModel();
 $mainNav = $navmodel->getMainnav();
 $severNav = $navmodel->getServernav();
 $categoryInfo = $navmodel->getCategory();
-var_dump($categoryInfo);
+echo json_encode($categoryInfo);
 $this->title = '首页';
 ?>
 <?php $this->beginPage() ?>
@@ -81,271 +81,32 @@ $this->title = '首页';
 						<i class="shopClass_icon"></i>
 					</h5>
 					<div class="shopClass_show">
-						<dl class="shopClass_item">
-							<dt>
-								<a href="#" class="b">手机</a>
-								<a href="#" class="b">数码</a>
-								<a href="#" class="aLink">合约机</a>
-							</dt>
-							<dd>
-								<a href="#">荣耀3X</a>
-								<a href="#">单反</a>
-								<a href="#">智能设备</a>
-							</dd>
-							<div class="shopClass_list fade">
-								<div class="shopClass_cont">
-									<dl class="shopList_item">
-										<dt>电脑装机11111</dt>
-										<dd>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-										</dd>
-									</dl>
-									<dl class="shopList_item">
-										<dt>电脑装机</dt>
-										<dd>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字啊</a>
-										</dd>
-									</dl>
-									<div class="shopList_links">
-										<a href="#">文字测试内容等等
-											<span></span>
-										</a>
-										<a href="#">文字容等等
-											<span></span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</dl>
-						<dl class="shopClass_item">
-							<dt>
-								<a href="#" class="b">手机</a>
-								<a href="#" class="b">数码</a>
-								<a href="#" class="aLink">合约机</a>
-							</dt>
-							<dd>
-								<a href="#">荣耀3X</a>
-								<a href="#">单反</a>
-								<a href="#">智能设备</a>
-							</dd>
-							<div class="shopClass_list fade">
-								<div class="shopClass_cont">
-									<dl class="shopList_item">
-										<dt>电脑装机</dt>
-										<dd>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-										</dd>
-									</dl>
-									<dl class="shopList_item">
-										<dt>电脑装机</dt>
-										<dd>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字啊</a>
-										</dd>
-									</dl>
-									<div class="shopList_links">
-										<a href="#">文字测试内容等等
-											<span></span>
-										</a>
-										<a href="#">文字容等等
-											<span></span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</dl>
-						<dl class="shopClass_item">
-							<dt>
-								<a href="#" class="b">手机</a>
-								<a href="#" class="b">数码</a>
-								<a href="#" class="aLink">合约机</a>
-							</dt>
-							<dd>
-								<a href="#">荣耀3X</a>
-								<a href="#">单反</a>
-								<a href="#">智能设备</a>
-							</dd>
-							<div class="shopClass_list fade">
-								<div class="shopClass_cont">
-									<dl class="shopList_item">
-										<dt>电脑装机222222</dt>
-										<dd>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-										</dd>
-									</dl>
-									<dl class="shopList_item">
-										<dt>电脑装机</dt>
-										<dd>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字啊</a>
-										</dd>
-									</dl>
-									<div class="shopList_links">
-										<a href="#">文字测试内容等等
-											<span></span>
-										</a>
-										<a href="#">文字容等等
-											<span></span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</dl>
-						<dl class="shopClass_item">
-							<dt>
-								<a href="#" class="b">手机</a>
-								<a href="#" class="b">数码</a>
-								<a href="#" class="aLink">合约机</a>
-							</dt>
-							<dd>
-								<a href="#">荣耀3X</a>
-								<a href="#">单反</a>
-								<a href="#">智能设备</a>
-							</dd>
-							<div class="shopClass_list fade">
-								<div class="shopClass_cont">
-									<dl class="shopList_item">
-										<dt>电脑装机3333333333</dt>
-										<dd>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-										</dd>
-									</dl>
-									<dl class="shopList_item">
-										<dt>电脑装机</dt>
-										<dd>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字啊</a>
-										</dd>
-									</dl>
-									<div class="shopList_links">
-										<a href="#">文字测试内容等等
-											<span></span>
-										</a>
-										<a href="#">文字容等等
-											<span></span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</dl>
-						<dl class="shopClass_item">
-							<dt>
-								<a href="#" class="b">手机</a>
-								<a href="#" class="b">数码</a>
-								<a href="#" class="aLink">合约机</a>
-							</dt>
-							<dd>
-								<a href="#">荣耀3X</a>
-								<a href="#">单反</a>
-								<a href="#">智能设备</a>
-							</dd>
-							<div class="shopClass_list fade">
-								<div class="shopClass_cont">
-									<dl class="shopList_item">
-										<dt>电脑装机4444444444444444</dt>
-										<dd>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-										</dd>
-									</dl>
-									<dl class="shopList_item">
-										<dt>电脑装机</dt>
-										<dd>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字字啊</a>
-											<a href="#">文字字字啊</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字</a>
-											<a href="#">文字啊</a>
-											<a href="#">文字啊</a>
-										</dd>
-									</dl>
-									<div class="shopList_links">
-										<a href="#">文字测试内容等等
-											<span></span>
-										</a>
-										<a href="#">文字容等等
-											<span></span>
-										</a>
-									</div>
-								</div>
-							</div>
-						</dl>
+					<?php
+						foreach ($categoryInfo as $key => $value) {
+							echo  '<dl class="shopClass_item">
+										<dt>
+											<a href="#" class="b">'.$value['name'].'</a>
+										</dt>
+										<div class="shopClass_list fade">
+											<div class="shopClass_cont">
+											'; 
+												foreach ($value['child'] as $k => $v) {
+													
+											  echo '<dl class="shopList_item">
+														<dt>'.$v['name'].'</dt>
+														<dd class="shopClass_there_list">';
+																foreach ($v['childs'] as $n => $m) {
+																	echo '<a href="#">'.$m['name'].'</a>';
+																};
+
+												 echo  '</dd>
+													</dl>';
+												};
+									 echo  '</div>
+										</div>
+									</dl>';
+						}
+						?>
 					</div>
 				</div>
 				<ul class="nav fl">

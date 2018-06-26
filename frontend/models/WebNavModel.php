@@ -114,7 +114,24 @@ class WebNavModel extends \yii\db\ActiveRecord
               FROM  shp_goods_category p 
              WHERE  p.category_p_id='.$value['id'].'')->queryAll();
 
-            array_push($categoryData[$key]['child'],$carray);
+             foreach($carray as $k => $v){
+
+                $carray[$k]['childs'] = array();
+                $barray = Yii::$app->db->createCommand('
+                SELECT 
+                        p.category_id id,
+                        p.category_p_id pid,
+                        p.category_name name
+                FROM  shp_goods_category p 
+                WHERE  p.category_p_id='.$v['id'].'')->queryAll();
+
+                if(!is_null($barray)){
+                    $carray[$k]['childs'] = $barray;
+                };
+                
+             };
+
+            $categoryData[$key]['child'] = $carray;
         };
 
        return $categoryData;
