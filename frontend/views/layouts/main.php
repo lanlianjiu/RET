@@ -17,6 +17,8 @@ AppAsset::register($this);
 $navmodel = new WebNavModel();
 $mainNav = $navmodel->getMainnav();
 $severNav = $navmodel->getServernav();
+$categoryInfo = $navmodel->getCategory();
+var_dump($categoryInfo);
 $this->title = '首页';
 ?>
 <?php $this->beginPage() ?>
@@ -42,7 +44,7 @@ $this->title = '首页';
                      <marquee scrollamount="3"><b>广州拓新保洁服务热线：0571-888888</b></marquee>
                 </div> -->
 				<div class="rightArea col-md-4">
-					欢迎来到衣旺网！
+					欢迎来到傻帽小婷网！
 					<?php
 						if(Yii::$app->user->isGuest){
 							
@@ -59,7 +61,7 @@ $this->title = '首页';
 			<div class="comWidth">
 				<div class="logo fl">
 					<a href="#">
-						<img src="images/1.png" style="width: 110px;height: 55px;" alt="慕课网">
+						<img src="images/1.png" style="width: 110px;height: 55px;" alt="">
 					</a>
 				</div>
 				<div class="search_box fl">
@@ -75,9 +77,9 @@ $this->title = '首页';
 		<div class="navBox">
 			<div class="comWidth clearfix">
 				<div class="shopClass fl">
-					<h3>全部商品分类
+					<h5 class="h5-all">全部商品分类
 						<i class="shopClass_icon"></i>
-					</h3>
+					</h5>
 					<div class="shopClass_show">
 						<dl class="shopClass_item">
 							<dt>
@@ -90,7 +92,7 @@ $this->title = '首页';
 								<a href="#">单反</a>
 								<a href="#">智能设备</a>
 							</dd>
-							<div class="shopClass_list hide">
+							<div class="shopClass_list fade">
 								<div class="shopClass_cont">
 									<dl class="shopList_item">
 										<dt>电脑装机11111</dt>
@@ -143,7 +145,7 @@ $this->title = '首页';
 								<a href="#">单反</a>
 								<a href="#">智能设备</a>
 							</dd>
-							<div class="shopClass_list hide">
+							<div class="shopClass_list fade">
 								<div class="shopClass_cont">
 									<dl class="shopList_item">
 										<dt>电脑装机</dt>
@@ -196,7 +198,7 @@ $this->title = '首页';
 								<a href="#">单反</a>
 								<a href="#">智能设备</a>
 							</dd>
-							<div class="shopClass_list hide">
+							<div class="shopClass_list fade">
 								<div class="shopClass_cont">
 									<dl class="shopList_item">
 										<dt>电脑装机222222</dt>
@@ -249,7 +251,7 @@ $this->title = '首页';
 								<a href="#">单反</a>
 								<a href="#">智能设备</a>
 							</dd>
-							<div class="shopClass_list hide">
+							<div class="shopClass_list fade">
 								<div class="shopClass_cont">
 									<dl class="shopList_item">
 										<dt>电脑装机3333333333</dt>
@@ -302,7 +304,7 @@ $this->title = '首页';
 								<a href="#">单反</a>
 								<a href="#">智能设备</a>
 							</dd>
-							<div class="shopClass_list hide">
+							<div class="shopClass_list fade">
 								<div class="shopClass_cont">
 									<dl class="shopList_item">
 										<dt>电脑装机4444444444444444</dt>

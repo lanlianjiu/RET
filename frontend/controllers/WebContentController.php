@@ -148,6 +148,9 @@ class WebContentController extends \yii\web\Controller
      */
     public function actionLogin()
     {
+         $this->layout = false; //不使用布局
+         $this->layout = "ls_main"; //设置使用的布局文件
+
         if (!Yii::$app->user->isGuest) {
             return $this->goHome();
         }
@@ -178,6 +181,9 @@ class WebContentController extends \yii\web\Controller
      */
     public function actionSignup()
     {
+
+         $this->layout = false; //不使用布局
+         $this->layout = "ls_main"; //设置使用的布局文件
         
         $model = new SignupForm();
         if ($model->load(Yii::$app->request->post())) {

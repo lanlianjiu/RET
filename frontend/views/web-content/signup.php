@@ -18,44 +18,66 @@ $this->title = '注册';
                 <?php $form = ActiveForm::begin(['id' => 'form-signup']); ?>
                 <table class="table">
                         <tr>
-                        <td width="100">头像</td>
-                        <td>
+                            <td width="100" align="right">
+                                头像
+                            </td>
+                            <td>
                                 <?= $form->field($model,'head_img')->widget('common\widgets\file_upload\FileUpload',['config'=>[]])?>
+                            </td>
+                         </tr>
+                        <tr>
+                            <td align="right">
+                                账号
+                            </td>
+                            <td>  
+                                <div class="form-inline feedback"><?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?></div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                密码
+                            </td>
+                            <td> <div class="form-inline feedback"><?= $form->field($model, 'password')->passwordInput() ?></div></td>
+                        </tr>
+                        <tr>
+                            <td align="right">
+                                重复密码
+                            </td>
+                            <td> 
+                                <div class="form-inline feedback"><?= $form->field($model, 'rePassword')->passwordInput() ?></div>
+                            </td>
+                        </tr>
+                        <tr>
+                        <td align="right">
+                            邮箱
+                        </td>
+                        <td>  
+                            <div class="form-inline feedback"><?= $form->field($model, 'email') ?></div>
                         </td>
                         </tr>
                         <tr>
-                        <td>账号</td>
-                        <td>  <div class="form-inline feedback"><?= $form->field($model, 'username')->textInput(['autofocus' => true]) ?></div></td>
-                        </tr>
-                        <tr>
-                        <td>密码</td>
-                        <td> <div class="form-inline feedback"><?= $form->field($model, 'password')->passwordInput() ?></div></td>
-                    </tr>
-                        <tr>
-                        <td>重复密码</td>
-                        <td> <div class="form-inline feedback"><?= $form->field($model, 'rePassword')->passwordInput() ?></div></td>
-                        </tr>
-                        <tr>
-                        <td>邮箱</td>
-                        <td>  <div class="form-inline feedback"><?= $form->field($model, 'email') ?></div></td>
-                        </tr>
-                        <tr>
-                            <td>短信验证码</td>
+                            <td align="right">
+                                短信验证码
+                            </td>
                             <td class="form-inline">
                                 <input id="smsCode" type="text" class="form-control" name="WebMessageModel[massage]" />
                                 <span onclick="sendMassage()">发送验证码</span>
                             </td>
                         </tr>
                         <tr>
-                            <td>验证码</td>
-                        <td> <div class="form-inline feedback"><?= $form->field($model, 'verifyCode')->widget(Captcha::className())?></div></td>
+                            <td align="right">
+                                验证码
+                            </td>
+                            <td> 
+                                <div class="form-inline feedback"><?= $form->field($model, 'verifyCode')->widget(Captcha::className())?></div>
+                            </td>
                         </tr>
                         <tr>
-                        <td colspan="2">
-                            <div class="form-group">
-                                    <?= Html::submitButton('提交', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'signup-button']) ?>
-                                </div>
-                        </td>
+                            <td colspan="2">
+                                <div class="form-group">
+                                        <?= Html::submitButton('提交', ['class' => 'btn btn-primary btn-block btn-flat', 'name' => 'signup-button']) ?>
+                                    </div>
+                            </td>
                         </tr>
                 </table>
                 <?php ActiveForm::end(); ?>
