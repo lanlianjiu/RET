@@ -18,7 +18,6 @@ $navmodel = new WebNavModel();
 $mainNav = $navmodel->getMainnav();
 $severNav = $navmodel->getServernav();
 $categoryInfo = $navmodel->getCategory();
-echo json_encode($categoryInfo);
 $this->title = '首页';
 ?>
 <?php $this->beginPage() ?>
