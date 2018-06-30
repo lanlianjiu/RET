@@ -58,6 +58,10 @@ class userModel extends BaseModel implements IdentityInterface
         ];
     }
 
+    public function actionSignup(){
+        echo "123";
+    }
+
     /**
      * @inheritdoc
      */

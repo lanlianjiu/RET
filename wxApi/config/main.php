@@ -29,6 +29,10 @@ return [
                         'class' => 'yii\rest\UrlRule',
                         'controller' => ['v1/user'],
                         //'pluralize' => false, 
+                        'extraPatterns' => [
+                            'POST login' => 'login',
+                            'GET signup' => 'signup',
+                        ]
                     ],
                 ],
             ]
