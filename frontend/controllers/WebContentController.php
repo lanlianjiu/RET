@@ -1,5 +1,4 @@
 <?php
-
 namespace frontend\controllers;
 use Yii;
 use frontend\models\messageForm;
@@ -17,7 +16,7 @@ use Aliyun\Core\DefaultAcsClient;
 use Aliyun\Api\Sms\Request\V20170525\SendSmsRequest;
 use Aliyun\Api\Sms\Request\V20170525\SendBatchSmsRequest;
 use Aliyun\Api\Sms\Request\V20170525\QuerySendDetailsRequest;
-
+include_once "wxBizDataCrypt.php";
 // 加载区域结点配置
 //Config::load();
 class WebContentController extends \yii\web\Controller
@@ -100,15 +99,25 @@ class WebContentController extends \yii\web\Controller
         $oauth2Url="https://api.weixin.qq.com/sns/jscode2session?appid=$appid&secret=$secret&js_code=$code&grant_type=authorization_code";
         $oauth2 = getJson($oauth2Url);
 
-        //第三步:根据全局access_token和openid查询用户信息
-        $access_token =  $token->access_token;
-        $openid = $oauth2->openid;
+        //第三步:根据全局access_token和openid查询用户信息(这应该是网页获取方式)
+        // $access_token =  $token->access_token;
+        // $openid = $oauth2->openid;
         
-        $get_user_info_url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=$access_token&openid=$openid&lang=zh_CN";
+        // $get_user_info_url = "https://api.weixin.qq.com/cgi-bin/user/info?access_token=$access_token&openid=$openid&lang=zh_CN";
         
-        $userinfo = getJson($get_user_info_url);
+        // $userinfo = getJson($get_user_info_url);
+
+        //小程序获取方式解密
+
+        $sessionKey = $oauth2->session_key;
+        $encryptedData = Yii::$app->request->get('encryptedData');
+        $iv = Yii::$app->request->get('iv');
+
+        $pc = new \WXBizDataCrypt($appid, $sessionKey);
+        $errCode = $pc->decryptData($encryptedData, $iv, $data);
+
         //打印用户信息
-        return $userinfo;
+        return $data;
     }
 
     //公司首页
