@@ -5,7 +5,7 @@
  * @license http://www.yiiframework.com/license/
  */
 
-namespace frontend\assets;
+namespace appApi\assets;
 
 use yii\web\AssetBundle;
 

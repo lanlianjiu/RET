@@ -1,6 +1,6 @@
 <?php
 
-namespace api\modules\v1;
+namespace wxApi\modules\v1;
 
 /**
  * v1 module definition class
@@ -10,7 +10,7 @@ class Module extends \yii\base\Module
     /**
      * @inheritdoc
      */
-    public $controllerNamespace = 'api\modules\v1\controllers';
+    public $controllerNamespace = 'wxApi\modules\v1\controllers';
 
     /**
      * @inheritdoc

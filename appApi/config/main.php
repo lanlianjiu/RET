@@ -9,10 +9,10 @@ return [
     'language' => 'zh-CN',
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
-    'controllerNamespace' => 'appapi\controllers',
+    'controllerNamespace' => 'appApi\controllers',
     'components' => [
          'user' => [ 
-                        'identityClass' => 'api\models\userModel',
+                        'identityClass' => 'appApi\models\userModel',
                         'enableAutoLogin' => true,
                         'enableSession'=>false,
                         'loginUrl' => null,
@@ -35,7 +35,7 @@ return [
     ],
     'modules' => [
         'v1' => [
-            'class' => 'api\modules\v1\Module',
+            'class' => 'appApi\modules\v1\Module',
         ],
     ],
     'params' => $params,
