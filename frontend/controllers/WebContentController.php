@@ -120,6 +120,35 @@ class WebContentController extends \yii\web\Controller
         return $data;
     }
 
+     public function actionTestkey(){
+        
+        $appid = "wx81228eb4b20c618e";
+        $secret = "690315463c658abed60d5705ae0291ba";
+        $code = Yii::$app->request->get('code');
+
+        function getJson($url){
+            $ch = curl_init();
+            curl_setopt($ch, CURLOPT_URL, $url);
+            curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, FALSE); 
+            curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE); 
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
+            $output = curl_exec($ch);
+            curl_close($ch);
+
+            return json_decode($output);
+        }
+
+       
+        //第二步:取得openid
+        $oauth2Url="https://api.weixin.qq.com/sns/jscode2session?appid=$appid&secret=$secret&js_code=$code&grant_type=authorization_code";
+        $oauth2 = getJson($oauth2Url);
+        
+        $sessionKey = $oauth2->session_key;
+        $data = ["is_login"=>2,"data"=>$sessionKey];
+        //打印用户信息
+        return json_encode($data);
+    }
+
     //公司首页
     public function actionIndex()
     {
