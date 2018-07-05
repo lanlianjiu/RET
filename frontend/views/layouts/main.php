@@ -89,23 +89,23 @@ $this->title = '首页';
 										<div class="shopClass_list fade">
 											<div class="shopClass_cont">
 											'; 
-												foreach ($value['child'] as $k => $v) {
+											// 	foreach ($value['child'] as $k => $v) {
 													
-											  echo '<dl class="shopList_item">
-														<dt>'.$v['name'].'</dt>
-														<dd class="shopClass_there_list">';
-																foreach ($v['childs'] as $n => $m) {
-																	echo '<a href="#">'.$m['name'].'</a>';
-																};
+											//   echo '<dl class="shopList_item">
+											// 			<dt>'.$v['name'].'</dt>
+											// 			<dd class="shopClass_there_list">';
+											// 					foreach ($v['childs'] as $n => $m) {
+											// 						echo '<a href="#">'.$m['name'].'</a>';
+											// 					};
 
-												 echo  '</dd>
-													</dl>';
-												};
+											// 	 echo  '</dd>
+											// 		</dl>';
+											// 	};
 									 echo  '</div>
 										</div>
 									</dl>';
 						}
-						?>
+					?>
 					</div>
 				</div>
 				<ul class="nav fl">
