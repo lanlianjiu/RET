@@ -225,10 +225,11 @@
     color: #FFF;
 }
 
-.shopClass_there_list  a{
+.shopClass_there_list a {
     color: #666 !important;
 }
- .shopClass_item a:hover {
+
+.shopClass_item a:hover {
     text-decoration: underline;
 }
 
@@ -464,6 +465,10 @@
     float: left;
     background-color: #FFF;
     padding: 5px;
+}
+
+.shop_item{
+    box-shadow: 0px 0px 5px 5px #eee;
 }
 
 .shop_item:hover {

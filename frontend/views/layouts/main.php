@@ -36,7 +36,6 @@ $this->title = '首页';
 </head>
 <body>
 <?php $this->beginBody() ?>
-<?php var_dump($categoryInfo);?>
 	<div class="headerBar">
 		<div class="topBar">
 			<div class="comWidth row">
@@ -90,18 +89,18 @@ $this->title = '首页';
 										<div class="shopClass_list fade">
 											<div class="shopClass_cont">
 											'; 
-											// 	foreach ($value['child'] as $k => $v) {
+												foreach ($value['child'] as $k => $v) {
 													
-											//   echo '<dl class="shopList_item">
-											// 			<dt>'.$v['name'].'</dt>
-											// 			<dd class="shopClass_there_list">';
-											// 					foreach ($v['childs'] as $n => $m) {
-											// 						echo '<a href="#">'.$m['name'].'</a>';
-											// 					};
+											  echo '<dl class="shopList_item">
+														<dt>'.$v['name'].'</dt>
+														<dd class="shopClass_there_list">';
+																foreach ($v['child'] as $n => $m) {
+																	echo '<a href="#">'.$m['name'].'</a>';
+																};
 
-											// 	 echo  '</dd>
-											// 		</dl>';
-											// 	};
+												 echo  '</dd>
+													</dl>';
+												};
 									 echo  '</div>
 										</div>
 									</dl>';
