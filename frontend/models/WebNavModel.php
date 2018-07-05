@@ -94,29 +94,30 @@ class WebNavModel extends \yii\db\ActiveRecord
 
     // 查询分类
     public function getCategory(){
-       $categoryData = Yii::$app->db->createCommand('
+      $arr = Yii::$app->db->createCommand('
             SELECT 
             p.category_id id,
             p.category_p_id pid,
             p.category_name name
             FROM shp_goods_category p WHERE p.category_p_id is not null')->queryAll();
 
-            $refer = array();
-            $tree = array();
-            foreach($categoryData as $k => $v){
-                $refer[$v['id']] = & $categoryData[$k]; //创建主键的数组引用
+        $refer = array();
+        $tree = array();
+        foreach($arr as $k => $v){
+            $refer[$v['id']] = & $arr[$k]; //创建主键的数组引用
+        }
+        foreach($arr as $k => $v){
+            $pid = $v['pid'];  //获取当前分类的父级id
+            if($pid == 1){
+            $tree[] = & $arr[$k];  //顶级栏目
+            }else{
+            if(isset($refer[$pid])){
+                $refer[$pid]['child'][] = & $arr[$k]; //如果存在父级栏目，则添加进父级栏目的子栏目数组中
             }
-            foreach($categoryData as $k => $v){
-                $pid = $v['pid'];  //获取当前分类的父级id
-                if($pid == 1){
-                  $tree[] = & $categoryData[$k];  //顶级栏目
-                }else{
-                    if(isset($refer[$pid])){
-                        $refer[$pid]['child'][] = & $categoryData[$k]; //如果存在父级栏目，则添加进父级栏目的子栏目数组中
-                    }
-                }
             }
-       return $categoryData;
+        }
+        return $tree;
+           
     }
 
     /**
