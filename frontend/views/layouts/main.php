@@ -36,6 +36,7 @@ $this->title = '首页';
 </head>
 <body>
 <?php $this->beginBody() ?>
+<?php var_dump($categoryInfo);?>
 	<div class="headerBar">
 		<div class="topBar">
 			<div class="comWidth row">
