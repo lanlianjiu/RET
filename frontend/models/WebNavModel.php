@@ -108,12 +108,12 @@ class WebNavModel extends \yii\db\ActiveRecord
             }
             foreach($categoryData as $k => $v){
                 $pid = $v['pid'];  //获取当前分类的父级id
-                if($pid == 1){
-                $tree[] = & $categoryData[$k];  //顶级栏目
+                if($pid === 1){
+                  $tree[] = & $categoryData[$k];  //顶级栏目
                 }else{
-                if(isset($refer[$pid])){
-                    $refer[$pid]['child'][] = & $categoryData[$k]; //如果存在父级栏目，则添加进父级栏目的子栏目数组中
-                }
+                    if(isset($refer[$pid])){
+                        $refer[$pid]['child'][] = & $categoryData[$k]; //如果存在父级栏目，则添加进父级栏目的子栏目数组中
+                    }
                 }
             }
        return $categoryData;
