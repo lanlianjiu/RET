@@ -48,7 +48,7 @@ $form = ActiveForm::begin(["id" => "goodspic-form"]);//定义form表单，调用
                                 <button id="delete_btn" type="button" ng-click="del_action()" class="btn btn-sm btn-danger-outline"><i class="fa fa-trash"></i> 批量删除</button>
                             </div>
                         </div>
-                        <table id="goodspic-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="137" 
+                        <table id="goodspic-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="100" 
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true" data-id-field="goods_pic_id" data-unique-id="goods_pic_id" data-hide-column="goods_pic_url" data-method="post" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" data-custom-url="index.php?r=goods-pic/table" class="table  table-hover th-table">
                             <thead>
                                 <tr>

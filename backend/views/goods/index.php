@@ -48,7 +48,7 @@ $form = ActiveForm::begin(["id" => "goods-form"]);//定义form表单，调用组
                                 <button id="delete_btn" type="button" ng-click="del_action()" class="btn btn-sm btn-danger-outline"><i class="fa fa-trash"></i> 批量删除</button>
                             </div>
                         </div>
-                        <table id="goods-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="137" data-show-export="true"
+                        <table id="goods-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="100" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
                             data-id-field="goods_id" data-unique-id="goods_id"  data-hide-column="category_id,brand_id,is_used" data-method="post" data-content-type="application/x-www-form-urlencoded; charset=UTF-8"data-custom-url="index.php?r=goods/table" class="table  table-hover th-table">
                             <thead>
