@@ -49,7 +49,7 @@ $this->title = '首页';
 							
 							echo '<a href="'.Url::toRoute('web-content/login').'">[登录]</a>'; 
 						}else{
-							echo '<a href="'.Url::toRoute('web-content/logout').'">[退出]</a>';
+							echo '(<a href="'.Url::toRoute('web-content/go-user-center').'">'.Yii::$app->user->identity->username.'</a>) <a href="'.Url::toRoute('web-content/logout').'">[退出]</a>';
 						};
 					?>
 					<?php echo '<a href="'.Url::toRoute('web-content/signup').'">[免费注册]</a>'; ?>
