@@ -20,14 +20,8 @@ $modelLabel = new \backend\models\WebUserModel();
                     <div class="row">
                         <div class="col-sm-12 ">
                             <form bootstrap-table-form="webuser-table" class="form-inline search-form">
-                            
                                 <div class="form-group" style="margin: 5px;">
-                                    <label>ID</label>
-                                    <input type="text" class="form-control"  name="id"  />
-                                </div>
-
-                                <div class="form-group" style="margin: 5px;">
-                                    <label>名称</label>
+                                    <label>会员名称</label>
                                     <input type="text" class="form-control"  name="username"  />
                                 </div>
                                 <div class="form-group">

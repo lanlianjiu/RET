@@ -45,7 +45,7 @@ $modelLabel = new \backend\models\AdminLog();
                                     <th data-sortable="true" data-field="module_name" width="80">模块</th>
                                     <th data-sortable="true" data-field="func_name" width="120">功能</th>
                                     <th data-sortable="true" data-field="right_name" width="120">方法</th>
-                                    <th data-sortable="true" data-field="client_ip" width="120">客户端IP</th>
+                                    <!-- <th data-sortable="true" data-field="client_ip" width="120">客户端IP</th> -->
                                     <th data-sortable="true" data-field="create_user" width="120">用户</th>
                                     <th data-sortable="true" data-field="create_date" width="120">时间</th>
                                     <th data-formatter="operateFormatter" width="120">操作</th>

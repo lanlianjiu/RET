@@ -22,8 +22,8 @@ $modelLabel = new \backend\models\AdminRight();
                         <div class="box-header search-box">
                             <form bootstrap-table-form="adminRight-table" class="form-inline search-form">
                                 <div class="form-group" style="margin: 5px;">
-                                    <label>ID</label>
-                                    <input type="text" class="form-control"  name="id"  />
+                                    <label>名称</label>
+                                    <input type="text" class="form-control"  name="right_name"  />
                                 </div>
                                 <div class="form-group">
                                     <button bootstrap-table-search="adminRight-table" class="btn btn-outline btn-primary btn-sm"> <i class="fa fa-search icon-white"></i> 搜索</button>
@@ -40,7 +40,7 @@ $modelLabel = new \backend\models\AdminRight();
                         </div>
                         <table id="adminRight-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="100" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                            data-id-field="id" data-unique-id="id" data-method="post" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" data-custom-url="index.php?r=admin-right/table" class="table  table-hover th-table">
+                            data-id-field="id" data-unique-id="id" data-method="post" data-hide-column="id" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" data-custom-url="index.php?r=admin-right/table" class="table  table-hover th-table">
                             <thead>
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>
@@ -49,8 +49,8 @@ $modelLabel = new \backend\models\AdminRight();
                                     <th data-sortable="true" data-field="display_order" width="80">显示顺序</th>
                                     <th data-sortable="true" data-field="has_lef" width="120">是否有子</th>
                                     <th data-sortable="true" data-field="display_order" width="120">顺序</th>
-                                    <th data-sortable="true" data-field="update_user" width="120">修改人</th>
-                                    <th data-sortable="true" data-field="update_date" width="120">修改时间</th>
+                                    <!-- <th data-sortable="true" data-field="update_user" width="120">修改人</th>
+                                    <th data-sortable="true" data-field="update_date" width="120">修改时间</th> -->
                                     <th data-formatter="operateFormatter" width="120">操作</th>
                                 </tr>
                             </thead>

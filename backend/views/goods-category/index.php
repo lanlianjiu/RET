@@ -36,7 +36,7 @@ $modelLabel = new \backend\models\ShpGoodsCategory();
                 <div class="box-header search-box">
                     <form bootstrap-table-form="adminLog-table" class="form-inline search-form">
                         <div class="form-group" style="margin: 5px;">
-                            <label>主键ID</label> <input type="text" class="form-control" name="id"  />
+                            <label>品牌名称</label> <input type="text" class="form-control" name="brandName"  />
                         </div>
                         <div class="form-group">
                             <button bootstrap-table-search="adminLog-table" class="btn btn-outline btn-primary btn-sm"> <i class="fa fa-search icon-white"></i> 搜索</button>

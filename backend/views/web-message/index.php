@@ -23,8 +23,8 @@ $modelLabel = new \backend\models\WebMessageModel();
                         <div class="col-sm-12">
                             <form bootstrap-table-form="webmessage-table" class="form-inline search-form">
                                 <div class="form-group" style="margin: 5px;">
-                                    <label>ID</label>
-                                    <input type="text" class="form-control"  name="message_id"  />
+                                    <label>联系人</label>
+                                    <input type="text" class="form-control"  name="connet_name"  />
                                 </div>
                                 <div class="form-group">
                                     <button bootstrap-table-search="webmessage-table" class="btn btn-outline btn-primary btn-sm"> <i class="fa fa-search icon-white"></i> 搜索</button>

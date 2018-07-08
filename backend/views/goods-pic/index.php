@@ -23,15 +23,9 @@ $form = ActiveForm::begin(["id" => "goodspic-form"]);//定义form表单，调用
                     <div class="row">
                         <div class="col-sm-12 ">
                             <form bootstrap-table-form="goodspic-table" class="form-inline search-form">
-                            
                                 <div class="form-group" style="margin: 5px;">
-                                    <label>类型</label>
-                                    <input type="text" class="form-control"  name="web_navType_id"  />
-                                </div>
-
-                                <div class="form-group" style="margin: 5px;">
-                                    <label>名称</label>
-                                    <input type="text" class="form-control"  name="web_nav_name"  />
+                                    <label>商品名称</label>
+                                    <input type="text" class="form-control"  name=""  />
                                 </div>
                                 <div class="form-group">
                                     <button bootstrap-table-search="goodspic-table" class="btn btn-outline btn-primary btn-sm"> <i class="fa fa-search icon-white"></i> 搜索</button>

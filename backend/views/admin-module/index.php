@@ -48,7 +48,7 @@ $modelLabel = new \backend\models\AdminModule();
                             <button ng-click="del_action()" id="delete_btn" type="button" class="btn btn-sm btn-danger-outline"><i class="fa fa-trash"></i> 批量删除</button>
                         </div>
                         <table id="adminModule-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="100" 
-                            data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
+                            data-pagination="true" data-filter-control="true" data-hide-column="id,entry_url" data-checkbox="true" data-show-export="true"
                             data-id-field="id" data-unique-id="id" data-method="post" data-custom-url="index.php?r=admin-module/table" class="table  table-hover  th-table">
                             <thead>
                                 <tr>

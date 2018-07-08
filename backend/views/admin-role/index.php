@@ -21,10 +21,6 @@ $modelLabel = new \backend\models\AdminRole();
                         <div class="col-sm-12">
                             <form bootstrap-table-form="adminRole-table" class="form-inline search-form">
                                 <div class="form-group" style="margin: 5px;">
-                                    <label>ID</label>
-                                    <input type="text" class="form-control"  name="id"  />
-                                </div>
-                                <div class="form-group" style="margin: 5px;">
                                     <label>角色名称</label>
                                     <input type="text" class="form-control"  name="name" />
                                 </div>
@@ -43,7 +39,7 @@ $modelLabel = new \backend\models\AdminRole();
                         </div>
                         <table id="adminRole-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="100" data-show-export="true"
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
-                            data-id-field="id" data-unique-id="id" data-method="post" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" data-custom-url="index.php?r=admin-role/table" class="table  table-hover  th-table">
+                            data-id-field="id" data-unique-id="id" data-method="post" data-hide-column="id" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" data-custom-url="index.php?r=admin-role/table" class="table  table-hover  th-table">
                             <thead>
                                 <tr>
                                     <th data-checkbox="true" width="80"></th>
@@ -51,8 +47,8 @@ $modelLabel = new \backend\models\AdminRole();
                                     <th data-sortable="true" data-field="code" >角色编号</th>
                                     <th data-sortable="true" data-field="name" >角色名称</th>
                                     <th data-sortable="true" data-field="des" >角色描述</th>
-                                    <th data-sortable="true" data-field="update_user" >更新人</th>
-                                    <th data-sortable="true" data-field="update_date">更新时间</th>
+                                    <!-- <th data-sortable="true" data-field="update_user" >更新人</th>
+                                    <th data-sortable="true" data-field="update_date">更新时间</th> -->
                                     <th data-formatter="operateFormatter" >操作</th>
                                 </tr>
                             </thead>

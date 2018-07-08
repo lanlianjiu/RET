@@ -19,9 +19,9 @@ use yii\helpers\Url;
                     <div class="col-sm-12">
                         <div class="box-header search-box">
                             <form bootstrap-table-form="deliveryOrder-table" class="form-inline search-form">
-                                <div class="form-group" style="margin: 5px;">
-                                    <label>ID</label>
-                                    <input type="text" class="form-control"  name="id"  />
+                               <div class="form-group" style="margin: 5px;">
+                                    <label>单号</label>
+                                    <input type="text" class="form-control"  name="order_no"  />
                                 </div>
                                 <div class="form-group">
                                     <button bootstrap-table-search="deliveryOrder-table" class="btn btn-outline btn-primary btn-sm"> <i class="fa fa-search icon-white"></i> 搜索</button>
