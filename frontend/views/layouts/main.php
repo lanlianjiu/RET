@@ -43,7 +43,7 @@ $this->title = '首页';
                      <marquee scrollamount="3"><b>广州拓新保洁服务热线：0571-888888</b></marquee>
                 </div> -->
 				<div class="rightArea col-md-4">
-					欢迎来到傻帽小婷网！
+					欢迎来到360商城！
 					<?php
 						if(Yii::$app->user->isGuest){
 							

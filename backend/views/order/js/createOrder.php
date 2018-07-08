@@ -6,8 +6,15 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 
 <script>
 var app = angular.module("myApp", []);
-app.controller("allOrder-controller", function($scope) {
+app.controller("createOrder-controller", function($scope) {
 
 });
+
+
+function  operateFormatter(value, row, index) {
+	  var h = "";
+    
+	 return h;
+}
 
 </script>

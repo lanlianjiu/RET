@@ -11,6 +11,11 @@ use yii\web\NotFoundHttpException;
 class OrderController extends BaseController
 {
     public $layout = "lte_main";
+
+    //新增跳转
+    public function actionCreateindex(){
+        return $this->render('createOrder');
+    }
    
     //全部订单
     public function actionAllorder()

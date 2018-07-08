@@ -2,8 +2,75 @@
 
  <!-- Main content -->
     <section class="content">
+    <div class="panel panel-default">
+      <div class="row ">
+          <div class="col-md-6" style="padding-right: 0px;">
+            <div class="col-md-6" style="border-right: 1px solid #ddd;">
+                <div class="panel-body text-center" style="border-bottom: 1px solid #ddd;">
+                  今日
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                      <tr>
+                        <td align="right">订单数</td>
+                        <td>0</td>
+                        <td align="right">总金额数</td>
+                        <td>0</td>
+                      </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6" style="border-right: 1px solid #ddd;">
+                 <div class="panel-body text-center" style="border-bottom: 1px solid #ddd;">
+                  昨日
+                 </div>
+                 <div class="panel-body">
+                    <table class="table">
+                      <tr>
+                        <td align="right">订单数</td>
+                        <td>0</td>
+                        <td align="right">总金额数</td>
+                        <td>0</td>
+                      </tr>
+                    </table>
+                 </div>
+            </div>
+          </div>
+          <div class="col-md-6" style="padding-left: 0px;">
+            <div class="col-md-6" style="border-right: 1px solid #ddd;">
+                <div class="panel-body text-center" style="border-bottom: 1px solid #ddd;">
+                  本月
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                      <tr>
+                        <td align="right">订单数</td>
+                        <td>0</td>
+                        <td align="right">总金额数</td>
+                        <td>0</td>
+                      </tr>
+                    </table>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="panel-body text-center" style="border-bottom: 1px solid #ddd;">
+                  上月
+                </div>
+                <div class="panel-body">
+                    <table class="table">
+                      <tr>
+                        <td>订单数</td>
+                        <td>0</td>
+                        <td>总金额数</td>
+                        <td>0</td>
+                      </tr>
+                    </table>
+                </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <div class="row">
-      
         <div class="col-md-6">
 
           <!-- LINE CHART -->

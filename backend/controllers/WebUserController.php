@@ -18,7 +18,7 @@ class WebUserController extends BaseController
         return $this->render('index');
     }
 
-    public function actionTable($postParams)
+    public function actionTable()
     {
         
         $query = Yii::$app->db->createCommand('
