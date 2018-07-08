@@ -279,6 +279,10 @@ thead {
 .user-image {
     max-width: 75px !important;
     border-radius: 50%;
+    border: 1px solid #ddd;
+    width: 35px !important;
+    height: 35px !important;
+    margin-top: -10px !important;
 }
 
 .content {

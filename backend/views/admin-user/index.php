@@ -90,7 +90,7 @@ $form = ActiveForm::begin(["id" => "admin-user-form"]);//定义form表单，调�
                                     <input type="text" class="form-control" ng-model="modal.uname" id="uname" name="AdminUser[uname]" placeholder="必填" />
                                 </td>
                             </tr>
-                            <tr>
+                            <tr ng-if="isEdit">
                                 <td align="right"> 
                                     <label for="password" class="control-label">密码</label>
                                 </td>

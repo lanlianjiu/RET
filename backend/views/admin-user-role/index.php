@@ -72,18 +72,19 @@ $modelLabel = new \backend\models\AdminUserRole();
 
                         <table class="table">
                             <tr>
-                                <td align="right"> 
+                                <td align="right" width="100"> 
                                     <label for="user_id" class="control-label">用户ID</label>
                                 </td>
                                 <td>
-                                    <input type="text" ng-model="modal.user_id" class="form-control" id="user_id" name="AdminUserRole[user_id]" />
+                                    <!-- <input type="text" ng-model="modal.user_id" class="form-control" id="user_id" name="AdminUserRole[user_id]" /> -->
+                                     <select id="sel_user" style="width:100%" class="form-control" ng-model="modal.user_id" name="AdminUserRole[user_id]"></select>
                                 </td>
-                                <td align="right"> 
+                                <!-- <td align="right"> 
                                     <label for="user_name" class="control-label">用户名</label>
                                 </td>
                                 <td>
                                     <input type="text" ng-model="modal.user_name" class="form-control" id="user_name" name="AdminUserRole[user_name]" />
-                                </td>
+                                </td> -->
                             </tr>
                         </table>
                    

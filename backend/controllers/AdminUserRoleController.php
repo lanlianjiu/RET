@@ -27,6 +27,25 @@ class AdminUserRoleController extends BaseController
         ]);
     }
 
+    /**
+     * Lists all AdminUserRole models.
+     * @return mixed
+     */
+    public function actionGetUser($roleId)
+    {
+        
+        $query = Yii::$app->db->createCommand('
+         SELECT 
+                u.id id,
+                u.uname text
+           FROM admin_user u
+          WHERE u.id not in (SELECT 
+                ur.user_id id
+           FROM admin_user_role ur
+          WHERE ur.role_id='.$roleId.')')->queryAll();
+        return json_encode($query);
+    }
+
     public function actionTable()
     {
         $postParams = Yii::$app->request->post("postParams");

@@ -102,16 +102,16 @@ if($otherMenu == false){
                     <!-- 个人信息 -->
                     <li class="dropdown user-menu notifications-menu" >
                       <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        <img src="dist/img/user2-160x160.jpg" class="user-image" alt=""> 
+                        <img src="<?php echo Yii::$app->user->identity->head_img_url;?>" class="user-image" alt=""> 
                         <span class="hidden-xs"><?php echo Yii::$app->user->identity->uname;?>&nbsp;&nbsp;</span>
                         <span class="fa fa-caret-down"></span>
                       </a>
                         <ul class="dropdown-menu" style="width: 150px;height:100px;">
                         <li>
                           <ul class="menu">
-                          <li><a href="<?=Url::toRoute('site/edit-user')?>"><i class="fa fa-cog"></i> 修改资料</a></li>
+                            <li><a href="<?=Url::toRoute('site/edit-user')?>"><i class="fa fa-cog"></i> 修改资料</a></li>
                             <li><a href="<?=Url::toRoute('site/logout')?>" data-method="post"><i class="fa fa-sign-out"></i> 退出</a></li>
-                        </ul>
+                          </ul>
                       </ul>
                     </li>
                   </ul>

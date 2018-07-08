@@ -17,6 +17,19 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 		$scope.addAction = function() {
 			$scope.modal = {};
 			dialog_add_edit.modal('show');
+			var URL = "<?=Url::toRoute('admin-user-role/get-user')?>";
+			$.ajax({
+				type: "get",
+				dataType:"json",
+				url: URL,
+				data:{roleId:roleId},
+				success: function(value) 
+				{
+						$("#sel_user").select2({
+							placeholder: "--请选择--",
+							data:value});
+				}
+			});
 		};
 
 		$scope.edit_action = function(id) {
@@ -36,7 +49,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 				data:{
 					id:$scope.modal.id,
 					'AdminUserRole[role_id]':roleId,
-					'AdminUserRole[user_id]':$scope.modal.user_id,
+					'AdminUserRole[user_id]':$("#sel_user").select2().val(),
 					'AdminUserRole[user_name]':$scope.modal.user_name
 				},
 				success: function(value) 

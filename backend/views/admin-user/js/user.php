@@ -14,12 +14,15 @@ define('ROOT_PATH',dirname(dirname(dirname(dirname(__FILE__)))));
 
 		$scope.addAction = function() {
 			$scope.modal = {};
+			$scope.isEdit = true;
 			dialog_add_edit.modal('show');
 		};
 
 		$scope.edit_action = function(id) {
 			var tableData = tableId.bootstrapTable('getRowByUniqueId', id);
 			$scope.modal = tableData;
+			
+			$scope.isEdit = false;
 			$scope.$apply();
 			dialog_add_edit.modal('show');
 		};
