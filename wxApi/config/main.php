@@ -25,15 +25,16 @@ return [
                 'showScriptName' => false,
                 'enableStrictParsing' =>true,
                 'rules' => [
-                     [
-                        'class' => 'yii\rest\UrlRule',
-                        'controller' => ['v1/user'],
-                        //'pluralize' => false, 
-                        'extraPatterns' => [
-                            'POST login' => 'login',
-                            'GET signup' => 'signup',
-                        ]
-                    ],
+                        [
+                            'class' => 'yii\rest\UrlRule',
+                            'controller' => ['v1/user'],
+                            //'pluralize' => false, 
+                            'extraPatterns' => [
+                                'POST login' => 'login',
+                                'POST signup' => 'signup',
+                            ],
+                        
+                        ],
                 ],
             ]
     ],
