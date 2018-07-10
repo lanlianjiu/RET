@@ -379,6 +379,7 @@ function ($) {
             dlg.close();
         }, 1500);
     }
+
     Dialog.prototype.Confirm = function (message, callback) {
         BootstrapDialog.confirm({
             type: 'type-primary',
@@ -392,6 +393,7 @@ function ($) {
             callback: callback
         })
     }
+
     $.dialog = new Dialog();
 })(jQuery);
 /**bootstrap-dialog-modal**/
@@ -419,10 +421,11 @@ function ($) {
 })(jQuery);
 /**
  * adaptionHeight end
- */+
-    /**bootstrap-table 初始化**/
-    function ($) {
+ */
++
+/**bootstrap-table 初始化**/
+function ($) {
 
-        
-    
-    }(jQuery);
+
+
+}(jQuery);

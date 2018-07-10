@@ -40,7 +40,7 @@ $form = ActiveForm::begin(["id" => "admin-user-form"]);//定义form表单，调�
                             <button id="delete_btn" type="button" ng-click="del_action()" class="btn btn-sm btn-danger-outline"><i class="fa fa-trash"></i> 批量删除</button>
                         </div>
                         <table id="adminUser-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="100" data-show-export="true"
-                            data-pagination="true" data-filter-control="true" data-checkbox="true" data-hide-column="id" data-show-export="true"
+                            data-pagination="true" data-filter-control="true" data-checkbox="true" data-hide-column="id" data-show-refresh="true" data-show-export="true"
                             data-id-field="id" data-unique-id="id" data-method="post" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" data-custom-url="index.php?r=admin-user/table" class="table  table-hover th-table">
                             <thead>
                                 <tr>

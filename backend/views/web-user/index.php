@@ -38,8 +38,8 @@ $modelLabel = new \backend\models\WebUserModel();
                                 <button id="delete_btn" ng-click="del_action()" type="button" class="btn btn-sm btn-danger-outline"><i class="fa fa-trash"></i> 批量删除</button>
                             </div>
                         </div>
-                        <table id="webuser-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="100" data-show-export="true"
-                            data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
+                        <table id="webuser-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="100" 
+                            data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-refresh="true" data-show-export="true"
                             data-id-field="id"  data-unique-id="id" data-method="post" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" data-custom-url="index.php?r=web-user/table" class="table  table-hover th-table">
                             <thead>
                                 <tr>

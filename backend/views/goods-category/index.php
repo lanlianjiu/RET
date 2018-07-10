@@ -51,7 +51,7 @@ $modelLabel = new \backend\models\ShpGoodsCategory();
                                 <button id="delete_btn" type="button" ng-click="del_action()" class="btn btn-sm btn-danger-outline"><i class="fa fa-trash"></i> 批量删除</button>
                             </div>
                         </div>
-                        <table id="categoryToBrand-table" data-toggle="table" data-toolbar=".action-toolbar" data-show-columns="true" data-autoheight="101" data-show-export="true"
+                        <table id="categoryToBrand-table" data-toggle="table" data-toolbar=".action-toolbar" data-show-columns="true" data-autoheight="101" 
                             data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
                             data-id-field="category2brand_id" data-unique-id="category2brand_id" data-method="post" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" class="table table-hover th-table">
                             <thead>

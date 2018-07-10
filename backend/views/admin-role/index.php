@@ -38,7 +38,7 @@ $modelLabel = new \backend\models\AdminRole();
                             <button id="delete_btn" ng-click="del_action()" type="button" class="btn btn-sm btn-danger-outline"><i class="fa fa-trash"></i> 批量删除</button>
                         </div>
                         <table id="adminRole-table" data-toolbar=".action-toolbar" data-toggle="table" data-show-columns="true" data-autoheight="100" data-show-export="true"
-                            data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
+                            data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-refresh="true" data-show-export="true"
                             data-id-field="id" data-unique-id="id" data-method="post" data-hide-column="id" data-content-type="application/x-www-form-urlencoded; charset=UTF-8" data-custom-url="index.php?r=admin-role/table" class="table  table-hover  th-table">
                             <thead>
                                 <tr>

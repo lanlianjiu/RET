@@ -6,7 +6,7 @@ include ROOT_PATH.'/web/js/iov-min-public.php';
 
 <script>
 var app = angular.module("myApp", []);
-app.controller("paidOrder-controller", function($scope) {
+app.controller("signedOrder-controller", function($scope) {
 
 });
 

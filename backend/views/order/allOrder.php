@@ -36,7 +36,7 @@ use yii\helpers\Url;
                             <a id="create_btn" ng-click="addOrder()" type="button" href="<?=Url::toRoute('order/createindex')?>" class="btn btn-sm btn-outline btn-primary"><i class="fa fa-plus"></i> 新增</a>
                         </div>
                         <table id="allOrder-table"  data-toggle="table" data-show-columns="true" data-toolbar=".action-toolbar" data-autoheight="100" data-show-export="true"
-                            data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-export="true"
+                            data-pagination="true" data-filter-control="true" data-checkbox="true" data-show-refresh="true" data-show-export="true"
                             data-id-field="order_id" data-unique-id="order_id" data-custom-url="index.php?r=order/table" class="table  table-hover th-table">
                             <thead>
                                 <tr>
