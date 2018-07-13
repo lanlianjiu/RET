@@ -26,7 +26,7 @@ use yii\helpers\Url;
 
 			var tableData = tableId.bootstrapTable('getRowByUniqueId', id);
 			$scope.modal = tableData;
-			
+			console.log(tableData.category_id)
 			$("#sel_menu").select2().val(tableData.category_id);
 			$("#sel_brand").select2().val(tableData.brand_id);
             $scope.modal.is_used = Number(tableData.is_used);
@@ -120,37 +120,27 @@ use yii\helpers\Url;
 							alert("出错了，" + textStatus);
 						},
 					success: function(data){
+						console.log(data)
+						var data = [{
+							id:"10",
+							pid:"1",
+							text:"女装/潮流",
+							children:[
+								{
+									id:"1125",
+									pid:"1001",
+									text:"七分短袖",
+									children:[{id:"1001",
+									pid:"10",
+									text:"短袖"
+									}]
+								}
+							]
 
+						}]
 						$("#sel_menu").select2({
 							placeholder: "--请选择--",
-							data:[
-									{
-										"id": "10",
-										"text": "女装 /内衣",
-										"children": [
-											{
-												"id": "1001",
-												"text": "女装"
-											}
-										]
-									},
-									{
-										"id": "11",
-										"text": "男装 /运动户外",
-										"children": [
-											{
-												"id": "1101",
-												"text": "男装",
-												// "children": [
-												// 				{
-												// 					"id": "110101",
-												// 					"text": "男装"
-												// 				}
-												// 			]
-											}
-										]
-									}
-								]
+							data:data
 						});
 					}
 			});
