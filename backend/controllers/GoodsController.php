@@ -103,7 +103,7 @@ class GoodsController extends BaseController
 
     public function actionGetCategory()
     {
-        $arr = Yii::$app->db->createCommand('
+        $query = Yii::$app->db->createCommand('
          SELECT 
               category_id id,
               category_p_id pid,
@@ -111,23 +111,53 @@ class GoodsController extends BaseController
            FROM shp_goods_category
            ')->queryAll();
 
-        $refer = array();
-        $tree = array();
-        foreach($arr as $k => $v){
-            $refer[$v['id']] = & $arr[$k]; //创建主键的数组引用
-        }
-        foreach($arr as $k => $v){
-            $pid = $v['pid'];  //获取当前分类的父级id
-            if($pid == 1){
-            $tree[] = & $arr[$k];  //顶级栏目
-            }else{
-            if(isset($refer[$pid])){
-                $refer[$pid]['children'][] = & $arr[$k]; //如果存在父级栏目，则添加进父级栏目的子栏目数组中
-            }
-            }
-        }
 
-        $result = $tree;
+            // $refer = array();
+            // $tree = array();
+            // foreach($arr as $k => $v){
+            //     $refer[$v['id']] = & $arr[$k]; //创建主键的数组引用
+            // }
+            // foreach($arr as $k => $v){
+            //     $pid = $v['pid'];  //获取当前分类的父级id
+            //     if($pid == 1){
+            //     $tree[] = & $arr[$k];  //顶级栏目
+            //     }else{
+            //     if(isset($refer[$pid])){
+            //         $refer[$pid]['children'][] = & $arr[$k]; //如果存在父级栏目，则添加进父级栏目的子栏目数组中
+            //     }
+            //     }
+            // }
+
+            // $result = $tree;
+
+           function getTree($array, $pid =0, $level = 0){
+
+                //声明静态数组,避免递归调用时,多次声明导致数组覆盖
+                static $list = [];
+                foreach ($array as $key => $value){
+                    //第一次遍历,找到父节点为根节点的节点 也就是pid=0的节点
+                    if ($value['pid'] == $pid){
+                        //父节点为根节点的节点,级别为0，也就是第一级
+                        $value['level'] = $level;
+                        //把数组放到list中
+                        $list[$value['id']] = $value;
+                        //把这个节点从数组中移除,减少后续递归消耗
+                        unset($array[$key]);
+                        //开始递归,查找父ID为该节点ID的节点,级别则为原级别+1
+                        getTree($array, $value['id'], $level+1);
+
+                    }
+                }
+                return $list;
+            };
+
+            $result = getTree($query);
+
+            foreach($result as $key => $value){
+                $result[$key]['text'] =  str_repeat('--', $value['level']).$value['text'];
+            }
+        
+           
         return json_encode($result);
     }
 
