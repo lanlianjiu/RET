@@ -56,5 +56,5 @@ use yii\helpers\Url;
 </div>
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/signedOrder.php';?>
+<?php require dirname(__FILE__).'/js/signedOrder.php';?>
 <?php $this->endBlock(); ?>

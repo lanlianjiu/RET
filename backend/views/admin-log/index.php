@@ -138,5 +138,5 @@ $modelLabel = new \backend\models\AdminLog();
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/log.php';?>
+<?php require dirname(__FILE__).'/js/log.php';?>
 <?php $this->endBlock(); ?>

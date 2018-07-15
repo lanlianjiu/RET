@@ -150,5 +150,5 @@ $modelLabel = new \backend\models\AdminMenu();
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/menu.php';?>
+<?php require dirname(__FILE__).'/js/menu.php';?>
 <?php $this->endBlock(); ?>

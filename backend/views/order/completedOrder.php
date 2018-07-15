@@ -56,5 +56,5 @@ use yii\helpers\Url;
 </div>
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/completedOrder.php';?>
+<?php require dirname(__FILE__).'/js/completedOrder.php';?>
 <?php $this->endBlock(); ?>

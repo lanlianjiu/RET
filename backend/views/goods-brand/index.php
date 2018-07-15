@@ -122,5 +122,5 @@ $form = ActiveForm::begin(["id" => "web-nav-form"]);//定义form表单，调用�
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/goodsbrand.php';?>
+<?php require dirname(__FILE__).'/js/goodsbrand.php';?>
 <?php $this->endBlock(); ?>

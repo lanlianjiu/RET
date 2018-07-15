@@ -122,6 +122,6 @@
 
     <?php $this->beginBlock('footer');  ?>
       <!-- <body></body>后代码块 -->
-      <?php include '/js/index.php';?>
+      <?php require dirname(__FILE__).'/js/index.php';?>
     <?php $this->endBlock(); ?>
     

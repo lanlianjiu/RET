@@ -111,5 +111,5 @@ $modelLabel = new \backend\models\WebUserModel();
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/webuser.php';?>
+<?php require dirname(__FILE__).'/js/webuser.php';?>
 <?php $this->endBlock(); ?>

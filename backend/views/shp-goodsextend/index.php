@@ -102,5 +102,5 @@ $modelLabel = new \backend\models\ShpGoodsextend();
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/shpgoodsextend.php';?>
+<?php require dirname(__FILE__).'/js/shpgoodsextend.php';?>
 <?php $this->endBlock(); ?>

@@ -145,5 +145,5 @@ $modelLabel = new \backend\models\ShpGoodsCategory();
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/goodscategory.php';?>
+<?php require dirname(__FILE__).'/js/goodscategory.php';?>
 <?php $this->endBlock(); ?>

@@ -101,5 +101,5 @@ $modelLabel = new \backend\models\ShpGoodsSize();
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/shpgoodssize.php';?>
+<?php require dirname(__FILE__).'/js/shpgoodssize.php';?>
 <?php $this->endBlock(); ?>

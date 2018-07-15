@@ -114,5 +114,5 @@ $form = ActiveForm::begin(["id" => "goodspic-form"]);//定义form表单，调用
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/goodspic.php';?>
+<?php require dirname(__FILE__).'/js/goodspic.php';?>
 <?php $this->endBlock(); ?>

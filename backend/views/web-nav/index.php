@@ -130,5 +130,5 @@ $modelLabel = new \backend\models\WebNavModel();
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/webnav.php';?>
+<?php require dirname(__FILE__).'/js/webnav.php';?>
 <?php $this->endBlock(); ?>

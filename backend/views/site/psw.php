@@ -53,5 +53,5 @@ use yii\bootstrap\ActiveForm;
 </section>
 
 <?php $this->beginBlock('footer');  ?>
-<?php include '/js/psw.php';?>
+<?php require dirname(__FILE__).'/js/psw.php';?>
 <?php $this->endBlock(); ?>

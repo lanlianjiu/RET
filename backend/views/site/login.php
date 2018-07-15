@@ -40,4 +40,4 @@ use yii\helpers\Url;
 <!-- iCheck -->
 <script src="<?=Url::base()?>/plugins/iCheck/icheck.min.js"></script>
 <!-- /.login-box -->
-<?php include '/js/login.php';?>
+<?php require dirname(__FILE__).'/js/login.php';?>

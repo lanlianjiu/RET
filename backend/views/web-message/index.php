@@ -138,5 +138,5 @@ $modelLabel = new \backend\models\WebMessageModel();
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/webmessage.php';?>
+<?php require dirname(__FILE__).'/js/webmessage.php';?>
 <?php $this->endBlock(); ?>

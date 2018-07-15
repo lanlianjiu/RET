@@ -146,5 +146,5 @@ $form = ActiveForm::begin(["id" => "goods-form"]);//定义form表单，调用组
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/goods.php';?>
+<?php require dirname(__FILE__).'/js/goods.php';?>
 <?php $this->endBlock(); ?>

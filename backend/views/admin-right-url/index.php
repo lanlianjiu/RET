@@ -237,5 +237,5 @@ $modelLabel = new \backend\models\AdminRightUrl();
 </div>
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
- <?php include '/js/right-url.php';?>
+ <?php require dirname(__FILE__).'/js/right-url.php';?>
 <?php $this->endBlock(); ?>

@@ -134,5 +134,5 @@ $modelLabel = new \backend\models\AdminRight();
 </div>
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/right.php';?>
+<?php require dirname(__FILE__).'/js/right.php';?>
 <?php $this->endBlock(); ?>

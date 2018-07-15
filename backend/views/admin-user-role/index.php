@@ -103,5 +103,5 @@ $modelLabel = new \backend\models\AdminUserRole();
 
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/user-role.php';?>
+<?php require dirname(__FILE__).'/js/user-role.php';?>
 <?php $this->endBlock(); ?>

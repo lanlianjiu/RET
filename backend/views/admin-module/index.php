@@ -138,5 +138,5 @@ $modelLabel = new \backend\models\AdminModule();
 
 <?php $this->beginBlock('footer');?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/module.php';?>
+<?php require dirname(__FILE__).'/js/module.php';?>
 <?php $this->endBlock();?>

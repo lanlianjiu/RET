@@ -56,5 +56,5 @@ use yii\helpers\Url;
 </div>
 <?php $this->beginBlock('footer');  ?>
 <!-- <body></body>后代码块 -->
-<?php include '/js/cancelOrder.php';?>
+<?php require dirname(__FILE__).'/js/cancelOrder.php';?>
 <?php $this->endBlock(); ?>

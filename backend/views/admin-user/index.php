@@ -122,5 +122,5 @@ $form = ActiveForm::begin(["id" => "admin-user-form"]);//定义form表单，调�
 
 <?php $this->beginBlock('footer');  ?>
     <!-- <body></body>后代码块 -->
-    <?php include '/js/user.php';?>
+    <?php require dirname(__FILE__).'/js/user.php';?>
 <?php $this->endBlock(); ?>

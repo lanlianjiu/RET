@@ -9,5 +9,5 @@ use yii\bootstrap\ActiveForm;
 </section>
 
 <?php $this->beginBlock('footer');  ?>
-<?php include '/js/editUserInfo.php';?>
+<?php require dirname(__FILE__).'/js/editUserInfo.php';?>
 <?php $this->endBlock(); ?>
