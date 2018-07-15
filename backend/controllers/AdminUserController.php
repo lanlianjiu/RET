@@ -48,7 +48,7 @@ class AdminUserController extends BaseController
             'upload'=>[
                     'class'=>'common\widgets\file_upload\UploadAction',
                     'config'=>[
-                        'imagePathFormat' => "/SHP/backend/web/uploadimg/{yyyy}{mm}{dd}/{time}{rand:6}",
+                        'imagePathFormat' => "/RET/backend/web/uploadimg/{yyyy}{mm}{dd}/{time}{rand:6}",
                             ]
                     ],
             'upload_more'=>[
