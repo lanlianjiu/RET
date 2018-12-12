@@ -85,4 +85,4 @@ $this->title = '注册';
         </div>
     </div>
 </div>
-<?php include '/js/signup.php';?>
+<?php include dirname(__FILE__).'/js/signup.php';?>
